@@ -13,7 +13,7 @@ function fncStaticInitWorldParams()
 	
 	//Physics
 	global.gravAcc = 0.4;
-	global.gravMax = 6;
+	global.gravMax = 4;
 	global.gravScale = 1;
 	global.waterGravScale = 0.2;
 }

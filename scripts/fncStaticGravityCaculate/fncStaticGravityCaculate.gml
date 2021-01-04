@@ -3,10 +3,13 @@
 function fncStaticGravityCaculate(){
 	if (gravAffect > 0)
 	{
-		if (grav < global.gravMax)
-			grav += global.gravAcc;
-		else
-			grav = global.gravAcc;
-		vspd += grav;
+		if (!place_meeting(x, y + 1, objBlock))
+		{
+			if (vspd < global.gravMax)
+				vspd += global.gravAcc;
+			else
+				vspd = global.gravMax;
+		}
+		else	vspd = 0;
 	}
 }
