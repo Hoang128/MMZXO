@@ -8,8 +8,15 @@ function fncStateStart()
 {
 	with(core.id)
 	{
+		if (sprite_index != sprPlayer.sprLand)
+		{
+			sprite_index = sprPlayer.sprIdle;
+			image_index = 0;
+		}
+		
 		hspd = 0;
 		vspd = 0;
+		jumpTime = jumpTimeMax;
 	}
 }
 
@@ -24,27 +31,41 @@ function fncStateRun()
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateRun);
+				return;
 			}
-			return;
 		}
 	
 		if (keyboard_check_pressed(global.keyJump))
 		{
-			vspd = -jumpSpd;
+			if (jumpTime > 0)
+			{
+				vspd = -jumpSpd;
+				jumpTime--;
+				
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+		}
+		
+		if (keyboard_check_pressed(global.keyDash))
+		{
 			with(other.stateMachine)
 			{
-				fncStateChange(objPlayerStateJump);
+				fncStateChange(objPlayerStateDash);
+				return;
 			}
-			return;
 		}
 	
-		if (!place_meeting(x, y + 1, objBlock))
+		if (!place_meeting(x, y + jumpSpd, objBlock))
 		{
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
+				return;
 			}
-			return;
 		}
 	}
 }

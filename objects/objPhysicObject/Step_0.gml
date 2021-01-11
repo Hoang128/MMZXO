@@ -24,5 +24,5 @@ if (physic == 1)
 	}
 }
 
-x += hspd;
-y += vspd;
+x += hspd * TIME_SCALE;
+y += vspd * TIME_SCALE;

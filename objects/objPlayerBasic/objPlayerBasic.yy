@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sprPlayerHitbox",
+    "path": "sprites/sprPlayerHitbox/sprPlayerHitbox.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "objPhysicObject",
@@ -26,6 +29,9 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objPlayerBasic","path":"objects/objPlayerBasic/objPlayerBasic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"objPlayerBasic","path":"objects/objPlayerBasic/objPlayerBasic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":7,"eventType":7,"collisionObjectId":null,"parent":{"name":"objPlayerBasic","path":"objects/objPlayerBasic/objPlayerBasic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,"parent":{"name":"objPlayerBasic","path":"objects/objPlayerBasic/objPlayerBasic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objPlayerBasic","path":"objects/objPlayerBasic/objPlayerBasic.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

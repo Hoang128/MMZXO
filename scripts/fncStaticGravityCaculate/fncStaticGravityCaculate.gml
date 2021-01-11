@@ -10,6 +10,9 @@ function fncStaticGravityCaculate(){
 			else
 				vspd = global.gravMax;
 		}
-		else	vspd = 0;
+		else	
+		{
+			vspd = 0;
+		}
 	}
 }

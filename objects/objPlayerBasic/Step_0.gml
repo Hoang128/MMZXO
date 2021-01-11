@@ -3,6 +3,8 @@
 
 //Step handle for early dev
 
+image_speed *= TIME_SCALE;
+
 fncStaticGravityCaculate();
 
 with (playerStateMachine)

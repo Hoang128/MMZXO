@@ -5,6 +5,14 @@ function fncStaticInitGame(){
 	fncStaticInitKeyboardParams();
 }
 
+function fncStaticInitMacros()
+{
+	//Macros
+	#macro TIME_SCALE global.timeScale * timeScale;
+	#macro VIEW_W 340;
+	#macro VIEW_H 192;
+}
+
 function fncStaticInitWorldParams()
 {
 	//Time
@@ -12,7 +20,7 @@ function fncStaticInitWorldParams()
 	global.timeScaleSlow = 0.2;
 	
 	//Physics
-	global.gravAcc = 0.4;
+	global.gravAcc = 0.2;
 	global.gravMax = 4;
 	global.gravScale = 1;
 	global.waterGravScale = 0.2;

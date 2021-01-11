@@ -4,6 +4,15 @@
 // Inherit the parent event
 event_inherited();
 
+function fncStateStart()
+{
+	with(core.id)
+	{
+		sprite_index = sprPlayer.sprRun;
+		image_index = 0;
+	}
+}
+
 function fncStateRun()
 {
 	with(core.id)
@@ -13,24 +22,47 @@ function fncStateRun()
 		if (hMove == 0)
 		{
 			with(other.stateMachine)
+			{
 				fncStateChange(objPlayerStateIdle);
-			return;
+				return;
+			}
+		}
+		else
+		{
+			if (charDir != hMove)
+				charDir = hMove;
 		}
 	
 		if (keyboard_check_pressed(global.keyJump))
 		{
-			vspd = -jumpSpd;
-		
-			with(other.stateMachine)
-				fncStateChange(objPlayerStateJump);
-			return;
+			if (jumpTime > 0)
+			{
+				vspd = -jumpSpd;
+				jumpTime--;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
 		}
-	
-		if (!place_meeting(x, y + 1, objBlock))
+		
+		if (keyboard_check_pressed(global.keyDash))
 		{
 			with(other.stateMachine)
+			{
+				fncStateChange(objPlayerStateDash);
+				return;
+			}
+		}
+	
+		if (!place_meeting(x, y + jumpSpd, objBlock))
+		{
+			with(other.stateMachine)
+			{
 				fncStateChange(objPlayerStateJump);
-			return;
+				return;
+			}
 		}
 	}
 }

@@ -3,7 +3,7 @@
 
 physic = 1;
 
-localTimeScale = 1;
+timeScale = 1;
 
 grav = 0;
 hspd = 0;
