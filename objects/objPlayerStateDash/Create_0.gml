@@ -3,9 +3,13 @@
 
 // Inherit the parent event
 event_inherited();
+airDash = false;
+shadowEffCreater = noone;
 
 function fncStateStart()
 {
+	shadowEffCreater = instance_create_depth(x, y, depth - 1, objPlayerShadowCreater);
+	shadowEffCreater.core = self.core;
 	with(core.id)
 	{
 		sprite_index = sprPlayer.sprDashStart;
@@ -19,6 +23,48 @@ function fncStateRun()
 {
 	with(core.id)
 	{
+		if (other.airDash)	
+		{
+			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+			if (charDir * hMove == -1)
+			{
+				charDir = hMove;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+			vspd = 0;
+		}
+		else
+		{
+			fncMoveSlopdeDownYPos();
+			if (place_meeting(x + charDir, y, objBlock))
+			{
+				if (!place_meeting(x + charDir * maxDisDetectSlopeAbove, y, objSlope))
+				{
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateIdle);
+						return;
+					}
+				}
+			}
+			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+			if (charDir * hMove == -1)
+			{
+				charDir = hMove;
+			}
+			if (!place_meeting(x, y + jumpSpd, objBlock))
+			{
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+		}
 		if (dashTime > 0)
 		{
 			if (keyboard_check_pressed(global.keyJump))
@@ -56,14 +102,17 @@ function fncStateRun()
 				sprite_index = sprPlayer.sprDashEnd;
 				image_index = 0;
 				
-				var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
-				if (hMove != 0)
+				if (!other.airDash)
 				{
-					charDir = hMove;
-					with(other.stateMachine)
+					var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+					if (hMove != 0)
 					{
-						fncStateChange(objPlayerStateRun);
-						return;
+						charDir = hMove;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateRun);
+							return;
+						}
 					}
 				}
 			}
@@ -77,29 +126,38 @@ function fncStateRun()
 				}
 			}
 			
-			if (abs(hspd) > 0)
-			{
-				hspd -= charDir * dashAccDown;
-			}
-			else
+			if (other.airDash)
 			{
 				hspd = 0;
 				
 				with(other.stateMachine)
 				{
-					fncStateChange(objPlayerStateIdle);
+					fncStateChange(objPlayerStateJump);
 					return;
 				}
-			}	
-		}
-		
-		if (!place_meeting(x, y + jumpSpd, objBlock))
-		{
-			with(other.stateMachine)
+			}
+			else
 			{
-				fncStateChange(objPlayerStateJump);
-				return;
+				if (abs(hspd) > 0)
+				{
+					hspd -= charDir * dashAccDown;
+				}
+				else
+				{
+					hspd = 0;
+				
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateIdle);
+						return;
+					}
+				}	
 			}
 		}
 	}
+}
+
+function fncStateEnd()
+{
+	instance_destroy(shadowEffCreater);
 }

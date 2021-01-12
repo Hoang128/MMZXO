@@ -3,14 +3,17 @@
 function fncStaticInitGame(){
 	fncStaticInitWorldParams();
 	fncStaticInitKeyboardParams();
+	fncStaticInitMacros();
 }
 
 function fncStaticInitMacros()
 {
 	//Macros
-	#macro TIME_SCALE global.timeScale * timeScale;
-	#macro VIEW_W 340;
-	#macro VIEW_H 192;
+	#macro TIME_SCALE global.timeScale * timeScale
+	#macro VIEW_W 340
+	#macro VIEW_H 192
+	#macro VPORT_W 1920
+	#macro VPORT_H 1080
 }
 
 function fncStaticInitWorldParams()
@@ -24,6 +27,14 @@ function fncStaticInitWorldParams()
 	global.gravMax = 4;
 	global.gravScale = 1;
 	global.waterGravScale = 0.2;
+	
+	//World
+	global.roomState = RoomState.MENU;
+	global.playerStartPosition =
+	{
+		x : 0,
+		y : 0
+	};
 }
 
 function fncStaticInitKeyboardParams()
@@ -42,19 +53,12 @@ function fncStaticInitKeyboardParams()
 	global.keyGiga = vk_space;
 }
 
-function fncStaticInitPlayerStates()
+function fncStaticInitStates()
 {
-	enum playerState
+	enum RoomState
 	{
-		IDLE,
-		RUN,
-		JUMP,
-		DASH,
-		WALL_KICK,
-		WALL_SLIDE,
-		WIRE_PLUG,
-		CLIMB,
-		FREEZE_ATTACK
+		MENU,
+		STAGE
 	}
 	
 	enum PlayerAtkState

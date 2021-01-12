@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 dashJump = false;
+shadowEffCreater = noone;
 
 function fncStateStart()
 {
@@ -24,6 +25,14 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	if (dashJump)
+	{
+		if (shadowEffCreater == noone)
+		{
+			shadowEffCreater = instance_create_depth(x, y, depth - 1, objPlayerShadowCreater);
+			shadowEffCreater.core = self.core;
+		}
+	}
 	with (core.id)
 	{
 		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
@@ -42,6 +51,27 @@ function fncStateRun()
 		{
 			if (vspd < 0) vspd = 0;
 		}
+		
+		if (airDashCount > 0)
+		{
+			if ((airDashWhenFastMove == true)
+			|| ((airDashWhenFastMove == false) && other.dashJump == false))
+			{
+				if (keyboard_check_pressed(global.keyDash))
+				{
+					airDashCount--;
+					if (!mixAirDashJump)
+						jumpTime = 0;
+					with(other.stateMachine)
+					{
+						var currentAirDash = true;
+						fncStateChange(objPlayerStateDash);
+						currentState.airDash = currentAirDash;
+						return;
+					}
+				}
+			}
+		}
 	
 		if (vspd >= 0)
 		{
@@ -52,20 +82,26 @@ function fncStateRun()
 				image_index = 0;
 			}
 			
-			if (keyboard_check_pressed(global.keyJump))
+			if ((airJumpWhenFastMove == true)
+				|| ((airJumpWhenFastMove == false) && other.dashJump == false))
 			{
-				if (jumpTime > 0)
+				if (keyboard_check_pressed(global.keyJump))
 				{
-					vspd = -jumpSpd;
-					jumpTime--;
-					
-					with(other.stateMachine)
+					if (jumpTime > 0)
 					{
-						var currentDashJump = currentState.dashJump;
-						fncStateChange(objPlayerStateJump);
-						if (currentDashJump)
-							currentState.dashJump = true;
-						return;
+						vspd = -jumpSpd;
+						jumpTime--;
+						if (!mixAirDashJump)
+							airDashCount = 0;
+					
+						with(other.stateMachine)
+						{
+							var currentDashJump = currentState.dashJump;
+							fncStateChange(objPlayerStateJump);
+							if (currentDashJump)
+								currentState.dashJump = true;
+							return;
+						}
 					}
 				}
 			}
@@ -82,4 +118,10 @@ function fncStateRun()
 			}
 		}
 	}
+}
+
+function fncStateEnd()
+{
+	if (instance_exists(shadowEffCreater))
+		instance_destroy(shadowEffCreater);
 }

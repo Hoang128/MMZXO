@@ -31,6 +31,18 @@ function fncStateRun()
 		{
 			if (charDir != hMove)
 				charDir = hMove;
+			if (place_meeting(x + charDir, y, objBlock))
+			{
+				if (!place_meeting(x + charDir * maxDisDetectSlopeAbove, y, objSlope))
+				{
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateIdle);
+						return;
+					}
+				}
+			}
+			fncMoveSlopdeDownYPos();
 		}
 	
 		if (keyboard_check_pressed(global.keyJump))
@@ -58,6 +70,7 @@ function fncStateRun()
 	
 		if (!place_meeting(x, y + jumpSpd, objBlock))
 		{
+			jumpTime--;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);

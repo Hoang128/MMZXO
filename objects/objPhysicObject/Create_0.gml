@@ -5,8 +5,20 @@ physic = 1;
 
 timeScale = 1;
 
-grav = 0;
 hspd = 0;
 vspd = 0;
 
+maxDisDetectSlopeAbove = 6;
+
 gravAffect = 0;
+
+function fncMoveSlopdeDownYPos()
+{
+	if (place_meeting(x, y + maxDisDetectSlopeAbove, objBlock))
+	{
+		while (!place_meeting(x, y + 1, objBlock))
+		{
+			y++;
+		}
+	}
+}

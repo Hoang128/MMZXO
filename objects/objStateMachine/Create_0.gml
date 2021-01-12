@@ -39,3 +39,9 @@ function fncStateChange(newState)
 		game_end();
 	}
 }
+
+function fncStateHandle()
+{
+	with (currentState.id)
+		fncStateRun();
+}

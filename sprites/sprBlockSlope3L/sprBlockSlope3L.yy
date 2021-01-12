@@ -69,7 +69,7 @@
   ],
   "parent": {
     "name": "Physic Blocks",
-    "path": "folders/Sprites/Physic Blocks.yy",
+    "path": "folders/Sprites/Basic Templates/Physic Blocks.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprBlockSlope3L",

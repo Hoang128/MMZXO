@@ -30,4 +30,9 @@ switch (sprite_index)
 		sprite_index = sprPlayer.sprIdle;
 		image_index = 0;
 	}	break;
+	case sprPlayer.sprSlideStart:
+	{
+		sprite_index = sprPlayer.sprSlide;
+		image_index = 0;
+	}	break;
 }

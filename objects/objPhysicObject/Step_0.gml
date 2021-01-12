@@ -10,7 +10,12 @@ if (physic == 1)
 		{
 			x += sign(hspd);
 		}
-		hspd = 0;
+		if (!place_meeting(x + hspd, y - maxDisDetectSlopeAbove, objBlock))
+		{
+			while (place_meeting(x + hspd, y, objBlock)) y--;
+		}
+		else
+			hspd = 0;
 	}
 	
 	//Vertical handle

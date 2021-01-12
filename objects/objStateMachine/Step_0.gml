@@ -4,12 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-function fncStateHandle()
-{
-	with (currentState.id)
-		fncStateRun();
-}
-
 if (core == noone)
 {
 	show_message("INVALID STATE MACHINE TYPE!");

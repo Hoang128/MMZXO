@@ -17,6 +17,7 @@ function fncStateStart()
 		hspd = 0;
 		vspd = 0;
 		jumpTime = jumpTimeMax;
+		airDashCount = airDashCountMax;
 	}
 }
 
@@ -27,11 +28,14 @@ function fncStateRun()
 		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove != 0)
 		{
-			charDir = hMove;
-			with(other.stateMachine)
+			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir)))
 			{
-				fncStateChange(objPlayerStateRun);
-				return;
+				charDir = hMove;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateRun);
+					return;
+				}
 			}
 		}
 	
@@ -52,15 +56,19 @@ function fncStateRun()
 		
 		if (keyboard_check_pressed(global.keyDash))
 		{
-			with(other.stateMachine)
+			if (!place_meeting(x + charDir, y, objBlock))
 			{
-				fncStateChange(objPlayerStateDash);
-				return;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateDash);
+					return;
+				}
 			}
 		}
 	
 		if (!place_meeting(x, y + jumpSpd, objBlock))
 		{
+			jumpTime--;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
