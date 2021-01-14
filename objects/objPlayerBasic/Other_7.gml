@@ -35,4 +35,9 @@ switch (sprite_index)
 		sprite_index = sprPlayer.sprSlide;
 		image_index = 0;
 	}	break;
+	case sprPlayer.sprWallKick:
+	{
+		sprite_index = sprPlayer.sprJump;
+		image_index = 0;
+	}
 }

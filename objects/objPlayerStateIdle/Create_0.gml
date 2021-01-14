@@ -77,3 +77,8 @@ function fncStateRun()
 		}
 	}
 }
+
+function fncStateEnd()
+{
+	
+}

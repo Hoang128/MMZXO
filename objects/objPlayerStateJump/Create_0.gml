@@ -47,7 +47,7 @@ function fncStateRun()
 		
 		hspd = moveSpd * hMove;
 		
-		if (keyboard_check_released(global.keyJump))
+		if (!keyboard_check(global.keyJump))
 		{
 			if (vspd < 0) vspd = 0;
 		}
@@ -82,26 +82,51 @@ function fncStateRun()
 				image_index = 0;
 			}
 			
-			if ((airJumpWhenFastMove == true)
-				|| ((airJumpWhenFastMove == false) && other.dashJump == false))
+			if (place_meeting(x + charDir, y, objBlock))
 			{
-				if (keyboard_check_pressed(global.keyJump))
+				var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+				if (hMove == charDir)
 				{
-					if (jumpTime > 0)
+					with(other.stateMachine)
 					{
-						vspd = -jumpSpd;
-						jumpTime--;
-						if (!mixAirDashJump)
-							airDashCount = 0;
-					
-						with(other.stateMachine)
+						fncStateChange(objPlayerStateSlide);
+					}
+				}
+			}
+			
+			
+			if (keyboard_check_pressed(global.keyJump))
+			{
+				if (!place_meeting(x + charDir * distanceCanWKick, y, objBlock))
+				{
+					if ((airJumpWhenFastMove == true)
+					|| ((airJumpWhenFastMove == false) && other.dashJump == false))
+					{
+						if (jumpTime > 0)
 						{
-							var currentDashJump = currentState.dashJump;
-							fncStateChange(objPlayerStateJump);
-							if (currentDashJump)
-								currentState.dashJump = true;
-							return;
+							vspd = -jumpSpd;
+							jumpTime--;
+							if (!mixAirDashJump)
+								airDashCount = 0;
+					
+							with(other.stateMachine)
+							{
+								var currentDashJump = currentState.dashJump;
+								fncStateChange(objPlayerStateJump);
+								if (currentDashJump)
+									currentState.dashJump = true;
+								return;
+							}
 						}
+					}
+				}
+				else
+				{
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateWallKick);
+						currentState.dashJump = keyboard_check(global.keyDash);
+						return;
 					}
 				}
 			}

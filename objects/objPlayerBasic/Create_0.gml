@@ -19,9 +19,15 @@ dashTimeMax = 25;
 
 mixAirDashJump = false;
 
-distanceCanSlide = 2;
-distanceCanWKick = 4;
+slideAcc = 0.5;
+slideSpdMax = 1;
 distanceOffSlide = 4;
+
+wallKickSpd = 3;
+wallKickTimeHMax = 6;
+distanceCanWKick = 4;
+
+
 
 //Properties
 physic = 1;
@@ -45,7 +51,8 @@ sprPlayer =
 	sprDash : sprPlayerZXDash,
 	sprDashEnd : sprPlayerZXDashEnd,
 	sprSlideStart : sprPlayerZXSlideStart,
-	sprSlide : sprPlayerZXSlide
+	sprSlide : sprPlayerZXSlide,
+	sprWallKick : sprPlayerZXWallKick
 };
 
 

@@ -25,6 +25,8 @@ function fncStateRun()
 	{
 		if (other.airDash)	
 		{
+			if (gravAffect)
+				gravAffect = 0;
 			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 			if (charDir * hMove == -1)
 			{
@@ -33,6 +35,25 @@ function fncStateRun()
 				{
 					fncStateChange(objPlayerStateJump);
 					return;
+				}
+			}
+			if (place_meeting(x + charDir, y, objBlock))
+			{
+				if (charDir == hMove)
+				{
+					with(other.stateMachine)
+					{			
+						fncStateChange(objPlayerStateSlide);
+						return;
+					}
+				}
+				else
+				{
+					with(other.stateMachine)
+					{			
+						fncStateChange(objPlayerStateJump);
+						return;
+					}
 				}
 			}
 			vspd = 0;
@@ -160,4 +181,9 @@ function fncStateRun()
 function fncStateEnd()
 {
 	instance_destroy(shadowEffCreater);
+	with (core.id)
+	{
+		if (!gravAffect)
+			gravAffect = 1;
+	}
 }

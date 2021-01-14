@@ -17,10 +17,6 @@ function fncStateChange(newState)
 	{
 		objNewState.stateMachine = self.id;
 		objNewState.core = self.core;
-		with(objNewState.id)
-		{
-			fncStateStart();
-		}
 		
 		if (currentState != noone)
 		{
@@ -29,6 +25,11 @@ function fncStateChange(newState)
 				fncStateEnd();
 				instance_destroy();
 			}
+		}
+		
+		with(objNewState.id)
+		{
+			fncStateStart();
 		}
 		
 		currentState = objNewState.id;

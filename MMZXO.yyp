@@ -1,10 +1,12 @@
 {
   "resources": [
     {"id":{"name":"sprBlockSlope1L","path":"sprites/sprBlockSlope1L/sprBlockSlope1L.yy",},"order":4,},
+    {"id":{"name":"objDebug","path":"objects/objDebug/objDebug.yy",},"order":0,},
     {"id":{"name":"Sprite2","path":"sprites/Sprite2/Sprite2.yy",},"order":0,},
     {"id":{"name":"sprBlock","path":"sprites/sprBlock/sprBlock.yy",},"order":0,},
     {"id":{"name":"objPlayerState","path":"objects/objPlayerState/objPlayerState.yy",},"order":0,},
     {"id":{"name":"objStateMachine","path":"objects/objStateMachine/objStateMachine.yy",},"order":0,},
+    {"id":{"name":"objPlayerStateWallKick","path":"objects/objPlayerStateWallKick/objPlayerStateWallKick.yy",},"order":6,},
     {"id":{"name":"sprBlockSlope2R","path":"sprites/sprBlockSlope2R/sprBlockSlope2R.yy",},"order":2,},
     {"id":{"name":"sprPlayerZXDashStart","path":"sprites/sprPlayerZXDashStart/sprPlayerZXDashStart.yy",},"order":8,},
     {"id":{"name":"sprPlayerZXIdle","path":"sprites/sprPlayerZXIdle/sprPlayerZXIdle.yy",},"order":0,},
@@ -34,9 +36,10 @@
     {"id":{"name":"sprPlayerZXSlide","path":"sprites/sprPlayerZXSlide/sprPlayerZXSlide.yy",},"order":10,},
     {"id":{"name":"objPlayerStateJump","path":"objects/objPlayerStateJump/objPlayerStateJump.yy",},"order":3,},
     {"id":{"name":"sprPlayerZXSlideStart","path":"sprites/sprPlayerZXSlideStart/sprPlayerZXSlideStart.yy",},"order":11,},
+    {"id":{"name":"ZX","path":"sprites/ZX/ZX.yy",},"order":2,},
     {"id":{"name":"sprPlayerZXDashEnd","path":"sprites/sprPlayerZXDashEnd/sprPlayerZXDashEnd.yy",},"order":9,},
     {"id":{"name":"objPlayerStateRun","path":"objects/objPlayerStateRun/objPlayerStateRun.yy",},"order":2,},
-    {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},"order":0,},
+    {"id":{"name":"sprPlayerZXWallKick","path":"sprites/sprPlayerZXWallKick/sprPlayerZXWallKick.yy",},"order":12,},
     {"id":{"name":"RoomStart","path":"rooms/RoomStart/RoomStart.yy",},"order":1,},
     {"id":{"name":"objGameView","path":"objects/objGameView/objGameView.yy",},"order":1,},
     {"id":{"name":"sprPlayerZXDash","path":"sprites/sprPlayerZXDash/sprPlayerZXDash.yy",},"order":7,},
@@ -106,6 +109,7 @@
     {"folderPath":"folders/Sprites/Basic Templates.yy","order":4,"resourceVersion":"1.0","name":"Basic Templates","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/Basic Templates/Background Blocks.yy","order":1,"resourceVersion":"1.0","name":"Background Blocks","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Objects/Player Characters/Effect.yy","order":4,"resourceVersion":"1.0","name":"Effect","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Debug.yy","order":5,"resourceVersion":"1.0","name":"Debug","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
