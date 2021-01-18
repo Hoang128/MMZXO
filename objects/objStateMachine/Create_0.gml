@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-physic = 0;
+physic.enable = false;
 
 coreType = noone;
 currentState = noone;

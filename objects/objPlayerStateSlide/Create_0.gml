@@ -13,7 +13,7 @@ function fncStateStart()
 		
 		hspd = 0;
 		vspd = 0;
-		gravAffect = 0;
+		physic.gravAffect = false;
 		jumpTime = jumpTimeMax;
 		airDashCount = airDashCountMax;
 	}
@@ -48,7 +48,7 @@ function fncStateRun()
 			}
 		}
 		
-		if (!place_meeting(x + charDir, y, objBlock) || place_meeting(x, y + distanceOffSlide, objBlock))
+		if (!place_meeting(x + charDir, y, objBlock) || fncIsOnGround(distanceOffSlide))
 		{
 			if (jumpTime > 0)
 				jumpTime--;
@@ -64,5 +64,5 @@ function fncStateRun()
 function fncStateEnd()
 {
 	with(core.id)
-		gravAffect = 1;
+		physic.gravAffect = true;
 }

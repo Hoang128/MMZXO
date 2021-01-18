@@ -1,6 +1,6 @@
 {
   "spriteId": null,
-  "solid": false,
+  "solid": true,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Stage Blocks",
-    "path": "folders/Objects/Stage Blocks.yy",
+    "name": "Basic Block",
+    "path": "folders/Objects/Stage Blocks/Basic Block.yy",
   },
   "resourceVersion": "1.0",
   "name": "objSlope",

@@ -16,7 +16,7 @@ function fncStateStart()
 		sprite_index = sprPlayer.sprWallKick
 		image_index = 0;
 		
-		gravAffect = 0;
+		physic.gravAffect = false;
 		other.wallKickTimeH = wallKickTimeHMax;
 		airDashCount = airDashCountMax;
 		jumpTime = jumpTimeMax;
@@ -65,7 +65,7 @@ function fncStateRun()
 function fncStateEnd()
 {
 	with(core.id)
-		gravAffect = 1;
+		physic.gravAffect = true;
 	if (instance_exists(shadowEffCreater))
 		instance_destroy(shadowEffCreater);
 }

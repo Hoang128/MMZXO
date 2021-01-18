@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+global.debug = true;
 currentPlayer = noone;
 currentCamera = noone;
 
@@ -18,4 +19,12 @@ function fncChangePlayer(newPlayer)
 	}
 	
 	fncCreatePlayer(newPlayer);
+}
+
+if (global.debug == true)
+{
+	if (!instance_exists(objDebug))
+	{
+		instance_create_depth(x, y, depth, objDebug);
+	}
 }

@@ -18,6 +18,7 @@ function fncStateStart()
 		vspd = 0;
 		jumpTime = jumpTimeMax;
 		airDashCount = airDashCountMax;
+		physic.onGround = true;
 	}
 }
 
@@ -28,7 +29,8 @@ function fncStateRun()
 		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove != 0)
 		{
-			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir)))
+			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir))
+			|| place_meeting(x + charDir, y, objSlope))
 			{
 				charDir = hMove;
 				with(other.stateMachine)
@@ -41,6 +43,24 @@ function fncStateRun()
 	
 		if (keyboard_check_pressed(global.keyJump))
 		{
+			if (keyboard_check(global.keyDown))
+			{
+				if (fncIsOnBlockThin(1))
+				{
+					if (!fncIsOnBlock(1))
+					{
+						y+=2;
+						jumpTime--;
+						physic.onGround = false;
+						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTime);
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateJump);
+							return;
+						}
+					}
+				}
+			}
 			if (jumpTime > 0)
 			{
 				vspd = -jumpSpd;
@@ -56,7 +76,8 @@ function fncStateRun()
 		
 		if (keyboard_check_pressed(global.keyDash))
 		{
-			if (!place_meeting(x + charDir, y, objBlock))
+			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir))
+			|| place_meeting(x + charDir, y, objSlope))
 			{
 				with(other.stateMachine)
 				{
@@ -66,7 +87,7 @@ function fncStateRun()
 			}
 		}
 	
-		if (!place_meeting(x, y + jumpSpd, objBlock))
+		if (!physic.onGround)
 		{
 			jumpTime--;
 			with(other.stateMachine)

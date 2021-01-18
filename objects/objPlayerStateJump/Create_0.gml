@@ -20,6 +20,8 @@ function fncStateStart()
 			sprite_index = sprPlayer.sprFallStart;
 			image_index = 0;
 		}
+		
+		physic.onGround = false;
 	}
 }
 
@@ -131,10 +133,11 @@ function fncStateRun()
 				}
 			}
 			
-			if (place_meeting(x, y + global.gravMax, objBlock))
+			if (physic.onGround == true)
 			{
 				sprite_index = sprPlayer.sprLand;
 				image_index = 0;
+				
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateIdle);

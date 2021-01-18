@@ -30,8 +30,8 @@ distanceCanWKick = 4;
 
 
 //Properties
-physic = 1;
-gravAffect = 1;
+physic.enable = true;
+physic.gravAffect = true;
 charDir = 1;
 jumpTime = jumpTimeMax;
 dashTime = dashTimeMax;

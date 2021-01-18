@@ -16,7 +16,49 @@ function fncStateStart()
 function fncStateRun()
 {
 	with(core.id)
-	{
+	{	
+		if (!physic.onGround)
+		{
+			jumpTime--;
+			with(other.stateMachine)
+			{
+				fncStateChange(objPlayerStateJump);
+				return;
+			}
+		}
+		
+		if (keyboard_check_pressed(global.keyJump))
+		{
+			if (keyboard_check(global.keyDown))
+			{
+				if (fncIsOnBlockThin(1))
+				{
+					if (!fncIsOnBlock(1))
+					{
+						y+=2;
+						jumpTime--;
+						physic.onGround = false;
+						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTime);
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateJump);
+							return;
+						}
+					}
+				}
+			}
+			if (jumpTime > 0)
+			{
+				vspd = -jumpSpd;
+				jumpTime--;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+		}
+		
 		hspd = runSpd * charDir;
 		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove == 0)
@@ -42,21 +84,6 @@ function fncStateRun()
 					}
 				}
 			}
-			fncMoveSlopdeDownYPos();
-		}
-	
-		if (keyboard_check_pressed(global.keyJump))
-		{
-			if (jumpTime > 0)
-			{
-				vspd = -jumpSpd;
-				jumpTime--;
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateJump);
-					return;
-				}
-			}
 		}
 		
 		if (keyboard_check_pressed(global.keyDash))
@@ -64,16 +91,6 @@ function fncStateRun()
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateDash);
-				return;
-			}
-		}
-	
-		if (!place_meeting(x, y + jumpSpd, objBlock))
-		{
-			jumpTime--;
-			with(other.stateMachine)
-			{
-				fncStateChange(objPlayerStateJump);
 				return;
 			}
 		}

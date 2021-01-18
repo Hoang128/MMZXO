@@ -5,8 +5,6 @@
 
 image_speed *= TIME_SCALE;
 
-fncStaticGravityCalculate();
-
 with (playerStateMachine)
 	fncStateHandle();
 

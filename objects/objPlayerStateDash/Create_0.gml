@@ -22,11 +22,15 @@ function fncStateStart()
 function fncStateRun()
 {
 	with(core.id)
-	{
-		if (other.airDash)	
+	{	
+		vspd = 0;
+		if (other.airDash)
 		{
-			if (gravAffect)
-				gravAffect = 0;
+			if (physic.gravAffect)
+				physic.gravAffect = false;
+			if (fncIsOnBlockThin(2))
+				if (!physic.onGround)
+					physic.onGround = true;
 			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 			if (charDir * hMove == -1)
 			{
@@ -37,59 +41,51 @@ function fncStateRun()
 					return;
 				}
 			}
-			if (place_meeting(x + charDir, y, objBlock))
-			{
-				if (charDir == hMove)
-				{
-					with(other.stateMachine)
-					{			
-						fncStateChange(objPlayerStateSlide);
-						return;
-					}
-				}
-				else
-				{
-					with(other.stateMachine)
-					{			
-						fncStateChange(objPlayerStateJump);
-						return;
-					}
-				}
-			}
-			vspd = 0;
-		}
-		else
-		{
-			fncMoveSlopdeDownYPos();
 			if (place_meeting(x + charDir, y, objBlock))
 			{
 				if (!place_meeting(x + charDir * maxDisDetectSlopeAbove, y, objSlope))
 				{
-					with(other.stateMachine)
+					if (charDir == hMove)
 					{
-						fncStateChange(objPlayerStateIdle);
-						return;
+						with(other.stateMachine)
+						{			
+							fncStateChange(objPlayerStateSlide);
+							return;
+						}
+					}
+					else
+					{
+						with(other.stateMachine)
+						{			
+							fncStateChange(objPlayerStateJump);
+							return;
+						}
 					}
 				}
 			}
-			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
-			if (charDir * hMove == -1)
-			{
-				charDir = hMove;
-			}
-			if (!place_meeting(x, y + jumpSpd, objBlock))
-			{
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateJump);
-					return;
-				}
-			}
 		}
-		if (dashTime > 0)
+		else
 		{
 			if (keyboard_check_pressed(global.keyJump))
 			{
+				if (keyboard_check(global.keyDown))
+				{
+					if (fncIsOnBlockThin(1))
+					{
+						if (!fncIsOnBlock(1))
+						{
+							y+=4;
+							jumpTime--;
+							physic.onGround = false;
+							fncIgnoreThinBlockFor(physic.thinBlockIgnoreTime);
+							with(other.stateMachine)
+							{
+								fncStateChange(objPlayerStateJump);
+								return;
+							}
+						}
+					}
+				}
 				if (jumpTime > 0)
 				{
 					vspd = -jumpSpd;
@@ -103,9 +99,38 @@ function fncStateRun()
 				}
 			}
 			
+			if (place_meeting(x + charDir, y, objBlock))
+			{
+				if (!place_meeting(x, y + maxDisDetectSlopeAbove, objSlope))
+				{
+					if (!place_meeting(x + charDir * maxDisDetectSlopeAbove, y, objSlope))
+					{
+						dashTime = 0;
+					}
+				}
+			}
+			
+			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+			if (charDir * hMove == -1)
+			{
+				charDir = hMove;
+			}
+			
+			if (!physic.onGround)
+			{
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+		}
+		
+		if (dashTime > 0)
+		{
 			if (abs(hspd) < dashSpd)
 			{
-				hspd += charDir * dashAccUp
+				hspd += charDir * dashAccUp * TIME_SCALE;
 			}
 			else
 				hspd = charDir * dashSpd;
@@ -161,7 +186,7 @@ function fncStateRun()
 			{
 				if (abs(hspd) > 0)
 				{
-					hspd -= charDir * dashAccDown;
+					hspd -= charDir * dashAccDown * TIME_SCALE;
 				}
 				else
 				{
@@ -183,7 +208,7 @@ function fncStateEnd()
 	instance_destroy(shadowEffCreater);
 	with (core.id)
 	{
-		if (!gravAffect)
-			gravAffect = 1;
+		if (!physic.gravAffect)
+			physic.gravAffect = true;
 	}
 }
