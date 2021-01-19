@@ -17,8 +17,8 @@
   "width": 45,
   "height": 36,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupCharZX",
+    "path": "texturegroups/texgroupCharZX",
   },
   "swatchColours": null,
   "gridX": 0,

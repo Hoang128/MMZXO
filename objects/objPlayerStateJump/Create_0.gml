@@ -37,7 +37,6 @@ function fncStateRun()
 	}
 	with (core.id)
 	{
-		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove != 0)
 		{
 			charDir = hMove;
@@ -48,6 +47,29 @@ function fncStateRun()
 			moveSpd = dashSpd;
 		
 		hspd = moveSpd * hMove;
+		
+		if (vMove < 0)
+		{
+			if (canClimb)
+			{
+				var objCol = collision_rectangle(bbox_right, (bbox_top + bbox_bottom) / 2, bbox_left, bbox_bottom, objLadder, false, false);
+				if (objCol != noone)
+				{
+					if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+					{
+						x = (objCol.bbox_right + objCol.bbox_left)/2;
+				
+						var climbFromFirstImageTemp = false;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateClimb);
+							currentState.climbFromFirstImage = climbFromFirstImageTemp;
+							return;
+						}
+					}
+				}
+			}
+		}
 		
 		if (!keyboard_check(global.keyJump))
 		{
@@ -86,7 +108,6 @@ function fncStateRun()
 			
 			if (place_meeting(x + charDir, y, objBlock))
 			{
-				var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 				if (hMove == charDir)
 				{
 					with(other.stateMachine)

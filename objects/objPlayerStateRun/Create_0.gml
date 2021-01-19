@@ -38,7 +38,7 @@ function fncStateRun()
 						y+=2;
 						jumpTime--;
 						physic.onGround = false;
-						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTime);
+						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTimeMax);
 						with(other.stateMachine)
 						{
 							fncStateChange(objPlayerStateJump);
@@ -60,7 +60,6 @@ function fncStateRun()
 		}
 		
 		hspd = runSpd * charDir;
-		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove == 0)
 		{
 			with(other.stateMachine)
@@ -81,6 +80,27 @@ function fncStateRun()
 					{
 						fncStateChange(objPlayerStateIdle);
 						return;
+					}
+				}
+			}
+		}
+		
+		if (vMove < 0)
+		{
+			if (canClimb)
+			{
+				var objCol = collision_rectangle(bbox_right, (bbox_top + bbox_bottom) / 2, bbox_left, bbox_bottom, objLadder, false, false);
+				if (objCol != noone)
+				{
+					if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+					{
+						x = (objCol.bbox_right + objCol.bbox_left)/2;
+				
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateClimb);
+							return;
+						}
 					}
 				}
 			}

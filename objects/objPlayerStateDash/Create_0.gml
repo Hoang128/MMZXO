@@ -31,7 +31,6 @@ function fncStateRun()
 			if (fncIsOnBlockThin(2))
 				if (!physic.onGround)
 					physic.onGround = true;
-			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 			if (charDir * hMove == -1)
 			{
 				charDir = hMove;
@@ -77,7 +76,7 @@ function fncStateRun()
 							y+=4;
 							jumpTime--;
 							physic.onGround = false;
-							fncIgnoreThinBlockFor(physic.thinBlockIgnoreTime);
+							fncIgnoreThinBlockFor(physic.thinBlockIgnoreTimeMax);
 							with(other.stateMachine)
 							{
 								fncStateChange(objPlayerStateJump);
@@ -110,7 +109,7 @@ function fncStateRun()
 				}
 			}
 			
-			var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+
 			if (charDir * hMove == -1)
 			{
 				charDir = hMove;
@@ -122,6 +121,31 @@ function fncStateRun()
 				{
 					fncStateChange(objPlayerStateJump);
 					return;
+				}
+			}
+		}
+		
+		if (vMove < 0)
+		{
+			if (canClimb)
+			{
+				var objCol = collision_rectangle(bbox_right, (bbox_top + bbox_bottom) / 2, bbox_left, bbox_bottom, objLadder, false, false);
+				if (objCol != noone)
+				{
+					if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+					{
+						x = (objCol.bbox_right + objCol.bbox_left)/2;
+				
+						var climbFromFirstImageTemp = true;
+						if (!physic.onGround)
+							climbFromFirstImageTemp = false;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateClimb);
+							currentState.climbFromFirstImage = climbFromFirstImageTemp;
+							return;
+						}
+					}
 				}
 			}
 		}
@@ -150,7 +174,6 @@ function fncStateRun()
 				
 				if (!other.airDash)
 				{
-					var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 					if (hMove != 0)
 					{
 						charDir = hMove;

@@ -27,15 +27,24 @@ wallKickSpd = 3;
 wallKickTimeHMax = 6;
 distanceCanWKick = 4;
 
-
+climbDir = 0;
+climbSpeed = 3;
+climbEndDelayMax = 5;
+climbDistance = 8;
+canClimbDelayTime = 5;
 
 //Properties
+depth = 0;
 physic.enable = true;
 physic.gravAffect = true;
 charDir = 1;
 jumpTime = jumpTimeMax;
 dashTime = dashTimeMax;
 airDashCount = airDashCountMax;
+climbEndDelay = 0;
+hMove = 0;
+vMove = 0;
+canClimb = 1;
 
 //Sprite struct
 sprPlayer =
@@ -52,7 +61,10 @@ sprPlayer =
 	sprDashEnd : sprPlayerZXDashEnd,
 	sprSlideStart : sprPlayerZXSlideStart,
 	sprSlide : sprPlayerZXSlide,
-	sprWallKick : sprPlayerZXWallKick
+	sprWallKick : sprPlayerZXWallKick,
+	sprClimbStart : sprPlayerZXClimbStart,
+	sprClimb : sprPlayerZXClimb,
+	sprClimbEnd : sprPlayerZXClimbEnd
 };
 
 
@@ -64,4 +76,17 @@ playerStateMachine.coreType = "player";
 with(playerStateMachine)
 {
 	fncStateChange(objPlayerStateIdle);
+}
+
+function fncSetupProperties()
+{
+	hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
+	vMove = keyboard_check(global.keyDown) - keyboard_check(global.keyUp);
+	
+	if (canClimb <= 1)
+	{
+		canClimb += TIME_SCALE;
+	}
+	else
+		canClimb = 1;
 }

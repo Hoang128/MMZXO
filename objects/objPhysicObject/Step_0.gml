@@ -80,6 +80,27 @@ if (physic.enable)
 			}
 		}
 	}
+	
+	//Vertical ladder top handle
+	if (vspd > 0)
+	{
+		if (physic.thinBlockIgnore == 0)
+		{
+			var objCol = collision_rectangle(bbox_left, bbox_bottom + 1, bbox_right, bbox_bottom + vspd, objLadderTop, true, true);
+			if (objCol != noone)
+			{
+				var colWithSelf = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, objCol.id, true, true);
+				if (!colWithSelf)
+				{
+					while(!place_meeting(x, y + sign(vspd), objCol))
+					{
+						y += sign(vspd);
+					}
+					vspd = 0;
+				}
+			}
+		}
+	}
 }
 
 x += hspd * TIME_SCALE;

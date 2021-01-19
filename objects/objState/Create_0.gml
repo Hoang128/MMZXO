@@ -3,6 +3,9 @@
 core = noone;
 stateType = noone;
 stateMachine = noone;
+parent = noone;
+child = noone;
+inited = false;
 
 function fncStateStart()
 {

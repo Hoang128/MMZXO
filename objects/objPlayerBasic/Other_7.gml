@@ -39,5 +39,10 @@ switch (sprite_index)
 	{
 		sprite_index = sprPlayer.sprJump;
 		image_index = 0;
-	}
+	}	break;
+	case sprPlayer.sprClimbStart:
+	{
+		sprite_index = sprPlayer.sprClimb;
+		image_index = 0;
+	}	break;
 }

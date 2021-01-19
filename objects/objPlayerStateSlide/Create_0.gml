@@ -28,7 +28,6 @@ function fncStateRun()
 		else
 			vspd = slideSpdMax;
 		
-		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove != charDir)
 		{
 			with(other.stateMachine)

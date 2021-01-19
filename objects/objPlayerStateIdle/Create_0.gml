@@ -26,7 +26,6 @@ function fncStateRun()
 {
 	with(core.id)
 	{
-		var hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
 		if (hMove != 0)
 		{
 			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir))
@@ -52,7 +51,7 @@ function fncStateRun()
 						y+=2;
 						jumpTime--;
 						physic.onGround = false;
-						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTime);
+						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTimeMax);
 						with(other.stateMachine)
 						{
 							fncStateChange(objPlayerStateJump);
@@ -83,6 +82,49 @@ function fncStateRun()
 				{
 					fncStateChange(objPlayerStateDash);
 					return;
+				}
+			}
+		}
+		
+		if (vMove < 0)
+		{
+			if (canClimb)
+			{
+				var objCol = collision_rectangle(bbox_right, (bbox_top + bbox_bottom) / 2, bbox_left, bbox_bottom, objLadder, false, false);
+				if (objCol != noone)
+				{
+					if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+					{
+						x = (objCol.bbox_right + objCol.bbox_left)/2;
+				
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateClimb);
+							return;
+						}
+					}
+				}
+			}
+		}
+		
+		else if (vMove > 0)
+		{
+			var objCol = collision_rectangle(bbox_right, bbox_bottom, bbox_left, bbox_bottom + 1, objLadderTop, false, false);
+			if (objCol != noone)
+			{
+				if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+				{
+					x = (objCol.bbox_right + objCol.bbox_left)/2;
+					y = objCol.bbox_top + ((bbox_bottom - bbox_top) / 2 + 2);
+					fncIgnoreThinBlockFor(1);
+					
+					var climbFromFirstImageTemp = false;
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateClimb);
+						currentState.climbFromFirstImage = climbFromFirstImageTemp;
+						return;
+					}
 				}
 			}
 		}

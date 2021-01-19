@@ -17,8 +17,8 @@
   "width": 8,
   "height": 4,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupPhysics",
+    "path": "texturegroups/texgroupPhysics",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1db207f8-216c-437e-a0b4-48194239af73","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Physic Blocks",
-    "path": "folders/Sprites/Basic Templates/Physic Blocks.yy",
+    "name": "Thin Blocks",
+    "path": "folders/Sprites/Basic Templates/Physic Blocks/Thin Blocks.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprBlockThin",

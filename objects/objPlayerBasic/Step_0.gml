@@ -5,7 +5,8 @@
 
 image_speed *= TIME_SCALE;
 
-with (playerStateMachine)
-	fncStateHandle();
+fncSetupProperties();
+
+playerStateMachine.fncStateHandle();
 
 event_inherited();

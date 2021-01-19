@@ -68,8 +68,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"a1b230a1-2e94-4b16-ad25-45c46f17a144","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Physic Blocks",
-    "path": "folders/Sprites/Basic Templates/Physic Blocks.yy",
+    "name": "Basic Blocks",
+    "path": "folders/Sprites/Basic Templates/Physic Blocks/Basic Blocks.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprBlock",

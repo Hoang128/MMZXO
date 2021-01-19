@@ -55,6 +55,30 @@ function fncIsOnBlock(distance)
 		return true;
 }
 
+function fncIsOnLadderTop(distance)
+{
+	if (physic.thinBlockIgnore == 0)
+	{
+		var objCol = collision_rectangle(bbox_left, bbox_bottom + 1, bbox_right, bbox_bottom + distance, objLadderTop, true, true);
+		if (objCol != noone)
+		{
+			var colWithSelf = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, objCol.id, true, true);
+			if (!colWithSelf && (objCol.bbox_bottom > self.bbox_bottom))
+				return true;
+			else
+			{
+				return false;
+			}
+		}
+		else
+		{
+			return false;
+		}
+	}
+	else
+		return false;
+}
+
 function fncIsOnBlockThin(distance)
 {
 	if (physic.thinBlockIgnore == 0)
@@ -73,7 +97,7 @@ function fncIsOnBlockThin(distance)
 			var colWithSelf = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, objCol.id, true, true);
 			ds_list_clear(objColList);
 			ds_list_destroy(objColList);
-			if (!colWithSelf && objCol.bbox_bottom > self.bbox_bottom)
+			if (!colWithSelf && (objCol.bbox_bottom > self.bbox_bottom))
 				return true;
 			else
 			{
@@ -93,7 +117,7 @@ function fncIsOnBlockThin(distance)
 
 function fncIsOnGround(distance)
 {
-	if (fncIsOnBlock(distance) || fncIsOnBlockThin(distance))
+	if (fncIsOnBlock(distance) || fncIsOnBlockThin(distance) || fncIsOnLadderTop(distance))
 		return true;
 	else
 		return false;

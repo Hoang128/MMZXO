@@ -1,0 +1,108 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+// Inherit the parent event
+event_inherited();
+
+climbFromFirstImage = true;
+inited = false;
+
+function fncStateStart()
+{
+	with (core.id)
+	{
+		sprite_index = sprPlayer.sprClimbStart;
+		image_index = 0;
+		
+		hspd = 0;
+		vspd = 0;
+		physic.gravAffect = false;
+		physic.onGround = false;
+		jumpTime = jumpTimeMax;
+		airDashCount = airDashCountMax;
+	}
+}
+
+function fncStateRun()
+{
+	with (core.id)
+	{
+		if (sprite_index == sprPlayer.sprClimbStart)
+		{
+			if (!other.inited)
+			{
+				if (other.climbFromFirstImage == false)
+					image_index = 1;
+				other.inited = true;
+			}
+		}
+		else if (sprite_index == sprPlayer.sprClimb)
+		{
+			climbDir = vMove;
+			vspd = climbDir * climbSpeed;
+			if (vspd < 0 && place_meeting(x, y + vspd, objBlock))
+			{
+				vspd = 0;
+				climbDir = 0;
+			}
+			if (hMove != 0)
+				charDir = hMove;
+			var objCol = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom, objLadderTop, false, true);
+			if (objCol != noone)
+			{
+				if (((self.bbox_top + self.bbox_bottom) / 2 - objCol.bbox_top) < 0)
+				{
+					sprite_index = sprPlayer.sprClimbEnd;
+					image_index = 0;
+					
+					vspd = 0;
+					physic.gravAffect = true;
+					self.y = objCol.bbox_top;
+					climbEndDelay = climbEndDelayMax;
+				}
+			}
+			
+			if (fncIsOnBlock(vspd) || fncIsOnBlockThin(vspd))
+			{
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateIdle);
+					return;
+				}
+			}
+			
+			if (keyboard_check_pressed(global.keyJump))
+			{
+				vspd = 0;
+				canClimb = -canClimbDelayTime;
+				jumpTime--;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+		}
+		else if (sprite_index == sprPlayer.sprClimbEnd)
+		{
+			if (climbEndDelay > 0)
+				climbEndDelay -= TIME_SCALE;
+			else
+			{
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateIdle);
+					return;
+				}
+			}
+		}
+	}
+}
+
+function fncStateEnd()
+{
+	with(core.id)
+	{
+		physic.gravAffect = true;
+	}
+}
