@@ -65,9 +65,9 @@ function fncStateRun()
 		}
 		else
 		{
-			if (keyboard_check_pressed(global.keyJump))
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
-				if (keyboard_check(global.keyDown))
+				if (fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD))
 				{
 					if (fncIsOnBlockThin(1))
 					{
@@ -158,7 +158,7 @@ function fncStateRun()
 			}
 			else
 				hspd = charDir * dashSpd;
-			if (keyboard_check_released(global.keyDash))
+			if (fncStaticHandleButton(KeyMap.DASH, KeyAction.RELEASED))
 			{
 				dashTime = 0;
 			}
@@ -186,7 +186,7 @@ function fncStateRun()
 				}
 			}
 			
-			if (keyboard_check_pressed(global.keyDash))
+			if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
 			{
 				with(other.stateMachine)
 				{

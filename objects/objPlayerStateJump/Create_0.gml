@@ -71,7 +71,7 @@ function fncStateRun()
 			}
 		}
 		
-		if (!keyboard_check(global.keyJump))
+		if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
 		{
 			if (vspd < 0) vspd = 0;
 		}
@@ -81,7 +81,7 @@ function fncStateRun()
 			if ((airDashWhenFastMove == true)
 			|| ((airDashWhenFastMove == false) && other.dashJump == false))
 			{
-				if (keyboard_check_pressed(global.keyDash))
+				if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
 				{
 					airDashCount--;
 					if (!mixAirDashJump)
@@ -118,7 +118,7 @@ function fncStateRun()
 			}
 			
 			
-			if (keyboard_check_pressed(global.keyJump))
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
 				if (!place_meeting(x + charDir * distanceCanWKick, y, objBlock))
 				{
@@ -148,7 +148,7 @@ function fncStateRun()
 					with(other.stateMachine)
 					{
 						fncStateChange(objPlayerStateWallKick);
-						currentState.dashJump = keyboard_check(global.keyDash);
+						currentState.dashJump = fncStaticHandleButton(KeyMap.DASH, KeyAction.HELD);
 						return;
 					}
 				}

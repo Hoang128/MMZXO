@@ -22,6 +22,36 @@ if (keyboard_check(ord("T")))
 	}
 }
 
+if (keyboard_check(ord("P")))
+{
+	if (keyboard_check_pressed(vk_numpad0))
+	{
+		if (physicVisible.blockNor)
+		{
+			fncChangeBlocksVisible(false);
+		}
+		else
+		{
+			fncChangeBlocksVisible(true);
+		}
+	}
+	
+	if (keyboard_check_pressed(vk_numpad1))
+	{
+		if(instance_exists(objPlayerBasic))
+		{
+			if (physicVisible.player)
+			{
+				physicVisible.player = false;
+			}
+			else
+			{
+				physicVisible.player = true;
+			}
+		}
+	}
+}
+
 if (keyboard_check(ord("R")))
 {
 	if (keyboard_check_pressed(vk_subtract))

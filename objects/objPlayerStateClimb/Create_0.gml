@@ -71,7 +71,7 @@ function fncStateRun()
 				}
 			}
 			
-			if (keyboard_check_pressed(global.keyJump))
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
 				vspd = 0;
 				canClimb = -canClimbDelayTime;

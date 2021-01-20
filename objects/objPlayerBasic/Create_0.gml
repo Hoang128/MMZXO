@@ -80,8 +80,8 @@ with(playerStateMachine)
 
 function fncSetupProperties()
 {
-	hMove = keyboard_check(global.keyRight) - keyboard_check(global.keyLeft);
-	vMove = keyboard_check(global.keyDown) - keyboard_check(global.keyUp);
+	hMove = fncStaticHandleButton(KeyMap.RIGHT, KeyAction.HELD) - fncStaticHandleButton(KeyMap.LEFT, KeyAction.HELD);
+	vMove = fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD) - fncStaticHandleButton(KeyMap.UP, KeyAction.HELD);
 	
 	if (canClimb <= 1)
 	{

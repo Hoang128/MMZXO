@@ -40,9 +40,9 @@ function fncStateRun()
 			}
 		}
 	
-		if (keyboard_check_pressed(global.keyJump))
+		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 		{
-			if (keyboard_check(global.keyDown))
+			if (fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD))
 			{
 				if (fncIsOnBlockThin(1))
 				{
@@ -73,7 +73,7 @@ function fncStateRun()
 			}
 		}
 		
-		if (keyboard_check_pressed(global.keyDash))
+		if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
 		{
 			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir))
 			|| place_meeting(x + charDir, y, objSlope))

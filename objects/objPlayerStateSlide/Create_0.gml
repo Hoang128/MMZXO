@@ -37,7 +37,7 @@ function fncStateRun()
 			}
 		}
 		
-		if (keyboard_check_pressed(global.keyJump))
+		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 		{
 			with(other.stateMachine)
 			{
