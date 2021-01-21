@@ -6,6 +6,22 @@ event_inherited();
 
 function fncStateStart()
 {
+	fncPlayerRunStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerRunRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerRunEnd();
+}
+
+function fncPlayerRunStart()
+{
 	with(core.id)
 	{
 		sprite_index = sprPlayer.sprRun;
@@ -13,7 +29,7 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerRunRun()
 {
 	with(core.id)
 	{	
@@ -54,6 +70,7 @@ function fncStateRun()
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);
+					currentState.dashJump = fncStaticHandleButton(KeyMap.DASH, KeyAction.HELD);
 					return;
 				}
 			}
@@ -115,4 +132,8 @@ function fncStateRun()
 			}
 		}
 	}
+}
+
+function fncPlayerRunEnd()
+{
 }

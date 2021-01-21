@@ -6,6 +6,22 @@ event_inherited();
 
 function fncStateStart()
 {
+	fncPlayerSlideStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerSlideRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerSlideEnd();
+}
+
+function fncPlayerSlideStart()
+{
 	with (core.id)
 	{
 		sprite_index = sprPlayer.sprSlideStart
@@ -19,7 +35,7 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerSlideRun()
 {
 	with (core.id)
 	{
@@ -60,7 +76,7 @@ function fncStateRun()
 	}
 }
 
-function fncStateEnd()
+function fncPlayerSlideEnd()
 {
 	with(core.id)
 		physic.gravAffect = true;

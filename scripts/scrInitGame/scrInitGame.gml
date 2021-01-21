@@ -51,6 +51,7 @@ function fncStaticInitInputParams()
 		gamepad : false
 	};
 	fncStaticInitKeyboardParams();
+	fncStaticInitKeypadParams();
 }
 
 function fncStaticInitKeyboardParams()
@@ -78,6 +79,32 @@ function fncStaticInitKeyboardParams()
 	global.keyUIConfirmSub	= ord("X");
 	global.keyUIBackSub		= ord("Z");
 	
+}
+
+function fncStaticInitKeypadParams()
+{
+	global.kpRight			= (gamepad_axis_value(0, gp_axislh) == 1);
+	global.kpLeft			= (gamepad_axis_value(0, gp_axislh) == -1);
+	global.kpUp				= (gamepad_axis_value(0, gp_axislv) == -1);
+	global.kpDown			= (gamepad_axis_value(0, gp_axislv) == 1);
+	
+	global.kpDash			= gp_shoulderrb;
+	global.kpJump			= gp_face2;
+	global.kpAtk1			= gp_face3;
+	global.kpAtk2			= gp_face1;
+	global.kpChangeL		= gp_shoulderl;
+	global.kpChangeR		= gp_shoulderr;
+	global.kpMoveL			= gp_face4;
+	global.kpMoveR			= gp_shoulderlb;
+	
+	global.kpUIRight		= gp_padr;
+	global.kpUILeft			= gp_padl;
+	global.kpUIUp			= gp_padu;
+	global.kpUIDown			= gp_padd;
+	global.kpUIConfirm		= gp_start;
+	global.kpUIBack			= gp_select;
+	global.kpUIConfirmSub	= gp_face1;
+	global.kpUIBackSub		= gp_face2;
 }
 
 function fncStaticInitStates()
@@ -170,14 +197,21 @@ function fncStaticHandleButton(keyMap, keyAction)
 /// @description				use to control buttons held in different platforms & devices.
 function fncStaticHandleButtonHeld(keyMap)
 {
+	var handled = false;
 	if (global.input.keyboard)
 	{
 		var keyInput = fncStaticGetKeyBoardMap(keyMap);
 		if (keyboard_check(keyInput))
-			return true;
+		handled = true;
+	}
+	if (global.input.gamepad)
+	{
+		var keyInput = fncStaticGetKeyPadMap(keyMap);
+		if (gamepad_button_check(0, keyMap))
+		handled = true;
 	}
 	
-	return false;
+	return handled;
 }
 
 /// @function					fncStaticHandleButtonPressed(keyMap);
@@ -185,14 +219,21 @@ function fncStaticHandleButtonHeld(keyMap)
 /// @description				use to control buttons pressed in different platforms & devices.
 function fncStaticHandleButtonPressed(keyMap)
 {
+	var handled = false;
 	if (global.input.keyboard)
 	{
 		var keyInput = fncStaticGetKeyBoardMap(keyMap);
 		if (keyboard_check_pressed(keyInput))
-			return true;
+			handled = true;
+	}
+	if (global.input.gamepad)
+	{
+		var keyInput = fncStaticGetKeyPadMap(keyMap);
+		if (gamepad_button_check_pressed(0, keyMap))
+			handled = true;
 	}
 	
-	return false;
+	return handled;
 }
 
 /// @function					fncStaticHandleButtonReleased(keyMap);
@@ -201,14 +242,20 @@ function fncStaticHandleButtonPressed(keyMap)
 
 function fncStaticHandleButtonReleased(keyMap)
 {
+	var handled = false;
 	if (global.input.keyboard)
 	{
 		var keyInput = fncStaticGetKeyBoardMap(keyMap);
 		if (keyboard_check_released(keyInput))
-			return true;
+			handled = true;
 	}
-	
-	return false;
+	if (global.input.gamepad)
+	{
+		var keyInput = fncStaticGetKeyPadMap(keyMap);
+		if (gamepad_button_check_released(0, keyMap))
+			handled = true;
+	}
+	return handled;
 }
 
 function fncStaticGetKeyBoardMap(keyboardMap)
@@ -224,10 +271,31 @@ function fncStaticGetKeyBoardMap(keyboardMap)
 		case KeyMap.JUMP:		keyInput = global.keyJump;	break;
 		case KeyMap.ATTACK1:	keyInput = global.keyAtk1;	break;
 		case KeyMap.ATTACK2:	keyInput = global.keyAtk2;	break;
-		case KeyMap.CHANGE_L:	keyInput = global.ChangeL;	break;
-		case KeyMap.CHANGE_R:	keyInput = global.ChangeR;	break;
-		case KeyMap.MOVE_L:		keyInput = global.ChangeL;	break;
-		case KeyMap.MOVE_R:		keyInput = global.ChangeR;	break;
+		case KeyMap.CHANGE_L:	keyInput = global.keyChangeL;	break;
+		case KeyMap.CHANGE_R:	keyInput = global.keyChangeR;	break;
+		case KeyMap.MOVE_L:		keyInput = global.keyChangeL;	break;
+		case KeyMap.MOVE_R:		keyInput = global.keyChangeR;	break;
+	}
+	return keyInput;
+}
+
+function fncStaticGetKeyPadMap(keyboardMap)
+{
+	var keyInput = noone;
+	switch (keyboardMap)
+	{
+		case KeyMap.RIGHT:		keyInput = global.kpRight;	break;
+		case KeyMap.LEFT:		keyInput = global.kpLeft;	break;
+		case KeyMap.DOWN:		keyInput = global.kpDown;	break;
+		case KeyMap.UP:			keyInput = global.kpUp;	break;
+		case KeyMap.DASH:		keyInput = global.kpDash;	break;
+		case KeyMap.JUMP:		keyInput = global.kpJump;	break;
+		case KeyMap.ATTACK1:	keyInput = global.kpAtk1;	break;
+		case KeyMap.ATTACK2:	keyInput = global.kpAtk2;	break;
+		case KeyMap.CHANGE_L:	keyInput = global.kpChangeL;	break;
+		case KeyMap.CHANGE_R:	keyInput = global.kpChangeR;	break;
+		case KeyMap.MOVE_L:		keyInput = global.kpChangeL;	break;
+		case KeyMap.MOVE_R:		keyInput = global.kpChangeR;	break;
 	}
 	return keyInput;
 }

@@ -35,6 +35,7 @@ canClimbDelayTime = 5;
 
 //Properties
 depth = 0;
+mask_index = sprPlayerHitbox;
 physic.enable = true;
 physic.gravAffect = true;
 charDir = 1;

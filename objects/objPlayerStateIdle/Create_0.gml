@@ -6,6 +6,22 @@ event_inherited();
 
 function fncStateStart()
 {
+	fncPlayerIdleStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerIdleRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerIdleEnd();
+}
+
+function fncPlayerIdleStart()
+{
 	with(core.id)
 	{
 		if (sprite_index != sprPlayer.sprLand)
@@ -22,24 +38,10 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerIdleRun()
 {
 	with(core.id)
 	{
-		if (hMove != 0)
-		{
-			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir))
-			|| place_meeting(x + charDir, y, objSlope))
-			{
-				charDir = hMove;
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateRun);
-					return;
-				}
-			}
-		}
-	
 		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 		{
 			if (fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD))
@@ -68,6 +70,7 @@ function fncStateRun()
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);
+					currentState.dashJump = fncStaticHandleButton(KeyMap.DASH, KeyAction.HELD);
 					return;
 				}
 			}
@@ -81,6 +84,20 @@ function fncStateRun()
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateDash);
+					return;
+				}
+			}
+		}
+		
+		if (hMove != 0)
+		{
+			if (!(place_meeting(x + charDir, y, objBlock) && (hMove == charDir))
+			|| place_meeting(x + charDir, y, objSlope))
+			{
+				charDir = hMove;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateRun);
 					return;
 				}
 			}
@@ -141,7 +158,21 @@ function fncStateRun()
 	}
 }
 
-function fncStateEnd()
+function fncPlayerIdleEnd()
 {
-	
+}
+
+function fncChangeToZXStates()
+{
+	with (core.id)
+	{
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
+		{
+			if (canShot == 1)
+			{
+				fncStartShot();
+				canShot = -waitShot;
+			}
+		}
+	}
 }

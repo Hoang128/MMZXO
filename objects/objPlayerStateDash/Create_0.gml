@@ -8,6 +8,22 @@ shadowEffCreater = noone;
 
 function fncStateStart()
 {
+	fncPlayerDashStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerDashRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerDashEnd();
+}
+
+function fncPlayerDashStart()
+{
 	shadowEffCreater = instance_create_depth(x, y, depth - 1, objPlayerShadowCreater);
 	shadowEffCreater.core = self.core;
 	with(core.id)
@@ -19,7 +35,7 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerDashRun()
 {
 	with(core.id)
 	{	
@@ -226,7 +242,7 @@ function fncStateRun()
 	}
 }
 
-function fncStateEnd()
+function fncPlayerDashEnd()
 {
 	instance_destroy(shadowEffCreater);
 	with (core.id)

@@ -9,6 +9,23 @@ inited = false;
 
 function fncStateStart()
 {
+	fncPlayerClimbStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerClimbRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerClimbEnd();
+}
+
+
+function fncPlayerClimbStart()
+{
 	with (core.id)
 	{
 		sprite_index = sprPlayer.sprClimbStart;
@@ -23,7 +40,7 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerClimbRun()
 {
 	with (core.id)
 	{
@@ -38,6 +55,18 @@ function fncStateRun()
 		}
 		else if (sprite_index == sprPlayer.sprClimb)
 		{
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+			{
+				vspd = 0;
+				canClimb = -canClimbDelayTime;
+				jumpTime--;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+			
 			climbDir = vMove;
 			vspd = climbDir * climbSpeed;
 			if (vspd < 0 && place_meeting(x, y + vspd, objBlock))
@@ -70,18 +99,6 @@ function fncStateRun()
 					return;
 				}
 			}
-			
-			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
-			{
-				vspd = 0;
-				canClimb = -canClimbDelayTime;
-				jumpTime--;
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateJump);
-					return;
-				}
-			}
 		}
 		else if (sprite_index == sprPlayer.sprClimbEnd)
 		{
@@ -99,7 +116,7 @@ function fncStateRun()
 	}
 }
 
-function fncStateEnd()
+function fncPlayerClimbEnd()
 {
 	with(core.id)
 	{

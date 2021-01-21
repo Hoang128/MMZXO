@@ -16,5 +16,16 @@ switch (sprite_index)
 	case sprPlayer.sprLand:			image_speed = 0.5;				break;
 	case sprPlayer.sprClimb:		image_speed = 0.5 * climbDir;	break;
 	case sprPlayer.sprClimbEnd:		image_speed = 0;				break;
-	default:						image_speed = 0.5;				break;
+	case sprPlayer.sprDashEnd:
+	{
+		if (image_index < 1)		image_speed = 0.5;
+		else						image_speed = 0;
+	}																break;
+	default:						image_speed = 0.5;
+}
+
+switch (sprite_index)
+{
+	case sprPlayer.sprDash:			mask_index = sprPlayerHitboxLow;	break;
+	default:						mask_index = sprPlayerHitbox;		break;
 }

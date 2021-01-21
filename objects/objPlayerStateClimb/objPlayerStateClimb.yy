@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "States",
-    "path": "folders/Objects/Player Characters/States.yy",
+    "path": "folders/Objects/Player Characters/Base/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerStateClimb",

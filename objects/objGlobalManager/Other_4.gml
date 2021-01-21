@@ -3,7 +3,7 @@
 
 if (global.roomState == RoomState.STAGE)
 {
-	fncCreatePlayer(objPlayerBasic);
+	fncCreatePlayer(objPlayerZX);
 	
 	currentCamera = instance_create_depth(
 		global.playerStartPosition.x, 

@@ -5,8 +5,25 @@
 event_inherited();
 dashJump = false;
 shadowEffCreater = noone;
+afterWallKick = 1;
 
 function fncStateStart()
+{
+	fncPlayerJumpStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerJumpRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerJumpEnd();
+}
+
+function fncPlayerJumpStart()
 {
 	with (core.id)
 	{
@@ -25,7 +42,7 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerJumpRun()
 {
 	if (dashJump)
 	{
@@ -37,6 +54,11 @@ function fncStateRun()
 	}
 	with (core.id)
 	{
+		if (other.afterWallKick == 1)
+		{
+			image_index = 1;
+			other.afterWallKick = 2;
+		}
 		if (hMove != 0)
 		{
 			charDir = hMove;
@@ -169,7 +191,7 @@ function fncStateRun()
 	}
 }
 
-function fncStateEnd()
+function fncPlayerJumpEnd()
 {
 	if (instance_exists(shadowEffCreater))
 		instance_destroy(shadowEffCreater);

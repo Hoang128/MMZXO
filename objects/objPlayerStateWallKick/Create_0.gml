@@ -10,6 +10,22 @@ wallKickTimeH = 0;
 
 function fncStateStart()
 {
+	fncPlayerWallKickStart();
+}
+
+function fncStateRun()
+{
+	fncPlayerWallKickRun();
+	fncChangeToUniqueStates();
+}
+
+function fncStateEnd()
+{
+	fncPlayerWallKickEnd();
+}
+
+function fncPlayerWallKickStart()
+{
 	with(core.id)
 	{
 		sprite_index = sprPlayer.sprWallKick
@@ -25,7 +41,7 @@ function fncStateStart()
 	}
 }
 
-function fncStateRun()
+function fncPlayerWallKickRun()
 {
 	if (dashJump)
 	{
@@ -55,6 +71,7 @@ function fncStateRun()
 				var currentDashJump = currentState.dashJump;
 				fncStateChange(objPlayerStateJump);
 				currentState.dashJump = currentDashJump;
+				currentState.afterWallKick = 1;
 				return;
 			}
 		}
@@ -84,11 +101,10 @@ function fncStateRun()
 	}
 }
 
-function fncStateEnd()
+function fncPlayerWallKickEnd()
 {
 	with(core.id)
 		physic.gravAffect = true;
 	if (instance_exists(shadowEffCreater))
 		instance_destroy(shadowEffCreater);
 }
-
