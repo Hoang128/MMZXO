@@ -14,6 +14,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerClimbRun();
 	fncChangeToUniqueStates();
 }

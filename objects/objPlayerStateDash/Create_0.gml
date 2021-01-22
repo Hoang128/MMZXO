@@ -6,6 +6,7 @@ event_inherited();
 airDash = false;
 shadowEffCreater = noone;
 
+
 function fncStateStart()
 {
 	fncPlayerDashStart();
@@ -13,6 +14,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerDashRun();
 	fncChangeToUniqueStates();
 }
@@ -31,8 +33,9 @@ function fncPlayerDashStart()
 		sprite_index = sprPlayer.sprDashStart;
 		image_index = 0;
 		
-		var dashEff = instance_create_depth(x + charDir * 12, bbox_bottom - 12, depth - 1, objDashEff);
+		var dashEff = instance_create_depth(x + charDir * 12, bbox_bottom - 12, depth - 2, objMoveImpactEff);
 		dashEff.image_xscale = self.charDir;
+		
 		dashTime = dashTimeMax;
 	}
 }
@@ -260,6 +263,20 @@ function fncPlayerDashEnd()
 	{
 		if (!physic.gravAffect)
 			physic.gravAffect = true;
+	}
+}
+
+function fncStateInit()
+{
+	if (!inited)
+	{
+		if (!airDash)
+		{
+			var dashDust = instance_create_depth(core.id.x, core.id.y, core.id.depth - 1, objSideDust);
+			dashDust.image_xscale = core.id.charDir;
+		}
+		
+		inited = true;
 	}
 }
 

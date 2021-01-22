@@ -15,6 +15,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerWallKickRun();
 	fncChangeToUniqueStates();
 }
@@ -30,6 +31,9 @@ function fncPlayerWallKickStart()
 	{
 		sprite_index = sprPlayer.sprWallKick
 		image_index = 0;
+		
+		var flare = instance_create_depth(x + charDir * 12, y, depth - 1, objFlare);
+		flare.image_xscale = charDir;
 		
 		physic.gravAffect = false;
 		other.wallKickTimeH = wallKickTimeHMax;

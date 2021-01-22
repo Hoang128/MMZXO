@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+if (core.playerStateMachine.currentState.object_index != objPlayerStateRun)
+	instance_destroy();
+
 if (waitTime <= 0)
 {
 	waitTime = waitTimeMax;

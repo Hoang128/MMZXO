@@ -4,8 +4,6 @@
 // Inherit the parent event
 event_inherited();
 
-runSFXCreater = noone;
-
 function fncStateStart()
 {
 	fncPlayerRunStart();
@@ -13,6 +11,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerRunRun();
 	fncChangeToUniqueStates();
 }
@@ -24,12 +23,16 @@ function fncStateEnd()
 
 function fncPlayerRunStart()
 {
-	runSFXCreater = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
-	
 	with(core.id)
 	{
 		sprite_index = sprPlayer.sprRun;
 		image_index = 0;
+		
+		if (runSFXPlayer == noone)
+		{
+			runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
+			runSFXPlayer.core = self.id;
+		}
 	}
 }
 
@@ -140,7 +143,7 @@ function fncPlayerRunRun()
 
 function fncPlayerRunEnd()
 {
-	instance_destroy(runSFXCreater);
+
 }
 
 function fncChangeToZXStates()

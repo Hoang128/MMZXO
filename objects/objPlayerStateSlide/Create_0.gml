@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
+slideEff = noone;
 
 function fncStateStart()
 {
@@ -11,6 +12,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerSlideRun();
 	fncChangeToUniqueStates();
 }
@@ -22,6 +24,8 @@ function fncStateEnd()
 
 function fncPlayerSlideStart()
 {
+	audio_play_sound_on(global.emitterSFX.source, sfxFootCommon, false, false);
+	
 	with (core.id)
 	{
 		sprite_index = sprPlayer.sprSlideStart
@@ -80,6 +84,8 @@ function fncPlayerSlideEnd()
 {
 	with(core.id)
 		physic.gravAffect = true;
+	
+	instance_destroy(slideEff);
 }
 
 function fncChangeToZXStates()

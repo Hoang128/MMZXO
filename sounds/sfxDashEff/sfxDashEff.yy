@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfxDashEff.wav",
-  "duration": 0.73602,
+  "duration": 0.695476,
   "parent": {
     "name": "Common",
     "path": "folders/Sounds/SFX/Common.yy",

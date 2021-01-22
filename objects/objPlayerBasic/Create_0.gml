@@ -34,6 +34,7 @@ climbDistance = 8;
 canClimbDelayTime = 5;
 
 //Properties
+runSFXPlayer = noone;
 depth = 0;
 mask_index = sprPlayerHitbox;
 physic.enable = true;

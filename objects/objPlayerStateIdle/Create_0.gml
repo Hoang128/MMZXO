@@ -11,6 +11,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerIdleRun();
 	fncChangeToUniqueStates();
 }
