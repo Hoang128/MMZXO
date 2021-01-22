@@ -223,6 +223,15 @@ function fncPlayerDashRun()
 			}
 			else
 			{
+				if (hMove != 0)
+				{
+					charDir = hMove;
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateRun);
+						return;
+					}
+				}
 				if (abs(hspd) > 0)
 				{
 					hspd -= charDir * dashAccDown * TIME_SCALE;
@@ -249,5 +258,20 @@ function fncPlayerDashEnd()
 	{
 		if (!physic.gravAffect)
 			physic.gravAffect = true;
+	}
+}
+
+function fncChangeToZXStates()
+{
+	with (core.id)
+	{
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
+		{
+			if (canShot == 1)
+			{
+				fncStartShot();
+				canShot = -waitShot;
+			}
+		}
 	}
 }

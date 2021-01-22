@@ -75,8 +75,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"267c0a00-5503-40d5-be5e-076ce4e2787c","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Attack",
-    "path": "folders/Sprites/Characters/ZX/Attack.yy",
+    "name": "Shot",
+    "path": "folders/Sprites/Characters/ZX/Attack/Shot.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprPlayerZXLandShot2",

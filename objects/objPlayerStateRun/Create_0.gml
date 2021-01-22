@@ -137,3 +137,18 @@ function fncPlayerRunRun()
 function fncPlayerRunEnd()
 {
 }
+
+function fncChangeToZXStates()
+{
+	with (core.id)
+	{
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
+		{
+			if (canShot == 1)
+			{
+				fncStartShot();
+				canShot = -waitShot;
+			}
+		}
+	}
+}

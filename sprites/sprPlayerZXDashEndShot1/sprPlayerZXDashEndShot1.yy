@@ -75,8 +75,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"0e35fbf4-d492-427b-93b7-128f6cead7ce","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Attack",
-    "path": "folders/Sprites/Characters/ZX/Attack.yy",
+    "name": "Shot",
+    "path": "folders/Sprites/Characters/ZX/Attack/Shot.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprPlayerZXDashEndShot1",

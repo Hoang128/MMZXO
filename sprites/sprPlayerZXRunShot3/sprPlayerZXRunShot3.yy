@@ -132,8 +132,8 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3c8c667c-fe0a-4828-aff2-a8ba2579d869","tags":[],"resourceType":"GMImageLayer",},
   ],
   "parent": {
-    "name": "Attack",
-    "path": "folders/Sprites/Characters/ZX/Attack.yy",
+    "name": "Shot",
+    "path": "folders/Sprites/Characters/ZX/Attack/Shot.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprPlayerZXRunShot3",

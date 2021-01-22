@@ -196,3 +196,18 @@ function fncPlayerJumpEnd()
 	if (instance_exists(shadowEffCreater))
 		instance_destroy(shadowEffCreater);
 }
+
+function fncChangeToZXStates()
+{
+	with (core.id)
+	{
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
+		{
+			if (canShot == 1)
+			{
+				fncStartShot();
+				canShot = -waitShot;
+			}
+		}
+	}
+}

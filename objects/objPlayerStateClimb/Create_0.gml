@@ -123,3 +123,21 @@ function fncPlayerClimbEnd()
 		physic.gravAffect = true;
 	}
 }
+
+function fncChangeToZXStates()
+{
+	with (core.id)
+	{
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
+		{
+			if (canShot == 1)
+			{
+				fncStartShot();
+				canShot = -waitShot;
+			}
+		}
+		
+		if (shotAnimPhase > 0)
+			vspd = 0;
+	}
+}
