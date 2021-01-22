@@ -28,7 +28,7 @@ wallKickTimeHMax = 6;
 distanceCanWKick = 4;
 
 climbDir = 0;
-climbSpeed = 3;
+climbSpeed = 2;
 climbEndDelayMax = 5;
 climbDistance = 8;
 canClimbDelayTime = 5;
