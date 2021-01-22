@@ -15,7 +15,7 @@ switch (sprite_index)
 	case sprPlayer.sprFall:			imgSpd = 0.5;				break;
 	case sprPlayer.sprLand:			imgSpd = 0.5;				break;
 	case sprPlayer.sprClimb:		imgSpd = 0.5 * climbDir;	break;
-	case sprPlayer.sprClimbEnd:		imgSpd = 0;				break;
+	case sprPlayer.sprClimbEnd:		imgSpd = 0;					break;
 	case sprPlayer.sprDashEnd:
 	{
 		if (image_index < 1)		imgSpd = 0.5;

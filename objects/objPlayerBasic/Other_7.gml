@@ -7,14 +7,14 @@ switch (sprite_index)
 	{
 		sprite_index = sprPlayer.sprJump;
 		image_index = 0;
-		break;
-	}
+		
+	}	break;
 	case sprPlayer.sprFallStart:
 	{
 		sprite_index = sprPlayer.sprFall;
 		image_index = 0;
-		break;
-	}
+		
+	}	break;
 	case sprPlayer.sprLand:
 	{
 		sprite_index = sprPlayer.sprIdle;
@@ -42,8 +42,8 @@ switch (sprite_index)
 	}	break;
 	case sprPlayer.sprWallKick:
 	{
-		sprite_index = sprPlayer.sprJump;
-		image_index = 0;
+		sprite_index = sprPlayer.sprJumpStart;
+		image_index = 1;
 	}	break;
 	case sprPlayer.sprClimbStart:
 	{

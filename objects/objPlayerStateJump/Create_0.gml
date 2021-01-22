@@ -5,7 +5,7 @@
 event_inherited();
 dashJump = false;
 shadowEffCreater = noone;
-afterWallKick = 1;
+afterWallKick = 0;
 
 function fncStateStart()
 {
@@ -122,8 +122,7 @@ function fncPlayerJumpRun()
 	
 		if (vspd >= 0)
 		{
-			if ((sprite_index == sprPlayer.sprJumpStart)
-			|| (sprite_index == sprPlayer.sprJump))
+			if ((sprite_index == sprPlayer.sprJumpStart) || (sprite_index == sprPlayer.sprJump))
 			{
 				sprite_index = sprPlayer.sprFallStart;
 				image_index = 0;
@@ -139,7 +138,6 @@ function fncPlayerJumpRun()
 					}
 				}
 			}
-			
 			
 			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
@@ -177,7 +175,7 @@ function fncPlayerJumpRun()
 				}
 			}
 			
-			if (physic.onGround == true)
+			if (physic.onGround)
 			{
 				sprite_index = sprPlayer.sprLand;
 				image_index = 0;

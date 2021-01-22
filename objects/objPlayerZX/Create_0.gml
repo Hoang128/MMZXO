@@ -50,7 +50,7 @@ function fncSetupZXProperties()
 			fncChangeMoveSpriteToShot(3);
 		}
 	}
-	else
+	else if (shotAnimPhase == 2)
 	{
 		if (shotAnimWait > 0)
 			shotAnimWait -= TIME_SCALE;
