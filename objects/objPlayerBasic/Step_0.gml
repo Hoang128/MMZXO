@@ -2,8 +2,7 @@
 // You can write your code in this editor
 
 //Step handle for early dev
-
-image_speed *= TIME_SCALE;
+image_speed = imgSpd * TIME_SCALE;
 
 fncSetupProperties();
 

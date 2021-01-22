@@ -4,6 +4,7 @@ function fncStaticInitGame(){
 	fncStaticInitDevParams();
 	fncStaticInitWorldParams();
 	fncStaticInitInputParams();
+	fncStaticInitSoundParams();
 	fncStaticInitMacros();
 }
 
@@ -41,6 +42,15 @@ function fncStaticInitWorldParams()
 		x : 0,
 		y : 0
 	};
+}
+
+function fncStaticInitSoundParams()
+{
+	global.emitterSFX = { source : noone, volume : 10 };
+	global.emitterBGM = { source : noone, volume : 10 };
+	
+	global.emitterSFX.source = audio_emitter_create();
+	global.emitterBGM.source = audio_emitter_create();
 }
 
 function fncStaticInitInputParams()

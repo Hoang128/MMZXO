@@ -31,6 +31,8 @@ function fncPlayerDashStart()
 		sprite_index = sprPlayer.sprDashStart;
 		image_index = 0;
 		
+		var dashEff = instance_create_depth(x + charDir * 12, bbox_bottom - 12, depth - 1, objDashEff);
+		dashEff.image_xscale = self.charDir;
 		dashTime = dashTimeMax;
 	}
 }

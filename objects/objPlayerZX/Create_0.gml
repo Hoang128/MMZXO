@@ -6,8 +6,8 @@ event_inherited();
 
 //Parameters
 waitShot = 10;
-shotAnimWaitMax = 30;
-flareShotTimeMax = 1;
+shotAnimWaitMax = 20;
+flareShotTimeMax = 0.5;
 
 //Properties
 canShot = 1;

@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+runSFXCreater = noone;
+
 function fncStateStart()
 {
 	fncPlayerRunStart();
@@ -22,6 +24,8 @@ function fncStateEnd()
 
 function fncPlayerRunStart()
 {
+	runSFXCreater = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
+	
 	with(core.id)
 	{
 		sprite_index = sprPlayer.sprRun;
@@ -136,6 +140,7 @@ function fncPlayerRunRun()
 
 function fncPlayerRunEnd()
 {
+	instance_destroy(runSFXCreater);
 }
 
 function fncChangeToZXStates()

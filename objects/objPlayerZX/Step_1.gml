@@ -44,5 +44,5 @@ switch (sprite_index)
 	
 	case sprPlayerZXWallKickShot1:
 	case sprPlayerZXWallKickShot2:
-		image_speed = 0;	break;
+		imgSpd = 0;	break;
 }
