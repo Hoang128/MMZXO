@@ -19,6 +19,11 @@ if (instance_exists(core))
 			objDust.image_xscale = image_xscale;
 			objDust.imgSpd = imgSpdDefault;
 			objDust.inPool = true;
+			with(objDust)
+			{
+				if (!collision_rectangle(x - 2, y - 2, x + 2, y + 2, objBlock, false, false))
+					visible = false;
+			}
 			ds_list_add(dustList, objDust);
 		}
 		else
@@ -28,6 +33,11 @@ if (instance_exists(core))
 			objDust.y = y;
 			objDust.visible = 1;
 			objDust.imgSpd = imgSpdDefault;
+			with(objDust)
+			{
+				if (!collision_rectangle(x - 2, y - 2, x + 2, y + 2, objBlock, false, false))
+					visible = false;
+			}
 		}
 	}
 	else

@@ -7,3 +7,6 @@ for (i = 0; i < ds_list_size(dustList); i++)
 	var objDust = ds_list_find_value(dustList, i);
 	objDust.inPool = false;
 }
+
+ds_list_clear(dustList);
+ds_list_destroy(dustList);

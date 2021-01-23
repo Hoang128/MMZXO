@@ -17,8 +17,8 @@
   "width": 24,
   "height": 57,
   "textureGroupId": {
-    "name": "texgroupCharPlayerEff",
-    "path": "texturegroups/texgroupCharPlayerEff",
+    "name": "texgroupCommonEff",
+    "path": "texturegroups/texgroupCommonEff",
   },
   "swatchColours": null,
   "gridX": 8,
