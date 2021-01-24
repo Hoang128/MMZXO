@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Model LX",
-    "path": "folders/Objects/Player Characters/Model LX.yy",
+    "path": "folders/Objects/Player/Player Characters/Model LX.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerLX",

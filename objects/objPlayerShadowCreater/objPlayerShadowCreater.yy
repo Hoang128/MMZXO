@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Effect",
-    "path": "folders/Objects/Player Characters/Base/Effect.yy",
+    "path": "folders/Objects/Player/Player Characters/Base/Effect.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerShadowCreater",

@@ -106,7 +106,7 @@ if (physic.enable)
 x += hspd * TIME_SCALE;
 y += vspd * TIME_SCALE;
 
-if (physic.onGround)
+if (physic.enable && physic.onGround)
 {
 	if (collision_rectangle(bbox_left, bbox_bottom + 1, bbox_right, bbox_bottom + maxDisDetectSlopeAbove, objBlockThin, true, false)
 	|| collision_rectangle(bbox_left, bbox_bottom + 1, bbox_right, bbox_bottom + maxDisDetectSlopeAbove, objBlock, true, false))

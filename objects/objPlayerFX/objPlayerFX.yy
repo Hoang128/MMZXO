@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Model FX",
-    "path": "folders/Objects/Player Characters/Model FX.yy",
+    "path": "folders/Objects/Player/Player Characters/Model FX.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerFX",

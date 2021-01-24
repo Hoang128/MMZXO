@@ -12,7 +12,7 @@ physic =
 }
 
 timeScale = 1;
-
+destroyOutScreen = false;
 imgSpd = 0.5;
 
 hspd = 0;
@@ -129,4 +129,12 @@ function fncIgnoreThinBlockFor(seconds)
 {
 	physic.thinBlockIgnore = true;
 	physic.thinBlockIgnoreTime = seconds;
+}
+
+function fncIsInActiveZone()
+{
+	if (collision_rectangle(ACTIVE_X, ACTIVE_Y, ACTIVE_X + ACTIVE_W, ACTIVE_Y + ACTIVE_H, self, false, false))
+		return true;
+	else
+		return false;
 }

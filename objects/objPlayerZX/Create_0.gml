@@ -5,7 +5,7 @@
 event_inherited();
 
 //Parameters
-waitShot = 10;
+waitShot = 5;
 shotAnimWaitMax = 20;
 flareShotTimeMax = 0.5;
 
@@ -63,12 +63,43 @@ function fncSetupZXProperties()
 	}
 }
 
-function fncStartShot()
+function fncPerformWeapon2()
 {
-	flareShotPhase = 1;
-	shotAnimPhase = 1;
-	flareShotTime = flareShotTimeMax;
-	fncChangeMoveSpriteToShot(1);
+	if (canShot == 1)
+	{
+		flareShotPhase = 1;
+		shotAnimPhase = 1;
+		flareShotTime = flareShotTimeMax;
+		fncChangeMoveSpriteToShot(1);
+		var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+		busterCreater.buster = objZXBusterNor;
+		busterCreater.core = self.id;
+		canShot = -waitShot;
+	}
+}
+
+function fncPerformChargeWeapon2()
+{
+	if (canShot == 1)
+	{
+		flareShotPhase = 1;
+		shotAnimPhase = 1;
+		flareShotTime = flareShotTimeMax;
+		fncChangeMoveSpriteToShot(1);
+		if (chargeWp2.Current < chargeWp2.Max)
+		{
+			var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+			busterCreater.buster = objZXBusterC1;
+			busterCreater.core = self.id;
+		}
+		else if (chargeWp2.Current >= chargeWp2.Max)
+		{
+			var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+			busterCreater.buster = objZXBusterC2;
+			busterCreater.core = self.id;
+		}
+		canShot = -waitShot;
+	}
 }
 
 function fncChangeMoveSpriteToShot(flareShotPhase)

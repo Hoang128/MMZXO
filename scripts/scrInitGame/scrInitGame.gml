@@ -19,8 +19,15 @@ function fncStaticInitMacros()
 	#macro TIME_SCALE global.timeScale * timeScale
 	#macro VIEW_W 340
 	#macro VIEW_H 192
+	#macro VIEW_X camera_get_view_x(view_camera)
+	#macro VIEW_Y camera_get_view_y(view_camera)
 	#macro VPORT_W 1920
 	#macro VPORT_H 1080
+	#macro ACTIVE_X VIEW_X - VIEW_W / 2
+	#macro ACTIVE_Y VIEW_Y - VIEW_H / 2
+	#macro ACTIVE_W VIEW_X * 2
+	#macro ACTIVE_H VIEW_Y * 2
+	
 }
 
 function fncStaticInitWorldParams()
@@ -167,6 +174,13 @@ function fncStaticInitStates()
 		ATTACK_2,
 		ATTACK_3,
 		CAN_NOT_CANCEL
+	}
+	
+	enum PlayerWeaponType
+	{
+		MELEE,
+		BUSTER,
+		OBJECTIVE
 	}
 }
 

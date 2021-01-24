@@ -131,14 +131,17 @@ function fncChangeToZXStates()
 	{
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
-			if (canShot == 1)
-			{
-				fncStartShot();
-				canShot = -waitShot;
-			}
+			fncPerformWeapon2();
 		}
 		
-		if (shotAnimPhase > 0)
-			vspd = 0;
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
+		{
+			fncChargeWeapon(2);
+		}
+		
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.RELEASED))
+		{
+			fncReleaseWeapon(2);
+		}
 	}
 }

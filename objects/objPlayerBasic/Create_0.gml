@@ -33,6 +33,18 @@ climbEndDelayMax = 5;
 climbDistance = 8;
 canClimbDelayTime = 5;
 
+chargeWp1 = {
+	Max : 60,
+	Mid : 10,
+	Current : 0
+}
+
+chargeWp2 = {
+	Max : 60,
+	Mid : 10,
+	Current : 0
+}
+
 //Properties
 runSFXPlayer = noone;
 depth = 0;
@@ -91,4 +103,64 @@ function fncSetupProperties()
 	}
 	else
 		canClimb = 1;
+}
+
+function fncChargeWeapon(weaponNumber)
+{
+	switch (weaponNumber)
+	{
+		case 1:
+		{
+			if (chargeWp1.Current < chargeWp1.Max)
+			{
+				chargeWp1.Current += TIME_SCALE;
+			}
+			else
+				chargeWp1.Current = chargeWp1.Max;
+		}	break;
+		case 2:
+		{
+			if (chargeWp2.Current < chargeWp2.Max)
+			{
+				chargeWp2.Current += TIME_SCALE;
+			}
+			else
+				chargeWp2.Current = chargeWp2.Max;
+		}	break;
+	}
+}
+
+function fncReleaseWeapon(weaponNumber)
+{
+	switch (weaponNumber)
+	{
+		case 1:
+		{
+			if (chargeWp1.Current > chargeWp1.Mid)
+				fncPerformChargeWeapon1();
+			chargeWp1.Current = 0;
+		}	break;
+		case 2:
+		{
+			if (chargeWp2.Current > chargeWp2.Mid)
+				fncPerformChargeWeapon2();
+			chargeWp2.Current = 0;
+		}	break;
+	}
+}
+
+function fncPerformChargeWeapon1()
+{
+}
+
+function fncPerformChargeWeapon2()
+{
+}
+
+function fncPerformWeapon1()
+{
+}
+
+function fncPerformWeapon2()
+{
 }

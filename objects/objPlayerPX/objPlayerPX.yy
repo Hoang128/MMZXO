@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Model PX",
-    "path": "folders/Objects/Player Characters/Model PX.yy",
+    "path": "folders/Objects/Player/Player Characters/Model PX.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerPX",

@@ -37,7 +37,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Base",
-    "path": "folders/Objects/Player Characters/Base.yy",
+    "path": "folders/Objects/Player/Player Characters/Base.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerBasic",
