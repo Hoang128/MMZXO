@@ -34,14 +34,14 @@ climbDistance = 8;
 canClimbDelayTime = 5;
 
 chargeWp1 = {
-	Max : 60,
-	Mid : 10,
+	Max : 90,
+	Mid : 30,
 	Current : 0
 }
 
 chargeWp2 = {
-	Max : 60,
-	Mid : 10,
+	Max : 90,
+	Mid : 30,
 	Current : 0
 }
 
@@ -113,6 +113,16 @@ function fncChargeWeapon(weaponNumber)
 		{
 			if (chargeWp1.Current < chargeWp1.Max)
 			{
+				if (chargeWp1.Current >= chargeWp1.Mid)
+				{
+					if (!instance_exists(objChargeWp1))
+					{
+						var chargeEff = instance_create_depth(x, y - 12, depth - 10, objChargeWp1);
+						chargeEff.image_xscale = charDir;
+						chargeEff.core = self.id;
+						chargeEff.weapon = 1;
+					}
+				}
 				chargeWp1.Current += TIME_SCALE;
 			}
 			else
@@ -122,6 +132,16 @@ function fncChargeWeapon(weaponNumber)
 		{
 			if (chargeWp2.Current < chargeWp2.Max)
 			{
+				if (chargeWp2.Current >= chargeWp2.Mid)
+				{
+					if (!instance_exists(objChargeWp2))
+					{
+						var chargeEff = instance_create_depth(x, y - 12, depth - 10, objChargeWp2);
+						chargeEff.image_xscale = charDir;
+						chargeEff.core = self.id;
+						chargeEff.weapon = 2;
+					}
+				}
 				chargeWp2.Current += TIME_SCALE;
 			}
 			else

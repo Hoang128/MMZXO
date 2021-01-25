@@ -53,11 +53,14 @@ function fncStaticInitWorldParams()
 
 function fncStaticInitSoundParams()
 {
-	global.emitterSFX = { source : noone, volume : 10 };
-	global.emitterBGM = { source : noone, volume : 10 };
+	global.emitterSFX = { source : noone, volume : 0.5 };
+	global.emitterBGM = { source : noone, volume : 0.5 };
 	
 	global.emitterSFX.source = audio_emitter_create();
 	global.emitterBGM.source = audio_emitter_create();
+	
+	audio_emitter_gain(global.emitterSFX.source, global.emitterSFX.volume);
+	audio_emitter_gain(global.emitterBGM.source, global.emitterBGM.volume);
 }
 
 function fncStaticInitInputParams()
