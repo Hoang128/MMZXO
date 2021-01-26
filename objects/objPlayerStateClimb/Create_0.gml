@@ -129,6 +129,8 @@ function fncChangeToZXStates()
 {
 	with (core.id)
 	{
+		if (shotAnimPhase != 0)
+			vspd = 0;
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
 			fncPerformWeapon2();
