@@ -13,3 +13,9 @@ if (instance_exists(objPlayerZX))
 	//draw_text(4, 144, "shot anim wait = " + string(objPlayerZX.shotAnimWait));
 	//draw_text(4, 168, "shot anim phase = " + string(objPlayerZX.shotAnimPhase));
 }
+
+if (instance_exists(objZXBusterFlareCtrl))
+{
+	draw_text(4, 144, "core fly speed = " + string(objZXBusterFlareCtrl.core.hspd * global.timeScale));
+	draw_text(4, 168, "phase = " + string(objZXBusterFlareCtrl.phase));
+}

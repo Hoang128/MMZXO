@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
+flySpeed = 7;
 damage = 2;
 destroyEff = objFlare;
 

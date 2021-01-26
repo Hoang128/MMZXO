@@ -12,6 +12,7 @@ damage = 1;
 flySpeed = 6;
 throughtWall = false;
 createDestroyEff = true;
+destroyOutScreen = true;
 destroyEff = noone;
 
 //Props

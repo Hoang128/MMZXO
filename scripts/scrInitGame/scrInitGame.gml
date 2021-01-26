@@ -23,10 +23,10 @@ function fncStaticInitMacros()
 	#macro VIEW_Y camera_get_view_y(view_camera)
 	#macro VPORT_W 1920
 	#macro VPORT_H 1080
-	#macro ACTIVE_X VIEW_X - VIEW_W / 2
-	#macro ACTIVE_Y VIEW_Y - VIEW_H / 2
-	#macro ACTIVE_W VIEW_X * 2
-	#macro ACTIVE_H VIEW_Y * 2
+	#macro ACTIVE_X camera_get_view_x(view_camera) - 340 / 2
+	#macro ACTIVE_Y camera_get_view_y(view_camera) - 192 / 2
+	#macro ACTIVE_W 340 * 2
+	#macro ACTIVE_H 192 * 2
 	
 }
 
