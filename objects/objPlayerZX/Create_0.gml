@@ -6,6 +6,8 @@ event_inherited();
 
 //Parameters
 waitShot = 5;
+waitShotLong = 15;
+rapidMax = 3;
 shotAnimWaitMax = 20;
 flareShotTimeMax = 0.5;
 
@@ -15,13 +17,16 @@ shotAnimPhase = 0;
 flareShotPhase = 0;	//phase 1: flare on, phase 2: flare off
 flareShotTime = flareShotTimeMax;
 shotAnimWait =shotAnimWaitMax;
+rapidCount = rapidMax;
 
 function fncSetupZXProperties()
 {
-	if ((canShot < 1) && (canShot >= -waitShot))
+	if ((canShot < 1) && (canShot >= -waitShotLong))
 		canShot += TIME_SCALE;
 	else if (canShot >= 1)
 	{
+		if (rapidCount == 0)	
+			rapidCount = rapidMax;
 		canShot = 1;
 	}
 	
@@ -58,6 +63,7 @@ function fncSetupZXProperties()
 		{
 			shotAnimWait = 0;
 			shotAnimPhase = 0;
+			if (rapidCount < rapidMax)	rapidCount = rapidMax;
 			fncChangeMoveSpriteToNormal();
 		}
 	}
@@ -74,7 +80,12 @@ function fncPerformWeapon2()
 		var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
 		busterCreater.buster = objZXBusterNor;
 		busterCreater.core = self.id;
-		canShot = -waitShot;
+		if (rapidCount > 0)
+			rapidCount--;
+		if (rapidCount == 0)
+			canShot = -waitShotLong;
+		else
+			canShot = -waitShot;
 	}
 }
 
@@ -98,7 +109,7 @@ function fncPerformChargeWeapon2()
 			busterCreater.buster = objZXBusterC2;
 			busterCreater.core = self.id;
 		}
-		canShot = -waitShot;
+		canShot = -waitShotLong;
 	}
 }
 
