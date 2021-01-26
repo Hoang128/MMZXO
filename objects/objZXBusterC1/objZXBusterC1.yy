@@ -5,7 +5,10 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": null,
+  "spriteMaskId": {
+    "name": "sprZXBusterC1",
+    "path": "sprites/sprZXBusterC1/sprZXBusterC1.yy",
+  },
   "persistent": false,
   "parentObjectId": {
     "name": "objPlayerWeaponBuster",

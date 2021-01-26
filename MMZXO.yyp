@@ -126,6 +126,7 @@
     {"id":{"name":"sprDashEff","path":"sprites/sprDashEff/sprDashEff.yy",},"order":2,},
     {"id":{"name":"objPlayerSlideEff","path":"objects/objPlayerSlideEff/objPlayerSlideEff.yy",},"order":4,},
     {"id":{"name":"sprCharge2Start","path":"sprites/sprCharge2Start/sprCharge2Start.yy",},"order":1,},
+    {"id":{"name":"Sprite93","path":"sprites/Sprite93/Sprite93.yy",},"order":3,},
     {"id":{"name":"objPlayerA","path":"objects/objPlayerA/objPlayerA.yy",},"order":0,},
     {"id":{"name":"sprPlayerZXSlide","path":"sprites/sprPlayerZXSlide/sprPlayerZXSlide.yy",},"order":10,},
     {"id":{"name":"sfxHP","path":"sounds/sfxHP/sfxHP.yy",},"order":15,},
