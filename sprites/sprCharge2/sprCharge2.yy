@@ -17,8 +17,8 @@
   "width": 44,
   "height": 41,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupCommonEff",
+    "path": "texturegroups/texgroupCommonEff",
   },
   "swatchColours": null,
   "gridX": 8,

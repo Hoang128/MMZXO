@@ -4,12 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 5;
-damage = 1;
-
-createDestroyEff = false;
-destroyEff = objExplosion;
-
-timeWaitMax = 5;
-
-timeWait = 0;
+hp = 3;
