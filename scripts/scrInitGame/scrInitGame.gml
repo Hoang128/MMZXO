@@ -185,6 +185,15 @@ function fncStaticInitStates()
 		BUSTER,
 		OBJECTIVE
 	}
+	
+	enum Element
+	{
+		FIRE,
+		ICE,
+		ELECT,
+		NEUTRAL,
+		DARK
+	}
 }
 
 /// @function					fncStaticHandleButton(keyMap, keyAction);

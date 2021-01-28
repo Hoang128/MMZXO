@@ -4,7 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-weaponType = PlayerWeaponType.OBJECTIVE;
-element = Element.NEUTRAL;
-isGuardBreaker = false;
-maxTimmer = 2;
+hit = 0;
