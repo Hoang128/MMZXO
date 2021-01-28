@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "sprGunGuardianIdle",
-    "path": "sprites/sprGunGuardianIdle/sprGunGuardianIdle.yy",
+    "name": "sprGuardianIdle",
+    "path": "sprites/sprGuardianIdle/sprGuardianIdle.yy",
   },
   "solid": false,
   "visible": true,
@@ -25,6 +25,7 @@
   "physicsShapePoints": [],
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objE_GunGuardian","path":"objects/objE_GunGuardian/objE_GunGuardian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objE_GunGuardian","path":"objects/objE_GunGuardian/objE_GunGuardian.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

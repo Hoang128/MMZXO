@@ -24,5 +24,8 @@ armor =
 	electArmor : 0,
 	darkArmor : 0
 }
-createDestroyEff = false;
+createDestroyEff = true;
 destroyEff = objExplosion;
+
+palette = noone;
+paletteNumber = 0;

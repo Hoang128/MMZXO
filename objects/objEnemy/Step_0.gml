@@ -5,15 +5,18 @@ if (damageTimmer > 0) damageTimmer -= TIME_SCALE;
 
 if (blinkTime > 0)
 {
-	if (blink > 0) blink -= DELTA_TIME;
+	if (blink > 0) blink -= TIME_SCALE;
 	else blink = blinkMax;
-	blinkTime -= DELTA_TIME;
+	blinkTime -= TIME_SCALE;
 }
 else
 {
 	blink = 0;
 	blinkTime = 0;
 }
+
+if (hp <= 0)
+	instance_destroy();
 
 // Inherit the parent event
 event_inherited();

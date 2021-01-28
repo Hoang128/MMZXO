@@ -5,12 +5,13 @@ if (sprite_index != noone)
 		gpu_set_blendmode(bm_add);
 
 	if (palette != noone)
-		scr_PalSwapSet(palette, paletteNumber, false);
+		fncStaticPalSwapSet(palette, paletteNumber, false);
 
-	draw_self();
+	if (sprite_index != noone)
+		draw_self();
 
 	if (palette != noone)
-		scr_PalSwapReset();
+		fncStaticPalSwapReset();
 	
 	if (gpu_get_blendmode() == bm_add)
 		gpu_set_blendmode(bm_normal);

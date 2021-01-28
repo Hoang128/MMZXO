@@ -1,7 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-var realDamage = 0;
-
+var realDamage = other.damage;
 if (damageTimmer == -1) 
 	damageTimmer = 0;
 if (damageTimmer <= 0)
@@ -10,12 +9,15 @@ if (damageTimmer <= 0)
 
 	switch (other.element)
 	{
-		case Element.DARK:		realDamage = other.damage - armor.darkArmor;		break;
-		case Element.FIRE:		realDamage = other.damage - armor.fireArmor;		break;
-		case Element.ICE:		realDamage = other.damage - armor.iceArmor;			break;
-		case Element.ELECT:		realDamage = other.damage - armor.electArmor;		break;
+		case Element.DARK:		realDamage -= armor.darkArmor;		break;
+		case Element.FIRE:		realDamage -= armor.fireArmor;		break;
+		case Element.ICE:		realDamage -= armor.iceArmor;		break;
+		case Element.ELECT:		realDamage -= armor.electArmor;		break;
 	}
+	show_debug_message("other damage = " + string(other.damage));
+	show_debug_message("armor = " + string(armor.neutralArmor));
 	realDamage -= armor.neutralArmor;
+	show_debug_message("damage = " + string(realDamage));
 	if (realDamage < 0)	realDamage = 0;
 	if (other.isGuardBreaker == false)
 	{
@@ -54,6 +56,15 @@ if (damageTimmer <= 0)
 		hp -= realDamage;
 		
 		//Create Effect
+		
+		if (other.weaponType == PlayerWeaponType.BUSTER)
+		{
+			if (hp > 0)
+			{
+				with(other)
+					instance_destroy();
+			}
+		}
 		
 		//Blink effect
 		if (blinkTime == 0)

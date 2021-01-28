@@ -17,19 +17,19 @@
   "width": 25,
   "height": 41,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupEnemies",
+    "path": "texturegroups/texgroupEnemies",
   },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"ab85f04e-df31-4861-8c90-551a2566ffe1","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"ab85f04e-df31-4861-8c90-551a2566ffe1","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},"LayerId":{"name":"d1ca6607-46c9-4f74-b5d9-49de4a4acdc8","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprGuardianStand","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},"resourceVersion":"1.0","name":"ab85f04e-df31-4861-8c90-551a2566ffe1","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"ab85f04e-df31-4861-8c90-551a2566ffe1","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"ab85f04e-df31-4861-8c90-551a2566ffe1","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},"LayerId":{"name":"d1ca6607-46c9-4f74-b5d9-49de4a4acdc8","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sprGuardianIdle","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},"resourceVersion":"1.0","name":"ab85f04e-df31-4861-8c90-551a2566ffe1","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
-    "spriteId": {"name":"sprGuardianStand","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},
+    "spriteId": {"name":"sprGuardianIdle","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},
     "timeUnits": 1,
     "playback": 1,
     "playbackSpeed": 30.0,
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"2b6d0bd8-f8ab-4c9d-b960-835467beb3a0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ab85f04e-df31-4861-8c90-551a2566ffe1","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"2b6d0bd8-f8ab-4c9d-b960-835467beb3a0","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"ab85f04e-df31-4861-8c90-551a2566ffe1","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -58,9 +58,9 @@
     "yorigin": 40,
     "eventToFunction": {},
     "eventStubScript": null,
-    "parent": {"name":"sprGuardianStand","path":"sprites/sprGuardianStand/sprGuardianStand.yy",},
+    "parent": {"name":"sprGuardianIdle","path":"sprites/sprGuardianIdle/sprGuardianIdle.yy",},
     "resourceVersion": "1.3",
-    "name": "sprGuardianStand",
+    "name": "sprGuardianIdle",
     "tags": [],
     "resourceType": "GMSequence",
   },
@@ -72,7 +72,7 @@
     "path": "folders/Sprites/Enemies/Trooper/Gun Type.yy",
   },
   "resourceVersion": "1.0",
-  "name": "sprGuardianStand",
+  "name": "sprGuardianIdle",
   "tags": [],
   "resourceType": "GMSprite",
 }
