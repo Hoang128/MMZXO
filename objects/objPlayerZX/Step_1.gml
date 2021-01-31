@@ -45,4 +45,11 @@ switch (sprite_index)
 	case sprPlayerZXWallKickShot1:
 	case sprPlayerZXWallKickShot2:
 		imgSpd = 0;	break;
+		
+	case sprPlayerZXSlashCombo1:
+	case sprPlayerZXSlashCombo2:
+	case sprPlayerZXSlashCombo3:
+	case sprPlayerZXSlashJump:
+	case sprPlayerZXSlashSpin:
+		imgSpd = 1;	break;
 }

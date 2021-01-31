@@ -23,7 +23,7 @@ function fncSetCreatePosition()
 			case sprPlayerZXFallShot1:
 			case sprPlayerZXWallKickShot1:
 			{
-				createPosition.x = core.x + 45 * core.charDir;
+				createPosition.x = core.x + 26 * core.charDir;
 				createPosition.y = core.y - 20;
 			}	break;
 		

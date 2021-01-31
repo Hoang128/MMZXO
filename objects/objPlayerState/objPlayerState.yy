@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "States",
-    "path": "folders/Objects/Player/Player Characters/Base/States.yy",
+    "name": "Player Characters",
+    "path": "folders/Objects/Player/Player Characters.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerState",

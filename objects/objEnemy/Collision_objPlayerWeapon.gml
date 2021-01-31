@@ -56,6 +56,7 @@ if (damageTimmer <= 0)
 		hp -= realDamage;
 		
 		//Create Effect
+		audio_play_sound_on(global.emitterSFX.source, other.collisionSFX, false, false);
 		
 		if (other.weaponType == PlayerWeaponType.BUSTER)
 		{

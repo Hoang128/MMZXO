@@ -26,6 +26,9 @@ armor =
 }
 createDestroyEff = true;
 destroyEff = objExplosion;
+explosionCount = 1;
+
+destroyPiece = {sprite : noone, number : 0};
 
 palette = noone;
 paletteNumber = 0;

@@ -69,6 +69,27 @@ function fncSetupZXProperties()
 	}
 }
 
+function fncPerformWeapon1()
+{
+	switch (playerStateMachine.currentState.object_index)
+	{
+		case objPlayerStateIdle:
+		{
+			with(playerStateMachine)
+				fncStateChange(objPlayerStateZXSlashCombo1);	
+		}	break;
+		case objPlayerStateJump:
+		{
+			with(playerStateMachine)
+			{
+				var currentDashJump = currentState.dashJump;
+				fncStateChange(objPlayerStateZXSlashJump);	
+				currentState.dashJump = currentDashJump;
+			}
+		}	break;
+	}
+}
+
 function fncPerformWeapon2()
 {
 	if (canShot == 1)

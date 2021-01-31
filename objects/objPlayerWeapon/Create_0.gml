@@ -8,3 +8,4 @@ weaponType = PlayerWeaponType.OBJECTIVE;
 element = Element.NEUTRAL;
 isGuardBreaker = false;
 maxTimmer = 2;
+collisionSFX = sfxEnemyHit;
