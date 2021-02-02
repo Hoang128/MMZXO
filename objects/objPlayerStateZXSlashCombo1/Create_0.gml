@@ -28,8 +28,10 @@ function fncPlayerZXSlashCombo1Start()
 	{
 		sprite_index = sprPlayerZXSlashCombo1;
 		image_index = 0;
-		
 		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
+		
+		hspd = 0;
+		vspd = 0;
 	}
 }
 

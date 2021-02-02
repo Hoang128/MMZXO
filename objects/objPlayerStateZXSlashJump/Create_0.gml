@@ -87,6 +87,7 @@ function fncPlayerZXSlashJumpRun()
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateIdle);
+					currentState.lastState = "jump";
 					return;
 				}
 			}

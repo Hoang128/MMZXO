@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
+lastState = "default";
 
 function fncStateStart()
 {
@@ -25,13 +26,9 @@ function fncPlayerIdleStart()
 {
 	with(core.id)
 	{
-		if (sprite_index != sprPlayer.sprLand)
-		{
-			sprite_index = sprPlayer.sprIdle;
-			image_index = 0;
-		}
+		sprite_index = sprPlayer.sprIdle;
+		image_index = 0;
 		
-		hspd = 0;
 		vspd = 0;
 		jumpTime = jumpTimeMax;
 		airDashCount = airDashCountMax;
@@ -163,10 +160,59 @@ function fncPlayerIdleEnd()
 {
 }
 
+function fncStateInit()
+{
+	if (!inited)
+	{
+		switch(lastState)
+		{
+			case "jump":	
+			{
+				with (core.id)
+				{
+					sprite_index = sprPlayer.sprLand;
+					image_index = 0;
+				}
+			}	break;
+		
+			case "dash":
+			{
+				with (core.id)
+				{
+					sprite_index = sprPlayer.sprDashEnd;
+					image_index = 0;
+				}
+			}	break;
+			
+			case "slash dash":
+			{
+				with (core.id)
+				{
+					sprite_index = sprPlayer.sprDashEnd;
+					image_index = 1;
+				}
+			}	break;
+			
+			default: 
+			{
+				with(core.id)
+					hspd = 0;	
+			}	break;
+		}
+		inited = true;
+	}
+}
+
 function fncChangeToZXStates()
 {
 	with (core.id)
 	{
+		if ((other.lastState == "dash") || (other.lastState == "slash dash"))
+		{
+			if (abs(hspd) > 0)	hspd -= dashAccDown * charDir;
+			if ((hspd * charDir) <= 0)	hspd = 0;
+		}
+		
 		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
 		{
 			fncPerformWeapon1();

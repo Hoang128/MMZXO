@@ -11,7 +11,7 @@
     "path": "audiogroups/audiogroup_default",
   },
   "soundFile": "sfxEnemyHit.wav",
-  "duration": 0.153798,
+  "duration": 0.322506,
   "parent": {
     "name": "Common",
     "path": "folders/Sounds/SFX/Common.yy",

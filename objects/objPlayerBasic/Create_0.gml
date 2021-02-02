@@ -9,12 +9,13 @@ runSpd = 2;
 airJumpWhenFastMove = false;
 jumpSpd = 4;
 jumpTimeMax = 3;
-dashSpd = 4;
+
 
 airDashWhenFastMove = true;
 airDashCountMax = 3;
-dashAccUp = 0.8;
-dashAccDown = 0.4;
+dashSpd = 4;
+dashAccUp = 2;
+dashAccDown = 1;
 dashTimeMax = 25;
 
 mixAirDashJump = false;

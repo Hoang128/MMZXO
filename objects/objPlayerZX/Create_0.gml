@@ -11,6 +11,8 @@ rapidMax = 3;
 shotAnimWaitMax = 20;
 flareShotTimeMax = 0.5;
 
+dashSlashAccUp = 2;
+
 //Properties
 canShot = 1;
 shotAnimPhase = 0;
@@ -78,6 +80,7 @@ function fncPerformWeapon1()
 			with(playerStateMachine)
 				fncStateChange(objPlayerStateZXSlashCombo1);	
 		}	break;
+		
 		case objPlayerStateJump:
 		{
 			with(playerStateMachine)
@@ -85,6 +88,14 @@ function fncPerformWeapon1()
 				var currentDashJump = currentState.dashJump;
 				fncStateChange(objPlayerStateZXSlashJump);	
 				currentState.dashJump = currentDashJump;
+			}
+		}	break;
+		
+		case objPlayerStateDash:
+		{
+			with(playerStateMachine)
+			{
+				fncStateChange(objPlayerStateZXSlashDash);	
 			}
 		}	break;
 	}

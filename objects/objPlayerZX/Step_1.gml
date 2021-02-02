@@ -51,5 +51,6 @@ switch (sprite_index)
 	case sprPlayerZXSlashCombo3:
 	case sprPlayerZXSlashJump:
 	case sprPlayerZXSlashSpin:
+	case sprPlayerZXSlashDash:
 		imgSpd = 1;	break;
 }

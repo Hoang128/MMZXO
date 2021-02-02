@@ -175,7 +175,7 @@ function fncPlayerDashRun()
 		{
 			if (abs(hspd) < dashSpd)
 			{
-				hspd += charDir * dashAccUp * TIME_SCALE;
+				hspd += charDir * dashAccUp;
 			}
 			else
 				hspd = charDir * dashSpd;
@@ -187,70 +187,11 @@ function fncPlayerDashRun()
 		}
 		else
 		{
-			if (sprite_index != sprPlayer.sprDashEnd)
+			with(other.stateMachine)
 			{
-				dashTime = 0;
-				sprite_index = sprPlayer.sprDashEnd;
-				image_index = 0;
-				
-				if (!other.airDash)
-				{
-					if (hMove != 0)
-					{
-						charDir = hMove;
-						with(other.stateMachine)
-						{
-							fncStateChange(objPlayerStateRun);
-							return;
-						}
-					}
-				}
-			}
-			
-			if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
-			{
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateDash);
-					return;
-				}
-			}
-			
-			if (other.airDash)
-			{
-				hspd = 0;
-				
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateJump);
-					return;
-				}
-			}
-			else
-			{
-				if (hMove != 0)
-				{
-					charDir = hMove;
-					with(other.stateMachine)
-					{
-						fncStateChange(objPlayerStateRun);
-						return;
-					}
-				}
-				if (abs(hspd) > 0)
-				{
-					hspd -= charDir * dashAccDown * TIME_SCALE;
-				}
-				else
-				{
-					hspd = 0;
-				
-					with(other.stateMachine)
-					{
-						fncStateChange(objPlayerStateIdle);
-						return;
-					}
-				}	
+				fncStateChange(objPlayerStateIdle);
+				currentState.lastState = "dash";
+				return;
 			}
 		}
 	}
@@ -284,6 +225,11 @@ function fncChangeToZXStates()
 {
 	with (core.id)
 	{
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
+		{
+			fncPerformWeapon1();
+		}
+		
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
 			fncPerformWeapon2();
