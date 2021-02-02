@@ -47,11 +47,11 @@ function fncPlayerDashRun()
 		vspd = 0;
 		if (other.airDash)
 		{
-			if (physic.gravAffect)
-				physic.gravAffect = false;
-			if (fncIsOnBlockThin(2))
-				if (!physic.onGround)
-					physic.onGround = true;
+			if (fncIsOnGround(2))
+			{
+				other.airDash = false;
+				physic.gravAffect = true;
+			}
 			if (charDir * hMove == -1)
 			{
 				charDir = hMove;
@@ -216,7 +216,11 @@ function fncStateInit()
 			var dashDust = instance_create_depth(core.id.x, core.id.y, core.id.depth - 1, objSideDust);
 			dashDust.image_xscale = core.id.charDir;
 		}
-		
+		else
+		{
+			with (core.id)
+				physic.gravAffect = false;
+		}
 		inited = true;
 	}
 }
@@ -240,7 +244,7 @@ function fncChangeToZXStates()
 			fncChargeWeapon(2);
 		}
 		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.RELEASED))
+		if (!fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
 		{
 			fncReleaseWeapon(2);
 		}

@@ -95,7 +95,9 @@ function fncPerformWeapon1()
 		{
 			with(playerStateMachine)
 			{
+				var currentAirDash = currentState.airDash;
 				fncStateChange(objPlayerStateZXSlashDash);	
+				currentState.airDash = currentAirDash;
 			}
 		}	break;
 	}

@@ -219,7 +219,7 @@ function fncChangeToZXStates()
 			fncChargeWeapon(2);
 		}
 		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.RELEASED))
+		if (!fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
 		{
 			fncReleaseWeapon(2);
 		}

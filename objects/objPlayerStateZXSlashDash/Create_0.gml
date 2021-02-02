@@ -32,8 +32,6 @@ function fncPlayerZXSlashDashStart()
 		sprite_index = sprPlayerZXSlashDash;
 		image_index = 0;
 		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
-		
-		physic.gravAffect = false;
 	}
 }
 
@@ -41,6 +39,27 @@ function fncPlayerZXSlashDashRun()
 {
 	with (core.id)
 	{
+		if (other.airDash)
+		{
+			if (fncIsOnGround(2))
+			{
+				other.airDash = false;
+				physic.gravAffect = true;
+			}
+		}
+		else
+		{
+			if (!physic.onGround)
+			{
+				jumpTime--;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
+			}
+		}
+		
 		if (image_index < 6)
 		{
 			if (abs(hspd) < abs(dashSpd))
@@ -55,6 +74,7 @@ function fncPlayerZXSlashDashRun()
 			with(stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
+				return;
 			}
 		}
 		else
@@ -63,8 +83,22 @@ function fncPlayerZXSlashDashRun()
 			{
 				fncStateChange(objPlayerStateIdle);
 				currentState.lastState = "slash dash";
+				return;
 			}
 		}
+	}
+}
+
+function fncStateInit()
+{
+	if (!inited)
+	{
+		if (airDash)
+		{
+			with (core.id)
+			 physic.gravAffect = false;
+		}
+		inited = true;
 	}
 }
 
