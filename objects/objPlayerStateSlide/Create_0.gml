@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 slideEff = noone;
+transToSlideState = false;
+lastState = "default";
 
 function fncStateStart()
 {
@@ -22,6 +24,31 @@ function fncStateEnd()
 	fncPlayerSlideEnd();
 }
 
+function fncStateInit()
+{
+	if (!inited)
+	{
+		switch (lastState)
+		{
+			case "slide slash":
+			{
+				with (core.id)
+				{
+					sprite_index = sprPlayer.sprSlide;
+					image_index = 0;
+				}
+			}	break;
+		
+			default:
+			{
+				vspd = 0;
+			}
+		}
+		
+		inited = false;
+	}
+}
+
 function fncPlayerSlideStart()
 {
 	audio_play_sound_on(global.emitterSFX.source, sfxFootCommon, false, false);
@@ -32,7 +59,6 @@ function fncPlayerSlideStart()
 		image_index = 0;
 		
 		hspd = 0;
-		vspd = 0;
 		physic.gravAffect = false;
 		jumpTime = jumpTimeMax;
 		airDashCount = airDashCountMax;
@@ -85,13 +111,19 @@ function fncPlayerSlideEnd()
 	with(core.id)
 		physic.gravAffect = true;
 	
-	instance_destroy(slideEff);
+	if (!transToSlideState)
+		instance_destroy(slideEff);
 }
 
 function fncChangeToZXStates()
 {
 	with (core.id)
 	{
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
+		{
+			fncPerformWeapon1();
+		}
+		
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
 			fncPerformWeapon2();

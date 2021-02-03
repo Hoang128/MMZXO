@@ -100,6 +100,24 @@ function fncPerformWeapon1()
 				currentState.airDash = currentAirDash;
 			}
 		}	break;
+		
+		case objPlayerStateSlide:
+		{
+			with(playerStateMachine)
+			{
+				var currentDustEff = noone;
+				var startFrame = image_index;
+				if (instance_exists(currentState.slideEff))
+					currentDustEff = currentState.slideEff.id;
+				if (other.sprite_index == other.sprPlayer.sprSlide)
+					startFrame = 4;
+				currentState.transToSlideState = true;
+				fncStateChange(objPlayerStateZXSlashSlide);
+				currentState.startFrame = startFrame;
+				currentState.slideEff = currentDustEff;
+				
+			}
+		}
 	}
 }
 

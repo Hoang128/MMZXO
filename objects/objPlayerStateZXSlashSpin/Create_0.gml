@@ -72,6 +72,7 @@ function fncPlayerZXSlashSpinRun()
 					with(other.stateMachine)
 					{
 						fncStateChange(objPlayerStateSlide);
+						return;
 					}
 				}
 			}
@@ -100,6 +101,7 @@ function fncPlayerZXSlashSpinRun()
 			var currentDashJump = currentState.dashJump;
 			fncStateChange(objPlayerStateJump);
 			currentState.dashJump = currentDashJump;
+			return;
 		}
 	}
 }
@@ -129,6 +131,7 @@ function fncChangeToZXStates()
 					var currentDashJump = currentState.dashJump;
 					fncStateChange(objPlayerStateZXSlashSpin);
 					currentState.dashJump = currentDashJump;
+					return;
 				}
 			}
 		}
