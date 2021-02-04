@@ -13,9 +13,9 @@ switch (sprite_index)
 	case sprPlayerZXSlashSpin:
 	case sprPlayerZXSlashDash:
 	case sprPlayerZXSlashSlide:
+	case sprPlayerZXSlashClimb:
 	{
 		with (playerStateMachine.currentState)
 			slashEnd = true;
-		image_index -= 1;
 	}	break;
 }

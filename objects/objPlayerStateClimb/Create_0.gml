@@ -6,6 +6,7 @@ event_inherited();
 
 climbFromFirstImage = true;
 inited = false;
+lastState = "default";
 
 function fncStateStart()
 {
@@ -24,14 +25,35 @@ function fncStateEnd()
 	fncPlayerClimbEnd();
 }
 
+function fncStateInit()
+{
+	if (!inited)
+	{
+		if (lastState == "climb slash")
+		{
+			with (core.id)
+			{
+				sprite_index = sprPlayer.sprClimb;
+				image_index = 3;
+			}
+		}
+		else
+		{
+			with (core.id)
+			{
+				sprite_index = sprPlayer.sprClimbStart;
+				image_index = 0;
+			}
+		}
+		inited = true;
+	}
+}
+
 
 function fncPlayerClimbStart()
 {
 	with (core.id)
 	{
-		sprite_index = sprPlayer.sprClimbStart;
-		image_index = 0;
-		
 		hspd = 0;
 		vspd = 0;
 		physic.gravAffect = false;
@@ -131,6 +153,12 @@ function fncChangeToZXStates()
 	{
 		if (shotAnimPhase != 0)
 			vspd = 0;
+		
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
+		{
+			fncPerformWeapon1();
+		}
+		
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
 			fncPerformWeapon2();

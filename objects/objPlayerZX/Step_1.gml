@@ -54,6 +54,7 @@ switch (sprite_index)
 	}	break;
 	case sprPlayerZXSlashJump:
 	case sprPlayerZXSlashDash:
+	case sprPlayerZXSlashClimb:
 	{
 		imgSpd = 1.5;
 	}	break;

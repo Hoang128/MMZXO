@@ -122,7 +122,19 @@ function fncPerformWeapon1()
 				currentState.slideEff = currentDustEff;
 				return;
 			}
-		}
+		}	break;
+		
+		case objPlayerStateClimb:
+		{
+			if (sprite_index == sprPlayer.sprClimb)
+			{
+				with(playerStateMachine)
+				{
+					fncStateChange(objPlayerStateZXSlashClimb);	
+					return;
+				}
+			}
+		}	break;
 	}
 }
 
