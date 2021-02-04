@@ -49,9 +49,16 @@ switch (sprite_index)
 	case sprPlayerZXSlashCombo1:
 	case sprPlayerZXSlashCombo2:
 	case sprPlayerZXSlashCombo3:
+	{
+		imgSpd = 1.2;
+	}	break;
 	case sprPlayerZXSlashJump:
-	case sprPlayerZXSlashSpin:
 	case sprPlayerZXSlashDash:
+	{
+		imgSpd = 1.5;
+	}	break;
+	
+	case sprPlayerZXSlashSpin:
 	{
 		imgSpd = 1;
 	}	break;
@@ -59,10 +66,10 @@ switch (sprite_index)
 	case sprPlayerZXSlashSlide:
 	{
 		if (image_index < 4)
-			imgSpd = 0.5;
+			imgSpd = 1;
 		else	
 		{
-			imgSpd = 1;
+			imgSpd = 1.5;
 		}
 	}	break;
 }
