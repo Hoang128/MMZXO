@@ -13,6 +13,11 @@ flareShotTimeMax = 0.5;
 
 dashSlashAccUp = 2;
 
+runSlashPhase = 0;
+runSlashTime = 0;
+runSlashPhase1TimeMax = 5;
+runSlashPhase2Timemax = 10;
+
 //Properties
 canShot = 1;
 shotAnimPhase = 0;
@@ -67,6 +72,45 @@ function fncSetupZXProperties()
 			shotAnimPhase = 0;
 			if (rapidCount < rapidMax)	rapidCount = rapidMax;
 			fncChangeMoveSpriteToNormal();
+		}
+	}
+	
+	if (runSlashPhase > 0)
+	{
+		if (playerStateMachine.currentState.object_index != objPlayerStateRun)
+		{
+			sprPlayer.sprRun = sprPlayerZXRun;
+			
+			runSlashPhase = 0;
+			runSlashTime = 0;
+		}
+		else
+		{
+			if (runSlashPhase == 1)
+			{
+				if (runSlashTime > 0)
+					runSlashTime -= TIME_SCALE;
+				else
+				{
+					sprPlayer.sprRun = sprPlayerZXSlashRun2;
+					sprite_index = sprPlayer.sprRun;
+			
+					runSlashPhase = 2;
+					runSlashTime = runSlashPhase2Timemax;
+				}
+			}
+			else if (runSlashPhase == 2)
+			{
+				if (runSlashTime > 0)
+					runSlashTime -= TIME_SCALE;
+				else
+				{
+					sprPlayer.sprRun = sprPlayerZXRun;
+					sprite_index = sprPlayer.sprRun;
+			
+					runSlashPhase = 0;
+				}
+			}
 		}
 	}
 }
@@ -134,6 +178,17 @@ function fncPerformWeapon1()
 					return;
 				}
 			}
+		}	break;
+		
+		case objPlayerStateRun:
+		{
+			runSlashPhase = 1;
+			runSlashTime = runSlashPhase1TimeMax;
+			
+			sprPlayer.sprRun = sprPlayerZXSlashRun1;
+			sprite_index = sprPlayer.sprRun;
+			
+			audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 		}	break;
 	}
 }
@@ -272,6 +327,8 @@ function fncChangeMoveSprite()
 		case sprPlayerZXIdleShot3:			sprite_index = sprPlayer.sprIdle;		break;
 		
 		case sprPlayerZXRun:
+		case sprPlayerZXSlashRun1:
+		case sprPlayerZXSlashRun2:
 		case sprPlayerZXRunShot1:
 		case sprPlayerZXRunShot2:
 		case sprPlayerZXRunShot3:			sprite_index = sprPlayer.sprRun;		break;

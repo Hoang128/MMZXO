@@ -149,7 +149,12 @@ function fncPlayerRunEnd()
 function fncChangeToZXStates()
 {
 	with (core.id)
-	{
+	{	
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
+		{
+			fncPerformWeapon1();
+		}
+		
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
 			fncPerformWeapon2();
