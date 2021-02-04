@@ -95,6 +95,16 @@ function fncPlayerZXSlashSlideRun()
 			}
 		}
 		
+		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+		{
+			with(other.stateMachine)
+			{
+				fncStateChange(objPlayerStateWallKick);
+				currentState.dashJump = keyboard_check(global.keyDash);
+				return;
+			}
+		}
+		
 		if (!place_meeting(x + charDir, y, objBlock) || fncIsOnGround(distanceOffSlide))
 		{
 			if (jumpTime > 0)
