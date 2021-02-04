@@ -35,10 +35,13 @@ switch (sprite_index)
 		sprite_index = sprPlayer.sprSlide;
 		image_index = 0;
 		
-		playerStateMachine.currentState.slideEff 
-		= instance_create_depth(x + charDir * 12, y + 4, depth - 1, objPlayerSlideEff);
-		playerStateMachine.currentState.slideEff.core 
-		= self.id;
+		if (playerStateMachine.currentState.slideEff == noone)
+		{
+			playerStateMachine.currentState.slideEff 
+			= instance_create_depth(x + charDir * 12, y + 4, depth - 1, objPlayerSlideEff);
+			playerStateMachine.currentState.slideEff.core 
+			= self.id;
+		}
 	}	break;
 	case sprPlayer.sprWallKick:
 	{

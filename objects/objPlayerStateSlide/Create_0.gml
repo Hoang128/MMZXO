@@ -9,6 +9,8 @@ lastState = "default";
 
 function fncStateStart()
 {
+	if (global.debug)
+		show_debug_message("Entered Slide State!");
 	fncPlayerSlideStart();
 }
 
@@ -41,11 +43,16 @@ function fncStateInit()
 		
 			default:
 			{
-				vspd = 0;
+				with (core.id)
+				{
+					sprite_index = sprPlayer.sprSlideStart;
+					image_index = 0;
+					vspd = 0;
+				}
 			}
 		}
 		
-		inited = false;
+		inited = true;
 	}
 }
 
@@ -54,10 +61,7 @@ function fncPlayerSlideStart()
 	audio_play_sound_on(global.emitterSFX.source, sfxFootCommon, false, false);
 	
 	with (core.id)
-	{
-		sprite_index = sprPlayer.sprSlideStart
-		image_index = 0;
-		
+	{	
 		hspd = 0;
 		physic.gravAffect = false;
 		jumpTime = jumpTimeMax;

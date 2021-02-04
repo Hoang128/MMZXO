@@ -79,6 +79,7 @@ function fncPerformWeapon1()
 		{
 			with(playerStateMachine)
 				fncStateChange(objPlayerStateZXSlashCombo1);	
+				return;
 		}	break;
 		
 		case objPlayerStateJump:
@@ -88,6 +89,7 @@ function fncPerformWeapon1()
 				var currentDashJump = currentState.dashJump;
 				fncStateChange(objPlayerStateZXSlashJump);	
 				currentState.dashJump = currentDashJump;
+				return;
 			}
 		}	break;
 		
@@ -98,24 +100,27 @@ function fncPerformWeapon1()
 				var currentAirDash = currentState.airDash;
 				fncStateChange(objPlayerStateZXSlashDash);	
 				currentState.airDash = currentAirDash;
+				return;
 			}
 		}	break;
 		
 		case objPlayerStateSlide:
 		{
+			var startFrame = image_index;
+			if (sprite_index == sprPlayer.sprSlide)
+					startFrame = 4;
 			with(playerStateMachine)
 			{
 				var currentDustEff = noone;
-				var startFrame = image_index;
-				if (instance_exists(currentState.slideEff))
-					currentDustEff = currentState.slideEff.id;
-				if (other.sprite_index == other.sprPlayer.sprSlide)
-					startFrame = 4;
+				
+				if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
+					currentDustEff = currentState.slideEff;
+				
 				currentState.transToSlideState = true;
 				fncStateChange(objPlayerStateZXSlashSlide);
 				currentState.startFrame = startFrame;
 				currentState.slideEff = currentDustEff;
-				
+				return;
 			}
 		}
 	}

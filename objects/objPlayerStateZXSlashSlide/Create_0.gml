@@ -10,6 +10,8 @@ slashEnd = false;
 
 function fncStateStart()
 {
+	if (global.debug)
+		show_debug_message("Entered Slash Slide State!");
 	fncPlayerZXSlashSlideStart();
 }
 
@@ -53,6 +55,32 @@ function fncPlayerZXSlashSlideRun()
 {
 	with (core.id)
 	{
+		if (other.slashEnd)
+		{
+			with(other.stateMachine)
+			{
+				var currentDustEff = noone;
+				
+				if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
+					currentDustEff = currentState.slideEff;
+				currentState.transToSlideState = true;
+				
+				fncStateChange(objPlayerStateSlide);
+				currentState.lastState = "slide slash";
+				currentState.slideEff = currentDustEff;
+				return;
+			}
+		}
+		
+		if (image_index > 4)
+		{
+			if (other.slideEff == noone)
+			{
+				other.slideEff = instance_create_depth(x + charDir * 12, y + 4, depth - 1, objPlayerSlideEff);
+				other.slideEff.core = self.id;
+			}
+		}
+		
 		if (vspd < slideSpdMax)
 			vspd += slideAcc;
 		else
@@ -74,23 +102,6 @@ function fncPlayerZXSlashSlideRun()
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
-				return;
-			}
-		}
-		
-		if (other.slashEnd)
-		{
-			with(other.stateMachine)
-			{
-				var currentDustEff = noone;
-				
-				if (instance_exists(currentState.slideEff))
-					currentDustEff = currentState.slideEff.id;
-				transToSlideState = true;
-				
-				fncStateChange(objPlayerStateSlide);
-				currentState.lastState = "slide slash";
-				currentState.slideEff = currentDustEff;
 				return;
 			}
 		}

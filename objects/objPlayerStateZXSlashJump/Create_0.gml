@@ -10,6 +10,8 @@ shadowEffCreater = noone;
 
 function fncStateStart()
 {
+	if (global.debug)
+		show_debug_message("Entered Slash Jump State!");
 	fncPlayerZXSlashJumpStart();
 }
 
@@ -37,7 +39,7 @@ function fncPlayerZXSlashJumpStart()
 
 function fncPlayerZXSlashJumpRun()
 {
-		if (dashJump)
+	if (dashJump)
 	{
 		if (shadowEffCreater == noone)
 		{
@@ -45,6 +47,18 @@ function fncPlayerZXSlashJumpRun()
 			shadowEffCreater.core = self.core;
 		}
 	}
+	
+	if (slashEnd)
+	{
+		with(stateMachine)
+		{
+			var currentDashJump = currentState.dashJump;
+			fncStateChange(objPlayerStateJump);
+			currentState.dashJump = currentDashJump;
+			return;
+		}
+	}
+	
 	with (core.id)
 	{
 		if (hMove != 0)
@@ -91,16 +105,6 @@ function fncPlayerZXSlashJumpRun()
 					return;
 				}
 			}
-		}
-	}
-	
-	if (slashEnd)
-	{
-		with(stateMachine)
-		{
-			var currentDashJump = currentState.dashJump;
-			fncStateChange(objPlayerStateJump);
-			currentState.dashJump = currentDashJump;
 		}
 	}
 }

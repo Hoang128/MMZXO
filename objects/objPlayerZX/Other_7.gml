@@ -16,5 +16,6 @@ switch (sprite_index)
 	{
 		with (playerStateMachine.currentState)
 			slashEnd = true;
+		image_index -= 1;
 	}	break;
 }

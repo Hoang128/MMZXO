@@ -9,6 +9,8 @@ afterWallKick = 0;
 
 function fncStateStart()
 {
+	if (global.debug)
+		show_debug_message("Entered Jump State!");
 	fncPlayerJumpStart();
 }
 
