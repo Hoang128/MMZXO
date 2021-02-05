@@ -31,6 +31,11 @@ function fncPlayerZXSlashDashStart()
 	{
 		sprite_index = sprPlayerZXSlashDash;
 		image_index = 0;
+		
+		with (weaponMeleeMgr)
+		{
+			fncCreateMeleeWeapon(objZXDagger, sprZXSlashDashHitbox);
+		}
 		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 	}
 }
@@ -52,6 +57,7 @@ function fncPlayerZXSlashDashRun()
 			if (!physic.onGround)
 			{
 				jumpTime--;
+				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);
@@ -109,5 +115,14 @@ function fncPlayerZXSlashDashEnd()
 	{
 		if (!physic.gravAffect)
 			physic.gravAffect = true;
+			
+		with (weaponMeleeMgr)
+		{
+			if ((weaponSlash != noone) && instance_exists(weaponSlash))
+			{
+				if (weaponSlash.destroyWhenChangeState)
+					fncDestroyMeleeWeapon();
+			}
+		}
 	}
 }

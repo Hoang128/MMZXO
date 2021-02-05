@@ -7,3 +7,19 @@ event_inherited();
 hit = 0;
 
 core = noone;
+inited = false;
+spriteWeapon = noone;
+
+image_speed = 0;
+imgSpd = 0;
+destroyWhenChangeState = false;
+playerStateChanged = false;
+
+function fncChangeImgSpd()
+{
+	imgSpd = 1;
+}
+
+function fncSetupSprite()
+{
+}

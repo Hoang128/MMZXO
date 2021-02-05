@@ -31,6 +31,11 @@ function fncPlayerZXSlashSpinStart()
 		sprite_index = sprPlayerZXSlashSpin;
 		image_index = 0;
 		
+		with (weaponMeleeMgr)
+		{
+			fncCreateMeleeWeapon(objZXDagger, sprZXSlashSpinHitbox);
+			weaponSlash.destroyWhenChangeState = true;
+		}
 		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 	}
 }
@@ -110,6 +115,18 @@ function fncPlayerZXSlashSpinEnd()
 {
 	if (instance_exists(shadowEffCreater))
 		instance_destroy(shadowEffCreater);
+		
+	with (core.id)
+	{
+		with (weaponMeleeMgr)
+		{
+			if ((weaponSlash != noone) && instance_exists(weaponSlash))
+			{
+				if (weaponSlash.destroyWhenChangeState)
+					fncDestroyMeleeWeapon();
+			}
+		}
+	}
 }
 
 function fncChangeToZXStates()

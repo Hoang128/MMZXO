@@ -16,10 +16,28 @@ else
 		instance_destroy();
 	}
 	
+	if (!inited)
+	{
+		fncSetupSprite();
+		inited = true;
+	}
+	
+	if (playerStateChanged)
+	{
+		if (imgSpd == 0)
+		{
+			fncChangeImgSpd();
+		}
+	}
+	
+	if (image_index > (image_number - 2))
+		instance_destroy();
+	
 	x = core.x;
 	y = core.y;
 	image_xscale = core.image_xscale;
 	image_yscale = core.image_yscale;
-	depth = core.depth;
-	image_index = core.image_index;
+	depth = core.core.depth - 1;
+	if (!playerStateChanged)
+		image_index = core.core.image_index;
 }

@@ -45,6 +45,11 @@ function fncPlayerZXSlashSlideStart()
 	{
 		sprite_index = sprPlayerZXSlashSlide;
 		image_index = 0;
+		
+		with (weaponMeleeMgr)
+		{
+			fncCreateMeleeWeapon(objZXDagger, sprZXSlashSlideHitbox);
+		}
 		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 	
 		physic.gravAffect = false;
@@ -88,6 +93,7 @@ function fncPlayerZXSlashSlideRun()
 		
 		if (hMove != charDir)
 		{
+			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
@@ -97,6 +103,7 @@ function fncPlayerZXSlashSlideRun()
 		
 		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 		{
+			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateWallKick);
@@ -109,6 +116,7 @@ function fncPlayerZXSlashSlideRun()
 		{
 			if (jumpTime > 0)
 				jumpTime--;
+			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
@@ -121,7 +129,18 @@ function fncPlayerZXSlashSlideRun()
 function fncPlayerZXSlashSlideEnd()
 {
 	with(core.id)
+	{
 		physic.gravAffect = true;
+		
+		with (weaponMeleeMgr)
+		{
+			if ((weaponSlash != noone) && instance_exists(weaponSlash))
+			{
+				if (weaponSlash.destroyWhenChangeState)
+					fncDestroyMeleeWeapon();
+			}
+		}
+	}
 	
 	if (!transToSlideState)
 		instance_destroy(slideEff);

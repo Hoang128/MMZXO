@@ -29,6 +29,10 @@ function fncPlayerZXSlashClimbStart()
 		image_speed = 0;
 		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 		
+		with (weaponMeleeMgr)
+		{
+			fncCreateMeleeWeapon(objZXDagger, sprZXSlashClimbHitbox);
+		}
 		vspd = 0;
 		physic.gravAffect = false;
 	}
@@ -53,6 +57,7 @@ function fncPlayerZXSlashClimbRun()
 			vspd = 0;
 			canClimb = -canClimbDelayTime;
 			jumpTime--;
+			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
@@ -67,5 +72,13 @@ function fncPlayerZXSlashClimbEnd()
 	with(core.id)
 	{
 		physic.gravAffect = true;
+		with (weaponMeleeMgr)
+		{
+			if ((weaponSlash != noone) && instance_exists(weaponSlash))
+			{
+				if (weaponSlash.destroyWhenChangeState)
+					fncDestroyMeleeWeapon();
+			}
+		}
 	}
 }

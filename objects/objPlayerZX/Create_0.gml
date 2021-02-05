@@ -25,6 +25,8 @@ flareShotPhase = 0;	//phase 1: flare on, phase 2: flare off
 flareShotTime = flareShotTimeMax;
 shotAnimWait =shotAnimWaitMax;
 rapidCount = rapidMax;
+weaponMeleeMgr = instance_create_depth(x, y, depth, objPlayerWeaponMeleeMgr);
+weaponMeleeMgr.core = self;
 
 function fncSetupZXProperties()
 {
@@ -94,7 +96,13 @@ function fncSetupZXProperties()
 				{
 					sprPlayer.sprRun = sprPlayerZXSlashRun2;
 					sprite_index = sprPlayer.sprRun;
-			
+					
+					with (weaponMeleeMgr)
+					{
+						fncCreateMeleeWeapon(objZXDagger, sprZXSlashRunHitbox);
+						weaponSlash.playerStateChanged = true;
+					}
+					
 					runSlashPhase = 2;
 					runSlashTime = runSlashPhase2Timemax;
 				}
