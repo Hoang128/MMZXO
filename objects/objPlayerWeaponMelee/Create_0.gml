@@ -5,3 +5,5 @@
 event_inherited();
 
 hit = 0;
+
+core = noone;

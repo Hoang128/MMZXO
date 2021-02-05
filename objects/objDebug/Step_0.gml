@@ -22,11 +22,11 @@ if (keyboard_check(ord("T")))
 	}
 }
 
-if (keyboard_check(ord("P")))
+if (keyboard_check(ord("L")))
 {
 	if (keyboard_check_pressed(vk_numpad0))
 	{
-		if (physicVisible.blockNor)
+		if (physicVisible.blocks)
 		{
 			fncChangeBlocksVisible(false);
 		}

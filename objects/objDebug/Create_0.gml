@@ -3,9 +3,7 @@
 
 physicVisible = 
 {
-	blockNor : true,
-	blockThin : true,
-	ladder : true,
+	blocks : true,
 	player : false
 }
 
@@ -21,7 +19,7 @@ function fncChangeBlocksVisible(changeToVisible)
 			visible = true;
 		with(objLadderTop)
 			visible = true;
-		physicVisible.blockNor = true;
+		physicVisible.blocks = true;
 	}
 	else
 	{
@@ -33,6 +31,6 @@ function fncChangeBlocksVisible(changeToVisible)
 			visible = false;
 		with(objLadderTop)
 			visible = false;
-		physicVisible.blockNor = false;
+		physicVisible.blocks = false;
 	}
 }

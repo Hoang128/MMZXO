@@ -182,13 +182,16 @@ function fncPerformWeapon1()
 		
 		case objPlayerStateRun:
 		{
-			runSlashPhase = 1;
-			runSlashTime = runSlashPhase1TimeMax;
+			if (runSlashPhase == 0)
+			{
+				runSlashPhase = 1;
+				runSlashTime = runSlashPhase1TimeMax;
 			
-			sprPlayer.sprRun = sprPlayerZXSlashRun1;
-			sprite_index = sprPlayer.sprRun;
+				sprPlayer.sprRun = sprPlayerZXSlashRun1;
+				sprite_index = sprPlayer.sprRun;
 			
-			audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
+				audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
+			}
 		}	break;
 	}
 }
