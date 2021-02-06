@@ -50,92 +50,95 @@ function fncPlayerRunRun()
 			}
 		}
 		
-		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+		if (weaponMeleeMgr.weaponSlash == noone)
 		{
-			if (fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD))
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
-				if (fncIsOnBlockThin(1))
+				if (fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD))
 				{
-					if (!fncIsOnBlock(1))
+					if (fncIsOnBlockThin(1))
 					{
-						y+=2;
-						jumpTime--;
-						physic.onGround = false;
-						fncIgnoreThinBlockFor(physic.thinBlockIgnoreTimeMax);
-						with(other.stateMachine)
+						if (!fncIsOnBlock(1))
 						{
-							fncStateChange(objPlayerStateJump);
-							return;
+							y+=2;
+							jumpTime--;
+							physic.onGround = false;
+							fncIgnoreThinBlockFor(physic.thinBlockIgnoreTimeMax);
+							with(other.stateMachine)
+							{
+								fncStateChange(objPlayerStateJump);
+								return;
+							}
 						}
 					}
 				}
-			}
-			if (jumpTime > 0)
-			{
-				vspd = -jumpSpd;
-				jumpTime--;
-				with(other.stateMachine)
+				if (jumpTime > 0)
 				{
-					fncStateChange(objPlayerStateJump);
-					currentState.dashJump = fncStaticHandleButton(KeyMap.DASH, KeyAction.HELD);
-					return;
-				}
-			}
-		}
-		
-		hspd = runSpd * charDir;
-		if (hMove == 0)
-		{
-			with(other.stateMachine)
-			{
-				fncStateChange(objPlayerStateIdle);
-				return;
-			}
-		}
-		else
-		{
-			if (charDir != hMove)
-				charDir = hMove;
-			if (place_meeting(x + charDir, y, objBlock))
-			{
-				if (!place_meeting(x + charDir * maxDisDetectSlopeAbove, y, objSlope))
-				{
+					vspd = -jumpSpd;
+					jumpTime--;
 					with(other.stateMachine)
 					{
-						fncStateChange(objPlayerStateIdle);
+						fncStateChange(objPlayerStateJump);
+						currentState.dashJump = fncStaticHandleButton(KeyMap.DASH, KeyAction.HELD);
 						return;
 					}
 				}
 			}
-		}
 		
-		if (vMove < 0)
-		{
-			if (canClimb)
+			hspd = runSpd * charDir;
+			if (hMove == 0)
 			{
-				var objCol = collision_rectangle(bbox_right, (bbox_top + bbox_bottom) / 2, bbox_left, bbox_bottom, objLadder, false, false);
-				if (objCol != noone)
+				with(other.stateMachine)
 				{
-					if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+					fncStateChange(objPlayerStateIdle);
+					return;
+				}
+			}
+			else
+			{
+				if (charDir != hMove)
+					charDir = hMove;
+				if (place_meeting(x + charDir, y, objBlock))
+				{
+					if (!place_meeting(x + charDir * maxDisDetectSlopeAbove, y, objSlope))
 					{
-						x = (objCol.bbox_right + objCol.bbox_left)/2;
-				
 						with(other.stateMachine)
 						{
-							fncStateChange(objPlayerStateClimb);
+							fncStateChange(objPlayerStateIdle);
 							return;
 						}
 					}
 				}
 			}
-		}
 		
-		if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
-		{
-			with(other.stateMachine)
+			if (vMove < 0)
 			{
-				fncStateChange(objPlayerStateDash);
-				return;
+				if (canClimb)
+				{
+					var objCol = collision_rectangle(bbox_right, (bbox_top + bbox_bottom) / 2, bbox_left, bbox_bottom, objLadder, false, false);
+					if (objCol != noone)
+					{
+						if ((abs(self.x - ((objCol.bbox_right + objCol.bbox_left)/2))) <= climbDistance)
+						{
+							x = (objCol.bbox_right + objCol.bbox_left)/2;
+				
+							with(other.stateMachine)
+							{
+								fncStateChange(objPlayerStateClimb);
+								return;
+							}
+						}
+					}
+				}
+			}
+		
+			if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
+			{
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateDash);
+					return;
+				}
 			}
 		}
 	}

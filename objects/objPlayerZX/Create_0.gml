@@ -125,82 +125,85 @@ function fncSetupZXProperties()
 
 function fncPerformWeapon1()
 {
-	switch (playerStateMachine.currentState.object_index)
+	if (weaponMeleeMgr.weaponSlash == noone)
 	{
-		case objPlayerStateIdle:
+		switch (playerStateMachine.currentState.object_index)
 		{
-			with(playerStateMachine)
-				fncStateChange(objPlayerStateZXSlashCombo1);	
-				return;
-		}	break;
-		
-		case objPlayerStateJump:
-		{
-			with(playerStateMachine)
+			case objPlayerStateIdle:
 			{
-				var currentDashJump = currentState.dashJump;
-				fncStateChange(objPlayerStateZXSlashJump);	
-				currentState.dashJump = currentDashJump;
-				return;
-			}
-		}	break;
+				with(playerStateMachine)
+					fncStateChange(objPlayerStateZXSlashCombo1);	
+					return;
+			}	break;
 		
-		case objPlayerStateDash:
-		{
-			with(playerStateMachine)
-			{
-				var currentAirDash = currentState.airDash;
-				fncStateChange(objPlayerStateZXSlashDash);	
-				currentState.airDash = currentAirDash;
-				return;
-			}
-		}	break;
-		
-		case objPlayerStateSlide:
-		{
-			var startFrame = image_index;
-			if (sprite_index == sprPlayer.sprSlide)
-					startFrame = 4;
-			with(playerStateMachine)
-			{
-				var currentDustEff = noone;
-				
-				if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
-					currentDustEff = currentState.slideEff;
-				
-				currentState.transToSlideState = true;
-				fncStateChange(objPlayerStateZXSlashSlide);
-				currentState.startFrame = startFrame;
-				currentState.slideEff = currentDustEff;
-				return;
-			}
-		}	break;
-		
-		case objPlayerStateClimb:
-		{
-			if (sprite_index == sprPlayer.sprClimb)
+			case objPlayerStateJump:
 			{
 				with(playerStateMachine)
 				{
-					fncStateChange(objPlayerStateZXSlashClimb);	
+					var currentDashJump = currentState.dashJump;
+					fncStateChange(objPlayerStateZXSlashJump);	
+					currentState.dashJump = currentDashJump;
 					return;
 				}
-			}
-		}	break;
+			}	break;
 		
-		case objPlayerStateRun:
-		{
-			if (runSlashPhase == 0)
+			case objPlayerStateDash:
 			{
-				runSlashPhase = 1;
-				runSlashTime = runSlashPhase1TimeMax;
+				with(playerStateMachine)
+				{
+					var currentAirDash = currentState.airDash;
+					fncStateChange(objPlayerStateZXSlashDash);	
+					currentState.airDash = currentAirDash;
+					return;
+				}
+			}	break;
+		
+			case objPlayerStateSlide:
+			{
+				var startFrame = image_index;
+				if (sprite_index == sprPlayer.sprSlide)
+						startFrame = 4;
+				with(playerStateMachine)
+				{
+					var currentDustEff = noone;
+				
+					if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
+						currentDustEff = currentState.slideEff;
+				
+					currentState.transToSlideState = true;
+					fncStateChange(objPlayerStateZXSlashSlide);
+					currentState.startFrame = startFrame;
+					currentState.slideEff = currentDustEff;
+					return;
+				}
+			}	break;
+		
+			case objPlayerStateClimb:
+			{
+				if (sprite_index == sprPlayer.sprClimb)
+				{
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateZXSlashClimb);	
+						return;
+					}
+				}
+			}	break;
+		
+			case objPlayerStateRun:
+			{
+				if (runSlashPhase == 0)
+				{
+					runSlashPhase = 1;
+					runSlashTime = runSlashPhase1TimeMax;
 			
-				sprPlayer.sprRun = sprPlayerZXSlashRun1;
-				sprite_index = sprPlayer.sprRun;
+					sprPlayer.sprRun = sprPlayerZXSlashRun1;
+					sprite_index = sprPlayer.sprRun;
 			
-				audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
-			}
-		}	break;
+					audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
+				}
+			}	break;
+		}
 	}
 }
 

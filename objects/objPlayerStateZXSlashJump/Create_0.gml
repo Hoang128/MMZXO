@@ -59,8 +59,8 @@ function fncPlayerZXSlashJumpRun()
 			var currentDashJump = currentState.dashJump;
 			fncStateChange(objPlayerStateJump);
 			currentState.dashJump = currentDashJump;
-			return;
 		}
+		return;
 	}
 	
 	with (core.id)
@@ -91,8 +91,8 @@ function fncPlayerZXSlashJumpRun()
 					with(other.stateMachine)
 					{
 						fncStateChange(objPlayerStateSlide);
-						return;
 					}
+					with (other)	return;
 				}
 			}
 			
@@ -109,8 +109,8 @@ function fncPlayerZXSlashJumpRun()
 				{
 					fncStateChange(objPlayerStateIdle);
 					currentState.lastState = "jump";
-					return;
 				}
+				with (other)	return;
 			}
 		}
 	}
@@ -158,8 +158,8 @@ function fncChangeToZXStates()
 					var currentDashJump = currentState.dashJump;
 					fncStateChange(objPlayerStateZXSlashSpin);
 					currentState.dashJump = currentDashJump;
-					return;
 				}
+				with (other)	return;
 			}
 		}
 	}

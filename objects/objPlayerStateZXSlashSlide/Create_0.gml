@@ -73,8 +73,9 @@ function fncPlayerZXSlashSlideRun()
 				fncStateChange(objPlayerStateSlide);
 				currentState.lastState = "slide slash";
 				currentState.slideEff = currentDustEff;
-				return;
 			}
+			
+			return;
 		}
 		
 		if (image_index > 4)
@@ -97,19 +98,19 @@ function fncPlayerZXSlashSlideRun()
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
-				return;
 			}
+			with (other)	return;
 		}
 		
 		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 		{
 			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-			with(other.stateMachine)
+			with (other.stateMachine)
 			{
 				fncStateChange(objPlayerStateWallKick);
 				currentState.dashJump = keyboard_check(global.keyDash);
-				return;
 			}
+			with (other)	return;
 		}
 		
 		if (!place_meeting(x + charDir, y, objBlock) || fncIsOnGround(distanceOffSlide))
@@ -117,11 +118,13 @@ function fncPlayerZXSlashSlideRun()
 			if (jumpTime > 0)
 				jumpTime--;
 			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-			with(other.stateMachine)
+			with (other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
 				return;
 			}
+			
+			with (other)	return;
 		}
 	}
 }
