@@ -14,6 +14,8 @@ switch (sprite_index)
 	case sprPlayerZXSlashDash:
 	case sprPlayerZXSlashSlide:
 	case sprPlayerZXSlashClimb:
+	case sprPlayerZXSlashChargeGround:
+	case sprPlayerZXSlashChargeJump:
 	{
 		with (playerStateMachine.currentState)
 			slashEnd = true;

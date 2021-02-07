@@ -60,6 +60,8 @@ switch (sprite_index)
 	}	break;
 	
 	case sprPlayerZXSlashSpin:
+	case sprPlayerZXSlashChargeGround:
+	case sprPlayerZXSlashChargeJump:
 	{
 		imgSpd = 1;
 	}	break;

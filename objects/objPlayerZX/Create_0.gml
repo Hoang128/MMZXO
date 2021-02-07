@@ -207,6 +207,26 @@ function fncPerformWeapon1()
 	}
 }
 
+function fncPerformChargeWeapon1()
+{
+	if (chargeWp1.Current >= chargeWp1.Max)
+	{
+		switch (playerStateMachine.currentState.object_index)
+		{
+			case objPlayerStateRun:
+			case objPlayerStateIdle:
+			case objPlayerStateDash:
+			{
+				with(playerStateMachine)
+				{
+					fncStateChange(objPlayerStateZXSlashChargeGround);	
+					return;
+				}
+			}	break;
+		}
+	}
+}
+
 function fncPerformWeapon2()
 {
 	if (canShot == 1)

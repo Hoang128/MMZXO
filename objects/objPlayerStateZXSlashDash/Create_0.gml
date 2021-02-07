@@ -102,7 +102,10 @@ function fncStateInit()
 		if (airDash)
 		{
 			with (core.id)
-			 physic.gravAffect = false;
+			{
+				vspd = 0;
+				physic.gravAffect = false;
+			}
 		}
 		inited = true;
 	}

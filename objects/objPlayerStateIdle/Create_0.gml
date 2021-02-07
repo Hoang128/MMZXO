@@ -218,6 +218,16 @@ function fncChangeToZXStates()
 			fncPerformWeapon1();
 		}
 		
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.HELD))
+		{
+			fncChargeWeapon(1);
+		}
+		
+		if (!fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.HELD))
+		{
+			fncReleaseWeapon(1);
+		}
+		
 		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
 		{
 			fncPerformWeapon2();

@@ -26,15 +26,17 @@ function fncSetupSprite()
 {
 	switch (sprite_index)
 	{
-		case sprZXSlashDashHitbox:		spriteWeapon = sprZXSlashDashImg;		break;
-		case sprZXSlashClimbHitbox:		spriteWeapon = sprZXSlashClimbImg;		break;
-		case sprZXSlashJumpHitbox:		spriteWeapon = sprZXSlashJumpImg;		break;
-		case sprZXSlashRunHitbox:		spriteWeapon = sprZXSlashRunImg;		break;
-		case sprZXSlashSlideHitbox:		spriteWeapon = sprZXSlashSlideImg;		break;
-		case sprZXSlashSpinHitbox:		spriteWeapon = sprZXSlashSpinImg;		break;
-		case sprZXSlashCombo1Hitbox:	spriteWeapon = sprZXSlashCombo1Img;		break;
-		case sprZXSlashCombo2Hitbox:	spriteWeapon = sprZXSlashCombo2Img;		break;
-		case sprZXSlashCombo3Hitbox:	spriteWeapon = sprZXSlashCombo3Img;		break;
+		case sprZXSlashDashHitbox:				spriteWeapon = sprZXSlashDashImg;			break;
+		case sprZXSlashClimbHitbox:				spriteWeapon = sprZXSlashClimbImg;			break;
+		case sprZXSlashJumpHitbox:				spriteWeapon = sprZXSlashJumpImg;			break;
+		case sprZXSlashRunHitbox:				spriteWeapon = sprZXSlashRunImg;			break;
+		case sprZXSlashSlideHitbox:				spriteWeapon = sprZXSlashSlideImg;			break;
+		case sprZXSlashSpinHitbox:				spriteWeapon = sprZXSlashSpinImg;			break;
+		case sprZXSlashCombo1Hitbox:			spriteWeapon = sprZXSlashCombo1Img;			break;
+		case sprZXSlashCombo2Hitbox:			spriteWeapon = sprZXSlashCombo2Img;			break;
+		case sprZXSlashCombo3Hitbox:			spriteWeapon = sprZXSlashCombo3Img;			break;
+		case sprZXSlashChargeGroundHitbox:		spriteWeapon = sprZXSlashChargeGroundImg;	break;
+		case sprZXSlashChargeJumpHitbox:		spriteWeapon = sprZXSlashChargeJumpImg;		break;
 		
 	}
 }
