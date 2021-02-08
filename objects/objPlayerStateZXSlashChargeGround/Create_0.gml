@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 slashEnd = false;
+lastState = "default";
 
 function fncStateStart()
 {
@@ -26,6 +27,13 @@ function fncStateInit()
 {
 	if (!inited)
 	{
+		if (lastState == "default")
+		{
+			with (core.id)
+			{
+				image_index = 0;
+			}
+		}
 		inited = true;
 	}
 }
@@ -35,7 +43,6 @@ function fncPlayerZXSlashChargeStart()
 	with(core.id)
 	{
 		sprite_index = sprPlayerZXSlashChargeGround;
-		image_index = 0;
 		
 		with (weaponMeleeMgr)
 		{

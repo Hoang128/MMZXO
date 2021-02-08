@@ -9,6 +9,7 @@ runSpd = 2;
 airJumpWhenFastMove = false;
 jumpSpd = 4;
 jumpTimeMax = 3;
+jumpHspdRatio = 0.9;
 
 
 airDashWhenFastMove = true;

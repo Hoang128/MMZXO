@@ -12,35 +12,36 @@ function fncStateStart()
 {
 	if (global.debug)
 		show_debug_message("Entered Slash Jump State!");
-	fncPlayerZXSlashJumpStart();
+	fncPlayerZXSlashChargeJumpStart();
 }
 
 function fncStateRun()
 {
-	fncPlayerZXSlashJumpRun();
+	fncPlayerZXSlashChargeJumpRun();
 	fncChangeToUniqueStates();
 }
 
 function fncStateEnd()
 {
-	fncPlayerZXSlashJumpEnd();
+	fncPlayerZXSlashChargeJumpEnd();
 }
 
-function fncPlayerZXSlashJumpStart()
+function fncPlayerZXSlashChargeJumpStart()
 {
 	with(core.id)
 	{
-		sprite_index = sprPlayerZXSlashJump;
+		sprite_index = sprPlayerZXSlashChargeJump;
 		image_index = 0;
 		
 		with (weaponMeleeMgr)
 		{
-			fncCreateMeleeWeapon(objZXDagger, sprZXSlashJumpHitbox);
+			fncCreateMeleeWeapon(objZXDagger, sprZXSlashChargeJumpHitbox);
+			weaponSlash.destroyWhenChangeState = true;
 		}
 	}
 }
 
-function fncPlayerZXSlashJumpRun()
+function fncPlayerZXSlashChargeJumpRun()
 {
 	if (dashJump)
 	{
@@ -96,18 +97,16 @@ function fncPlayerZXSlashJumpRun()
 			}
 			
 			if (physic.onGround)
-			{
-				sprite_index = sprPlayer.sprLand;
-				image_index = 0;
-				
+			{	
 				runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
 				runSFXPlayer.core = self.id;
 				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				weaponMeleeMgr.enableNextSFX = false;
 				
 				with(other.stateMachine)
 				{
-					fncStateChange(objPlayerStateIdle);
-					currentState.lastState = "jump";
+					fncStateChange(objPlayerStateZXSlashChargeGround);
+					currentState.lastState = "slash charge jump";
 				}
 				with (other)	return;
 			}
@@ -115,7 +114,7 @@ function fncPlayerZXSlashJumpRun()
 	}
 }
 
-function fncPlayerZXSlashJumpEnd()
+function fncPlayerZXSlashChargeJumpEnd()
 {
 	if (instance_exists(shadowEffCreater))
 		instance_destroy(shadowEffCreater);
@@ -135,31 +134,5 @@ function fncPlayerZXSlashJumpEnd()
 
 function fncChangeToZXStates()
 {
-	if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
-	{
-		if (!slashNext)
-			slashNext = true;
-	}
-	
-	if (slashNext)
-	{
-		with(core.id)
-		{
-			if (image_index > 6)
-			{
-				with (weaponMeleeMgr)
-				{
-					fncDestroyMeleeWeapon();
-				}
-				
-				with (other.stateMachine)
-				{
-					var currentDashJump = currentState.dashJump;
-					fncStateChange(objPlayerStateZXSlashSpin);
-					currentState.dashJump = currentDashJump;
-				}
-				with (other)	return;
-			}
-		}
-	}
+
 }

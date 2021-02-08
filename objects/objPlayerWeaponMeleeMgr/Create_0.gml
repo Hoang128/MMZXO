@@ -6,6 +6,7 @@ event_inherited();
 
 weaponSlash = noone;
 core = noone;
+enableNextSFX = true;
 
 function fncCreateMeleeWeapon(object, sprite)
 {

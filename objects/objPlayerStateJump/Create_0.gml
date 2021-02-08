@@ -71,7 +71,7 @@ function fncPlayerJumpRun()
 		if (other.dashJump)
 			moveSpd = dashSpd;
 		
-		hspd = moveSpd * hMove;
+		hspd = moveSpd * hMove * jumpHspdRatio;
 		
 		if (vMove < 0)
 		{

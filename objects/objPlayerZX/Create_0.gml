@@ -213,11 +213,29 @@ function fncPerformChargeWeapon1()
 		{
 			case objPlayerStateRun:
 			case objPlayerStateIdle:
-			case objPlayerStateDash:
 			{
 				with(playerStateMachine)
 				{
 					fncStateChange(objPlayerStateZXSlashChargeGround);	
+					return;
+				}
+			}	break;
+			case objPlayerStateJump:
+			{
+				with(playerStateMachine)
+				{
+					fncStateChange(objPlayerStateZXSlashChargeJump);	
+					return;
+				}
+			}	break;
+			case objPlayerStateDash:
+			{
+				with(playerStateMachine)
+				{
+					if (currentState.airDash)
+						fncStateChange(objPlayerStateZXSlashChargeJump);	
+					else
+						fncStateChange(objPlayerStateZXSlashChargeGround);	
 					return;
 				}
 			}	break;

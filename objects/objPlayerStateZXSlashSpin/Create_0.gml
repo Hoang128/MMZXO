@@ -60,7 +60,7 @@ function fncPlayerZXSlashSpinRun()
 		if (other.dashJump)
 			moveSpd = dashSpd;
 		
-		hspd = moveSpd * hMove;
+		hspd = moveSpd * hMove * jumpHspdRatio;
 		
 		if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
 		{
