@@ -22,21 +22,65 @@ function fncChangeImgSpd()
 	}
 }
 
-function fncSetupSprite()
+function fncSetupResources()
 {
 	switch (sprite_index)
 	{
-		case sprZXSlashDashHitbox:				spriteWeapon = sprZXSlashDashImg;			break;
-		case sprZXSlashClimbHitbox:				spriteWeapon = sprZXSlashClimbImg;			break;
-		case sprZXSlashJumpHitbox:				spriteWeapon = sprZXSlashJumpImg;			break;
-		case sprZXSlashRunHitbox:				spriteWeapon = sprZXSlashRunImg;			break;
-		case sprZXSlashSlideHitbox:				spriteWeapon = sprZXSlashSlideImg;			break;
-		case sprZXSlashSpinHitbox:				spriteWeapon = sprZXSlashSpinImg;			break;
-		case sprZXSlashCombo1Hitbox:			spriteWeapon = sprZXSlashCombo1Img;			break;
-		case sprZXSlashCombo2Hitbox:			spriteWeapon = sprZXSlashCombo2Img;			break;
-		case sprZXSlashCombo3Hitbox:			spriteWeapon = sprZXSlashCombo3Img;			break;
-		case sprZXSlashChargeGroundHitbox:		spriteWeapon = sprZXSlashChargeGroundImg;	break;
-		case sprZXSlashChargeJumpHitbox:		spriteWeapon = sprZXSlashChargeJumpImg;		break;
+		case sprZXSlashDashHitbox:				
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashDashImg;			
+		}	break;
+		case sprZXSlashClimbHitbox:				
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashClimbImg;
+		}	break;
+		case sprZXSlashJumpHitbox:
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashJumpImg;
+		}	break;
+		case sprZXSlashRunHitbox:
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashRunImg;
+		}	break;
+		case sprZXSlashSlideHitbox:				
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashSlideImg;
+		}	break;
+		case sprZXSlashSpinHitbox:
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashSpinImg;
+		}	break;
+		case sprZXSlashCombo1Hitbox:
+		{
+			sfx = vfxVentSlash1;
+			spriteWeapon = sprZXSlashCombo1Img;
+		}	break;
+		case sprZXSlashCombo2Hitbox:			
+		{
+			sfx = vfxVentSlash2;
+			spriteWeapon = sprZXSlashCombo2Img;			
+		}	break;
+		case sprZXSlashCombo3Hitbox:
+		{
+			sfx = vfxVentSlash3;
+			spriteWeapon = sprZXSlashCombo3Img;
+		}	break;
+		case sprZXSlashChargeGroundHitbox:
+		{
+			sfx = vfxVentSlashCharge;
+			spriteWeapon = sprZXSlashChargeGroundImg;
+		}	break;
+		case sprZXSlashChargeJumpHitbox:
+		{
+			sfx = vfxVentSlashCharge;
+			spriteWeapon = sprZXSlashChargeJumpImg;		
+		}	break;
 		
 	}
 }

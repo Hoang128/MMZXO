@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Common",
-    "path": "folders/Objects/Effects/Common.yy",
+    "name": "Effect",
+    "path": "folders/Objects/Player/Player Characters/Base/Effect.yy",
   },
   "resourceVersion": "1.0",
   "name": "objChargeWp1",

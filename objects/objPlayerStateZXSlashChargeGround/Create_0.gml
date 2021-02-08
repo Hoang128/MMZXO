@@ -36,7 +36,6 @@ function fncPlayerZXSlashChargeStart()
 	{
 		sprite_index = sprPlayerZXSlashChargeGround;
 		image_index = 0;
-		audio_play_sound_on(global.emitterSFX.source, vfxVentSlashCharge, false, false);
 		
 		with (weaponMeleeMgr)
 		{

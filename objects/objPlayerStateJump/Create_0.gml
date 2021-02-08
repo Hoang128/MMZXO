@@ -204,26 +204,5 @@ function fncPlayerJumpEnd()
 
 function fncChangeToZXStates()
 {
-	with (core.id)
-	{
-		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
-		{
-			fncPerformWeapon1();
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
-		{
-			fncPerformWeapon2();
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
-		{
-			fncChargeWeapon(2);
-		}
-		
-		if (!fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
-		{
-			fncReleaseWeapon(2);
-		}
-	}
+	
 }

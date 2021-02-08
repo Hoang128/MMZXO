@@ -8,6 +8,8 @@ stateType = "player";
 
 function fncChangeToUniqueStates()
 {
+	fncWeaponHandle();
+	
 	switch(core.object_index)
 	{
 		case objPlayerZX:	fncChangeToZXStates();	break;
@@ -55,4 +57,40 @@ function fncChangeToOXStates()
 function fncChangeToAStates()
 {
 	
+}
+
+function fncWeaponHandle()
+{
+	with (core.id)
+	{
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
+		{
+			fncPerformWeapon1();
+		}
+		
+		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.HELD))
+		{
+			fncChargeWeapon(1);
+		}
+		
+		if (!fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.HELD))
+		{
+			fncReleaseWeapon(1);
+		}
+		
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
+		{
+			fncPerformWeapon2();
+		}
+		
+		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
+		{
+			fncChargeWeapon(2);
+		}
+		
+		if (!fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
+		{
+			fncReleaseWeapon(2);
+		}
+	}
 }

@@ -4,5 +4,5 @@
 // Inherit the parent event
 event_inherited();
 
-if ((level == 1) && (core.chargeWp2.Current >= core.chargeWp2.Max))
+if ((level == 1) && (core.chargeWp1.Current >= core.chargeWp1.Max))
 	level = 2;

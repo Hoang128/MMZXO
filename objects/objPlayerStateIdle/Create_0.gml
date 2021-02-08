@@ -212,35 +212,5 @@ function fncChangeToZXStates()
 			if (abs(hspd) > 0)	hspd -= dashAccDown * charDir;
 			if ((hspd * charDir) <= 0)	hspd = 0;
 		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
-		{
-			fncPerformWeapon1();
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.HELD))
-		{
-			fncChargeWeapon(1);
-		}
-		
-		if (!fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.HELD))
-		{
-			fncReleaseWeapon(1);
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
-		{
-			fncPerformWeapon2();
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
-		{
-			fncChargeWeapon(2);
-		}
-		
-		if (!fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
-		{
-			fncReleaseWeapon(2);
-		}
 	}
 }

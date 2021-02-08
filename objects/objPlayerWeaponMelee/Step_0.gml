@@ -18,7 +18,8 @@ else
 	
 	if (!inited)
 	{
-		fncSetupSprite();
+		fncSetupResources();
+		audio_play_sound_on(global.emitterSFX.source, sfx, false, false);
 		inited = true;
 	}
 	

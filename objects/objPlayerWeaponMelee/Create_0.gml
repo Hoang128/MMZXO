@@ -9,6 +9,7 @@ hit = 0;
 core = noone;
 inited = false;
 spriteWeapon = noone;
+sfx = noone;
 
 image_speed = 0;
 imgSpd = 0;
@@ -20,6 +21,6 @@ function fncChangeImgSpd()
 	imgSpd = 1;
 }
 
-function fncSetupSprite()
+function fncSetupResources()
 {
 }

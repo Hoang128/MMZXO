@@ -153,25 +153,5 @@ function fncChangeToZXStates()
 	{
 		if (shotAnimPhase != 0)
 			vspd = 0;
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK1, KeyAction.PRESSED))
-		{
-			fncPerformWeapon1();
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.PRESSED))
-		{
-			fncPerformWeapon2();
-		}
-		
-		if (fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
-		{
-			fncChargeWeapon(2);
-		}
-		
-		if (!fncStaticHandleButton(KeyMap.ATTACK2, KeyAction.HELD))
-		{
-			fncReleaseWeapon(2);
-		}
 	}
 }

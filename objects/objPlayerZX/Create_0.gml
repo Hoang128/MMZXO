@@ -199,8 +199,6 @@ function fncPerformWeapon1()
 			
 					sprPlayer.sprRun = sprPlayerZXSlashRun1;
 					sprite_index = sprPlayer.sprRun;
-			
-					audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 				}
 			}	break;
 		}

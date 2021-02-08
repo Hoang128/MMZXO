@@ -36,7 +36,6 @@ function fncPlayerZXSlashDashStart()
 		{
 			fncCreateMeleeWeapon(objZXDagger, sprZXSlashDashHitbox);
 		}
-		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 	}
 }
 

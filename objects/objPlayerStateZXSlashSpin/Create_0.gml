@@ -36,7 +36,6 @@ function fncPlayerZXSlashSpinStart()
 			fncCreateMeleeWeapon(objZXDagger, sprZXSlashSpinHitbox);
 			weaponSlash.destroyWhenChangeState = true;
 		}
-		audio_play_sound_on(global.emitterSFX.source, vfxVentSlash1, false, false);
 	}
 }
 
