@@ -137,6 +137,7 @@ function fncPerformWeapon1()
 			}	break;
 		
 			case objPlayerStateJump:
+			case objPlayerStateWallKick:
 			{
 				with(playerStateMachine)
 				{
@@ -220,14 +221,18 @@ function fncPerformChargeWeapon1()
 					return;
 				}
 			}	break;
+			
 			case objPlayerStateJump:
 			{
 				with(playerStateMachine)
 				{
+					var currentDashJump = currentState.dashJump;
 					fncStateChange(objPlayerStateZXSlashChargeJump);	
+					currentState.dashJump = currentDashJump;
 					return;
 				}
 			}	break;
+			
 			case objPlayerStateDash:
 			{
 				with(playerStateMachine)
@@ -239,51 +244,78 @@ function fncPerformChargeWeapon1()
 					return;
 				}
 			}	break;
+			
+			case objPlayerStateSlide:
+			{
+				var startFrame = image_index;
+				if (sprite_index == sprPlayer.sprSlide)
+						startFrame = 4;
+				with(playerStateMachine)
+				{
+					var currentDustEff = noone;
+				
+					if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
+						currentDustEff = currentState.slideEff;
+				
+					currentState.transToSlideState = true;
+					fncStateChange(objPlayerStateZXSlashChargeSlide);
+					currentState.startFrame = startFrame;
+					currentState.slideEff = currentDustEff;
+					return;
+				}
+			}	break;
 		}
 	}
 }
 
 function fncPerformWeapon2()
 {
-	if (canShot == 1)
+	if (weaponMeleeMgr.weaponSlash == noone)
 	{
-		flareShotPhase = 1;
-		shotAnimPhase = 1;
-		flareShotTime = flareShotTimeMax;
-		fncChangeMoveSpriteToShot(1);
-		var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
-		busterCreater.buster = objZXBusterNor;
-		busterCreater.core = self.id;
-		if (rapidCount > 0)
-			rapidCount--;
-		if (rapidCount == 0)
-			canShot = -waitShotLong;
-		else
-			canShot = -waitShot;
+		if (canShot == 1)
+		{
+			flareShotPhase = 1;
+			shotAnimPhase = 1;
+			flareShotTime = flareShotTimeMax;
+			fncChangeMoveSpriteToShot(1);
+			var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+			busterCreater.buster = objZXBusterNor;
+			busterCreater.core = self.id;
+			if (rapidCount > 0)
+				rapidCount--;
+			if (rapidCount == 0)
+				canShot = -waitShotLong;
+			else
+				canShot = -waitShot;
+		}
 	}
 }
 
 function fncPerformChargeWeapon2()
 {
-	if (canShot == 1)
+	if (weaponMeleeMgr.weaponSlash == noone)
 	{
-		flareShotPhase = 1;
-		shotAnimPhase = 1;
-		flareShotTime = flareShotTimeMax;
-		fncChangeMoveSpriteToShot(1);
-		if (chargeWp2.Current < chargeWp2.Max)
+		if (canShot == 1)
 		{
-			var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
-			busterCreater.buster = objZXBusterC1;
-			busterCreater.core = self.id;
+			flareShotPhase = 1;
+			shotAnimPhase = 1;
+			flareShotTime = flareShotTimeMax;
+			fncChangeMoveSpriteToShot(1);
+			if (chargeWp2.Current < chargeWp2.Max)
+			{
+				var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+				busterCreater.buster = objZXBusterC1;
+				busterCreater.core = self.id;
+			}
+			else if (chargeWp2.Current >= chargeWp2.Max)
+			{
+				var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+				busterCreater.buster = objZXBusterC2;
+				busterCreater.core = self.id;
+			}
+			canShot = -waitShotLong;
 		}
-		else if (chargeWp2.Current >= chargeWp2.Max)
-		{
-			var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
-			busterCreater.buster = objZXBusterC2;
-			busterCreater.core = self.id;
-		}
-		canShot = -waitShotLong;
+		
 	}
 }
 

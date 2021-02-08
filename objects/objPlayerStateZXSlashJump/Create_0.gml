@@ -61,55 +61,57 @@ function fncPlayerZXSlashJumpRun()
 		}
 		return;
 	}
-	
-	with (core.id)
+	else
 	{
-		if (hMove != 0)
+		with (core.id)
 		{
-			charDir = hMove;
-		}
-		
-		var moveSpd = runSpd;
-		if (other.dashJump)
-			moveSpd = dashSpd;
-		
-		hspd = moveSpd * hMove * jumpHspdRatio;
-		
-		if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
-		{
-			if (vspd < 0) vspd = 0;
-		}
-	
-		if (vspd >= 0)
-		{
-			if (place_meeting(x + charDir, y, objBlock))
+			if (hMove != 0)
 			{
-				if (hMove == charDir)
+				charDir = hMove;
+			}
+		
+			var moveSpd = runSpd;
+			if (other.dashJump)
+				moveSpd = dashSpd;
+		
+			hspd = moveSpd * hMove * jumpHspdRatio;
+		
+			if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
+			{
+				if (vspd < 0) vspd = 0;
+			}
+	
+			if (vspd >= 0)
+			{
+				if (place_meeting(x + charDir, y, objBlock))
 				{
+					if (hMove == charDir)
+					{
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateSlide);
+						}
+						with (other)	return;
+					}
+				}
+			
+				if (physic.onGround)
+				{
+					sprite_index = sprPlayer.sprLand;
+					image_index = 0;
+				
+					runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
+					runSFXPlayer.core = self.id;
 					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				
 					with(other.stateMachine)
 					{
-						fncStateChange(objPlayerStateSlide);
+						fncStateChange(objPlayerStateIdle);
+						currentState.lastState = "jump";
 					}
 					with (other)	return;
 				}
-			}
-			
-			if (physic.onGround)
-			{
-				sprite_index = sprPlayer.sprLand;
-				image_index = 0;
-				
-				runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
-				runSFXPlayer.core = self.id;
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-				
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateIdle);
-					currentState.lastState = "jump";
-				}
-				with (other)	return;
 			}
 		}
 	}

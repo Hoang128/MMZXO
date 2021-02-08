@@ -41,37 +41,6 @@ function fncPlayerZXSlashDashStart()
 
 function fncPlayerZXSlashDashRun()
 {
-	with (core.id)
-	{
-		if (other.airDash)
-		{
-			if (fncIsOnGround(2))
-			{
-				other.airDash = false;
-				physic.gravAffect = true;
-			}
-		}
-		else
-		{
-			if (!physic.onGround)
-			{
-				jumpTime--;
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateJump);
-					return;
-				}
-			}
-		}
-		
-		if (image_index < 6)
-		{
-			if (abs(hspd) < abs(dashSpd))
-				hspd += dashSlashAccUp * charDir;
-		}
-	}
-	
 	if (slashEnd)
 	{
 		if (airDash)
@@ -89,6 +58,39 @@ function fncPlayerZXSlashDashRun()
 				fncStateChange(objPlayerStateIdle);
 				currentState.lastState = "slash dash";
 				return;
+			}
+		}
+	}
+	else
+	{
+		with (core.id)
+		{
+			if (other.airDash)
+			{
+				if (fncIsOnGround(2))
+				{
+					other.airDash = false;
+					physic.gravAffect = true;
+				}
+			}
+			else
+			{
+				if (!physic.onGround)
+				{
+					jumpTime--;
+					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateJump);
+						return;
+					}
+				}
+			}
+		
+			if (image_index < 6)
+			{
+				if (abs(hspd) < abs(dashSpd))
+					hspd += dashSlashAccUp * charDir;
 			}
 		}
 	}

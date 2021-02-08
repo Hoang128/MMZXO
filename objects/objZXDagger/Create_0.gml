@@ -81,6 +81,15 @@ function fncSetupResources()
 			sfx = vfxVentSlashCharge;
 			spriteWeapon = sprZXSlashChargeJumpImg;		
 		}	break;
-		
+		case sprZXSlashChargeSlideHitbox:
+		{
+			sfx = vfxVentSlashCharge;
+			spriteWeapon = sprZXSlashChargeSlideImg;		
+		}	break;
+		case sprZXSlashChargeClimbHitbox:
+		{
+			sfx = vfxVentSlashCharge;
+			spriteWeapon = sprZXSlashChargeClimbImg;		
+		}	break;
 	}
 }

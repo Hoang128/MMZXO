@@ -62,53 +62,55 @@ function fncPlayerZXSlashChargeJumpRun()
 		}
 		return;
 	}
-	
-	with (core.id)
-	{
-		if (hMove != 0)
+	else
+	{	
+		with (core.id)
 		{
-			charDir = hMove;
-		}
-		
-		var moveSpd = runSpd;
-		if (other.dashJump)
-			moveSpd = dashSpd;
-		
-		hspd = moveSpd * hMove * jumpHspdRatio;
-		
-		if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
-		{
-			if (vspd < 0) vspd = 0;
-		}
-	
-		if (vspd >= 0)
-		{
-			if (place_meeting(x + charDir, y, objBlock))
+			if (hMove != 0)
 			{
-				if (hMove == charDir)
+				charDir = hMove;
+			}
+		
+			var moveSpd = runSpd;
+			if (other.dashJump)
+				moveSpd = dashSpd;
+		
+			hspd = moveSpd * hMove * jumpHspdRatio;
+		
+			if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
+			{
+				if (vspd < 0) vspd = 0;
+			}
+	
+			if (vspd >= 0)
+			{
+				if (place_meeting(x + charDir, y, objBlock))
 				{
+					if (hMove == charDir)
+					{
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateSlide);
+						}
+						with (other)	return;
+					}
+				}
+			
+				if (physic.onGround)
+				{	
+					runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
+					runSFXPlayer.core = self.id;
 					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+					weaponMeleeMgr.enableNextSFX = false;
+				
 					with(other.stateMachine)
 					{
-						fncStateChange(objPlayerStateSlide);
+						fncStateChange(objPlayerStateZXSlashChargeGround);
+						currentState.lastState = "slash charge jump";
 					}
 					with (other)	return;
 				}
-			}
-			
-			if (physic.onGround)
-			{	
-				runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
-				runSFXPlayer.core = self.id;
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-				weaponMeleeMgr.enableNextSFX = false;
-				
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateZXSlashChargeGround);
-					currentState.lastState = "slash charge jump";
-				}
-				with (other)	return;
 			}
 		}
 	}

@@ -49,55 +49,6 @@ function fncPlayerZXSlashSpinRun()
 			shadowEffCreater.core = self.core;
 		}
 	}
-	with (core.id)
-	{
-		if (hMove != 0)
-		{
-			charDir = hMove;
-		}
-		
-		var moveSpd = runSpd;
-		if (other.dashJump)
-			moveSpd = dashSpd;
-		
-		hspd = moveSpd * hMove * jumpHspdRatio;
-		
-		if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
-		{
-			if (vspd < 0) vspd = 0;
-		}
-	
-		if (vspd >= 0)
-		{
-			if (place_meeting(x + charDir, y, objBlock))
-			{
-				if (hMove == charDir)
-				{
-					with(other.stateMachine)
-					{
-						fncStateChange(objPlayerStateSlide);
-						return;
-					}
-				}
-			}
-			
-			if (physic.onGround)
-			{
-				sprite_index = sprPlayer.sprLand;
-				image_index = 0;
-				
-				runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
-				runSFXPlayer.core = self.id;
-				
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateIdle);
-					return;
-				}
-			}
-		}
-	}
-	
 	if (slashEnd)
 	{
 		with(stateMachine)
@@ -106,6 +57,57 @@ function fncPlayerZXSlashSpinRun()
 			fncStateChange(objPlayerStateJump);
 			currentState.dashJump = currentDashJump;
 			return;
+		}
+	}
+	else
+	{
+		with (core.id)
+		{
+			if (hMove != 0)
+			{
+				charDir = hMove;
+			}
+		
+			var moveSpd = runSpd;
+			if (other.dashJump)
+				moveSpd = dashSpd;
+		
+			hspd = moveSpd * hMove * jumpHspdRatio;
+		
+			if (!fncStaticHandleButton(KeyMap.JUMP, KeyAction.HELD))
+			{
+				if (vspd < 0) vspd = 0;
+			}
+	
+			if (vspd >= 0)
+			{
+				if (place_meeting(x + charDir, y, objBlock))
+				{
+					if (hMove == charDir)
+					{
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateSlide);
+							return;
+						}
+					}
+				}
+			
+				if (physic.onGround)
+				{
+					sprite_index = sprPlayer.sprLand;
+					image_index = 0;
+				
+					runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
+					runSFXPlayer.core = self.id;
+				
+					with(other.stateMachine)
+					{
+						fncStateChange(objPlayerStateIdle);
+						return;
+					}
+				}
+			}
 		}
 	}
 }

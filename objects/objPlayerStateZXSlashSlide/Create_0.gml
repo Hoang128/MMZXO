@@ -76,54 +76,57 @@ function fncPlayerZXSlashSlideRun()
 			
 			return;
 		}
-		
-		if (image_index > 4)
-		{
-			if (other.slideEff == noone)
-			{
-				other.slideEff = instance_create_depth(x + charDir * 12, y + 4, depth - 1, objPlayerSlideEff);
-				other.slideEff.core = self.id;
-			}
-		}
-		
-		if (vspd < slideSpdMax)
-			vspd += slideAcc;
 		else
-			vspd = slideSpdMax;
-		
-		if (hMove != charDir)
 		{
-			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-			with(other.stateMachine)
+			if (image_index > 4)
 			{
-				fncStateChange(objPlayerStateJump);
+				if (other.slideEff == noone)
+				{
+					other.slideEff = instance_create_depth(x + charDir * 12, y + 4, depth - 1, objPlayerSlideEff);
+					other.slideEff.core = self.id;
+				}
 			}
-			with (other)	return;
-		}
 		
-		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
-		{
-			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-			with (other.stateMachine)
-			{
-				fncStateChange(objPlayerStateWallKick);
-				currentState.dashJump = keyboard_check(global.keyDash);
-			}
-			with (other)	return;
-		}
+			if (vspd < slideSpdMax)
+				vspd += slideAcc;
+			else
+				vspd = slideSpdMax;
 		
-		if (!place_meeting(x + charDir, y, objBlock) || fncIsOnGround(distanceOffSlide))
-		{
-			if (jumpTime > 0)
-				jumpTime--;
-			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-			with (other.stateMachine)
+			if (hMove != charDir)
 			{
-				fncStateChange(objPlayerStateJump);
-				return;
+				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				charDir *= -1;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+				}
+				with (other)	return;
 			}
+		
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+			{
+				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				with (other.stateMachine)
+				{
+					fncStateChange(objPlayerStateWallKick);
+					currentState.dashJump = keyboard_check(global.keyDash);
+				}
+				with (other)	return;
+			}
+		
+			if (!place_meeting(x + charDir, y, objBlock) || fncIsOnGround(distanceOffSlide))
+			{
+				if (jumpTime > 0)
+					jumpTime--;
+				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				with (other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
 			
-			with (other)	return;
+				with (other)	return;
+			}
 		}
 	}
 }

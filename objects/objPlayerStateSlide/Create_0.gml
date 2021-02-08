@@ -80,6 +80,7 @@ function fncPlayerSlideRun()
 		
 		if (hMove != charDir)
 		{
+			charDir *= -1;
 			with(other.stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);

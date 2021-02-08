@@ -48,19 +48,21 @@ function fncPlayerZXSlashClimbRun()
 			return;
 		}
 	}
-	
-	with (core.id)
+	else
 	{
-		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+		with (core.id)
 		{
-			vspd = 0;
-			canClimb = -canClimbDelayTime;
-			jumpTime--;
-			weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-			with(other.stateMachine)
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
-				fncStateChange(objPlayerStateJump);
-				return;
+				vspd = 0;
+				canClimb = -canClimbDelayTime;
+				jumpTime--;
+				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				with(other.stateMachine)
+				{
+					fncStateChange(objPlayerStateJump);
+					return;
+				}
 			}
 		}
 	}
