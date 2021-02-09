@@ -12,5 +12,6 @@ if (instance_exists(objPlayerZX))
 	draw_text(4, 120, "charge current 2 = " + string(objPlayerZX.chargeWp2.Current));
 	draw_text(4, 144, "sprite index = " + string(objPlayerZX.sprite_index));
 	draw_text(4, 168, "image index = " + string(objPlayerZX.image_index));
-	draw_text(4, 192, "state index = " + string(objPlayerZX.playerStateMachine.currentState.object_index));
+	draw_text(4, 192, "state index = " + string(objPlayerZX.weaponMeleeMgr));
+	draw_text(4, 216, "state index = " + string(objPlayerZX.weaponMeleeMgr.weaponSlash));
 }

@@ -57,7 +57,8 @@ function fncPlayerZXSlashClimbRun()
 				vspd = 0;
 				canClimb = -canClimbDelayTime;
 				jumpTime--;
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				if (instance_exists(weaponMeleeMgr.weaponSlash))
+					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);

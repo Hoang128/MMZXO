@@ -78,7 +78,8 @@ function fncPlayerZXSlashDashRun()
 				if (!physic.onGround)
 				{
 					jumpTime--;
-					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+					if (instance_exists(weaponMeleeMgr.weaponSlash))
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 					with(other.stateMachine)
 					{
 						fncStateChange(objPlayerStateJump);

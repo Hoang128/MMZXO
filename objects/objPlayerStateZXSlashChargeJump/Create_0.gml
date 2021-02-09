@@ -6,6 +6,7 @@ event_inherited();
 slashEnd = false;
 slashNext = false;
 dashJump = false;
+lastState = "default";
 shadowEffCreater = noone;
 
 function fncStateStart()
@@ -17,6 +18,7 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	fncStateInit();
 	fncPlayerZXSlashChargeJumpRun();
 	fncChangeToUniqueStates();
 }
@@ -26,12 +28,46 @@ function fncStateEnd()
 	fncPlayerZXSlashChargeJumpEnd();
 }
 
+function fncStateInit()
+{
+	if (!inited)
+	{
+		switch (lastState)
+		{
+			case "default":
+			{
+				with (core.id)
+					image_index = 0;
+			}	break;
+			case "slash charge slide":
+			{
+				with (core.id)
+				{
+					if (image_index >= 5)
+					{
+						image_index -= 3;
+					}
+					else
+						image_index = 0;
+				}
+			}	break;
+			case "slash charge climb":
+			{
+				with (core.id)
+				{
+					image_index ++;
+				}
+			}	break;
+		}
+		inited = true;
+	}
+}
+
 function fncPlayerZXSlashChargeJumpStart()
 {
 	with(core.id)
 	{
 		sprite_index = sprPlayerZXSlashChargeJump;
-		image_index = 0;
 		
 		with (weaponMeleeMgr)
 		{
@@ -86,14 +122,33 @@ function fncPlayerZXSlashChargeJumpRun()
 			{
 				if (place_meeting(x + charDir, y, objBlock))
 				{
-					if (hMove == charDir)
+					if (!fncIsOnGround(distanceOffSlide))
 					{
-						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-						with(other.stateMachine)
+						if (hMove == charDir)
 						{
-							fncStateChange(objPlayerStateSlide);
+							if (image_index < 8)
+							{
+								if (instance_exists(weaponMeleeMgr.weaponSlash))
+								{
+									weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+									weaponMeleeMgr.enableNextSFX = false;
+								}
+								with (other.stateMachine)
+								{
+									fncStateChange(objPlayerStateZXSlashChargeSlide);
+									currentState.lastState = "slash charge jump";
+									return;
+								}
+							}
+							else
+							{
+								with (other.stateMachine)
+								{
+									fncStateChange(objPlayerStateSlide);
+									return;
+								}
+							}
 						}
-						with (other)	return;
 					}
 				}
 			
@@ -101,9 +156,12 @@ function fncPlayerZXSlashChargeJumpRun()
 				{	
 					runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
 					runSFXPlayer.core = self.id;
-					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-					weaponMeleeMgr.enableNextSFX = false;
-				
+					if (instance_exists(weaponMeleeMgr.weaponSlash))
+					{
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+						weaponMeleeMgr.enableNextSFX = false;
+					}
+					
 					with(other.stateMachine)
 					{
 						fncStateChange(objPlayerStateZXSlashChargeGround);

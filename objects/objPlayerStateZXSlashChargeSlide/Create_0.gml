@@ -7,6 +7,7 @@ slideEff = noone;
 transToSlideState = false;
 startFrame = 0;
 slashEnd = false;
+lastState = "default";
 
 function fncStateStart()
 {
@@ -31,20 +32,33 @@ function fncStateInit()
 {
 	if (!inited)
 	{
-		with (core.id)
+		switch (lastState)
 		{
-			image_index = other.startFrame;
+			case "default":
+			{
+				with (core.id)
+				{
+					image_index = other.startFrame;
+				}
+			}	break;
+			case "slash charge jump":
+			{
+				with (core.id)
+				{
+					image_index += 3;
+				}
+			}	break;
 		}
 		inited = true;
 	}
 }
+
 
 function fncPlayerZXSlashChargeSlideStart()
 {
 	with (core.id)
 	{
 		sprite_index = sprPlayerZXSlashChargeSlide;
-		image_index = 0;
 		
 		with (weaponMeleeMgr)
 		{
@@ -95,22 +109,58 @@ function fncPlayerZXSlashChargeSlideRun()
 		
 			if (hMove != charDir)
 			{
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				charDir *= -1;
-				with(other.stateMachine)
+				if (image_index < 11)
 				{
-					fncStateChange(objPlayerStateJump);
+					if (instance_exists(weaponMeleeMgr.weaponSlash))
+					{
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+						weaponMeleeMgr.enableNextSFX = false;
+					}
+					with (other.stateMachine)
+					{
+						fncStateChange(objPlayerStateZXSlashChargeJump);
+						currentState.lastState = "slash charge slide";
+						return;
+					}
+				}
+				else
+				{
+					with (other.stateMachine)
+					{
+						fncStateChange(objPlayerStateJump);
+						return;
+					}
 				}
 				with (other)	return;
 			}
 		
 			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-				with (other.stateMachine)
+				if (image_index < 11)
 				{
-					fncStateChange(objPlayerStateWallKick);
-					currentState.dashJump = keyboard_check(global.keyDash);
+					if (instance_exists(weaponMeleeMgr.weaponSlash))
+					{
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+						weaponMeleeMgr.enableNextSFX = false;
+					}
+					
+					with (other.stateMachine)
+					{
+						fncStateChange(objPlayerStateZXSlashChargeJump);
+						currentState.lastState = "slash charge slide";
+						currentState.dashJump = keyboard_check(global.keyDash);
+						return;
+					}
+				}
+				else
+				{
+					with (other.stateMachine)
+					{
+						fncStateChange(objPlayerStateJump);
+						currentState.dashJump = keyboard_check(global.keyDash);
+						return;
+					}
 				}
 				with (other)	return;
 			}
@@ -119,11 +169,27 @@ function fncPlayerZXSlashChargeSlideRun()
 			{
 				if (jumpTime > 0)
 					jumpTime--;
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-				with (other.stateMachine)
+				if (image_index < 11)
 				{
-					fncStateChange(objPlayerStateJump);
-					return;
+					if (instance_exists(weaponMeleeMgr.weaponSlash))
+					{
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+						weaponMeleeMgr.enableNextSFX = false;
+					}
+					with (other.stateMachine)
+					{
+						fncStateChange(objPlayerStateZXSlashChargeJump);
+						currentState.lastState = "slash charge slide";
+						return;
+					}
+				}
+				else
+				{
+					with (other.stateMachine)
+					{
+						fncStateChange(objPlayerStateJump);
+						return;
+					}
 				}
 			
 				with (other)	return;

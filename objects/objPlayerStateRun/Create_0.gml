@@ -50,6 +50,8 @@ function fncPlayerRunRun()
 			}
 		}
 		
+		hspd = runSpd * charDir;
+		
 		if (weaponMeleeMgr.weaponSlash == noone)
 		{
 			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
@@ -85,7 +87,6 @@ function fncPlayerRunRun()
 				}
 			}
 		
-			hspd = runSpd * charDir;
 			if (hMove == 0)
 			{
 				with(other.stateMachine)

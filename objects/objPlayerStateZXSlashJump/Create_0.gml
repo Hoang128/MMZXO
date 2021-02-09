@@ -85,14 +85,18 @@ function fncPlayerZXSlashJumpRun()
 			{
 				if (place_meeting(x + charDir, y, objBlock))
 				{
-					if (hMove == charDir)
+					if (!fncIsOnGround(distanceOffSlide))
 					{
-						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
-						with(other.stateMachine)
+						if (hMove == charDir)
 						{
-							fncStateChange(objPlayerStateSlide);
+							if (instance_exists(weaponMeleeMgr.weaponSlash))
+								weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+							with(other.stateMachine)
+							{
+								fncStateChange(objPlayerStateSlide);
+							}
+							with (other)	return;
 						}
-						with (other)	return;
 					}
 				}
 			
@@ -103,7 +107,8 @@ function fncPlayerZXSlashJumpRun()
 				
 					runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
 					runSFXPlayer.core = self.id;
-					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+					if (instance_exists(weaponMeleeMgr.weaponSlash))
+						weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				
 					with(other.stateMachine)
 					{

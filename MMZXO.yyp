@@ -238,6 +238,7 @@
     {"id":{"name":"Sprite28","path":"sprites/Sprite28/Sprite28.yy",},"order":3,},
     {"id":{"name":"sprZXSlashSpinImg","path":"sprites/sprZXSlashSpinImg/sprZXSlashSpinImg.yy",},"order":8,},
     {"id":{"name":"sprPlayerZXLandShot3","path":"sprites/sprPlayerZXLandShot3/sprPlayerZXLandShot3.yy",},"order":16,},
+    {"id":{"name":"objPlayerStateZXSlashChargeClimb","path":"objects/objPlayerStateZXSlashChargeClimb/objPlayerStateZXSlashChargeClimb.yy",},"order":11,},
     {"id":{"name":"sprPlayerZXDashStartShot1","path":"sprites/sprPlayerZXDashStartShot1/sprPlayerZXDashStartShot1.yy",},"order":7,},
     {"id":{"name":"sfxElectricSpark","path":"sounds/sfxElectricSpark/sfxElectricSpark.yy",},"order":1,},
     {"id":{"name":"sprPlayerZXDashEndShot2","path":"sprites/sprPlayerZXDashEndShot2/sprPlayerZXDashEndShot2.yy",},"order":3,},

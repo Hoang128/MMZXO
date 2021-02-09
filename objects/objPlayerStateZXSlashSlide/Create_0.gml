@@ -94,7 +94,8 @@ function fncPlayerZXSlashSlideRun()
 		
 			if (hMove != charDir)
 			{
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				if (instance_exists(weaponMeleeMgr.weaponSlash))
+					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				charDir *= -1;
 				with(other.stateMachine)
 				{
@@ -105,7 +106,8 @@ function fncPlayerZXSlashSlideRun()
 		
 			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				if (instance_exists(weaponMeleeMgr.weaponSlash))
+					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				with (other.stateMachine)
 				{
 					fncStateChange(objPlayerStateWallKick);
@@ -118,7 +120,8 @@ function fncPlayerZXSlashSlideRun()
 			{
 				if (jumpTime > 0)
 					jumpTime--;
-				weaponMeleeMgr.weaponSlash.playerStateChanged = true;
+				if (instance_exists(weaponMeleeMgr.weaponSlash))
+					weaponMeleeMgr.weaponSlash.playerStateChanged = true;
 				with (other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);

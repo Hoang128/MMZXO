@@ -132,11 +132,14 @@ function fncPlayerJumpRun()
 			
 			if (place_meeting(x + charDir, y, objBlock))
 			{
-				if (hMove == charDir)
+				if (!fncIsOnGround(distanceOffSlide))
 				{
-					with(other.stateMachine)
+					if (hMove == charDir)
 					{
-						fncStateChange(objPlayerStateSlide);
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateSlide);
+						}
 					}
 				}
 			}
