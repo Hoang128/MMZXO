@@ -7,3 +7,4 @@ childObjectPalNumber = 0;
 child = noone;
 
 subInit = false;
+visible = false;

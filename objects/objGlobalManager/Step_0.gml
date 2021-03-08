@@ -10,6 +10,7 @@ else if (slowEffTime == 0)
 }
 
 //Deactivate unecessary objects
+//Active object inside zone
 if (activateCount > 0)
 {
 	activateCount--;
@@ -20,14 +21,15 @@ else
 	instance_activate_object(objGameManager);
 	instance_activate_object(objBlock);
 	instance_activate_object(objBlockThin);
-	instance_activate_object(objStateMachine);
+	instance_activate_object(objEnemySpawmer);
 	instance_activate_object(objState);
+	instance_activate_object(objStateMachine);
 	
 	instance_activate_object(objPlayerBasic);
 	
 	//Special Enemies
 	#region
-	
+
 	
 	#endregion
 	

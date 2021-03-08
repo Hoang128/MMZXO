@@ -1,5 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+/// @description Destroy
+if (parent != noone)
+{
+	with (parent)
+		child = noone;
+}
 
 if (createDestroyEff)
 {

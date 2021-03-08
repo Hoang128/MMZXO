@@ -51,7 +51,7 @@ function fncPlayerWallKickRun()
 	{
 		if (shadowEffCreater == noone)
 		{
-			shadowEffCreater = instance_create_depth(x, y, depth - 1, objPlayerShadowCreater);
+			shadowEffCreater = instance_create_depth(core.x, core.y, depth - 1, objPlayerShadowCreater);
 			shadowEffCreater.core = self.core;
 		}
 	}

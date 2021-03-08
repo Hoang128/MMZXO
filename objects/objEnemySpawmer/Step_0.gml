@@ -2,6 +2,8 @@
 
 event_inherited();
 
+if (visible)	visible = false;
+
 var xx = VIEW_X - VIEW_W / 2;
 var yy = VIEW_Y - VIEW_H / 2;
 var ww = VIEW_W * 2;

@@ -12,6 +12,8 @@ guard = 0;
 
 damageTimmer = -10;
 
+parent = noone;
+
 blink = 0;
 blinkMax = 8;
 blinkTime = 0;

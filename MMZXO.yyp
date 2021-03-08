@@ -119,6 +119,7 @@
     {"id":{"name":"sprZXSlashCombo1Hitbox","path":"sprites/sprZXSlashCombo1Hitbox/sprZXSlashCombo1Hitbox.yy",},"order":1,},
     {"id":{"name":"objMoveImpactEff","path":"objects/objMoveImpactEff/objMoveImpactEff.yy",},"order":0,},
     {"id":{"name":"objBlockThinH","path":"objects/objBlockThinH/objBlockThinH.yy",},"order":1,},
+    {"id":{"name":"objS_GunGuardian","path":"objects/objS_GunGuardian/objS_GunGuardian.yy",},"order":1,},
     {"id":{"name":"sprZXSlashCombo3Hitbox","path":"sprites/sprZXSlashCombo3Hitbox/sprZXSlashCombo3Hitbox.yy",},"order":2,},
     {"id":{"name":"Sound28","path":"sounds/Sound28/Sound28.yy",},"order":12,},
     {"id":{"name":"sprPlayerZXDashEndShot3","path":"sprites/sprPlayerZXDashEndShot3/sprPlayerZXDashEndShot3.yy",},"order":4,},
