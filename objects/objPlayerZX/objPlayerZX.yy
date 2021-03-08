@@ -33,7 +33,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Model ZX",
-    "path": "folders/Objects/Player/Player Characters/Model ZX.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model ZX.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerZX",

@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Guardian",
-    "path": "folders/Objects/Enemy/Guardian.yy",
+    "path": "folders/Objects/Visible InGame/Enemy/Guardian.yy",
   },
   "resourceVersion": "1.0",
   "name": "objE_GunGuardian",

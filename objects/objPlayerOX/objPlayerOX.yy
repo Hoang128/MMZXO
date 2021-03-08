@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Model OX",
-    "path": "folders/Objects/Player/Player Characters/Model OX.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model OX.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerOX",

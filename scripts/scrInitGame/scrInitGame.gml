@@ -4,6 +4,7 @@ function fncStaticInitGame(){
 	fncStaticInitDevParams();
 	fncStaticInitWorldParams();
 	fncStaticInitInputParams();
+	fncStaticInitScreenParams();
 	fncStaticInitSoundParams();
 	fncStaticInitMacros();
 }
@@ -23,10 +24,10 @@ function fncStaticInitMacros()
 	#macro VIEW_Y camera_get_view_y(view_camera)
 	#macro VPORT_W 1920
 	#macro VPORT_H 1080
-	#macro ACTIVE_X camera_get_view_x(view_camera) - 340 / 2
-	#macro ACTIVE_Y camera_get_view_y(view_camera) - 192 / 2
-	#macro ACTIVE_W 340 * 2
-	#macro ACTIVE_H 192 * 2
+	#macro ACTIVE_X camera_get_view_x(view_camera) - 340
+	#macro ACTIVE_Y camera_get_view_y(view_camera) - 192
+	#macro ACTIVE_W 340 * 3
+	#macro ACTIVE_H 192 * 3
 	
 }
 
@@ -49,6 +50,11 @@ function fncStaticInitWorldParams()
 		x : 0,
 		y : 0
 	};
+}
+
+function fncStaticInitScreenParams()
+{
+	window_set_size(1920, 1080);
 }
 
 function fncStaticInitSoundParams()

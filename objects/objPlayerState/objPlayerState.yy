@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Player Characters",
-    "path": "folders/Objects/Player/Player Characters.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerState",

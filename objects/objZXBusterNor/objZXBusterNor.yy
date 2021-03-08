@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "ZX",
-    "path": "folders/Objects/Player/Player Weapons/ZX.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Weapons/ZX.yy",
   },
   "resourceVersion": "1.0",
   "name": "objZXBusterNor",

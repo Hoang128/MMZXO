@@ -43,3 +43,7 @@ if (global.debug == true)
 		instance_create_depth(x, y, depth, objDebug);
 	}
 }
+
+//Deactivate object variables
+activateCount = 0;
+activateMaxCount = 3;

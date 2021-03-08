@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Enemy",
-    "path": "folders/Objects/Enemy.yy",
+    "path": "folders/Objects/Visible InGame/Enemy.yy",
   },
   "resourceVersion": "1.0",
   "name": "objDummy",
