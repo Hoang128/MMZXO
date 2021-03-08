@@ -4,6 +4,21 @@
 global.debug = true;
 currentPlayer = noone;
 currentCamera = noone;
+slowEffTime = -10;
+
+function fncSetTimeScale(newTimeScale, time)
+{
+	if (time == 0)
+	{
+		slowEffTime = -10;
+	}
+	else
+	{
+		slowEffTime = time;
+	}
+	
+	global.timeScale = newTimeScale;	
+}
 
 function fncCreatePlayer(player)
 {

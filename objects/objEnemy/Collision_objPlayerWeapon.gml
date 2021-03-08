@@ -81,6 +81,10 @@ if (damageTimmer == -10)
 			else if (other.weaponType == PlayerWeaponType.MELEE)
 			{
 				createCollisionEffectMelee(other);
+				with (objGlobalManager)
+				{
+					fncSetTimeScale(0.5, 5);
+				}
 			}
 		
 			//Blink effect
