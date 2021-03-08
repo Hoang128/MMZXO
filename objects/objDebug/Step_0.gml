@@ -4,22 +4,27 @@ if (keyboard_check(ord("T")))
 {
 	if (keyboard_check_pressed(vk_subtract))
 	{
-		if (global.timeScale == 0.1)
+		if (global.timeScale == 0.01)
 		{
 			global.timeScale = 1;
 		}
 		else
-			global.timeScale -= 0.1;
+			global.timeScale -= 0.01;
 	}
 	else if (keyboard_check_pressed(vk_add))
 	{
 		if(global.timeScale == 1)
 		{
-			global.timeScale = 0.1;
+			global.timeScale = 0.01;
 		}
 		else
-			global.timeScale += 0.1;
+			global.timeScale += 0.01;
 	}
+}
+
+if (keyboard_check(ord("R")))
+{
+	room_restart();
 }
 
 if (keyboard_check(ord("L")))

@@ -68,7 +68,8 @@ function fncStaticInitInputParams()
 	global.input = 
 	{
 		keyboard : true,
-		gamepad : false
+		gamepad : false,
+		gamepadSlot : -1
 	};
 	fncStaticInitKeyboardParams();
 	fncStaticInitKeypadParams();
@@ -242,9 +243,56 @@ function fncStaticHandleButtonHeld(keyMap)
 	}
 	if (global.input.gamepad)
 	{
+		//show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
+		//show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
 		var keyInput = fncStaticGetKeyPadMap(keyMap);
-		if (gamepad_button_check(0, keyMap))
-		handled = true;
+		if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
+		{
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
+			{
+				show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) > 0)
+				{
+					show_debug_message("left analog right");
+					handled = true;
+				}
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
+			{
+				show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) < 0)
+				{
+					show_debug_message("left analog left");
+					handled = true;
+				}
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
+			{
+				show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) > 0)
+				{
+					show_debug_message("left analog up");
+					handled = true;
+				}
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
+			{
+				show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) < 0)
+				{
+					show_debug_message("left analog down");
+					handled = true;
+				}
+			}
+		}
+		else
+		{
+			if (gamepad_button_check(global.input.gamepadSlot, keyInput))
+				handled = true;
+		}
 	}
 	
 	return handled;
@@ -265,8 +313,37 @@ function fncStaticHandleButtonPressed(keyMap)
 	if (global.input.gamepad)
 	{
 		var keyInput = fncStaticGetKeyPadMap(keyMap);
-		if (gamepad_button_check_pressed(0, keyMap))
-			handled = true;
+		if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
+		{
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)
+					handled = true;
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)
+					handled = true;
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)
+					handled = true;
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)
+					handled = true;
+			}
+		}
+		else
+		{
+			if (gamepad_button_check_pressed(global.input.gamepadSlot, keyInput))
+				handled = true;
+		}
 	}
 	
 	return handled;
@@ -288,8 +365,37 @@ function fncStaticHandleButtonReleased(keyMap)
 	if (global.input.gamepad)
 	{
 		var keyInput = fncStaticGetKeyPadMap(keyMap);
-		if (gamepad_button_check_released(0, keyMap))
-			handled = true;
+		if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)) ||
+			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
+		{
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) != 1)
+					handled = true;
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) != -1)
+					handled = true;
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) != 1)
+					handled = true;
+			}
+			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
+			{
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) != -1)
+					handled = true;
+			}
+		}
+		else
+		{
+			if (gamepad_button_check_released(global.input.gamepadSlot, keyInput))
+				handled = true;
+		}
 	}
 	return handled;
 }
@@ -299,18 +405,18 @@ function fncStaticGetKeyBoardMap(keyboardMap)
 	var keyInput = noone;
 	switch (keyboardMap)
 	{
-		case KeyMap.RIGHT:		keyInput = global.keyRight;	break;
-		case KeyMap.LEFT:		keyInput = global.keyLeft;	break;
-		case KeyMap.DOWN:		keyInput = global.keyDown;	break;
-		case KeyMap.UP:			keyInput = global.keyUp;	break;
-		case KeyMap.DASH:		keyInput = global.keyDash;	break;
-		case KeyMap.JUMP:		keyInput = global.keyJump;	break;
-		case KeyMap.ATTACK1:	keyInput = global.keyAtk1;	break;
-		case KeyMap.ATTACK2:	keyInput = global.keyAtk2;	break;
+		case KeyMap.RIGHT:		keyInput = global.keyRight;		break;
+		case KeyMap.LEFT:		keyInput = global.keyLeft;		break;
+		case KeyMap.DOWN:		keyInput = global.keyDown;		break;
+		case KeyMap.UP:			keyInput = global.keyUp;		break;
+		case KeyMap.DASH:		keyInput = global.keyDash;		break;
+		case KeyMap.JUMP:		keyInput = global.keyJump;		break;
+		case KeyMap.ATTACK1:	keyInput = global.keyAtk1;		break;
+		case KeyMap.ATTACK2:	keyInput = global.keyAtk2;		break;
 		case KeyMap.CHANGE_L:	keyInput = global.keyChangeL;	break;
 		case KeyMap.CHANGE_R:	keyInput = global.keyChangeR;	break;
-		case KeyMap.MOVE_L:		keyInput = global.keyChangeL;	break;
-		case KeyMap.MOVE_R:		keyInput = global.keyChangeR;	break;
+		case KeyMap.MOVE_L:		keyInput = global.keyMoveL;		break;
+		case KeyMap.MOVE_R:		keyInput = global.keyMoveR;		break;
 	}
 	return keyInput;
 }
@@ -320,18 +426,18 @@ function fncStaticGetKeyPadMap(keyboardMap)
 	var keyInput = noone;
 	switch (keyboardMap)
 	{
-		case KeyMap.RIGHT:		keyInput = global.kpRight;	break;
-		case KeyMap.LEFT:		keyInput = global.kpLeft;	break;
-		case KeyMap.DOWN:		keyInput = global.kpDown;	break;
-		case KeyMap.UP:			keyInput = global.kpUp;	break;
-		case KeyMap.DASH:		keyInput = global.kpDash;	break;
-		case KeyMap.JUMP:		keyInput = global.kpJump;	break;
-		case KeyMap.ATTACK1:	keyInput = global.kpAtk1;	break;
-		case KeyMap.ATTACK2:	keyInput = global.kpAtk2;	break;
+		case KeyMap.RIGHT:		keyInput = global.kpRight;		break;
+		case KeyMap.LEFT:		keyInput = global.kpLeft;		break;
+		case KeyMap.DOWN:		keyInput = global.kpDown;		break;
+		case KeyMap.UP:			keyInput = global.kpUp;			break;
+		case KeyMap.DASH:		keyInput = global.kpDash;		break;
+		case KeyMap.JUMP:		keyInput = global.kpJump;		break;
+		case KeyMap.ATTACK1:	keyInput = global.kpAtk1;		break;
+		case KeyMap.ATTACK2:	keyInput = global.kpAtk2;		break;
 		case KeyMap.CHANGE_L:	keyInput = global.kpChangeL;	break;
 		case KeyMap.CHANGE_R:	keyInput = global.kpChangeR;	break;
-		case KeyMap.MOVE_L:		keyInput = global.kpChangeL;	break;
-		case KeyMap.MOVE_R:		keyInput = global.kpChangeR;	break;
+		case KeyMap.MOVE_L:		keyInput = global.kpMoveL;		break;
+		case KeyMap.MOVE_R:		keyInput = global.kpMoveR;		break;
 	}
 	return keyInput;
 }

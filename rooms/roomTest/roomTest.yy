@@ -20,6 +20,7 @@
         {"properties":[],"isDnd":false,"objectId":{"name":"objE_GunGuardian","path":"objects/objE_GunGuardian/objE_GunGuardian.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":592.0,"y":72.0,"resourceVersion":"1.0","name":"inst_3B517022","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"objE_GunGuardian","path":"objects/objE_GunGuardian/objE_GunGuardian.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":664.0,"y":72.0,"resourceVersion":"1.0","name":"inst_117CC457","tags":[],"resourceType":"GMRInstance",},
         {"properties":[],"isDnd":false,"objectId":{"name":"objE_GunGuardian","path":"objects/objE_GunGuardian/objE_GunGuardian.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":744.0,"y":72.0,"resourceVersion":"1.0","name":"inst_1EE8644","tags":[],"resourceType":"GMRInstance",},
+        {"properties":[],"isDnd":false,"objectId":{"name":"objDummy","path":"objects/objDummy/objDummy.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.125,"scaleY":1.375,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":60.0,"y":112.0,"resourceVersion":"1.0","name":"inst_34362C1A","tags":[],"resourceType":"GMRInstance",},
       ],"visible":true,"depth":-90,"userdefinedDepth":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Visible","tags":[],"resourceType":"GMRInstanceLayer",},
     {"instances":[
         {"properties":[],"isDnd":false,"objectId":{"name":"objBlock","path":"objects/objBlock/objBlock.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":43.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":184.0,"resourceVersion":"1.0","name":"inst_6116D798","tags":[],"resourceType":"GMRInstance",},
@@ -549,6 +550,7 @@
     {"name":"inst_3B517022","path":"rooms/roomTest/roomTest.yy",},
     {"name":"inst_117CC457","path":"rooms/roomTest/roomTest.yy",},
     {"name":"inst_1EE8644","path":"rooms/roomTest/roomTest.yy",},
+    {"name":"inst_34362C1A","path":"rooms/roomTest/roomTest.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

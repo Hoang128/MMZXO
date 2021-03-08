@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 if (damageTimmer > 0) damageTimmer -= TIME_SCALE;
+if ((damageTimmer <= 0) && (damageTimmer > -10)) damageTimmer = -10;
 
 if (blinkTime > 0)
 {

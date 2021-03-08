@@ -10,7 +10,7 @@ damage = 1;
 guardDir = 0;
 guard = 0;
 
-damageTimmer = -1;
+damageTimmer = -10;
 
 blink = 0;
 blinkMax = 8;
@@ -32,3 +32,13 @@ destroyPiece = {sprite : noone, number : 0};
 
 palette = noone;
 paletteNumber = 0;
+
+function createCollisionEffectMelee(playerDamageSource)
+{
+	var randomSpace = 5;
+	var pos = {x : self.x, y : self.y};
+	pos.x = clamp(playerDamageSource.x + (abs(playerDamageSource.sprite_width) - abs(playerDamageSource.sprite_xoffset)) * 0.75 * playerDamageSource.image_xscale, bbox_left, bbox_right);
+	pos.y = clamp((playerDamageSource.core.core.bbox_top + playerDamageSource.core.core.bbox_bottom) / 2, bbox_top, bbox_bottom);
+	var objSlash = instance_create_depth(pos.x, pos.y, depth - 1, objMeleeSlashEff);
+	objSlash.image_angle = random(randomSpace) * 180 / randomSpace;
+}

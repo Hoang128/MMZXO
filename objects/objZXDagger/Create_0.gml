@@ -29,7 +29,7 @@ function fncSetupResources()
 		case sprZXSlashDashHitbox:				
 		{
 			sfx = vfxVentSlash1;
-			spriteWeapon = sprZXSlashDashImg;			
+			spriteWeapon = sprZXSlashDashImg;	
 		}	break;
 		case sprZXSlashClimbHitbox:				
 		{
@@ -64,7 +64,7 @@ function fncSetupResources()
 		case sprZXSlashCombo2Hitbox:			
 		{
 			sfx = vfxVentSlash2;
-			spriteWeapon = sprZXSlashCombo2Img;			
+			spriteWeapon = sprZXSlashCombo2Img;		
 		}	break;
 		case sprZXSlashCombo3Hitbox:
 		{
@@ -84,7 +84,7 @@ function fncSetupResources()
 		case sprZXSlashChargeSlideHitbox:
 		{
 			sfx = vfxVentSlashCharge;
-			spriteWeapon = sprZXSlashChargeSlideImg;		
+			spriteWeapon = sprZXSlashChargeSlideImg;	
 		}	break;
 		case sprZXSlashChargeClimbHitbox:
 		{

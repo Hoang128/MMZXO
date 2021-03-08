@@ -1,8 +1,5 @@
 {
-  "spriteId": {
-    "name": "sprGuardianIdle",
-    "path": "sprites/sprGuardianIdle/sprGuardianIdle.yy",
-  },
+  "spriteId": null,
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

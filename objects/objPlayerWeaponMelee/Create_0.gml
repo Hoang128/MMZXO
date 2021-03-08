@@ -5,7 +5,11 @@
 event_inherited();
 
 hit = 0;
+maxTimmer = -10;
+markImageIndex = -1;
+canHitEnemy = true;
 
+weaponType = PlayerWeaponType.MELEE;
 core = noone;
 inited = false;
 spriteWeapon = noone;
