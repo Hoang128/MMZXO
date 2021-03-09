@@ -10,7 +10,20 @@ function fncStateRun()
 	{
 		targetObject = objGlobalManager.currentPlayer;
 		
-		x = targetObject.x;
-		y = targetObject.y;
+		movePos.x = targetObject.x;
+		movePos.y = targetObject.y;
+		
+		if (collision_rectangle(targetObject.bbox_left, targetObject.bbox_top, targetObject.bbox_right, targetObject.bbox_bottom, objLockCamZone, false, true))
+		{
+			var zone = collision_rectangle(targetObject.bbox_left, targetObject.bbox_top, targetObject.bbox_right, targetObject.bbox_bottom, objLockCamZone, false, true);
+			with(other.stateMachine)
+			{
+				fncStateChange(objViewStateZoneLock);
+				
+				currentState.zoneLock = zone;
+				
+				return;
+			}
+		}
 	}
 }

@@ -4,3 +4,19 @@ event_inherited();
 
 with (viewStateMachine)
 	fncStateHandle();
+	
+if (abs(x - movePos.x) >= camSpeed)
+{
+	x += sign(movePos.x - x) * camSpeed;
+}
+
+if (abs(x - movePos.x) < camSpeed)
+	x = movePos.x;
+	
+if (abs(y - movePos.y) >= camSpeed)
+{
+	y += sign(movePos.y - y) * camSpeed;
+}
+
+if (abs(y - movePos.y) < camSpeed)
+	y = movePos.y;

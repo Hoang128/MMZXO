@@ -4,6 +4,8 @@ viewStateMachine.core = self;
 viewStateMachine.coreType = "view";
 
 targetObject = noone;
+movePos = {x:0, y:0};
+camSpeed = 4;
 
 scrInitCamera();
 

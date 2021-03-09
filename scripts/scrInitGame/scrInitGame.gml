@@ -54,7 +54,7 @@ function fncStaticInitWorldParams()
 
 function fncStaticInitScreenParams()
 {
-	window_set_size(1920, 1080);
+	window_set_size(960, 540);
 }
 
 function fncStaticInitSoundParams()
