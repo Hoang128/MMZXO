@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 zoneLock = noone;
+spaceRatio = 1/2;
 
 function fncStateRun()
 {
@@ -32,7 +33,7 @@ function fncStateRun()
 			if (other.zoneLock.lockCam.horizontal)
 			{
 				if (abs(other.zoneLock.bbox_right - other.zoneLock.bbox_left) > VIEW_W)
-					movePos.x = clamp(targetObject.x, other.zoneLock.bbox_left + VIEW_W/2, other.zoneLock.bbox_right - VIEW_W/2);
+					movePos.x = clamp(targetObject.x, other.zoneLock.bbox_left + VIEW_W * other.spaceRatio, other.zoneLock.bbox_right - VIEW_W * other.spaceRatio);
 				else
 					movePos.x = (other.zoneLock.bbox_right + other.zoneLock.bbox_left) / 2;
 			}
@@ -41,8 +42,8 @@ function fncStateRun()
 			
 			if (other.zoneLock.lockCam.vertical)
 			{
-				if (abs(other.zoneLock.bbox_top - other.zoneLock.bbox_bottom) > VIEW_W)
-					movePos.y = clamp(targetObject.y, other.zoneLock.bbox_top + VIEW_W/2, other.zoneLock.bbox_bottom - VIEW_W/2);
+				if (abs(other.zoneLock.bbox_top - other.zoneLock.bbox_bottom) > VIEW_H)
+					movePos.y = clamp(targetObject.y, other.zoneLock.bbox_top + VIEW_H * other.spaceRatio, other.zoneLock.bbox_bottom - VIEW_H * other.spaceRatio);
 				else
 					movePos.y = (other.zoneLock.bbox_top + other.zoneLock.bbox_bottom) / 2;
 			}
