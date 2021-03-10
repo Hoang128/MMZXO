@@ -35,6 +35,11 @@ climbEndDelayMax = 5;
 climbDistance = 8;
 canClimbDelayTime = 5;
 
+inviAfterStunMax = 180;
+inviTime = 0;
+blinkTime = 0;
+blinkTimeMax = 20;
+
 chargeWp1 = {
 	Max : 90,
 	Mid : 30,
@@ -81,9 +86,15 @@ sprPlayer =
 	sprWallKick : sprPlayerZXWallKick,
 	sprClimbStart : sprPlayerZXClimbStart,
 	sprClimb : sprPlayerZXClimb,
-	sprClimbEnd : sprPlayerZXClimbEnd
+	sprClimbEnd : sprPlayerZXClimbEnd,
+	sprStunNor : sprPlayerZXStun1,
+	sprStunHard : sprPlayerZXStun2
 };
 
+vfxPlayer =
+{
+	vfxHurt : vfxVentHurt
+};
 
 //State machine
 playerStateMachine = instance_create_depth(x, y, depth, objStateMachine);
@@ -106,6 +117,20 @@ function fncSetupProperties()
 	}
 	else
 		canClimb = 1;
+		
+	if (inviTime > 0)
+	{
+		if (blinkTime > 0)
+			blinkTime -= TIME_SCALE;
+		else
+			blinkTime = blinkTimeMax;
+		inviTime -= TIME_SCALE;
+	}
+	else
+	{
+		blinkTime = 0;
+		inviTime = 0;
+	}
 }
 
 function fncChargeWeapon(weaponNumber)
