@@ -1,9 +1,5 @@
 /// @description Insert description here
 // You can write your code in this editor
-if (other.canHitEnemy)
-	{
-		show_debug_message("damage timmer = " + string(damageTimmer));
-	}
 
 if (damageTimmer == -10)
 {
@@ -19,10 +15,7 @@ if (damageTimmer == -10)
 			case Element.ICE:		realDamage -= armor.iceArmor;		break;
 			case Element.ELECT:		realDamage -= armor.electArmor;		break;
 		}
-		show_debug_message("other damage = " + string(other.damage));
-		show_debug_message("armor = " + string(armor.neutralArmor));
 		realDamage -= armor.neutralArmor;
-		show_debug_message("damage = " + string(realDamage));
 		if (realDamage < 0)	realDamage = 0;
 		if (other.isGuardBreaker == false)
 		{
@@ -54,12 +47,8 @@ if (damageTimmer == -10)
 		if (other.weaponType == PlayerWeaponType.MELEE)
 		{
 			other.hit++;
-			show_debug_message("from enemy: can hit enemy 1 = " + string(other.canHitEnemy));
-			show_debug_message("from enemy: image index = " + string(other.image_index));
-			show_debug_message("from enemy: image index mark = " + string(other.markImageIndex));
 			other.canHitEnemy = 0;
 			other.markImageIndex = other.image_index;
-			show_debug_message("from enemy: can hit enemy 2 = " + string(other.canHitEnemy));
 		}
 	
 		if (realDamage > 0)
