@@ -3,6 +3,7 @@
 function fncStaticInitGame(){
 	fncStaticInitDevParams();
 	fncStaticInitWorldParams();
+	fncStaticInitGeneralParams();
 	fncStaticInitInputParams();
 	fncStaticInitScreenParams();
 	fncStaticInitSoundParams();
@@ -50,6 +51,13 @@ function fncStaticInitWorldParams()
 		x : 0,
 		y : 0
 	};
+}
+
+function fncStaticInitGeneralParams()
+{
+	global.hpMax = 16;
+	global.mpMax = 16;
+	global.crystal = 0;
 }
 
 function fncStaticInitScreenParams()

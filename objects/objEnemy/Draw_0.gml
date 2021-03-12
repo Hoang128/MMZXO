@@ -16,3 +16,6 @@ if (sprite_index != noone)
 	if (gpu_get_blendmode() == bm_add)
 		gpu_set_blendmode(bm_normal);
 }
+
+draw_set_font(fontDebugS);
+draw_text(x, y + 8, "HP = " + string(hp));

@@ -7,9 +7,7 @@ event_inherited();
 function fncStateRun()
 {
 	with(core.id)
-	{
-		targetObject = objGlobalManager.currentPlayer;
-		
+	{	
 		movePos.x = targetObject.x;
 		movePos.y = targetObject.y;
 		

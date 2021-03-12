@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-hp = 3;
+hp = 2;
 
 destroyPiece.sprite = sprTrooperPiece;
 destroyPiece.number = 3;

@@ -4,6 +4,8 @@
 event_inherited();
 
 //General Parameters
+hp = global.hpMax;
+
 runSpd = 2;
 
 airJumpWhenFastMove = false;

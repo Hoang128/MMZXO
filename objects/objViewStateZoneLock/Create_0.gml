@@ -9,9 +9,7 @@ spaceRatio = 1/2;
 function fncStateRun()
 {
 	with(core.id)
-	{
-		targetObject = objGlobalManager.currentPlayer;
-		
+	{		
 		if (other.zoneLock != noone)
 		{
 			if (!collision_rectangle(targetObject.bbox_left, targetObject.bbox_top, targetObject.bbox_right, targetObject.bbox_bottom, other.zoneLock, false, true))

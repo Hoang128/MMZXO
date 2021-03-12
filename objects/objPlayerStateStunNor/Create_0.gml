@@ -29,6 +29,10 @@ function fncPlayerStunNorStart()
 		sprite_index = sprPlayer.sprStunNor;
 		image_index = 0;
 		
+		if (hp <= 0)
+		{
+			physic.gravAffect = false;
+		}
 		hspd = -charDir;
 		vspd = 0;
 		
@@ -69,7 +73,13 @@ function fncPlayerStunNorRun()
 
 function fncPlayerStunNorEnd()
 {
-	
+	with(core.id)
+	{
+		if (hp==0)
+		{
+			instance_destroy();
+		}
+	}
 }
 
 function fncWeaponHandle()

@@ -3,7 +3,7 @@ viewStateMachine = instance_create_depth(x, y, depth, objStateMachine);
 viewStateMachine.core = self;
 viewStateMachine.coreType = "view";
 
-targetObject = noone;
+targetObject = objGlobalManager.currentPlayer;
 movePos = {x:0, y:0};
 camSpeed = 4;
 

@@ -8,3 +8,13 @@ if (weaponMeleeMgr != noone)
 		instance_destroy(weaponMeleeMgr);
 	}
 }
+
+with (objGameView)
+{
+	targetObject = self;
+}
+
+if (instance_exists(playerStateMachine))
+{
+	instance_destroy(playerStateMachine)
+}
