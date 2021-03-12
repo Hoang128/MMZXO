@@ -8,3 +8,5 @@ hp = 3;
 
 destroyPiece.sprite = sprTrooperPiece;
 destroyPiece.number = 3;
+
+explosionCount = 3;

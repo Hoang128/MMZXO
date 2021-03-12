@@ -27,7 +27,7 @@ armor =
 	darkArmor : 0
 }
 createDestroyEff = true;
-destroyEff = objExplosion;
+destroyEff = objExplosionChain;
 explosionCount = 1;
 
 destroyPiece = {sprite : noone, number : 0};

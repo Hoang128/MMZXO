@@ -9,8 +9,13 @@ if (parent != noone)
 
 if (createDestroyEff)
 {
+	
 	var pos = {x : (bbox_right + bbox_left) / 2, y : (bbox_top + bbox_bottom) / 2}
-	instance_create_depth(pos.x, pos.y, depth - 1, destroyEff);
+	var dEff = instance_create_depth(pos.x, pos.y, depth - 1, destroyEff);
+	if (destroyEff == objExplosionChain)
+	{
+		dEff.chainMax = explosionCount;
+	}
 }
 
 if (destroyPiece.number > 0)

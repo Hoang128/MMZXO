@@ -124,6 +124,7 @@
     {"id":{"name":"sprPlayerZXJumpShot3","path":"sprites/sprPlayerZXJumpShot3/sprPlayerZXJumpShot3.yy",},"order":12,},
     {"id":{"name":"sprZXSlashCombo1Hitbox","path":"sprites/sprZXSlashCombo1Hitbox/sprZXSlashCombo1Hitbox.yy",},"order":1,},
     {"id":{"name":"objMoveImpactEff","path":"objects/objMoveImpactEff/objMoveImpactEff.yy",},"order":0,},
+    {"id":{"name":"objExplosionChain","path":"objects/objExplosionChain/objExplosionChain.yy",},"order":11,},
     {"id":{"name":"objBlockThinH","path":"objects/objBlockThinH/objBlockThinH.yy",},"order":1,},
     {"id":{"name":"objS_GunTrooper","path":"objects/objS_GunTrooper/objS_GunTrooper.yy",},"order":1,},
     {"id":{"name":"sprZXSlashCombo3Hitbox","path":"sprites/sprZXSlashCombo3Hitbox/sprZXSlashCombo3Hitbox.yy",},"order":2,},
