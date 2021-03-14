@@ -5,6 +5,8 @@ if (inviTime == 0)
 {
 	hp -= other.damage;
 	
+	if (hp < 0) hp = 0;
+	
 	inviTime = inviAfterStunMax;
 	with (playerStateMachine)
 		fncStateChange(objPlayerStateStunNor);

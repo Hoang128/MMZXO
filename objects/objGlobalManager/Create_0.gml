@@ -44,6 +44,12 @@ if (global.debug == true)
 	}
 }
 
+if (!instance_exists(objRoomManager))
+	instance_create_depth(x, y, depth, objRoomManager);
+	
+if (!instance_exists(objInputManager))
+	instance_create_depth(x, y, depth, objInputManager);
+
 //Deactivate object variables
 activateCount = 0;
 activateMaxCount = 3;

@@ -32,11 +32,15 @@ function fncPlayerStunNorStart()
 		if (hp <= 0)
 		{
 			physic.gravAffect = false;
+			hspd = 0;
 		}
-		hspd = -charDir;
-		vspd = 0;
-		
-		audio_play_sound_on(global.emitterSFX.source, vfxPlayer.vfxHurt, false, false);
+		else
+		{
+			hspd = -charDir;
+			
+			audio_play_sound_on(global.emitterSFX.source, vfxPlayer.vfxHurt, false, false);
+		}
+		vspd = 0;	
 		
 		with (weaponMeleeMgr)
 			fncDestroyMeleeWeapon();
@@ -78,6 +82,7 @@ function fncPlayerStunNorEnd()
 		if (hp==0)
 		{
 			instance_destroy();
+			instance_create_depth(x, y, depth - 1, objPlayerDeathEffCreater);
 		}
 	}
 }
