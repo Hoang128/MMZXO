@@ -6,6 +6,17 @@ switch (phase)
 	{
 		UIBackground.xEnd = UIBackground.xStart + UIAnim.UIWidthMin;
 		UIBackground.yEnd = UIBackground.yStart + UIAnim.UIHeightMin;
+		
+		for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+		{
+			var currentContext = ds_list_find_value(childMenuNodeList, i);
+			if (currentContext.childContextType != noone)
+			{
+				childContext = instance_create_depth(x, y, depth - 1, childContextType);
+				childContext.parent = self;
+			}
+		}
+		
 		phase = 1;
 	}	break;
 	case 1:

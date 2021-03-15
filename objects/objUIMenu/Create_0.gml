@@ -34,9 +34,9 @@ UIContext =
 
 UISFX =
 {
-	enterSFX : noone,
-	exitSFX  : noone,
-	moveSFX  : noone
+	enterSFX  : sfxUIEnter,
+	exitSFX   : sfxUIBack,
+	deniedSFX : sfxUIDenied
 }
 
 UIAnim =
@@ -52,7 +52,7 @@ titleContext = "UI Menu (UI Menu Tiếng Việt)";
 
 childMenuNodeList = ds_list_create();
 
-function fncInitUIChildMenuNode(context, childMenu, actived)
+function fncInitUIChildMenuNode(context, childMenuType, childContextType, actived)
 {
 	var childMenuNode =
 	{
@@ -62,50 +62,18 @@ function fncInitUIChildMenuNode(context, childMenu, actived)
 		selected : false
 	};
 	childMenuNode.context = context;
-	childMenuNode.childMenu = childMenu;
+	childMenuNode.childMenuType = childMenuType;
+	childMenuNode.childContextType = childContextType;
+	childMenuNode.childMenu = noone;
+	childMenuNode.childContext = noone;
 	childMenuNode.actived = actived;
 	childMenuNode.selected = false;
 	
 	ds_list_add(childMenuNodeList, childMenuNode);
 }
 
-function fncDrawUITitle(xPos, yPos, context)
-{
-	draw_set_font(fontMenuTitle);
-	if (UIContext.shadow)
-	{
-		draw_set_color(c_black);
-		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, context);
-	}
-	
-	draw_set_color(c_white);
-	draw_text(xPos, yPos, context);
-	draw_set_color(c_white);
-}
-
-function fncDrawUIChildContext(xPos, yPos, childContext)
-{
-	draw_set_font(fontMenuContext);
-	if (UIContext.shadow)
-	{
-		draw_set_color(c_black);
-		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, childContext.context);
-	}
-	
-	if (childContext.actived)
-	{
-		if (childContext.selected)
-			draw_set_color(c_yellow);
-		else
-			draw_set_color(c_white);
-	}	else	draw_set_color(c_gray);
-	draw_text(xPos, yPos, childContext.context);
-	draw_set_color(c_white);
-}
-
 //Debug init child menu's props
-
-fncInitUIChildMenuNode("context 1", noone, true);
-fncInitUIChildMenuNode("context 2", noone, false);
-fncInitUIChildMenuNode("context 3", noone, true);
-fncInitUIChildMenuNode("context 4", noone, true);
+fncInitUIChildMenuNode("context 1", noone, noone, true);
+fncInitUIChildMenuNode("context 2", noone, noone, false);
+fncInitUIChildMenuNode("context 3", noone, noone, true);
+fncInitUIChildMenuNode("context 4", noone, noone, true);

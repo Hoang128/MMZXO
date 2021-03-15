@@ -1,5 +1,38 @@
 /// @description Insert description here
 // You can write your code in this editor
+function fncDrawUITitle(xPos, yPos, context)
+{
+	draw_set_font(fontMenuTitle);
+	if (UIContext.shadow)
+	{
+		draw_set_color(c_black);
+		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, context);
+	}
+	
+	draw_set_color(c_white);
+	draw_text(xPos, yPos, context);
+	draw_set_color(c_white);
+}
+
+function fncDrawUIChildContext(xPos, yPos, childContext)
+{
+	draw_set_font(fontMenuContext);
+	if (UIContext.shadow)
+	{
+		draw_set_color(c_black);
+		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, childContext.context);
+	}
+	
+	if (childContext.actived)
+	{
+		if (childContext.selected)
+			draw_set_color(c_yellow);
+		else
+			draw_set_color(c_white);
+	}	else	draw_set_color(c_gray);
+	draw_text(xPos, yPos, childContext.context);
+	draw_set_color(c_white);
+}
 
 if (UIBackground.actived)
 {
