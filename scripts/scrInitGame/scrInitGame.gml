@@ -63,6 +63,7 @@ function fncStaticInitGeneralParams()
 function fncStaticInitScreenParams()
 {
 	window_set_size(960, 540);
+	display_set_gui_size(VPORT_W, VPORT_H);
 }
 
 function fncStaticInitSoundParams()

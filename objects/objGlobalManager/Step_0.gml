@@ -24,6 +24,7 @@ else
 	instance_activate_object(objEnemySpawmer);
 	instance_activate_object(objState);
 	instance_activate_object(objStateMachine);
+	instance_activate_object(objUI);
 	instance_activate_object(objEffUI);
 	
 	instance_activate_object(objPlayerBasic);

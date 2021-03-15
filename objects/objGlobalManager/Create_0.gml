@@ -49,6 +49,9 @@ if (!instance_exists(objRoomManager))
 	
 if (!instance_exists(objInputManager))
 	instance_create_depth(x, y, depth, objInputManager);
+	
+if (!instance_exists(objUIManager))
+	instance_create_depth(x, y, depth, objUIManager);
 
 //Deactivate object variables
 activateCount = 0;
