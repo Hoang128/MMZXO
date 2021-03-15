@@ -14,8 +14,10 @@ UIBackground =
 	alpha     : 0.7,
 	xStart    : 40,
 	yStart    : 60,
-	UIWidth     : 400,
-	UIHeight    : 600
+	xEnd	  : 0,
+	yEnd      : 0,
+	UIWidth   : 400,
+	UIHeight  : 600
 }
 
 UIContext = 
@@ -39,9 +41,9 @@ UISFX =
 
 UIAnim =
 {
-	widthMin  : 80,
-	heightMin : 80,
-	animSpd   : 4
+	UIWidthMin  : 80,
+	UIHeightMin : 80,
+	animSpd   : 40
 }
 
 //Construct UI props & funcs
