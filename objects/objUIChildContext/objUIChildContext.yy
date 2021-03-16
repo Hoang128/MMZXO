@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "UI Menu",
-    "path": "folders/Objects/Visible InGame/UI Menu.yy",
+    "name": "Templates",
+    "path": "folders/Objects/Visible InGame/UI Menu/Templates.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIChildContext",

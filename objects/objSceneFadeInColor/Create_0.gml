@@ -7,3 +7,5 @@ event_inherited();
 fadeSpd = 0.025;
 colorVal = c_black;
 colorAlpha = 0;
+
+depth = -1000;

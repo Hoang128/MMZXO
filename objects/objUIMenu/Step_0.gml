@@ -17,17 +17,28 @@ switch (phase)
 			}
 		}
 		
+		fncUIUpdateSelectedContext();
+		
 		phase = 1;
 	}	break;
 	case 1:
 	{
-		//Open width
-		if (UIBackground.xEnd < (UIBackground.xStart + UIBackground.UIWidth))
-			UIBackground.xEnd += UIAnim.animSpd;
+		if (UIAnim.isEnable)
+		{
+			//Open width
+			if (UIBackground.xEnd < (UIBackground.xStart + UIBackground.UIWidth))
+				UIBackground.xEnd += UIAnim.animSpd;
+			else
+			{
+				UIBackground.xEnd = (UIBackground.xStart + UIBackground.UIWidth);
+				phase = 2;
+			}
+		}
 		else
 		{
 			UIBackground.xEnd = (UIBackground.xStart + UIBackground.UIWidth);
-			phase = 2;
+			UIBackground.yEnd = (UIBackground.yStart + UIBackground.UIHeight);
+			phase = 3;
 		}
 	}	break;
 	case 2:
@@ -45,17 +56,28 @@ switch (phase)
 	{
 		if (objUIManager.UICurrentInUse == self)
 		{
-	
+			fncUISelect();
+			fncUIMoveUp();
+			fncUIMoveDown();
+			fncUIExit();
 		}
 	}	break;
 	case 4:
 	{
-		//Close height
-		if (UIBackground.yEnd > (UIBackground.yStart + UIAnim.UIHeightMin))
-			UIBackground.yEnd -= UIAnim.animSpd;
+		if (UIAnim.isEnable)
+		{
+			//Close height
+			if (UIBackground.yEnd > (UIBackground.yStart + UIAnim.UIHeightMin))
+				UIBackground.yEnd -= UIAnim.animSpd;
+			else
+			{
+				UIBackground.yEnd = (UIBackground.yStart + UIAnim.UIHeightMin);
+				phase = 5;
+			}
+		}
 		else
 		{
-			UIBackground.yEnd = (UIBackground.yStart + UIAnim.UIHeightMin);
+			UIBackground.xEnd = (UIBackground.xStart + UIAnim.UIWidthMin);
 			phase = 5;
 		}
 	}	break;
@@ -71,4 +93,3 @@ switch (phase)
 		}
 	}	break;
 }
-

@@ -164,19 +164,15 @@ function fncStaticInitStates()
 		CHANGE_L,
 		CHANGE_R,
 		MOVE_L,
-		MOVE_R
-	}
-	
-	enum KeyMapUI
-	{
-		LEFT,
-		RIGHT,
-		UP,
-		DOWN,
-		CONFIRM,
-		BACK,
-		CONFIRM_SUB,
-		BACK_SUB
+		MOVE_R,
+		UI_LEFT,
+		UI_RIGHT,
+		UI_UP,
+		UI_DOWN,
+		UI_CONFIRM,
+		UI_BACK,
+		UI_CONFIRM_SUB,
+		UI_BACK_SUB
 	}
 	
 	enum KeyAction
@@ -420,18 +416,26 @@ function fncStaticGetKeyBoardMap(keyboardMap)
 	var keyInput = noone;
 	switch (keyboardMap)
 	{
-		case KeyMap.RIGHT:		keyInput = global.keyRight;		break;
-		case KeyMap.LEFT:		keyInput = global.keyLeft;		break;
-		case KeyMap.DOWN:		keyInput = global.keyDown;		break;
-		case KeyMap.UP:			keyInput = global.keyUp;		break;
-		case KeyMap.DASH:		keyInput = global.keyDash;		break;
-		case KeyMap.JUMP:		keyInput = global.keyJump;		break;
-		case KeyMap.ATTACK1:	keyInput = global.keyAtk1;		break;
-		case KeyMap.ATTACK2:	keyInput = global.keyAtk2;		break;
-		case KeyMap.CHANGE_L:	keyInput = global.keyChangeL;	break;
-		case KeyMap.CHANGE_R:	keyInput = global.keyChangeR;	break;
-		case KeyMap.MOVE_L:		keyInput = global.keyMoveL;		break;
-		case KeyMap.MOVE_R:		keyInput = global.keyMoveR;		break;
+		case KeyMap.RIGHT:			keyInput = global.keyRight;			break;
+		case KeyMap.LEFT:			keyInput = global.keyLeft;			break;
+		case KeyMap.DOWN:			keyInput = global.keyDown;			break;
+		case KeyMap.UP:				keyInput = global.keyUp;			break;
+		case KeyMap.DASH:			keyInput = global.keyDash;			break;
+		case KeyMap.JUMP:			keyInput = global.keyJump;			break;
+		case KeyMap.ATTACK1:		keyInput = global.keyAtk1;			break;
+		case KeyMap.ATTACK2:		keyInput = global.keyAtk2;			break;
+		case KeyMap.CHANGE_L:		keyInput = global.keyChangeL;		break;
+		case KeyMap.CHANGE_R:		keyInput = global.keyChangeR;		break;
+		case KeyMap.MOVE_L:			keyInput = global.keyMoveL;			break;
+		case KeyMap.MOVE_R:			keyInput = global.keyMoveR;			break;
+		case KeyMap.UI_RIGHT:		keyInput = global.keyUIRight;		break;
+		case KeyMap.UI_LEFT:		keyInput = global.keyUILeft;		break;
+		case KeyMap.UI_UP:			keyInput = global.keyUIUp;			break;
+		case KeyMap.UI_DOWN:		keyInput = global.keyUIDown;		break;
+		case KeyMap.UI_CONFIRM:		keyInput = global.keyUIConfirm;		break;
+		case KeyMap.UI_CONFIRM_SUB:	keyInput = global.keyUIConfirmSub;	break;
+		case KeyMap.UI_BACK:		keyInput = global.keyUIConfirmSub;	break;
+		case KeyMap.UI_BACK_SUB:	keyInput = global.keyUIConfirmSub;	break;
 	}
 	return keyInput;
 }
@@ -441,18 +445,26 @@ function fncStaticGetKeyPadMap(keyboardMap)
 	var keyInput = noone;
 	switch (keyboardMap)
 	{
-		case KeyMap.RIGHT:		keyInput = global.kpRight;		break;
-		case KeyMap.LEFT:		keyInput = global.kpLeft;		break;
-		case KeyMap.DOWN:		keyInput = global.kpDown;		break;
-		case KeyMap.UP:			keyInput = global.kpUp;			break;
-		case KeyMap.DASH:		keyInput = global.kpDash;		break;
-		case KeyMap.JUMP:		keyInput = global.kpJump;		break;
-		case KeyMap.ATTACK1:	keyInput = global.kpAtk1;		break;
-		case KeyMap.ATTACK2:	keyInput = global.kpAtk2;		break;
-		case KeyMap.CHANGE_L:	keyInput = global.kpChangeL;	break;
-		case KeyMap.CHANGE_R:	keyInput = global.kpChangeR;	break;
-		case KeyMap.MOVE_L:		keyInput = global.kpMoveL;		break;
-		case KeyMap.MOVE_R:		keyInput = global.kpMoveR;		break;
+		case KeyMap.RIGHT:			keyInput = global.kpRight;			break;
+		case KeyMap.LEFT:			keyInput = global.kpLeft;			break;
+		case KeyMap.DOWN:			keyInput = global.kpDown;			break;
+		case KeyMap.UP:				keyInput = global.kpUp;				break;
+		case KeyMap.DASH:			keyInput = global.kpDash;			break;
+		case KeyMap.JUMP:			keyInput = global.kpJump;			break;
+		case KeyMap.ATTACK1:		keyInput = global.kpAtk1;			break;
+		case KeyMap.ATTACK2:		keyInput = global.kpAtk2;			break;
+		case KeyMap.CHANGE_L:		keyInput = global.kpChangeL;		break;
+		case KeyMap.CHANGE_R:		keyInput = global.kpChangeR;		break;
+		case KeyMap.MOVE_L:			keyInput = global.kpMoveL;			break;
+		case KeyMap.MOVE_R:			keyInput = global.kpMoveR;			break;
+		case KeyMap.UI_RIGHT:		keyInput = global.kpUIRight;		break;
+		case KeyMap.UI_LEFT:		keyInput = global.kpUILeft;			break;
+		case KeyMap.UI_UP:			keyInput = global.kpUIUp;			break;
+		case KeyMap.UI_DOWN:		keyInput = global.kpUIDown;			break;
+		case KeyMap.UI_CONFIRM:		keyInput = global.kpUIConfirm;		break;
+		case KeyMap.UI_CONFIRM_SUB:	keyInput = global.kpUIConfirmSub;	break;
+		case KeyMap.UI_BACK:		keyInput = global.kpUIConfirmSub;	break;
+		case KeyMap.UI_BACK_SUB:	keyInput = global.kpUIConfirmSub;	break;
 	}
 	return keyInput;
 }
