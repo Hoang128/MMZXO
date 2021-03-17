@@ -4,4 +4,7 @@
 if (colorAlpha > 0)
 	colorAlpha -= fadeSpd;
 else
+{
+	isComplete = true;
 	instance_destroy();
+}

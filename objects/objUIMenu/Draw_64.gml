@@ -2,7 +2,7 @@
 // You can write your code in this editor
 function fncDrawUITitle(xPos, yPos, context)
 {
-	draw_set_font(fontMenuTitle);
+	draw_set_font(UIContext.titleFont);
 	if (UIContext.shadow)
 	{
 		draw_set_color(c_black);
@@ -16,7 +16,7 @@ function fncDrawUITitle(xPos, yPos, context)
 
 function fncDrawUIChildContext(xPos, yPos, childContext)
 {
-	draw_set_font(fontMenuContext);
+	draw_set_font(UIContext.childFont);
 	if (UIContext.shadow)
 	{
 		draw_set_color(c_black);
@@ -47,7 +47,7 @@ if (phase == 3)
 {
 	draw_set_valign(fa_bottom);
 	draw_set_halign(fa_left);
-
+	
 	var xPos = UIBackground.xStart + UIContext.titleHMargin;
 	var yPos = UIBackground.yStart + UIContext.titleVMargin;
 	fncDrawUITitle(xPos, yPos, titleContext);

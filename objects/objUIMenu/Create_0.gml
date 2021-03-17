@@ -7,6 +7,9 @@ event_inherited();
 objUIManager.UICurrentInUse = self;
 phase = 0;
 menuCursor = 0;
+closeTime = 0;
+closeMenuOpenEffObj = noone;
+closeMenuCloseEffObj = noone;
 
 UIBackground = 
 {
@@ -45,7 +48,9 @@ UIAnim =
 	isEnable    : true,
 	UIWidthMin  : 80,
 	UIHeightMin : 80,
-	animSpd     : 40
+	animSpd     : 40,
+	closeMenuOpenEff : noone,
+	closeMenuCloseEff : noone
 }
 
 //Construct UI props & funcs
@@ -59,7 +64,10 @@ function fncInitUIChildMenuNode(context, childMenuType, childContextType, active
 	var childMenuNode =
 	{
 		context : "Child Context",
+		childMenuType : noone,
+		childContextType : noone,
 		childMenu : noone,
+		childContext : noone,
 		actived : true,
 		selected : false
 	};
@@ -154,6 +162,23 @@ function fncUIHandleExit()
 function fncUIHandleSelect()
 {
 	
+}
+
+function fncUICloseMenu()
+{
+	phase = 4;
+}
+
+function fncUIOpenSubMenuAfter(time, effectClose, effectOpen)
+{
+	var obj = instance_create_depth(x, y, depth, objUISubMenuCreater);
+	obj.menu = ds_list_find_value(childMenuNodeList, menuCursor).childMenuType;
+	obj.time = time;
+	obj.effectClose = effectClose;
+	obj.effectOpen = effectOpen;
+	obj.menuParent = self;
+	
+	objUIManager.UICurrentInUse = noone;
 }
 
 //Debug init child menu's props

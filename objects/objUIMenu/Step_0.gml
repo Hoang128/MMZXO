@@ -89,7 +89,48 @@ switch (phase)
 		else
 		{
 			UIBackground.xEnd = (UIBackground.xStart + UIAnim.UIWidthMin);
-			instance_destroy();
+			phase = 6;
 		}
+	}	break;
+	case 6:
+	{
+		if (closeTime > 0)
+			closeTime--;
+		else
+			phase = 7;
+	}	break;
+	case 7:
+	{
+		if (UIAnim.closeMenuCloseEff != noone)
+		{
+			closeMenuCloseEffObj = instance_create_depth(x, y, depth, UIAnim.closeMenuCloseEff);
+			phase = 8;
+		}
+		else	phase = 9;
+	}	break;
+	case 8:
+	{
+		if (closeMenuCloseEffObj != noone)
+		{
+			if (closeMenuCloseEffObj.isComplete)
+			{
+				phase = 9;
+			}
+		}
+		else phase = 9;
+
+	}	break;
+	case 9:	
+	{
+		if (closeMenuCloseEffObj != noone)
+		{
+			instance_destroy(closeMenuCloseEffObj);
+		}
+		if (UIAnim.closeMenuOpenEff != noone)
+		{
+			closeMenuOpenEffObj = instance_create_depth(x, y, depth, UIAnim.closeMenuOpenEff);
+		}
+		
+		instance_destroy();	
 	}	break;
 }

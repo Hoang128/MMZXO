@@ -7,5 +7,6 @@ event_inherited();
 fadeSpd = 0.025;
 colorVal = c_black;
 colorAlpha = 0;
+isComplete = false;
 
 depth = -1000;

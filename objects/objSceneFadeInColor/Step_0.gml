@@ -3,3 +3,8 @@
 
 if (colorAlpha < 1)
 	colorAlpha += fadeSpd;
+else
+{
+	colorAlpha = 1;
+	isComplete = true;
+}

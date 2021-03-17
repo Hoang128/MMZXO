@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-UIContext.childFont = fontMenuTitle;
+UIContext.childFont = fontMenuContext;
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 256;
 
@@ -14,9 +14,9 @@ UIBackground.UIWidth = 480;
 UIBackground.UIHeight = 1080;
 
 titleContext = "";
-fncInitUIChildMenuNode("Singleplay", noone, noone, true);
-fncInitUIChildMenuNode("Multiplay", noone, noone, false);
-fncInitUIChildMenuNode("Options", noone, noone, true);
+fncInitUIChildMenuNode("Chơi đơn", noone, noone, true);
+fncInitUIChildMenuNode("Chơi mạng", noone, noone, false);
+fncInitUIChildMenuNode("Cài đặt", objUIOptionsMenu, noone, true);
 
 function fncUIHandleSelect()
 {
@@ -30,6 +30,7 @@ function fncUIHandleSelect()
 		}	break;
 		case 2:
 		{
+			fncUIOpenSubMenuAfter(2, objSceneFadeInColor, objSceneFadeOutColor);
 		}	break;
 	}
 }
