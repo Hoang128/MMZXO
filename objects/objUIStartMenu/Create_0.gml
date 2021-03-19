@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-UIContext.childFont = fontMenuContext;
+UIContext.childFont = fontMenuM;
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 256;
 

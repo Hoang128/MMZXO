@@ -26,14 +26,28 @@ UIBackground =
 
 UIContext = 
 {
-	titleFont      : fontMenuTitle,
-	childFont      : fontMenuContext,
+	titleFont      : fontMenuM,
+	childFont      : fontMenuS,
 	titleVMargin   : 80,
 	titleHMargin   : 60,
 	childHMargin   : 90,
 	childVSpace    : 64,
 	shadow         : true,
 	shadowDistance : 4
+}
+
+UIMenuLimit = 
+{
+	actived : false,
+	maxRow : 5,
+	firstRow : 0,
+	iconCtrlSpacing : 16
+}
+
+UIControl =
+{
+	fireRateMax : 10,
+	firate : 0
 }
 
 UISFX =
@@ -116,6 +130,8 @@ function fncUIMoveUp()
 			if (tempCursor >= 0)
 				menuCursor = tempCursor;
 			fncUIUpdateSelectedContext();
+			if (UIMenuLimit.actived)
+				fncUIUpdateUIMenuDisplayCursorUp();
 		}
 	}
 }
@@ -136,6 +152,35 @@ function fncUIMoveDown()
 			if (tempCursor < ds_list_size(childMenuNodeList))
 				menuCursor = tempCursor;
 			fncUIUpdateSelectedContext();
+			if (UIMenuLimit.actived)
+				fncUIUpdateUIMenuDisplayCursorDown();
+		}
+	}
+}
+
+function fncUIUpdateUIMenuDisplayCursorDown()
+{
+	if (UIMenuLimit.firstRow < menuCursor - UIMenuLimit.maxRow)
+	{
+		if (menuCursor <= UIMenuLimit.maxRow)
+			UIMenuLimit.firstRow = 0;
+		else
+		{
+		
+			UIMenuLimit.firstRow = menuCursor - UIMenuLimit.maxRow;
+		}
+	}
+}
+
+function fncUIUpdateUIMenuDisplayCursorUp()
+{
+	if (UIMenuLimit.firstRow > menuCursor)
+	{
+		if (menuCursor >= (ds_list_size(childMenuNodeList) - 1 - UIMenuLimit.maxRow))
+			UIMenuLimit.firstRow = ds_list_size(childMenuNodeList) - 1 - UIMenuLimit.maxRow;
+		else
+		{
+			UIMenuLimit.firstRow = menuCursor;
 		}
 	}
 }

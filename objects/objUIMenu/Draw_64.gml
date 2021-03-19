@@ -1,5 +1,21 @@
 /// @description Insert description here
 // You can write your code in this editor
+function fncDrawMenuDebugInfo()
+{
+	draw_set_font(fontDebug);
+	
+	switch(object_index)
+	{
+		case objUIKeyboardMenu:
+		{
+			draw_text(UIBackground.xStart, UIBackground.yStart + 32, "keyboard menu");
+		}	break;
+	}
+	
+	draw_text(UIBackground.xStart, UIBackground.yStart + 64, "start vector =  " + string(UIBackground.xStart) + ", " + string(UIBackground.yStart));
+	draw_text(UIBackground.xStart, UIBackground.yStart + 96, "end vector =  " + string(UIBackground.xEnd) + ", " + string(UIBackground.yEnd));
+}
+
 function fncDrawUITitle(xPos, yPos, context)
 {
 	draw_set_font(UIContext.titleFont);
@@ -34,6 +50,9 @@ function fncDrawUIChildContext(xPos, yPos, childContext)
 	draw_set_color(c_white);
 }
 
+if (phase == 0)
+	return;
+
 if (UIBackground.actived)
 {
 	draw_set_color(UIBackground.backColor);
@@ -55,12 +74,22 @@ if (phase == 3)
 	var xStartPos = UIBackground.xStart + UIContext.childHMargin;
 	var yStartPos = UIBackground.yStart + UIContext.titleVMargin * 2;
 
-	for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+	var maxRowNumber;
+	if (UIMenuLimit.actived)
+		maxRowNumber = UIMenuLimit.maxRow + 1;
+	else
+		maxRowNumber = ds_list_size(childMenuNodeList);
+	
+	for (var i = 0; i < maxRowNumber; i++)
 	{
-		var currentContext = ds_list_find_value(childMenuNodeList, i);
+		var currentContext = ds_list_find_value(childMenuNodeList, i + UIMenuLimit.firstRow);
 		xPos = xStartPos;
 		yPos = yStartPos + UIContext.childVSpace * i;
 	
 		fncDrawUIChildContext(xPos, yPos, currentContext);
 	}
 }
+
+/*
+if (global.debug)
+	fncDrawMenuDebugInfo();

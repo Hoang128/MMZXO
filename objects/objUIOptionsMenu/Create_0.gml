@@ -17,10 +17,20 @@ UIBackground.UIWidth = 540;
 UIBackground.UIHeight = 952;
 
 titleContext = "Cài đặt";
-fncInitUIChildMenuNode("Cài đặt phím", noone, noone, true);
+fncInitUIChildMenuNode("Cài đặt bàn phím", objUIKeyboardMenu, noone, true);
+fncInitUIChildMenuNode("Cài đặt tay cầm", noone, noone, true);
 fncInitUIChildMenuNode("Cài đặt chung", noone, noone, false);
 fncInitUIChildMenuNode("Đồ họa", noone, noone, true);
 fncInitUIChildMenuNode("Âm thanh", noone, noone, true);
+
+function fncUIHandleSelect()
+{
+	switch (menuCursor)
+	{
+		case 0:
+			fncUIOpenSubMenuAfter(0, noone, noone);	break;
+	}
+}
 
 function fncUIHandleExit()
 {
