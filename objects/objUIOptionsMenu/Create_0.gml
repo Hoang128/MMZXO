@@ -10,6 +10,7 @@ UIAnim.closeMenuOpenEff = objSceneFadeOutColor;
 
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 128;
+UIContext.childVMargin = 192;
 
 UIBackground.xStart = 64;
 UIBackground.yStart = 64;
@@ -22,6 +23,7 @@ fncInitUIChildMenuNode("Cài đặt tay cầm", noone, noone, true);
 fncInitUIChildMenuNode("Cài đặt chung", noone, noone, false);
 fncInitUIChildMenuNode("Đồ họa", noone, noone, true);
 fncInitUIChildMenuNode("Âm thanh", noone, noone, true);
+fncInitUIChildMenuNode("Trở lại", noone, noone, true);
 
 function fncUIHandleSelect()
 {
@@ -29,6 +31,8 @@ function fncUIHandleSelect()
 	{
 		case 0:
 			fncUIOpenSubMenuAfter(0, noone, noone);	break;
+		case 5:
+			fncUICloseMenu();
 	}
 }
 

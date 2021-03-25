@@ -90,7 +90,10 @@ sprPlayer =
 	sprClimb : sprPlayerZXClimb,
 	sprClimbEnd : sprPlayerZXClimbEnd,
 	sprStunNor : sprPlayerZXStun1,
-	sprStunHard : sprPlayerZXStun2
+	sprStunHard : sprPlayerZXStun2,
+	sprStand : sprPlayerZXStand,
+	sprStandStart : sprPlayerZXStandStart,
+	sprStandEnd : sprPlayerZXStandEnd
 };
 
 vfxPlayer =
@@ -105,7 +108,7 @@ playerStateMachine.coreType = "player";
 
 with(playerStateMachine)
 {
-	fncStateChange(objPlayerStateIdle);
+	fncStateChange(objPlayerStateTeleDown);
 }
 
 function fncSetupProperties()

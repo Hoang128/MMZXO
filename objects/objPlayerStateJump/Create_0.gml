@@ -6,6 +6,7 @@ event_inherited();
 dashJump = false;
 shadowEffCreater = noone;
 afterWallKick = 0;
+lastState = noone;
 
 function fncStateStart()
 {
@@ -42,6 +43,29 @@ function fncPlayerJumpStart()
 		}
 		
 		physic.onGround = false;
+	}
+}
+
+function fncStateInit()
+{
+	if (!inited)
+	{
+		with(core.id)
+		{
+			if (vspd >= 0)
+			{
+				var colObj = noone;
+				do
+				{
+					colObj = collision_rectangle(bbox_left, bbox_top - 1, bbox_right, bbox_top, objBlock, false, true)
+					if (colObj)
+						y++;
+				}
+				until (colObj == noone)
+			}
+		}
+		
+		inited = true;
 	}
 }
 

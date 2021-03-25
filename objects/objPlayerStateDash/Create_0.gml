@@ -58,6 +58,7 @@ function fncPlayerDashRun()
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);
+					currentState.lastState = "dash";
 					return;
 				}
 			}
@@ -78,6 +79,7 @@ function fncPlayerDashRun()
 						with(other.stateMachine)
 						{			
 							fncStateChange(objPlayerStateJump);
+							currentState.lastState = "dash";
 							return;
 						}
 					}
@@ -101,6 +103,7 @@ function fncPlayerDashRun()
 							with(other.stateMachine)
 							{
 								fncStateChange(objPlayerStateJump);
+								currentState.lastState = "dash";
 								return;
 							}
 						}
@@ -114,6 +117,7 @@ function fncPlayerDashRun()
 					{
 						fncStateChange(objPlayerStateJump);
 						currentState.dashJump = true;
+						currentState.lastState = "dash";
 						return;
 					}
 				}
@@ -141,6 +145,7 @@ function fncPlayerDashRun()
 				with(other.stateMachine)
 				{
 					fncStateChange(objPlayerStateJump);
+					currentState.lastState = "dash";
 					return;
 				}
 			}

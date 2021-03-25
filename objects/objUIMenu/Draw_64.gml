@@ -72,7 +72,7 @@ if (phase == 3)
 	fncDrawUITitle(xPos, yPos, titleContext);
 
 	var xStartPos = UIBackground.xStart + UIContext.childHMargin;
-	var yStartPos = UIBackground.yStart + UIContext.titleVMargin * 2;
+	var yStartPos = UIBackground.yStart + UIContext.titleVMargin + UIContext.childVMargin;
 
 	var maxRowNumber;
 	if (UIMenuLimit.actived)

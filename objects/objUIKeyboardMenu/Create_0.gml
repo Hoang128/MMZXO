@@ -9,6 +9,7 @@ UIContext.childFont = fontMenuS;
 
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 128;
+UIContext.childVMargin = 192;
 
 UIBackground.xStart = 668;
 UIBackground.yStart = 64;
@@ -18,21 +19,54 @@ UIBackground.UIHeight = 952;
 UIMenuLimit.actived = true;
 UIMenuLimit.maxRow = 5;
 
+listKeyboardMap = ds_list_create();
+
 titleContext = "Cài đặt bàn phím";
-fncInitUIChildMenuNode("Di chuyển trái", noone, noone, true);
-fncInitUIChildMenuNode("Di chuyển phải", noone, noone, true);
-fncInitUIChildMenuNode("Di chuyển lên", noone, noone, true);
-fncInitUIChildMenuNode("Di chuyển xuống", noone, noone, true);
-fncInitUIChildMenuNode("Nhảy", noone, noone, true);
-fncInitUIChildMenuNode("Trượt", noone, noone, true);
-fncInitUIChildMenuNode("Dùng vũ khí 1", noone, noone, true);
-fncInitUIChildMenuNode("Dùng vũ khí 2", noone, noone, true);
-fncInitUIChildMenuNode("Tuyệt chiêu 1", noone, noone, true);
-fncInitUIChildMenuNode("Tuyệt chiêu 2", noone, noone, true);
-fncInitUIChildMenuNode("Đổi dạng", noone, noone, true);
-fncInitUIChildMenuNode("Xem bản đồ", noone, noone, true);
+fncInitUIChildMenuNode("Di chuyển trái", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Di chuyển phải", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Di chuyển lên", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Di chuyển xuống", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Nhảy", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Trượt", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Dùng vũ khí 1", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Dùng vũ khí 2", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Tuyệt chiêu 1", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Tuyệt chiêu 2", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Đổi dạng", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Xem bản đồ", noone, objUIKeyboardIndexer, true);
 
 function fncUIHandleExit()
 {
 	fncUICloseMenu();
+}
+
+function fncInitlistKeyboardMap()
+{
+	ds_list_add(listKeyboardMap, global.keyLeft);
+	ds_list_add(listKeyboardMap, global.keyRight);
+	ds_list_add(listKeyboardMap, global.keyUp);
+	ds_list_add(listKeyboardMap, global.keyDown);
+	ds_list_add(listKeyboardMap, global.keyJump);
+	ds_list_add(listKeyboardMap, global.keyDash);
+	ds_list_add(listKeyboardMap, global.keyAtk1);
+	ds_list_add(listKeyboardMap, global.keyAtk2);
+	ds_list_add(listKeyboardMap, global.keyMoveL);
+	ds_list_add(listKeyboardMap, global.keyMoveR);
+	ds_list_add(listKeyboardMap, global.keyChangeL);
+	ds_list_add(listKeyboardMap, global.keyChangeR);
+}
+
+function fncInitCheckDuplicateKey(key, index)
+{
+	for (var i = 0; i < ds_list_size(listKeyboardMap); i++)
+	{
+		if (i == index)	
+			continue;
+		if (ds_list_find_value(listKeyboardMap, i) == key)
+		{
+			return true;
+		}
+	}
+	
+	return false;
 }

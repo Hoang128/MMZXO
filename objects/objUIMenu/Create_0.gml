@@ -31,6 +31,7 @@ UIContext =
 	titleVMargin   : 80,
 	titleHMargin   : 60,
 	childHMargin   : 90,
+	childVMargin   : 64,
 	childVSpace    : 64,
 	shadow         : true,
 	shadowDistance : 4

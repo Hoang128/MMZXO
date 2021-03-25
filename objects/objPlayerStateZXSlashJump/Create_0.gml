@@ -125,7 +125,9 @@ function fncPlayerZXSlashJumpRun()
 function fncPlayerZXSlashJumpEnd()
 {
 	if (instance_exists(shadowEffCreater))
+	{
 		instance_destroy(shadowEffCreater);
+	}
 	
 	with (core.id)
 	{

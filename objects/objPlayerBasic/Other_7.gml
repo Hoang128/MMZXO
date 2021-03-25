@@ -3,6 +3,17 @@
 
 switch (sprite_index)
 {
+	case sprPlayer.sprStandEnd:
+	{
+		sprite_index = sprPlayer.sprIdle;
+		image_index = 0;
+		with (playerStateMachine.currentState)
+		{
+			waitTime = waitPhase2;
+			phase = 2;
+		}
+	}	break;
+	
 	case sprPlayer.sprJumpStart:
 	{
 		sprite_index = sprPlayer.sprJump;

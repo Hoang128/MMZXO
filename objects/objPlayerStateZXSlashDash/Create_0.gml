@@ -48,6 +48,7 @@ function fncPlayerZXSlashDashRun()
 			with(stateMachine)
 			{
 				fncStateChange(objPlayerStateJump);
+				currentState.lastState = "slash dash";
 				return;
 			}
 		}
@@ -83,6 +84,7 @@ function fncPlayerZXSlashDashRun()
 					with(other.stateMachine)
 					{
 						fncStateChange(objPlayerStateJump);
+						currentState.lastState = "slash dash";
 						return;
 					}
 				}
@@ -120,7 +122,7 @@ function fncPlayerZXSlashDashEnd()
 	{
 		if (!physic.gravAffect)
 			physic.gravAffect = true;
-			
+		
 		with (weaponMeleeMgr)
 		{
 			if ((weaponSlash != noone) && instance_exists(weaponSlash))

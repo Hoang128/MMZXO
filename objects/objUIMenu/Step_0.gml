@@ -12,8 +12,10 @@ switch (phase)
 			var currentContext = ds_list_find_value(childMenuNodeList, i);
 			if (currentContext.childContextType != noone)
 			{
-				childContext = instance_create_depth(x, y, depth - 1, childContextType);
+				childContext = instance_create_depth(x, y, depth - 1, currentContext.childContextType);
 				childContext.parent = self;
+				childContext.index = i;
+				childContext.UIContext.font = UIContext.childFont;
 			}
 		}
 		
