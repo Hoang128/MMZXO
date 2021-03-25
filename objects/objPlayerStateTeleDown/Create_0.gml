@@ -63,4 +63,5 @@ function fncStateRun()
 
 function fncStateEnd()
 {
+	global.gameState = GameState.INGAME_GAMEPLAY;
 }

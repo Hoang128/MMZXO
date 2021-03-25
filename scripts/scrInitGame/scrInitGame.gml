@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function fncStaticInitGame(){
 	fncStaticInitDevParams();
+	fncStaticInitStates();
 	fncStaticInitWorldParams();
 	fncStaticInitGeneralParams();
 	fncStaticInitInputParams();
@@ -34,6 +35,9 @@ function fncStaticInitMacros()
 
 function fncStaticInitWorldParams()
 {
+	
+	global.gameState = GameState.MENU;
+
 	//Time
 	global.timeScale = 1;
 	global.timeScaleSlow = 0.2;
@@ -145,10 +149,18 @@ function fncStaticInitKeypadParams()
 
 function fncStaticInitStates()
 {
+	enum GameState
+	{
+		INGAME_CUTSCENE,
+		INGAME_GAMEPLAY,
+		CUTSCENE,
+		MENU
+	}
+	
 	enum RoomState
 	{
 		MENU,
-		STAGE
+		STAGE,
 	}
 	
 	enum KeyMap
@@ -215,29 +227,34 @@ function fncStaticInitStates()
 
 function fncStaticHandleButton(keyMap, keyAction)
 {
-	switch (keyAction)
+	if ((global.gameState == GameState.INGAME_GAMEPLAY) 
+	 || (global.gameState == GameState.MENU))
 	{
-		case KeyAction.HELD:
+		switch (keyAction)
 		{
-			if (fncStaticHandleButtonHeld(keyMap))
-				return true;
-			else	return false;
-		}	break;
+			case KeyAction.HELD:
+			{
+				if (fncStaticHandleButtonHeld(keyMap))
+					return true;
+				else	return false;
+			}	break;
 		
-		case KeyAction.PRESSED:
-		{
-			if (fncStaticHandleButtonPressed(keyMap))
-				return true;
-			else	return false;
-		}	break;
+			case KeyAction.PRESSED:
+			{
+				if (fncStaticHandleButtonPressed(keyMap))
+					return true;
+				else	return false;
+			}	break;
 		
-		case KeyAction.RELEASED:
-		{
-			if (fncStaticHandleButtonReleased(keyMap))
-				return true;
-			else	return false;
-		}	break;
+			case KeyAction.RELEASED:
+			{
+				if (fncStaticHandleButtonReleased(keyMap))
+					return true;
+				else	return false;
+			}	break;
+		}
 	}
+	return false;
 }
 
 /// @function					fncStaticHandleButtonHeld(keyMap);

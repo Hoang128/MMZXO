@@ -56,3 +56,5 @@ if (!instance_exists(objUIManager))
 //Deactivate object variables
 activateCount = 0;
 activateMaxCount = 3;
+
+fncStaticInitGame();
