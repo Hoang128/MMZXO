@@ -281,38 +281,38 @@ function fncStaticHandleButtonHeld(keyMap)
 		{
 			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
 			{
-				show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) > 0)
+				//show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)
 				{
 					show_debug_message("left analog right");
-					handled = true;
+					return true;
 				}
 			}
 			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
 			{
-				show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) < 0)
+				//show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)
 				{
 					show_debug_message("left analog left");
-					handled = true;
+					return true;
 				}
 			}
 			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
 			{
-				show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) > 0)
+				//show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)
 				{
 					show_debug_message("left analog up");
-					handled = true;
+					return true;
 				}
 			}
 			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
 			{
-				show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) < 0)
+				//show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
+				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)
 				{
 					show_debug_message("left analog down");
-					handled = true;
+					return true;
 				}
 			}
 		}

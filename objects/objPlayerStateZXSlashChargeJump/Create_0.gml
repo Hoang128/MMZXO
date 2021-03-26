@@ -183,11 +183,7 @@ function fncPlayerZXSlashChargeJumpEnd()
 	{
 		with (weaponMeleeMgr)
 		{
-			if ((weaponSlash != noone) && instance_exists(weaponSlash))
-			{
-				if (weaponSlash.destroyWhenChangeState)
-					fncDestroyMeleeWeapon();
-			}
+			fncDestroyMeleeWeapon();
 		}
 	}
 }

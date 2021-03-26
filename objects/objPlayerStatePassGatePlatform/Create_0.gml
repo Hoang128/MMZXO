@@ -25,6 +25,14 @@ function fncStateStart()
 		hspd = 0;
 		vspd = 0;
 		physic.gravAffect = false;
+		
+		with (weaponMeleeMgr)
+		{
+			if ((weaponSlash != noone) && instance_exists(weaponSlash))
+			{
+					fncDestroyMeleeWeapon();
+			}
+		}
 	}
 }
 
@@ -54,7 +62,7 @@ function fncStateRun()
 		{
 			if (!place_meeting(x + 2 * charDir, y, objBlock))
 			{
-				x += charDir * 2;
+				x += charDir;
 			}
 		}
 	}

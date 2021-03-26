@@ -8,7 +8,7 @@ imgSpdDefault = 0.5;
 dustNumberMax = 4;
 waitTimeMax = 8;
 
-dustList = ds_list_create();
+dustList = array_create(dustNumberMax);
 dustNumber = 0;
 waitTime = 0;
 core = noone;

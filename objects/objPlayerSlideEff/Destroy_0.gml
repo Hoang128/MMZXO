@@ -2,11 +2,8 @@
 // You can write your code in this editor
 
 var i = 0;
-for (i = 0; i < ds_list_size(dustList); i++)
+for (i = 0; i < dustNumberMax; i++)
 {
-	var objDust = ds_list_find_value(dustList, i);
-	objDust.inPool = false;
+	if (instance_exists(dustList[i]))
+		dustList[i].inPool = false;
 }
-
-ds_list_clear(dustList);
-ds_list_destroy(dustList);

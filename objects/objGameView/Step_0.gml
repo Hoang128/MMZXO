@@ -5,6 +5,8 @@ event_inherited();
 with (viewStateMachine)
 	fncStateHandle();
 	
+fncLimitHCamByLimitZone();
+	
 if (abs(x - movePos.x) >= camSpeed)
 {
 	x += sign(movePos.x - x) * camSpeed;

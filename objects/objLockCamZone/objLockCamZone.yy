@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objPhysicObject",
-    "path": "objects/objPhysicObject/objPhysicObject.yy",
+    "name": "objStageZone",
+    "path": "objects/objStageZone/objStageZone.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Camera Zone",
-    "path": "folders/Objects/Stage Zones/Camera Zone.yy",
+    "name": "Camera Lock Zone",
+    "path": "folders/Objects/Stage Zones/Camera Lock Zone.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLockCamZone",

@@ -24,11 +24,11 @@ if (instance_exists(core))
 				if (!collision_rectangle(x - 2, y - 2, x + 2, y + 2, objBlock, false, false))
 					visible = false;
 			}
-			ds_list_add(dustList, objDust);
+			dustList[dustNumber] = objDust;
 		}
 		else
 		{
-			var objDust = ds_list_find_value(dustList, ds_list_size(dustList));
+			var objDust = dustList[dustNumberMax - 1];
 			objDust.x = x;
 			objDust.y = y;
 			objDust.visible = 1;
