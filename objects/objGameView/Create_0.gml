@@ -19,7 +19,7 @@ function fncLimitHCamByLimitZone()
 	if (!position_meeting(movePos.x, movePos.y, objLimitCamHZone))
 	{
 		var listLimHCamZone = ds_list_create();
-		listLimHCamZone = collision_rectangle_list(VIEW_X, VIEW_Y, VIEW_X + VIEW_W, VIEW_Y + VIEW_H, objLimitCamHZone, false, true, listLimHCamZone, false);
+		collision_rectangle_list(VIEW_X, VIEW_Y, VIEW_X + VIEW_W, VIEW_Y + VIEW_H, objLimitCamHZone, false, true, listLimHCamZone, false);
 	
 		if (ds_list_size(listLimHCamZone) == 1)
 		{
@@ -62,7 +62,7 @@ function fncLimitHCamByLimitZone()
 			show_debug_message("limit cam zone number is greater than 2. Game auto exit!");
 		}
 		
-		ds_list_clear(listLimHCamZone);
 		ds_list_destroy(listLimHCamZone);
+		listLimHCamZone = -1;
 	}
 }

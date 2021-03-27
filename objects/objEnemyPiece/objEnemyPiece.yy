@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Enemy",
-    "path": "folders/Objects/Visible InGame/Enemy.yy",
+    "name": "Templates",
+    "path": "folders/Objects/Visible InGame/Enemy/Templates.yy",
   },
   "resourceVersion": "1.0",
   "name": "objEnemyPiece",

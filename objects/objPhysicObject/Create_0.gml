@@ -138,3 +138,76 @@ function fncIsInActiveZone()
 	else
 		return false;
 }
+
+function fncIsWallAhead(dir)
+{
+	if (place_meeting(x + dir, y, objBlock))
+	{
+		if (!place_meeting(x + dir * maxDisDetectSlopeAbove, y, objSlope))
+		{
+			return true;
+		}
+	}
+	
+	return false;
+}
+
+function fncIsFloorAhead(dir, distance)
+{
+	if (fncIsBlockFloorAhead(dir, distance) || fncIsThinFloorAhead(dir, distance))
+		return true;
+	else
+		return false;
+}
+
+function fncIsBlockFloorAhead(dir, distance)
+{
+	if (dir == 1)
+	{
+		if (!collision_rectangle(bbox_right, bbox_bottom, bbox_right + dir, bbox_bottom + distance, objBlock, false, true))
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlope, true, true))
+			{
+				return false;
+			}
+		}
+	}
+	else if (dir == -1)
+	{
+		if (!collision_rectangle(bbox_left, bbox_bottom, bbox_left - dir, bbox_bottom + distance, objBlock, false, true))
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlope, true, true))
+			{
+				return false;
+			}
+		}
+	}
+	
+	return true;
+}
+
+function fncIsThinFloorAhead(dir, distance)
+{
+	if (dir == 1)
+	{
+		if (!collision_rectangle(bbox_right, bbox_bottom, bbox_right + dir, bbox_bottom + distance, objBlockThin, false, true))
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlopeThin, true, true))
+			{
+				return false;
+			}
+		}
+	}
+	else if (dir == -1)
+	{
+		if (!collision_rectangle(bbox_left, bbox_bottom, bbox_left - dir, bbox_bottom + distance, objBlockThin, false, true))
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlopeThin, true, true))
+			{
+				return false;
+			}
+		}
+	}
+	
+	return true;
+}

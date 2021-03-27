@@ -11,3 +11,12 @@ if (inviTime == 0)
 	with (playerStateMachine)
 		fncStateChange(objPlayerStateStunNor);
 }
+
+with (other)
+{
+	if (bullet)
+	{
+		if (destroyWhenHit)
+			instance_destroy();
+	}
+}

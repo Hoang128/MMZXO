@@ -19,3 +19,4 @@ if (!ds_list_empty(flareList))
 
 ds_list_clear(flareList);
 ds_list_destroy(flareList);
+flareList = -1;

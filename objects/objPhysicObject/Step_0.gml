@@ -53,7 +53,7 @@ if (physic.enable)
 	//Vertical thin block handle
 	if (vspd > 0)
 	{
-		if (physic.thinBlockIgnore == 0)
+		if (!physic.thinBlockIgnore)
 		{
 			var objColList = ds_list_create();
 			collision_rectangle_list(bbox_left, bbox_bottom + 1, bbox_right, bbox_bottom + vspd, objBlockThin, true, true, objColList, true);
@@ -84,7 +84,7 @@ if (physic.enable)
 	//Vertical ladder top handle
 	if (vspd > 0)
 	{
-		if (physic.thinBlockIgnore == 0)
+		if (!physic.thinBlockIgnore)
 		{
 			var objCol = collision_rectangle(bbox_left, bbox_bottom + 1, bbox_right, bbox_bottom + vspd, objLadderTop, true, true);
 			if (objCol != noone)

@@ -3,3 +3,4 @@
 
 // Inherit the parent event
 event_inherited();
+draw_text(x, y + 8, "shot time = " + string(shotTime));

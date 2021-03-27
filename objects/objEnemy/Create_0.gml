@@ -14,6 +14,7 @@ damageTimmer = -10;
 
 parent = noone;
 
+bullet = false;
 blink = 0;
 blinkMax = 8;
 blinkTime = 0;
@@ -43,4 +44,25 @@ function createCollisionEffectMelee(playerDamageSource)
 	pos.y = clamp((playerDamageSource.core.core.bbox_top + playerDamageSource.core.core.bbox_bottom) / 2, bbox_top, bbox_bottom);
 	var objSlash = instance_create_depth(pos.x, pos.y, depth - 1, objMeleeSlashEff);
 	objSlash.image_angle = random(randomSpace) * 180 / randomSpace;
+}
+
+function fncRealEnemyHandleStep()
+{
+	if (damageTimmer > 0) damageTimmer -= TIME_SCALE;
+	if ((damageTimmer <= 0) && (damageTimmer > -10)) damageTimmer = -10;
+
+	if (blinkTime > 0)
+	{
+		if (blink > 0) blink -= TIME_SCALE;
+		else blink = blinkMax;
+		blinkTime -= TIME_SCALE;
+	}
+	else
+	{
+		blink = 0;
+		blinkTime = 0;
+	}
+
+	if (hp <= 0)
+		instance_destroy();
 }

@@ -18,4 +18,5 @@ if (sprite_index != noone)
 }
 
 draw_set_font(fontDebugS);
+draw_set_halign(fa_center);
 draw_text(x, y + 8, "HP = " + string(hp));
