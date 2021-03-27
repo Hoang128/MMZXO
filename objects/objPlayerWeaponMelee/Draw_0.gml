@@ -5,8 +5,8 @@ if(floor(image_index) > markImageIndex)
 	if (markImageIndex != -1)
 	{
 		markImageIndex = -1;
-		if (!canHitEnemy)
-			canHitEnemy = true;
+		if (!ds_list_empty(enemyIgnoreList))
+			ds_list_clear(enemyIgnoreList);
 	}
 }
 	

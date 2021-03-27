@@ -14,7 +14,7 @@ explosionCount = 3;
 physic.enable = true;
 
 runSpeed = 1;
-shotNumber = 3;
+shotNumber = 1;
 canShot = 0;
 waitTimeMax = 60;
 activeRange = 64;

@@ -2,7 +2,7 @@
 // You can write your code in this editor
 if (sprite_index == sprTrooperShoot)
 {
-	if (shotTime > shotNumber)
+	if (shotTime >= shotNumber)
 	{
 		shotTime = 0;
 		state = gunTrooperState.STAND;

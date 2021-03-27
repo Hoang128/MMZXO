@@ -3,7 +3,12 @@
 
 if (damageTimmer == -10)
 {
-	if (other.canHitEnemy)
+	var isIgnored = false;
+	with (other)
+	{
+		isIgnored = fncIsEnemyIgnored(other.id);
+	}
+	if (!isIgnored)
 	{
 		var realDamage = other.damage;
 		damageTimmer = other.maxTimmer;
@@ -47,7 +52,7 @@ if (damageTimmer == -10)
 		if (other.weaponType == PlayerWeaponType.MELEE)
 		{
 			other.hit++;
-			other.canHitEnemy = 0;
+			ds_list_add(other.enemyIgnoreList, self.id);
 			other.markImageIndex = other.image_index;
 		}
 	
