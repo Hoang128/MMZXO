@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 event_inherited();
+depth = 0;
 
 //General Parameters
 hp = global.hpMax;

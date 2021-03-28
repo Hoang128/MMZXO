@@ -30,11 +30,14 @@ armor =
 createDestroyEff = true;
 destroyEff = objExplosionChain;
 explosionCount = 1;
+weaponTypeCauseDeath = noone;
 
+destroySlashPiece = noone;
 destroyPiece = {sprite : noone, number : 0};
 
 palette = noone;
 paletteNumber = 0;
+
 
 function createCollisionEffectMelee(playerDamageSource)
 {

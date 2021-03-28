@@ -18,4 +18,6 @@ if (instance_exists(objDebug))
 }
 
 draw_set_font(fontDebugS);
+draw_set_halign(fa_center);
 draw_text(x, y + 8, "HP = " + string(hp));
+draw_text(x, y + 16, "depth = " + string(depth));
