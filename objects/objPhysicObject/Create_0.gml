@@ -139,11 +139,11 @@ function fncIsInActiveZone()
 		return false;
 }
 
-function fncIsWallAhead(dir)
+function fncIsWallAhead(dir, vDir)
 {
 	if (place_meeting(x + dir, y, objBlock))
 	{
-		if (!place_meeting(x + dir * maxDisDetectSlopeAbove, y, objSlope))
+		if (!place_meeting(x + dir * maxDisDetectSlopeAbove * vDir, y, objSlope))
 		{
 			return true;
 		}
@@ -152,33 +152,59 @@ function fncIsWallAhead(dir)
 	return false;
 }
 
-function fncIsFloorAhead(dir, distance)
+function fncIsFloorAhead(dir, distance, vDir)
 {
-	if (fncIsBlockFloorAhead(dir, distance) || fncIsThinFloorAhead(dir, distance))
+	if (fncIsBlockFloorAhead(dir, distance, vDir) || fncIsThinFloorAhead(dir, distance, vDir))
 		return true;
 	else
 		return false;
 }
 
-function fncIsBlockFloorAhead(dir, distance)
+function fncIsBlockFloorAhead(dir, distance, vDir)
 {
-	if (dir == 1)
+	if (vDir == 1)
 	{
-		if (!collision_rectangle(bbox_right, bbox_bottom, bbox_right + dir, bbox_bottom + distance, objBlock, false, true))
+		if (dir == 1)
 		{
-			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlope, true, true))
+			if (!collision_rectangle(bbox_right, bbox_bottom, bbox_right + dir, bbox_bottom + distance, objBlock, false, true))
 			{
-				return false;
+				if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlope, true, true))
+				{
+					return false;
+				}
+			}
+		}
+		else if (dir == -1)
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_left - dir, bbox_bottom + distance, objBlock, false, true))
+			{
+				if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlope, true, true))
+				{
+					return false;
+				}
 			}
 		}
 	}
-	else if (dir == -1)
+	else if (vDir == -1)
 	{
-		if (!collision_rectangle(bbox_left, bbox_bottom, bbox_left - dir, bbox_bottom + distance, objBlock, false, true))
+		if (dir == 1)
 		{
-			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlope, true, true))
+			if (!collision_rectangle(bbox_right, bbox_top, bbox_right + dir, bbox_top - distance, objBlock, false, true))
 			{
-				return false;
+				if (!collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top - distance, objSlope, true, true))
+				{
+					return false;
+				}
+			}
+		}
+		else if (dir == -1)
+		{
+			if (!collision_rectangle(bbox_left, bbox_top, bbox_left - dir, bbox_top - distance, objBlock, false, true))
+			{
+				if (!collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top - distance, objSlope, true, true))
+				{
+					return false;
+				}
 			}
 		}
 	}
@@ -186,25 +212,51 @@ function fncIsBlockFloorAhead(dir, distance)
 	return true;
 }
 
-function fncIsThinFloorAhead(dir, distance)
+function fncIsThinFloorAhead(dir, distance, vDir)
 {
-	if (dir == 1)
+	if (vDir == 1)
 	{
-		if (!collision_rectangle(bbox_right, bbox_bottom, bbox_right + dir, bbox_bottom + distance, objBlockThin, false, true))
+		if (dir == 1)
 		{
-			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlopeThin, true, true))
+			if (!collision_rectangle(bbox_right, bbox_bottom, bbox_right + dir, bbox_bottom + distance, objBlockThin, false, true))
 			{
-				return false;
+				if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlopeThin, true, true))
+				{
+					return false;
+				}
+			}
+		}
+		else if (dir == -1)
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_left - dir, bbox_bottom + distance, objBlockThin, false, true))
+			{
+				if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlopeThin, true, true))
+				{
+					return false;
+				}
 			}
 		}
 	}
-	else if (dir == -1)
+	else if (vDir == -1)
 	{
-		if (!collision_rectangle(bbox_left, bbox_bottom, bbox_left - dir, bbox_bottom + distance, objBlockThin, false, true))
+		if (dir == 1)
 		{
-			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + distance, objSlopeThin, true, true))
+			if (!collision_rectangle(bbox_right, bbox_top, bbox_right + dir, bbox_top - distance, objBlockThin, false, true))
 			{
-				return false;
+				if (!collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top - distance, objSlopeThin, true, true))
+				{
+					return false;
+				}
+			}
+		}
+		else if (dir == -1)
+		{
+			if (!collision_rectangle(bbox_left, bbox_top, bbox_left - dir, bbox_top - distance, objBlockThin, false, true))
+			{
+				if (!collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top - distance, objSlopeThin, true, true))
+				{
+					return false;
+				}
 			}
 		}
 	}

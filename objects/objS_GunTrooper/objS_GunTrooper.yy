@@ -29,8 +29,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Trooper",
-    "path": "folders/Objects/Visible InGame/Enemy/Trooper.yy",
+    "name": "Spawmer List",
+    "path": "folders/Objects/Visible InGame/Enemy/Enemies/Spawmer List.yy",
   },
   "resourceVersion": "1.0",
   "name": "objS_GunTrooper",

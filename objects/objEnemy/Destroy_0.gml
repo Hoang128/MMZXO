@@ -25,6 +25,16 @@ if (weaponTypeCauseDeath == PlayerWeaponType.MELEE)
 	var objSlashEff = instance_create_depth(x + (deathDir * abs(sprite_width) / 2), (bbox_top + bbox_bottom) / 2 - (sprite_height / 4), depth, objSlashKillEff);
 	objSlashEff.image_xscale = deathDir;
 	objSlashEff.image_angle = -deathDir * 45;
+	
+	if (destroySlashPiece == noone)
+	{
+		var pos = {x : (bbox_right + bbox_left) / 2, y : (bbox_top + bbox_bottom) / 2}
+		var dEff = instance_create_depth(pos.x, pos.y, depth - 1, destroyEff);
+		if (destroyEff == objExplosionChain)
+		{
+			dEff.chainMax = explosionCount;
+		}
+	}
 }
 
 if ((weaponTypeCauseDeath == PlayerWeaponType.MELEE) && (destroySlashPiece != noone))

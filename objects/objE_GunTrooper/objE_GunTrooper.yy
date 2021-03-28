@@ -37,7 +37,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "E",
-    "path": "folders/Objects/Visible InGame/Enemy/Trooper/E.yy",
+    "path": "folders/Objects/Visible InGame/Enemy/Enemies/Enemie Objects/Trooper/E.yy",
   },
   "resourceVersion": "1.0",
   "name": "objE_GunTrooper",

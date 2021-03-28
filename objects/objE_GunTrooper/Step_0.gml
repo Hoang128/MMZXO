@@ -13,8 +13,10 @@ switch (state)
 {
 	case gunTrooperState.INIT:
 	{
-		move_contact_solid(270, 0);
+		//move_contact_solid(270, 0);
 		physic.onGround = true;
+		runRange = activeRange/2;
+		fncChangeDirToCam();
 		state = gunTrooperState.STAND;
 	}	break;
 	
@@ -46,7 +48,7 @@ switch (state)
 	case gunTrooperState.RUN:
 	{
 		runRange += abs(hspd * TIME_SCALE);
-		if ((runRange > activeRange) || fncIsWallAhead(image_xscale) || !fncIsFloorAhead(image_xscale, maxDisDetectSlopeAbove))
+		if ((runRange > activeRange) || fncIsWallAhead(image_xscale, image_yscale) || !fncIsFloorAhead(image_xscale, maxDisDetectSlopeAbove, image_yscale))
 		{
 			runRange = 0;
 			state = gunTrooperState.STAND;

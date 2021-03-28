@@ -58,3 +58,10 @@ function fncIsReadyToAttack(player)
 	}
 	return false;
 }
+
+function fncChangeDirToCam()
+{
+	image_xscale = -1;
+	if ((objGameView.x - x) != 0)
+		image_xscale = sign(objGameView.x - x);
+}
