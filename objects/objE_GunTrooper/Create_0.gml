@@ -32,19 +32,21 @@ state = gunTrooperState.INIT;
 
 function fncIsPlayerAhead(player)
 {
-	if (!collision_line(
-	(bbox_left + bbox_right) / 2, 
-	(bbox_top + bbox_bottom) / 2, 
-	(player.bbox_left + player.bbox_right) / 2, 
-	(player.bbox_top + player.bbox_bottom) / 2, 
-	objBlock, false, false))
+	if (instance_exists(player))
 	{
-		if (image_xscale == sign(player.x - x))
+		if (!collision_line(
+		(bbox_left + bbox_right) / 2, 
+		(bbox_top + bbox_bottom) / 2, 
+		(player.bbox_left + player.bbox_right) / 2, 
+		(player.bbox_top + player.bbox_bottom) / 2, 
+		objBlock, false, false))
 		{
-			return true;
+			if (image_xscale == sign(player.x - x))
+			{
+				return true;
+			}
 		}
 	}
-	
 	return false;
 }
 
