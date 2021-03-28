@@ -25,6 +25,10 @@ if ((weaponTypeCauseDeath == PlayerWeaponType.MELEE) && (destroySlashPiece != no
 	var objPieceCreater = instance_create_depth(x, y, depth - 1, objEnemySlashedPieceCreater);
 	objPieceCreater.spritePiece = destroySlashPiece;
 	objPieceCreater.image_xscale = image_xscale;
+	
+	var objSlashEff = instance_create_depth(x + (deathDir * abs(sprite_width) / 2), (bbox_top + bbox_bottom) / 2 - (sprite_height / 4), depth, objSlashKillEff);
+	objSlashEff.image_xscale = deathDir;
+	objSlashEff.image_angle = -deathDir * 45;
 }
 else
 {

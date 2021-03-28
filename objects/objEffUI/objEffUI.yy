@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Effects",
-    "path": "folders/Objects/Effects.yy",
+    "path": "folders/Objects/Visible InGame/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "objEffUI",

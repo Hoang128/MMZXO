@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "UI",
-    "path": "folders/Objects/Effects/UI.yy",
+    "path": "folders/Objects/Visible InGame/Effects/UI.yy",
   },
   "resourceVersion": "1.0",
   "name": "objSceneFadeOutColor",

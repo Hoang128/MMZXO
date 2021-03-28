@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Common",
-    "path": "folders/Objects/Effects/Common.yy",
+    "path": "folders/Objects/Visible InGame/Effects/Common.yy",
   },
   "resourceVersion": "1.0",
   "name": "objFlareCluster",

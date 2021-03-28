@@ -7,5 +7,4 @@ event_inherited();
 pieceFront = noone;
 pieceBack = noone;
 spritePiece = noone;
-
 inited = false;

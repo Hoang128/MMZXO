@@ -31,6 +31,7 @@ createDestroyEff = true;
 destroyEff = objExplosionChain;
 explosionCount = 1;
 weaponTypeCauseDeath = noone;
+deathDir = 1;
 
 destroySlashPiece = noone;
 destroyPiece = {sprite : noone, number : 0};
