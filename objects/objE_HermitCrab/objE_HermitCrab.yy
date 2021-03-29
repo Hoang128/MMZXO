@@ -31,6 +31,7 @@
     {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"objE_HermitCrab","path":"objects/objE_HermitCrab/objE_HermitCrab.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":7,"eventType":7,"collisionObjectId":null,"parent":{"name":"objE_HermitCrab","path":"objects/objE_HermitCrab/objE_HermitCrab.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":8,"collisionObjectId":null,"parent":{"name":"objE_HermitCrab","path":"objects/objE_HermitCrab/objE_HermitCrab.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":1,"eventType":3,"collisionObjectId":null,"parent":{"name":"objE_HermitCrab","path":"objects/objE_HermitCrab/objE_HermitCrab.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],

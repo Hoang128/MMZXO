@@ -16,7 +16,8 @@ switch (state)
 		else
 			move_contact_solid(90, 0);
 		*/
-		
+		guard = 0.5;
+		guardDir = 90 + 90 * image_xscale;
 		state = hermitCrabState.IDLE;
 		waitTime = waitIdleMax;
 	}	break;
@@ -31,6 +32,9 @@ switch (state)
 			sprite_index = sprHermitCrabRun;
 			image_index = 0;
 			hspd = image_xscale * runSpd;
+			guard = 0.5;
+			guardDir = 90 + 90 * image_xscale;
+			
 		}
 	}	break;
 	
@@ -51,6 +55,8 @@ switch (state)
 				image_index = 0;
 				hspd = 0;
 				isCloseShellToShot = true;
+				guard = 0.5;
+				guardDir = 90 + 90 * image_xscale;
 				
 				waitToShot = waitToShotmax;
 			}
@@ -61,6 +67,8 @@ switch (state)
 			sprite_index = sprHermitCrabCloseShell;
 			image_index = 0;
 			hspd = 0;
+			guard = 0.5;
+			guardDir = 90 + 90 * image_xscale;
 			isCloseShellToShot = false;
 		}
 	}	break;
@@ -77,6 +85,7 @@ switch (state)
 				state = hermitCrabState.SHOT;
 				sprite_index = sprHermitCrabShot;
 				image_index = 0;
+				guard = 0;
 			}
 			else
 			{
@@ -84,6 +93,8 @@ switch (state)
 				state = hermitCrabState.OPEN_SHELL;
 				sprite_index = sprHermitCrabOpenShell;
 				image_index = 0;
+				guard = 0.5;
+				guardDir = 90 + 90 * image_xscale;
 			}
 		}
 	}	break;

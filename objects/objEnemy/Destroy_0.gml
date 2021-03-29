@@ -7,6 +7,12 @@ if (parent != noone)
 		child = noone;
 }
 
+if (instance_exists(shield))
+{
+	if (shield != self)
+		instance_destroy(shield);
+}
+
 if (createDestroyEff)
 {
 	if (weaponTypeCauseDeath != PlayerWeaponType.MELEE)

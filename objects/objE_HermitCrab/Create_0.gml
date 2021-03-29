@@ -23,6 +23,8 @@ xDistanceToShot = 120;
 waitToShotmax = 120;
 shotPos = {x : 0, y : 8};
 shotBullet = array_create(3, false);
+shield = instance_create_depth(x, y, depth, objE_HermitCrabShield);
+shield.core = self;
 
 isCloseShellToShot = false;
 waitTime = 0;

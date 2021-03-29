@@ -11,6 +11,9 @@ maxTimmer = 2;
 collisionSFX = sfxEnemyHit;
 canHitEnemy = true;
 
+destroyEff = noone;
+destroyEffShield = noone;
+
 enemyIgnoreList = ds_list_create();
 
 function fncIsEnemyIgnored(enemy)

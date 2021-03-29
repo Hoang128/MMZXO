@@ -7,6 +7,7 @@ switch (sprite_index)
 		sprite_index = sprHermitCrabInShell;
 		image_index = 0;
 		
+		guard = 1;
 		state = hermitCrabState.IN_SHELL;
 		waitTime = waitCloseShellMax;
 	}	break;
@@ -18,12 +19,15 @@ switch (sprite_index)
 		
 		state = hermitCrabState.IDLE;
 		waitTime = waitIdleMax;
+		guard = 0.5;
+		guardDir = 90 + 90 * image_xscale;
 	}	break;
 	
 	case sprHermitCrabShot:
 	{
 		sprite_index = sprHermitCrabInShell;
 		image_index = 0;
+		guard = 1;
 		
 		for (var i = 0; i < array_length(shotBullet); i++)
 		{

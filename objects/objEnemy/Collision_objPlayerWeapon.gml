@@ -8,6 +8,7 @@ if (damageTimmer == -10)
 	{
 		isIgnored = fncIsEnemyIgnored(other.id);
 	}
+	
 	if (!isIgnored)
 	{
 		var realDamage = other.damage;

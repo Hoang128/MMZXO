@@ -8,5 +8,6 @@ flySpeed = 5;
 damage = 1;
 phase = 2;
 destroyEff = objFlare;
+destroyEffShield = objFlarePulse;
 
 audio_play_sound_on(global.emitterSFX.source, sfxZXBusterN, false, false);

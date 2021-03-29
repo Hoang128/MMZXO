@@ -7,8 +7,12 @@ event_inherited();
 hp = 5;
 damage = 1;
 
-guardDir = 0;
+//protect ranged attack
+shield = noone;
+
+//protect melee attack
 guard = 0;
+guardDir = 0;
 
 damageTimmer = -10;
 
