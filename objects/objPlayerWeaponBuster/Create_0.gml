@@ -13,7 +13,9 @@ flySpeed = 6;
 throughtWall = false;
 createDestroyEff = true;
 destroyOutScreen = true;
+colWithGuard = false;
 destroyEff = noone;
+destroyGuardEff = noone;
 
 //Props
 phase = 1;

@@ -7,5 +7,6 @@ event_inherited();
 flySpeed = 7;
 damage = 2;
 destroyEff = objFlare;
+destroyEffShield = objFlarePulse;
 
 audio_play_sound_on(global.emitterSFX.source, sfxZXBusterC1, false, false);

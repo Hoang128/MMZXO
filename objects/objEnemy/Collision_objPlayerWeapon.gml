@@ -45,10 +45,46 @@ if (damageTimmer == -10)
 			{
 				realDamage = 0;
 			}
+			
+			if (realDamage == 0)
+			{
+				if (other.weaponType = PlayerWeaponType.MELEE)
+				{
+					with (objGlobalManager)
+					{
+						fncSetTimeScale(0.5, 5);
+					}
+				}
+				
+				if (other.weaponType = PlayerWeaponType.BUSTER)
+				{
+					with (other)
+					{
+						colWithGuard = true;
+					}
+				}
+			}
 		}
 	
 		if (guard == 2)
+		{
 			realDamage = 0;
+			if (other.weaponType = PlayerWeaponType.MELEE)
+			{
+				with (objGlobalManager)
+				{
+					fncSetTimeScale(0.5, 5);
+				}
+			}
+				
+			if (other.weaponType = PlayerWeaponType.BUSTER)
+			{
+				with (other)
+				{
+					colWithGuard = true;
+				}
+			}
+		}
 	
 		if (other.weaponType == PlayerWeaponType.MELEE)
 		{

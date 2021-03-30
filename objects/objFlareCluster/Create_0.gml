@@ -10,3 +10,5 @@ waitTimeMax = 4;
 flareCreated = 0;
 
 waitTime = waitTimeMax;
+
+objEffect = objFlare;

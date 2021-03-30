@@ -13,7 +13,7 @@ if (waitTime > 1)
 			var pos = {x : 0, y: 0}
 			pos.x = random_range(range/2, range);
 			pos.y = random_range(range/2, range);
-			var flare = instance_create_depth(x + pos.x, y + pos.y, depth, objFlare);
+			var flare = instance_create_depth(x + pos.x, y + pos.y, depth, objEffect);
 			flare.image_angle = random(360);
 			waitTime = waitTimeMax;
 		}

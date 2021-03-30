@@ -6,6 +6,13 @@
 //if (phase == 2)
 	hspd = flySpeed * image_xscale;
 	
+if (colWithGuard)
+{
+	if (destroyEff != destroyEffShield)
+		destroyEff = destroyEffShield;
+	instance_destroy();
+}
+	
 if (destroyOutScreen)
 {
 	if (!fncIsInActiveZone())

@@ -342,6 +342,7 @@
     {"id":{"name":"sprPlayerZXFall","path":"sprites/sprPlayerZXFall/sprPlayerZXFall.yy",},"order":5,},
     {"id":{"name":"Sound39","path":"sounds/Sound39/Sound39.yy",},"order":15,},
     {"id":{"name":"objPlayerBasic","path":"objects/objPlayerBasic/objPlayerBasic.yy",},"order":2,},
+    {"id":{"name":"objFlarePulseCluster","path":"objects/objFlarePulseCluster/objFlarePulseCluster.yy",},"order":14,},
     {"id":{"name":"fontDebug","path":"fonts/fontDebug/fontDebug.yy",},"order":0,},
     {"id":{"name":"vfxVentShot2","path":"sounds/vfxVentShot2/vfxVentShot2.yy",},"order":2,},
     {"id":{"name":"sprTrooperShoot","path":"sprites/sprTrooperShoot/sprTrooperShoot.yy",},"order":2,},
