@@ -8,9 +8,9 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 8,
-  "bbox_right": 447,
+  "bbox_right": 679,
   "bbox_top": 8,
-  "bbox_bottom": 295,
+  "bbox_bottom": 471,
   "HTile": false,
   "VTile": false,
   "For3D": false,
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e97dc362-0ba0-4723-a232-d9119d8dd6ba","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Abadoned Power Plant",
     "path": "folders/Sprites/Stage Tilesets/Abadoned Power Plant.yy",
