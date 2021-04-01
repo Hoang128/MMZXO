@@ -18,6 +18,7 @@ if (activateCount > 0)
 else
 {
 	instance_deactivate_all(true);
+	instance_activate_object(objParallaxBackground);
 	instance_activate_object(objGameManager);
 	instance_activate_object(objBlock);
 	instance_activate_object(objBlockThin);
