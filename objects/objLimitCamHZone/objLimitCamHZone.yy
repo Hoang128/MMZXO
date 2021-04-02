@@ -24,14 +24,14 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objLimitCamHZone","path":"objects/objLimitCamHZone/objLimitCamHZone.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"objLimitCamHZone","path":"objects/objLimitCamHZone/objLimitCamHZone.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Camara Limit Zone",
-    "path": "folders/Objects/Stage Zones/Camara Limit Zone.yy",
+    "path": "folders/Objects/Invi InGame/Stage Zones/Camara Limit Zone.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLimitCamHZone",

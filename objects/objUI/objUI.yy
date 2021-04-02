@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Game Managers",
-    "path": "folders/Objects/Game Managers.yy",
+    "path": "folders/Objects/Invi InGame/Game Managers.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUI",

@@ -24,14 +24,14 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objE_TrooperBullet","path":"objects/objE_TrooperBullet/objE_TrooperBullet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"objE_TrooperBullet","path":"objects/objE_TrooperBullet/objE_TrooperBullet.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "E",
-    "path": "folders/Objects/Visible InGame/Enemy/Enemies/Enemie Objects/Trooper/E.yy",
+    "name": "Trooper",
+    "path": "folders/Objects/Visible InGame/Enemy/Enemies/Enemie Objects/Trooper.yy",
   },
   "resourceVersion": "1.0",
   "name": "objE_TrooperBullet",

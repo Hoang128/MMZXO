@@ -24,13 +24,13 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objBlockThin","path":"objects/objBlockThin/objBlockThin.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "Thin Block",
-    "path": "folders/Objects/Stage Blocks/Thin Block.yy",
+    "path": "folders/Objects/Invi InGame/Stage Blocks/Thin Block.yy",
   },
   "resourceVersion": "1.0",
   "name": "objBlockThin",

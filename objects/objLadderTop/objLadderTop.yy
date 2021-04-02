@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Ladder",
-    "path": "folders/Objects/Stage Blocks/Ladder.yy",
+    "path": "folders/Objects/Invi InGame/Stage Blocks/Ladder.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLadderTop",

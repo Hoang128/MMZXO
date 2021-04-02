@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Basic Block",
-    "path": "folders/Objects/Stage Blocks/Basic Block.yy",
+    "path": "folders/Objects/Invi InGame/Stage Blocks/Basic Block.yy",
   },
   "resourceVersion": "1.0",
   "name": "objSlope",

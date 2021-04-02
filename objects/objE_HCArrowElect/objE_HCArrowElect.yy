@@ -24,14 +24,14 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objE_HCArrowElect","path":"objects/objE_HCArrowElect/objE_HCArrowElect.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"parent":{"name":"objE_HCArrowElect","path":"objects/objE_HCArrowElect/objE_HCArrowElect.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "E",
-    "path": "folders/Objects/Visible InGame/Enemy/Enemies/Enemie Objects/Hermit Crab/E.yy",
+    "name": "Hermit Crab",
+    "path": "folders/Objects/Visible InGame/Enemy/Enemies/Enemie Objects/Hermit Crab.yy",
   },
   "resourceVersion": "1.0",
   "name": "objE_HCArrowElect",

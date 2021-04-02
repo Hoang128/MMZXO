@@ -21,13 +21,13 @@
   "physicsKinematic": false,
   "physicsShapePoints": [],
   "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"parent":{"name":"objViewStateZoneLock","path":"objects/objViewStateZoneLock/objViewStateZoneLock.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
     "name": "States",
-    "path": "folders/Objects/Game Managers/View/States.yy",
+    "path": "folders/Objects/Invi InGame/Game Managers/View/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "objViewStateZoneLock",

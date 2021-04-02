@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Camera Lock Zone",
-    "path": "folders/Objects/Stage Zones/Camera Lock Zone.yy",
+    "path": "folders/Objects/Invi InGame/Stage Zones/Camera Lock Zone.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLockCamVZone",

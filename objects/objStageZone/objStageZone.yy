@@ -25,7 +25,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Stage Zones",
-    "path": "folders/Objects/Stage Zones.yy",
+    "path": "folders/Objects/Invi InGame/Stage Zones.yy",
   },
   "resourceVersion": "1.0",
   "name": "objStageZone",

@@ -30,7 +30,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Area I",
-    "path": "folders/Objects/Stage Background/Area I.yy",
+    "path": "folders/Objects/Visible InGame/Stage Background/Area I.yy",
   },
   "resourceVersion": "1.0",
   "name": "objElectTowerBack1",

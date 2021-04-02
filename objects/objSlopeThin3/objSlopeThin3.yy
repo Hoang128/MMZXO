@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Thin Block",
-    "path": "folders/Objects/Stage Blocks/Thin Block.yy",
+    "path": "folders/Objects/Invi InGame/Stage Blocks/Thin Block.yy",
   },
   "resourceVersion": "1.0",
   "name": "objSlopeThin3",

@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Stage Background",
-    "path": "folders/Objects/Stage Background.yy",
+    "path": "folders/Objects/Visible InGame/Stage Background.yy",
   },
   "resourceVersion": "1.0",
   "name": "objParallaxBackground",
