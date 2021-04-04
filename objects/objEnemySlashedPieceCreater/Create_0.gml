@@ -8,3 +8,5 @@ pieceFront = noone;
 pieceBack = noone;
 spritePiece = noone;
 inited = false;
+hMove = 0;
+vMove = 0;

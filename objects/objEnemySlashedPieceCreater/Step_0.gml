@@ -7,6 +7,8 @@ if (!inited)
 	pieceFront.sprite_index = spritePiece;
 	pieceFront.image_index = 0;
 	pieceFront.image_xscale = image_xscale;
+	pieceFront.hMove = hMove;
+	pieceFront.vMove = vMove;
 	
 	pieceBack = instance_create_depth(x, y, depth + 2, objEnemySlashedPiece);
 	pieceBack.sprite_index = spritePiece;

@@ -8,7 +8,8 @@ hp = 2;
 
 destroyPiece.sprite = sprTrooperPiece;
 destroyPiece.number = 3;
-destroySlashPiece = sprTrooperSlashPieces;
+destroySlashPiece.sprite = sprTrooperSlashPieces;
+destroySlashPiece.hMove = 1;
 
 explosionCount = 3;
 

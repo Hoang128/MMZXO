@@ -40,9 +40,12 @@ function fncChangeDirToCam()
 
 function fncHavePlayerAhead()
 {
-	if (sign(objGlobalManager.currentPlayer.x - self.x) == sign(image_xscale))
+	if (instance_exists(objGlobalManager.currentPlayer))
 	{
-		return true;
+		if (sign(objGlobalManager.currentPlayer.x - self.x) == sign(image_xscale))
+		{
+			return true;
+		}
 	}
 	return false;
 }

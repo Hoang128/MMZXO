@@ -32,7 +32,7 @@ if (weaponTypeCauseDeath == PlayerWeaponType.MELEE)
 	objSlashEff.image_xscale = deathDir;
 	objSlashEff.image_angle = -deathDir * 45;
 	
-	if (destroySlashPiece == noone)
+	if (destroySlashPiece.sprite == noone)
 	{
 		var pos = {x : (bbox_right + bbox_left) / 2, y : (bbox_top + bbox_bottom) / 2}
 		var dEff = instance_create_depth(pos.x, pos.y, depth - 1, destroyEff);
@@ -43,10 +43,12 @@ if (weaponTypeCauseDeath == PlayerWeaponType.MELEE)
 	}
 }
 
-if ((weaponTypeCauseDeath == PlayerWeaponType.MELEE) && (destroySlashPiece != noone))
+if ((weaponTypeCauseDeath == PlayerWeaponType.MELEE) && (destroySlashPiece.sprite != noone))
 {
 	var objPieceCreater = instance_create_depth(x, y, depth - 1, objEnemySlashedPieceCreater);
-	objPieceCreater.spritePiece = destroySlashPiece;
+	objPieceCreater.spritePiece = destroySlashPiece.sprite;
+	objPieceCreater.hMove = destroySlashPiece.hMove;
+	objPieceCreater.vMove = destroySlashPiece.vMove;
 	objPieceCreater.image_xscale = image_xscale;
 }
 else

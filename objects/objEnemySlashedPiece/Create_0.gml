@@ -11,3 +11,5 @@ dropDown = false;
 hDir = 0;
 moveSpd = 0.2;
 waitTime = 20;
+hMove = 0;
+vMove = 0;

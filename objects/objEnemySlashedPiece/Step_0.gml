@@ -10,15 +10,16 @@ switch (phase)
 	{
 		if (image_index < 1)
 		{
-			hDir = -image_xscale;
+			hDir = -image_xscale * hMove;
 		}
 		else
 		{
-			hDir = image_xscale;
+			hDir = 0;
 		}
 		
 		phase = 1;
 		hspd = hDir * moveSpd;
+		vspd = vMove;
 	}	break;
 	case 1:
 	{

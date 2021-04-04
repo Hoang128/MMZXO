@@ -14,10 +14,13 @@ switch (state)
 	case gunTrooperState.INIT:
 	{
 		//move_contact_solid(270, 0);
-		physic.onGround = true;
-		runRange = activeRange/2;
-		fncChangeDirToCam();
-		state = gunTrooperState.STAND;
+		if (collision_rectangle(VIEW_X, VIEW_Y, VIEW_X + VIEW_W, VIEW_Y + VIEW_H, self, false, false))
+		{
+			physic.onGround = true;
+			runRange = activeRange/2;
+			fncChangeDirToCam();
+			state = gunTrooperState.STAND;
+		}
 	}	break;
 	
 	case gunTrooperState.STAND:

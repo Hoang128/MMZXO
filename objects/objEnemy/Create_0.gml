@@ -37,7 +37,7 @@ explosionCount = 1;
 weaponTypeCauseDeath = noone;
 deathDir = 1;
 
-destroySlashPiece = noone;
+destroySlashPiece = {sprite : noone, hMove : 0, vMove : 0};
 destroyPiece = {sprite : noone, number : 0};
 
 palette = noone;

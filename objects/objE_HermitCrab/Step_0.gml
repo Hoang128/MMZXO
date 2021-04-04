@@ -8,18 +8,20 @@ switch (state)
 {
 	case hermitCrabState.INIT:
 	{
-		fncChangeDirToCam();
-		
 		/*
 		if (image_yscale > 0)
 			move_contact_solid(270, 0);
 		else
 			move_contact_solid(90, 0);
 		*/
-		guard = 0.5;
-		guardDir = 90 + 90 * image_xscale;
-		state = hermitCrabState.IDLE;
-		waitTime = waitIdleMax;
+		if (collision_rectangle(VIEW_X, VIEW_Y, VIEW_X + VIEW_W, VIEW_Y + VIEW_H, self, false, false))
+		{
+			fncChangeDirToCam();
+			guard = 0.5;
+			guardDir = 90 + 90 * image_xscale;
+			state = hermitCrabState.IDLE;
+			waitTime = waitIdleMax;
+		}
 	}	break;
 	
 	case hermitCrabState.IDLE:

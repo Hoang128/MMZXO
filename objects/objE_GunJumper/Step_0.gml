@@ -8,11 +8,13 @@ switch (state)
 {
 	case gunJumperState.INIT:
 	{
-		fncChangeDirToCam();
-		
-		lastActiveState = state;
-		state = gunJumperState.IDLE;
-		waitTime = waitTimeMax.idle;
+		if (collision_rectangle(VIEW_X, VIEW_Y, VIEW_X + VIEW_W, VIEW_Y + VIEW_H, self, false, false))
+		{
+			fncChangeDirToCam();
+			lastActiveState = state;
+			state = gunJumperState.IDLE;
+			waitTime = waitTimeMax.idle;
+		}
 	}	break;
 	
 	case gunJumperState.IDLE:
