@@ -76,7 +76,7 @@ switch (state)
 	{
 		if (canShot == 1)
 		{
-			if (image_index > 1)
+			if (image_index > 4)
 			{
 				var objBullet = instance_create_depth(x + 20 * image_xscale, y - 25, depth - 1, objE_TrooperBullet);
 				objBullet.dir = image_xscale;

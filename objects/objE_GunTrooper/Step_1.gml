@@ -5,7 +5,8 @@
 
 switch (sprite_index)
 {
-	case sprTrooperRun:	imgSpd = 0.25;	break;
+	case sprTrooperRun:
+	case sprTrooperShoot: imgSpd = 0.25;	break;
 	default: imgSpd = 0.5;	break;
 }
 

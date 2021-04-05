@@ -4,7 +4,10 @@
 // Inherit the parent event
 event_inherited();
 
-fncStaticDestroyOutScreen(self);
+if (state > 0)
+{
+	fncStaticDestroyOutScreen(self);
+}
 
 switch (state)
 {
