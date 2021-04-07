@@ -92,6 +92,8 @@ if (damageTimmer == -10)
 			ds_list_add(other.enemyIgnoreList, self.id);
 			other.markImageIndex = other.image_index;
 		}
+		
+		fncOnGetDamage(realDamage);
 	
 		if (realDamage > 0)
 		{

@@ -37,9 +37,19 @@ function fncIsPlayerInRange(player)
 
 function fncHandleFlyToPlayerState(player)
 {
-	if (distance_to_point(player.x, player.y - 48) > 8)
+	if (instance_exists(player))
 	{
-		move_towards_point(player.x, player.y - 48, flySpd);
+		if (distance_to_point(player.x, player.y - 48) > 8)
+		{
+			move_towards_point(player.x, player.y - 48, flySpd);
+		}
+		else
+		{
+			motion_set(0, 0);
+			state = evilBatState.DRILL_DOWN;
+			sprite_index = sprEvilBatDrill;
+			waitToDrill = waitTimeMaxDrill;
+		}
 	}
 	else
 	{

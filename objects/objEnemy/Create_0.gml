@@ -74,3 +74,8 @@ function fncRealEnemyHandleStep()
 	if (hp <= 0)
 		instance_destroy();
 }
+
+function fncOnGetDamage(realDamage)
+{
+	
+}
