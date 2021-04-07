@@ -2,17 +2,13 @@
 // You can write your code in this editor
 switch (sprite_index)
 {
-	case sprGateClosing:
+	case sprGate.sprClosing:
 	{
-		sprite_index = sprGateClose;
-		image_index = 0;
-		state = 1;
-		global.gameState = GameState.INGAME_GAMEPLAY;
-		fncGateCreateBlock();
+		fncGateClose();
 	}	break;
-	case sprGateOpening:
+	case sprGate.sprOpening:
 	{
-		sprite_index = sprGateOpen;
+		sprite_index = sprGate.sprOpen;
 		image_index = 0;
 		instance_destroy(gateBlock);
 		gateBlock = noone;

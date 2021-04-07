@@ -4,8 +4,25 @@
 // Inherit the parent event
 event_inherited();
 
+sprGate =
+{
+	sprClose : sprGateClose,
+	sprClosing : sprGateClosing,
+	sprOpen : sprGateOpen,
+	sprOpening : sprGateOpening
+}
+
 gateBlock = noone;
 state = 0;
+
+function fncGateClose()
+{
+	sprite_index = sprGate.sprClose;
+	image_index = 0;
+	state = 1;
+	global.gameState = GameState.INGAME_GAMEPLAY;
+	fncGateCreateBlock();
+}
 
 function fncGateCreateBlock()
 {

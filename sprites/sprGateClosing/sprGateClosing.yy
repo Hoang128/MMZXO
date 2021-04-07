@@ -119,9 +119,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3f672eeb-8e4b-4b8c-9e5e-770f9d40e427","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
-    "name": "Gates",
-    "path": "folders/Sprites/Stage Objects/Gates.yy",
+    "name": "Normal",
+    "path": "folders/Sprites/Stage Objects/Gates/Normal.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprGateClosing",

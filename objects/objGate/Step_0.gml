@@ -21,7 +21,7 @@ switch (state)
 					fncStateChange(objPlayerStatePassGatePlatform);
 			}
 			global.gameState = GameState.INGAME_CUTSCENE;
-			sprite_index = sprGateOpening;
+			sprite_index = sprGate.sprOpening;
 			image_index = 0;
 			state = 2;
 		}
@@ -32,7 +32,7 @@ switch (state)
 	{
 		if (!place_meeting(x, y, objPlayerBasic))
 		{
-			sprite_index = sprGateClosing;
+			sprite_index = sprGate.sprClosing;
 			image_index = 0;
 			state = 4;
 		}

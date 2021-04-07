@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c19c6644-4610-4ecc-9dab-cb614052fee1","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "InsideCamZone",
     "path": "folders/Sprites/Basic Templates/Zones/InsideCamZone.yy",
