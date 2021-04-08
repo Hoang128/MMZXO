@@ -17,8 +17,8 @@
   "width": 16,
   "height": 16,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupPhysics",
+    "path": "texturegroups/texgroupPhysics",
   },
   "swatchColours": null,
   "gridX": 8,
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2a22f98d-0b61-4659-a4a5-8a7ee072d88c","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "LimitCamZone",
     "path": "folders/Sprites/Basic Templates/Zones/LimitCamZone.yy",

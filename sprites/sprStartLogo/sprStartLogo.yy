@@ -17,8 +17,8 @@
   "width": 900,
   "height": 318,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupUIImage",
+    "path": "texturegroups/texgroupUIImage",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9e614bc7-bba4-4efe-be03-c4114d4aa832","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "UI",
     "path": "folders/Sprites/UI.yy",

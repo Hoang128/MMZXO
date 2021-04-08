@@ -17,8 +17,8 @@
   "width": 16,
   "height": 13,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupHermitCrabE",
+    "path": "texturegroups/texgroupHermitCrabE",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -87,6 +87,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1d69150c-587b-41ef-9fad-559024b3c933","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Hermit Crab",
     "path": "folders/Sprites/Enemies/Hermit Crab.yy",

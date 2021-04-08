@@ -4,6 +4,12 @@
 // Inherit the parent event
 event_inherited();
 
+roomInfo =
+{
+	roomId : noone,
+	roomBoss : noone,
+	roomBossBeaten : false
+};
 roomToChange = noone;
 waitTimeToChange = 60;
 

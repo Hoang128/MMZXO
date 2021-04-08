@@ -17,8 +17,8 @@
   "width": 11,
   "height": 12,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupTrooperGun",
+    "path": "texturegroups/texgroupTrooperGun",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -75,6 +75,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"9541b624-44ef-4fb1-9ec4-fa9197457187","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Gun Type",
     "path": "folders/Sprites/Enemies/Trooper/Gun Type.yy",

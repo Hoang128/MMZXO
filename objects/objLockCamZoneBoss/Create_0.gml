@@ -4,5 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-boss = objEnemyBoss;
+bossManager = objBossManager;
+bossManagerInstance = noone;
+haveBoss = true;
 inited = false;

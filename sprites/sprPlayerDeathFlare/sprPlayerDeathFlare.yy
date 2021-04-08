@@ -17,8 +17,8 @@
   "width": 32,
   "height": 34,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupCommonEff",
+    "path": "texturegroups/texgroupCommonEff",
   },
   "swatchColours": null,
   "gridX": 8,
@@ -87,6 +87,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c6c3f1cb-776f-49c1-aa03-cc492cd5aa76","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Common",
     "path": "folders/Sprites/Effects/Common.yy",

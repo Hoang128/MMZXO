@@ -17,8 +17,8 @@
   "width": 42,
   "height": 64,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupGunTotemE",
+    "path": "texturegroups/texgroupGunTotemE",
   },
   "swatchColours": null,
   "gridX": 0,

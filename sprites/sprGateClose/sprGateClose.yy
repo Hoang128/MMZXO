@@ -17,8 +17,8 @@
   "width": 32,
   "height": 85,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupGates",
+    "path": "texturegroups/texgroupGates",
   },
   "swatchColours": null,
   "gridX": 8,

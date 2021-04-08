@@ -17,8 +17,8 @@
   "width": 36,
   "height": 39,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupTrooperGun",
+    "path": "texturegroups/texgroupTrooperGun",
   },
   "swatchColours": null,
   "gridX": 0,

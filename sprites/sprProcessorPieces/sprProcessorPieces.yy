@@ -17,8 +17,8 @@
   "width": 31,
   "height": 28,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupProcessor",
+    "path": "texturegroups/texgroupProcessor",
   },
   "swatchColours": null,
   "gridX": 0,

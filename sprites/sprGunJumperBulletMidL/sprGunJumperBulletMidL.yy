@@ -17,8 +17,8 @@
   "width": 18,
   "height": 18,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupGunJumper",
+    "path": "texturegroups/texgroupGunJumper",
   },
   "swatchColours": null,
   "gridX": 8,

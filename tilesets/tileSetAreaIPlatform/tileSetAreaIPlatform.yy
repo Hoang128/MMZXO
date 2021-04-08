@@ -1,5 +1,4 @@
 {
-  "name": "tileSetAreaIPlatform",
   "spriteId": {
     "name": "sprAreaIPlatform",
     "path": "sprites/sprAreaIPlatform/sprAreaIPlatform.yy",
@@ -12,8 +11,8 @@
   "tilevsep": 0,
   "spriteNoExport": true,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupTileAreaI",
+    "path": "texturegroups/texgroupTileAreaI",
   },
   "out_tilehborder": 2,
   "out_tilevborder": 2,
@@ -2487,6 +2486,7 @@
     "path": "folders/Tile Sets/Area I.yy",
   },
   "resourceVersion": "1.0",
+  "name": "tileSetAreaIPlatform",
   "tags": [],
   "resourceType": "GMTileSet",
 }

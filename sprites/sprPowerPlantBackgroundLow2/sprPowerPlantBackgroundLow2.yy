@@ -17,8 +17,8 @@
   "width": 160,
   "height": 128,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupTileAreaI",
+    "path": "texturegroups/texgroupTileAreaI",
   },
   "swatchColours": null,
   "gridX": 0,

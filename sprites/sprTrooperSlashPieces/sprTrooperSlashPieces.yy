@@ -17,16 +17,16 @@
   "width": 32,
   "height": 38,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupTrooperGun",
+    "path": "texturegroups/texgroupTrooperGun",
   },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"731e6c32-fce1-4bc8-ac35-b32b1f189808","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"731e6c32-fce1-4bc8-ac35-b32b1f189808","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"LayerId":{"name":"3d90b1c8-764b-4d35-9a10-5b5aa536e6ad","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"731e6c32-fce1-4bc8-ac35-b32b1f189808","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"LayerId":{"name":"4ccf8d10-211a-4187-86b0-06eabd3f91d8","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"731e6c32-fce1-4bc8-ac35-b32b1f189808","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"LayerId":{"name":"3d90b1c8-764b-4d35-9a10-5b5aa536e6ad","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprTrooperSlashPieces","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"resourceVersion":"1.0","name":"731e6c32-fce1-4bc8-ac35-b32b1f189808","tags":[],"resourceType":"GMSpriteFrame",},
     {"compositeImage":{"FrameId":{"name":"11950d15-2f80-487f-a007-9963ade4f9ff","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
         {"FrameId":{"name":"11950d15-2f80-487f-a007-9963ade4f9ff","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"LayerId":{"name":"4ccf8d10-211a-4187-86b0-06eabd3f91d8","path":"sprites/sprTrooperSlashPieces/sprTrooperSlashPieces.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
@@ -74,6 +74,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"4ccf8d10-211a-4187-86b0-06eabd3f91d8","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3d90b1c8-764b-4d35-9a10-5b5aa536e6ad","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Gun Type",
     "path": "folders/Sprites/Enemies/Trooper/Gun Type.yy",

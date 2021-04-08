@@ -6,3 +6,4 @@ objSceneFade.fadeSpd = 0.025;
 objSceneFade.colorVal = c_black;
 roomToChange = noone;
 waitTimeToChange = 60;
+currentRoom = room;

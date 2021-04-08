@@ -5,3 +5,5 @@
 event_inherited();
 
 hp = 64;
+
+bossManager = noone;

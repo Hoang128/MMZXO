@@ -17,8 +17,8 @@
   "width": 48,
   "height": 37,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupHermitCrabE",
+    "path": "texturegroups/texgroupHermitCrabE",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"035df0de-9f1a-40f9-a488-a9adf6eb3994","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Shield",
     "path": "folders/Sprites/Enemies/Hermit Crab/Shield.yy",

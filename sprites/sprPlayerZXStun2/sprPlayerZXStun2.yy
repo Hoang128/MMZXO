@@ -17,8 +17,8 @@
   "width": 39,
   "height": 37,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupCharZX",
+    "path": "texturegroups/texgroupCharZX",
   },
   "swatchColours": null,
   "gridX": 0,
@@ -71,6 +71,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"202209b5-e89d-4fa9-81be-3a25d1fb74dc","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Base ",
     "path": "folders/Sprites/Characters/ZX/Base .yy",
