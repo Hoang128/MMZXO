@@ -67,9 +67,10 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"d1ca6607-46c9-4f74-b5d9-49de4a4acdc8","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Gun Type",
-    "path": "folders/Sprites/Enemies/Trooper/Gun Type.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Trooper/Gun Type.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprTrooperIdle",

@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Shield",
-    "path": "folders/Sprites/Enemies/Hermit Crab/Shield.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Hermit Crab/Shield.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprHermitCrabIdleShield",

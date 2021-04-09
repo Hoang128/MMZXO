@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gunner Jumper",
-    "path": "folders/Sprites/Enemies/Gunner Jumper.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Gunner Jumper.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprGunJumperJump",

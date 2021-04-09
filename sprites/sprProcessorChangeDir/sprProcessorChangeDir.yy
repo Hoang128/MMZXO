@@ -86,7 +86,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Processor",
-    "path": "folders/Sprites/Enemies/Processor.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Processor.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprProcessorChangeDir",

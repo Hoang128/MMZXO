@@ -1,0 +1,1 @@
+bossManager = objHellBatSchiltMgr;

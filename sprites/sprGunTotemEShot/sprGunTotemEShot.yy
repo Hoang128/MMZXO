@@ -70,7 +70,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gun Totem Electric",
-    "path": "folders/Sprites/Enemies/Gun Totem Electric.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Gun Totem Electric.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprGunTotemEShot",

@@ -78,7 +78,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Gun Type",
-    "path": "folders/Sprites/Enemies/Trooper/Gun Type.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Trooper/Gun Type.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprTrooperPiece",

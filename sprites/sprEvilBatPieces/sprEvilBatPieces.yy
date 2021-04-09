@@ -90,7 +90,7 @@
   "nineSlice": null,
   "parent": {
     "name": "Evil Bat",
-    "path": "folders/Sprites/Enemies/Evil Bat.yy",
+    "path": "folders/Sprites/Enemies/Creeps/Evil Bat.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprEvilBatPieces",
