@@ -6,6 +6,16 @@ event_inherited();
 
 waitTime = 60;
 
+function fncChooseMove()
+{
+	show_debug_message("choose move!");
+}
+
+function fncDoMove()
+{
+	
+}
+
 function fncStateStart()
 {
 	show_debug_message("hell bat schilt enter idle state");
@@ -27,22 +37,16 @@ function fncStateRun()
 		}
 		else
 		{
-			fncChooseMove();
-			fncDoMove();
+			with (other)
+			{
+				fncChooseMove();
+				fncDoMove();
+			}
 		}
 	}
 }
 
 function fncStateEnd()
-{
-}
-
-function fncChooseMove()
-{
-	
-}
-
-function fncDoMove()
 {
 	
 }
