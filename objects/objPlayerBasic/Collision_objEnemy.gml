@@ -1,22 +1,25 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (inviTime == 0)
+if (!other.isIllusion)
 {
-	hp -= other.damage;
-	
-	if (hp < 0) hp = 0;
-	
-	inviTime = inviAfterStunMax;
-	with (playerStateMachine)
-		fncStateChange(objPlayerStateStunNor);
-}
-
-with (other)
-{
-	if (bullet)
+	if (inviTime == 0)
 	{
-		if (destroyWhenHit)
-			instance_destroy();
+		hp -= other.damage;
+	
+		if (hp < 0) hp = 0;
+	
+		inviTime = inviAfterStunMax;
+		with (playerStateMachine)
+			fncStateChange(objPlayerStateStunNor);
+	}
+
+	with (other)
+	{
+		if (bullet)
+		{
+			if (destroyWhenHit)
+				instance_destroy();
+		}
 	}
 }

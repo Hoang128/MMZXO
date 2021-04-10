@@ -5,6 +5,14 @@ stateType = noone;
 stateMachine = noone;
 inited = false;
 
+function fncDoDequeueMove()
+{
+	with (stateMachine)
+	{
+		fncStateDequeue();
+	}
+}
+
 function fncStateStart()
 {
 }

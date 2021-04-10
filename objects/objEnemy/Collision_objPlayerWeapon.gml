@@ -1,53 +1,75 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-if (damageTimmer == -10)
+if (!isIllusion)
 {
-	var isIgnored = false;
-	with (other)
+	if (damageTimmer == -10)
 	{
-		isIgnored = fncIsEnemyIgnored(other.id);
-	}
-	
-	if (!isIgnored)
-	{
-		var realDamage = other.damage;
-		damageTimmer = other.maxTimmer;
-
-		switch (other.element)
+		var isIgnored = false;
+		with (other)
 		{
-			case Element.DARK:		realDamage -= armor.darkArmor;		break;
-			case Element.FIRE:		realDamage -= armor.fireArmor;		break;
-			case Element.ICE:		realDamage -= armor.iceArmor;		break;
-			case Element.ELECT:		realDamage -= armor.electArmor;		break;
+			isIgnored = fncIsEnemyIgnored(other.id);
 		}
-		realDamage -= armor.neutralArmor;
-		if (realDamage < 0)	realDamage = 0;
-		if (other.isGuardBreaker == false)
+	
+		if (!isIgnored)
 		{
-			if (guard == 0.5)
+			damageGot = other.damage;
+			damageTimmer = other.maxTimmer;
+
+			switch (other.element)
 			{
-				switch (guardDir)
+				case Element.DARK:		damageGot -= armor.darkArmor;		break;
+				case Element.FIRE:		damageGot -= armor.fireArmor;		break;
+				case Element.ICE:		damageGot -= armor.iceArmor;		break;
+				case Element.ELECT:		damageGot -= armor.electArmor;		break;
+			}
+			damageGot -= armor.neutralArmor;
+			if (damageGot < 0)	damageGot = 0;
+			if (other.isGuardBreaker == false)
+			{
+				if (guard == 0.5)
 				{
-					case 0:	
+					switch (guardDir)
 					{
-						if ((other.x - (bbox_right + bbox_left) / 2) > 0)
-							realDamage = 0;
-					}	break;
-					case 180:
+						case 0:	
+						{
+							if ((other.x - (bbox_right + bbox_left) / 2) > 0)
+								damageGot = 0;
+						}	break;
+						case 180:
+						{
+							if ((other.x - (bbox_right + bbox_left) / 2) < 0)
+								damageGot = 0;
+						}	break;
+					}
+				}
+				if (guard == 1)
+				{
+					damageGot = 0;
+				}
+			
+				if (damageGot == 0)
+				{
+					if (other.weaponType = PlayerWeaponType.MELEE)
 					{
-						if ((other.x - (bbox_right + bbox_left) / 2) < 0)
-							realDamage = 0;
-					}	break;
+						with (objGlobalManager)
+						{
+							fncSetTimeScale(0.5, 5);
+						}
+					}
+				
+					if (other.weaponType = PlayerWeaponType.BUSTER)
+					{
+						with (other)
+						{
+							colWithGuard = true;
+						}
+					}
 				}
 			}
-			if (guard == 1)
+	
+			if (guard == 2)
 			{
-				realDamage = 0;
-			}
-			
-			if (realDamage == 0)
-			{
+				damageGot = 0;
 				if (other.weaponType = PlayerWeaponType.MELEE)
 				{
 					with (objGlobalManager)
@@ -64,65 +86,45 @@ if (damageTimmer == -10)
 					}
 				}
 			}
-		}
 	
-		if (guard == 2)
-		{
-			realDamage = 0;
-			if (other.weaponType = PlayerWeaponType.MELEE)
+			if (other.weaponType == PlayerWeaponType.MELEE)
 			{
-				with (objGlobalManager)
-				{
-					fncSetTimeScale(0.5, 5);
-				}
+				other.hit++;
+				ds_list_add(other.enemyIgnoreList, self.id);
+				other.markImageIndex = other.image_index;
 			}
-				
-			if (other.weaponType = PlayerWeaponType.BUSTER)
-			{
-				with (other)
-				{
-					colWithGuard = true;
-				}
-			}
-		}
+		
+			fncOnGetDamage(damageGot);
 	
-		if (other.weaponType == PlayerWeaponType.MELEE)
-		{
-			other.hit++;
-			ds_list_add(other.enemyIgnoreList, self.id);
-			other.markImageIndex = other.image_index;
-		}
-		
-		fncOnGetDamage(realDamage);
-	
-		if (realDamage > 0)
-		{
-			hp -= realDamage;
-		
-			//Create Effect
-			audio_play_sound_on(global.emitterSFX.source, other.collisionSFX, false, false);
-		
-			if (other.weaponType == PlayerWeaponType.BUSTER)
+			if (damageGot > 0)
 			{
-				if (hp > 0)
-				{
-					with(other)
-						instance_destroy();
-				}
-			}
+				hp -= damageGot;
 		
-			else if (other.weaponType == PlayerWeaponType.MELEE)
-			{
-				createCollisionEffectMelee(other);
-				with (objGlobalManager)
-				{
-					fncSetTimeScale(0.5, 5);
-				}
-			}
+				//Create Effect
+				audio_play_sound_on(global.emitterSFX.source, other.collisionSFX, false, false);
 		
-			//Blink effect
-			if (blinkTime == 0)
-				blinkTime = blinkTimeMax;
+				if (other.weaponType == PlayerWeaponType.BUSTER)
+				{
+					if (hp > 0)
+					{
+						with(other)
+							instance_destroy();
+					}
+				}
+		
+				else if (other.weaponType == PlayerWeaponType.MELEE)
+				{
+					createCollisionEffectMelee(other);
+					with (objGlobalManager)
+					{
+						fncSetTimeScale(0.5, 5);
+					}
+				}
+		
+				//Blink effect
+				if (blinkTime == 0)
+					blinkTime = blinkTimeMax;
+			}
 		}
 	}
 }

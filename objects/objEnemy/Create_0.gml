@@ -6,6 +6,7 @@ event_inherited();
 
 hp = 5;
 damage = 1;
+damageGot = 0;
 
 //protect ranged attack
 shield = noone;
@@ -42,7 +43,7 @@ destroyPiece = {sprite : noone, number : 0};
 
 palette = noone;
 paletteNumber = 0;
-
+isIllusion = false;
 
 function createCollisionEffectMelee(playerDamageSource)
 {

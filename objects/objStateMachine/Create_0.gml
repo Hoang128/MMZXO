@@ -5,10 +5,27 @@
 event_inherited();
 
 physic.enable = false;
+useQueue = false;
 
 coreType = noone;
 currentState = noone;
 core = noone;
+
+stateQueue = ds_queue_create();
+
+function fncStateEnqueue(state)
+{
+	ds_queue_enqueue(stateQueue, state);
+}
+
+function fncStateDequeue()
+{
+	if (ds_queue_size(stateQueue) == 0)
+		return;
+	var newState = ds_queue_dequeue(stateQueue);
+	
+	fncStateChange(newState);
+}
 
 function fncStateChange(newState)
 {
