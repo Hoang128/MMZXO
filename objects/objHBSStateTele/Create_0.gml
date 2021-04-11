@@ -66,12 +66,18 @@ function fncStateRun()
 		{
 			timeTele = irandom_range(1, 3);
 		}
-		fncCreateIllusion(true);
+		
+		with (core.id)
+		{
+			sprite_index = sprHellBatTele;
+			image_index = 0;
+		}
+		
 		inited = true;
 	}
 	else
 	{
-		if (phase = 1)
+		if (phase == 1)
 		{
 			if (core.id.visible == 0)
 			{
@@ -90,14 +96,21 @@ function fncStateRun()
 				}
 			}
 		}
-		else
+		else if (phase == 2)
 		{
 			if (core.id.visible == 0)
 			{
 				if (!instance_exists(illusionIn))
-					core.id.visible = 1;
+				{
+					with (core.id)
+					{
+						sprite_index = sprHellBatFly;
+						image_index = 0;
+						visible = 1;
+					}
+				}
 			}
-			if (core.id.visible == 1)
+			else
 			{
 				if (timeWait > 0)
 				{
@@ -111,15 +124,17 @@ function fncStateRun()
 					if (timeTele > 0)
 					{
 						timeWait = timeWaitMax;
-						phase = 1;
-						fncCreateIllusion(true);
+						phase = 0;
+						
+						with (core.id)
+						{
+							sprite_index = sprHellBatTele;
+							image_index = 0;
+						}
 					}
 					else
 					{
-						if (core.id.visible)
-						{
-							fncDoDequeueMove();
-						}
+						fncDoDequeueMove();
 					}
 				}
 			}

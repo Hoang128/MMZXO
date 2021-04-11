@@ -46,4 +46,15 @@ switch (sprite_index)
 			fncStateDequeue();
 		}
 	}	break;
+	
+	case sprHellBatTele:
+	{
+		if (visible)
+		{
+			with (bossStateMachine.currentState)
+			{
+				fncCreateIllusion(true);
+			}
+		}
+	}	break;
 }
