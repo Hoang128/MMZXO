@@ -74,7 +74,6 @@ function fncDeactiveOutsideCamRegion()
 	instance_activate_object(objEffUI);
 	instance_activate_object(objStageZone);
 	instance_activate_object(objGate);
-
 	
 	instance_activate_object(objPlayerBasic);
 	

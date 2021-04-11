@@ -453,6 +453,7 @@
     {"id":{"name":"sprBlockSlope2","path":"sprites/sprBlockSlope2/sprBlockSlope2.yy",},"order":2,},
     {"id":{"name":"objEnemyReal","path":"objects/objEnemyReal/objEnemyReal.yy",},"order":3,},
     {"id":{"name":"sfxFootConveyer","path":"sounds/sfxFootConveyer/sfxFootConveyer.yy",},"order":2,},
+    {"id":{"name":"objE_HBSBat","path":"objects/objE_HBSBat/objE_HBSBat.yy",},"order":5,},
     {"id":{"name":"sprSlashKillEff","path":"sprites/sprSlashKillEff/sprSlashKillEff.yy",},"order":14,},
     {"id":{"name":"tileSetAreaITowerFore","path":"tilesets/tileSetAreaITowerFore/tileSetAreaITowerFore.yy",},"order":2,},
     {"id":{"name":"objUIKeyboardIndexer","path":"objects/objUIKeyboardIndexer/objUIKeyboardIndexer.yy",},"order":2,},

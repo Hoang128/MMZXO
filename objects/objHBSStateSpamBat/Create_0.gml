@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+waitTime = 0;
+waitTimeMax = 4;
+
 inited = false;
 spamTime = 120;
 
@@ -22,15 +25,26 @@ function fncStateRun()
 {	
 	with (core.id)
 	{
-		if (other.spamTime > 0)
+		if (sprite_index == sprHellBatSpamBat)
 		{
-			other.spamTime -= TIME_SCALE;
-		}
-		else
-		{
-			if (sprite_index != sprHellBatSpamBatEnd)
+			if (other.spamTime > 0)
+			{
+				if (other.waitTime > 0)
+				{
+					other.waitTime -= TIME_SCALE;
+				}
+				else
+				{
+					instance_create_depth(x + 24 * image_xscale, y - 42, depth, objE_HBSBat);
+					other.waitTime = other.waitTimeMax;
+				}
+			
+				other.spamTime -= TIME_SCALE;
+			}
+			else
 			{
 				sprite_index = sprHellBatSpamBatEnd;
+				image_index = 0;
 			}
 		}
 	}
