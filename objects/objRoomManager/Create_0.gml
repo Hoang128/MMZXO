@@ -6,10 +6,9 @@ event_inherited();
 
 roomInfo =
 {
-	roomId : noone,
-	roomBoss : noone,
-	roomBossBeaten : false
+	roomId : noone
 };
+
 roomToChange = noone;
 waitTimeToChange = 60;
 

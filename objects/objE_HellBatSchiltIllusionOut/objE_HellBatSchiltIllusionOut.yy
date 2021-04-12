@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "HellBat Schilt",
-    "path": "folders/Objects/Visible InGame/Enemy/Bosses/HellBat Schilt.yy",
+    "name": "Sub",
+    "path": "folders/Objects/Visible InGame/Enemy/Bosses/HellBat Schilt/Sub.yy",
   },
   "resourceVersion": "1.0",
   "name": "objE_HellBatSchiltIllusionOut",

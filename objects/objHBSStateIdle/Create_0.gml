@@ -15,38 +15,29 @@ function fncChooseMove()
 	var arrVal = ds_map_values_to_array(core.id.moveRatio);
 	var arrKey = ds_map_keys_to_array(core.id.moveRatio);
 	
-	with (core.id)
+	var randomChoose = ds_list_create();
+	
+	for (var i = 0; i < array_length(arrVal); i++)
 	{
-		for (var i = 0; i < array_length(arrVal); i++)
+		if (arrKey[i] == core.id.lastMove)
+			continue;
+		else
 		{
-			if (arrKey[i] != lastMove)
+			for (var j = 0; j < arrVal[i]; j++)
 			{
-				randTotal += arrVal[i];
+				ds_list_add(randomChoose, arrKey[i]);
 			}
 		}
 	}
 	
-	var randChoose = array_create(randTotal, "none");
 	
-	var counter = arrVal[0];
-	var subCounter = 0;
-	for (var i = 0; i < array_length(randChoose); i++)
-	{
-		if (i >= counter)
-		{
-			subCounter++;
-			counter += arrVal[subCounter];
-		}
-		
-		if (arrKey[subCounter] == core.id.lastMove)
-			continue;
-		randChoose[i] = arrKey[subCounter];
-	}
 	
 	randomize();
-	var rand = floor(random(randTotal));
+	var rand = random(floor(ds_list_size(randomChoose)));
 	
-	fncGetBatMoveSequence(randChoose[rand]);
+	fncGetBatMoveSequence(ds_list_find_value(randomChoose, rand));
+	
+	ds_list_destroy(randomChoose);
 }
 
 function fncGetBatMoveSequence(stringMove)

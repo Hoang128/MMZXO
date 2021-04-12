@@ -5,6 +5,10 @@
 event_inherited();
 
 x += image_xscale * hMoveSpd * TIME_SCALE;
+y += vMoveSpd * TIME_SCALE;
+
+vMoveSpd -= accSpd * TIME_SCALE;
+
 
 if (!collision_rectangle(VIEW_X, VIEW_Y, VIEW_X + VIEW_W, VIEW_Y + VIEW_H, self, false, false))
 {

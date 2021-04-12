@@ -5,7 +5,11 @@
 event_inherited();
 
 inited = false;
-spamTime = 60;
+
+spamTimeMax = 90;
+spamTime = spamTimeMax;
+
+skillUsed = false;
 
 function fncStateStart()
 {
@@ -24,6 +28,32 @@ function fncStateRun()
 	{
 		if (other.spamTime > 0)
 		{
+			if (other.spamTime <= (other.spamTimeMax * 0.6))
+			{
+				if (!other.skillUsed)
+				{
+					var sonic = array_create(6, noone);
+					sonic[0] = instance_create_depth(x + 13 * image_xscale, y - 51, depth - 1, objE_HBSSonicMove);
+					sonic[1] = instance_create_depth(x + 13 * image_xscale, y - 35, depth - 1, objE_HBSSonicMove);
+					
+					sonic[2] = instance_create_depth(x - 35 * image_xscale, y - 51, depth - 1, objE_HBSSonicMove);
+					sonic[3] = instance_create_depth(x - 35 * image_xscale, y - 35, depth - 1, objE_HBSSonicMove);
+					
+					sonic[4] = instance_create_depth(x - 3 * image_xscale, y - 67, depth - 1, objE_HBSSonicMove);
+					sonic[5] = instance_create_depth(x - 19 * image_xscale, y - 67, depth - 1, objE_HBSSonicMove);
+					
+					sonic[0].direction = 20;
+					sonic[1].direction = -20;
+					
+					sonic[2].direction = 160;
+					sonic[3].direction = -160;
+					
+					sonic[4].direction = 70;
+					sonic[5].direction = 110;
+					
+					other.skillUsed = true;
+				}
+			}
 			other.spamTime -= TIME_SCALE;
 		}
 		else

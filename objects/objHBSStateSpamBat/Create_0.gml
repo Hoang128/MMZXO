@@ -6,9 +6,17 @@ event_inherited();
 
 waitTime = 0;
 waitTimeMax = 4;
+vspdBatArr = array_create(6, 0);
+vspdBatArr[0] = 0.4;
+vspdBatArr[1] = 1.2;
+vspdBatArr[2] = 0.6;
+vspdBatArr[3] = 1;
+vspdBatArr[4] = 0.8;
+vspdBatArr[5] = 1.4;
+count = 0;
 
 inited = false;
-spamTime = 120;
+spamTime = 180;
 
 function fncStateStart()
 {
@@ -35,8 +43,16 @@ function fncStateRun()
 				}
 				else
 				{
-					instance_create_depth(x + 24 * image_xscale, y - 42, depth, objE_HBSBat);
+					var bat = instance_create_depth(x + 24 * image_xscale, y - 36 + other.count * 2, depth - 1, objE_HBSBat);
 					other.waitTime = other.waitTimeMax;
+					bat.vMoveSpd = other.vspdBatArr[other.count];
+					
+					if (other.count < (array_length(other.vspdBatArr) - 1))
+					{
+						other.count++;
+					}
+					else
+						other.count = 0;
 				}
 			
 				other.spamTime -= TIME_SCALE;
