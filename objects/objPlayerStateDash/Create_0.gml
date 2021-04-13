@@ -194,9 +194,18 @@ function fncPlayerDashRun()
 		{
 			with(other.stateMachine)
 			{
-				fncStateChange(objPlayerStateIdle);
-				currentState.lastState = "dash";
-				return;
+				if (fncIsOnGround(2))
+				{
+					fncStateChange(objPlayerStateIdle);
+					currentState.lastState = "dash";
+					return;
+				}
+				else
+				{
+					fncStateChange(objPlayerStateJump);
+					currentState.lastState = "dash";
+					return;
+				}
 			}
 		}
 	}

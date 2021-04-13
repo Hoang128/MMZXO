@@ -9,9 +9,7 @@ waitTime = 30;
 function fncChooseMove()
 {
 	show_debug_message("choose move!");
-	
-	var randTotal = 0;
-	
+
 	var arrVal = ds_map_values_to_array(core.id.moveRatio);
 	var arrKey = ds_map_keys_to_array(core.id.moveRatio);
 	
@@ -69,6 +67,16 @@ function fncGetBatMoveSequence(stringMove)
 				fncStateEnqueue(objHBSStateTele);
 			}
 		}	break;
+		
+		case "shot down":
+		{
+			with (stateMachine)
+			{
+				fncStateEnqueue(objHBSStateTele);
+				fncStateEnqueue(objHBSStateShotDown);
+				fncStateEnqueue(objHBSStateTeleAfterShot);
+			}
+		}	break;
 	}
 	with (stateMachine)
 	{
@@ -107,7 +115,11 @@ function fncStateRun()
 				fncDoDequeueMove();
 				if (core.id.lastMove == "release sonic")
 				{
-					stateMachine.currentState.customTele = true;
+					stateMachine.currentState.customTele = "release sonic";
+				}
+				else if (core.id.lastMove == "shot down")
+				{
+					stateMachine.currentState.customTele = "shot down";
 				}
 			}
 		}

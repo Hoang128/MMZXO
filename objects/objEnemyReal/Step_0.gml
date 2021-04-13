@@ -6,5 +6,3 @@
 fncRealEnemyHandleStep();
 
 event_inherited();
-
-show_debug_message("blink = " + string(blink));

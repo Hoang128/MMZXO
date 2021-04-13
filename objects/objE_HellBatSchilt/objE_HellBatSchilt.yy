@@ -5,10 +5,7 @@
   },
   "solid": false,
   "visible": true,
-  "spriteMaskId": {
-    "name": "sprHellBatFly",
-    "path": "sprites/sprHellBatFly/sprHellBatFly.yy",
-  },
+  "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
     "name": "objEnemyBoss",

@@ -57,4 +57,30 @@ switch (sprite_index)
 			}
 		}
 	}	break;
+	
+	case sprHellBatShotDown:
+	{
+		if (visible)
+		{
+			if (bossStateMachine.currentState.shotTime > 0)
+			{
+			
+				with (bossStateMachine.currentState)
+				{
+					if (shot)
+					{
+						shot = false;
+					}
+					fncStartIllusion(objGlobalManager.currentPlayer);
+				}
+			}
+			else
+			{
+				with (bossStateMachine.currentState)
+				{
+					fncDoDequeueMove();
+				}
+			}
+		}
+	}	break;
 }

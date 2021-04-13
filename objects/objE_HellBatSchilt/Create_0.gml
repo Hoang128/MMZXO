@@ -20,9 +20,10 @@ teleZone =
 };
 
 moveRatio = ds_map_create();
-ds_map_add(moveRatio, "release bat", 3);
-ds_map_add(moveRatio, "release sonic", 3);
-ds_map_add(moveRatio, "teleport", 3);
+ds_map_add(moveRatio, "release bat", 1);
+ds_map_add(moveRatio, "release sonic", 1);
+ds_map_add(moveRatio, "teleport", 1);
+ds_map_add(moveRatio, "shot down", 3);
 
 with(bossStateMachine)
 	fncStateChange(objHBSStateIdle);

@@ -11,12 +11,6 @@ if (instance_exists(objPlayerZX))
 	draw_text(4, 72, "vspd = " + string(objPlayerZX.vspd));
 	draw_text(4, 96, "charge current 1 = " + string(objPlayerZX.chargeWp1.Current));
 	draw_text(4, 120, "charge current 2 = " + string(objPlayerZX.chargeWp2.Current));
-	draw_text(4, 144, "sprite index = " + string(objPlayerZX.sprite_index));
-	draw_text(4, 168, "image index = " + string(objPlayerZX.image_index));
-	if (instance_exists(objPlayerZX.weaponMeleeMgr.weaponSlash))
-	{
-		draw_text(4, 192, "weapon meele image index = " + string(objPlayerZX.weaponMeleeMgr.weaponSlash.image_index));
-		draw_text(4, 216, "weapon meele mark index = " + string(objPlayerZX.weaponMeleeMgr.weaponSlash.markImageIndex));
-		draw_text(4, 240, "weapon meele can hit = " + string(objPlayerZX.weaponMeleeMgr.weaponSlash.canHitEnemy));
-	}
+	draw_text(4, 144, "air dash count = " + string(objPlayerZX.airDashCount));
+	draw_text(4, 168, "jump count = " + string(objPlayerZX.jumpTime));
 }

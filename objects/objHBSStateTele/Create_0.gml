@@ -11,12 +11,12 @@ timeWaitMax = 60;
 timeWaitIdle = 10;
 timeWait = timeWaitMax;
 illusionIn = noone;
-customTele = false;
+customTele = "no";
 phase = 0;
 
 function fncStateStart()
 {
-	show_debug_message("hell bat schilt ente tele state");
+	show_debug_message("hell bat schilt enter tele state");
 	core.id.isIllusion = true;
 }
 
@@ -36,14 +36,14 @@ function fncCreateIllusion(isOut)
 		{
 			fncChangeDirToPlayer(objGlobalManager.currentPlayer);
 		}
-		if (customTele)
+		if (customTele == "release sonic")
 		{
 			var centerX = (core.id.teleZone.x_l + core.id.teleZone.x_r) / 2;
 			var centerY = (core.id.teleZone.y_t + core.id.teleZone.y_b) / 2;
 			core.id.x = irandom_range(centerX - 64, centerX + 64);
 			core.id.y = irandom_range(centerY - 32, centerY + 32);
 		}
-		else
+		else if (customTele == "no")
 		{
 			core.id.x = irandom_range(core.id.teleZone.x_l, core.id.teleZone.x_r);
 			core.id.y = irandom_range(core.id.teleZone.y_t, core.id.teleZone.y_b);
@@ -58,7 +58,7 @@ function fncStateRun()
 {	
 	if (!inited)
 	{
-		if (customTele)
+		if (customTele == "release sonic" || customTele == "shot down")
 		{
 			timeTele = 1;
 		}
@@ -90,9 +90,16 @@ function fncStateRun()
 				}
 				else
 				{
-					timeWait = timeWaitIdle;
-					phase = 2;
-					fncCreateIllusion(false);
+					if (customTele != "shot down")
+					{
+						timeWait = timeWaitIdle;
+						phase = 2;
+						fncCreateIllusion(false);
+					}
+					else if (customTele == "shot down")
+					{
+						fncDoDequeueMove();
+					}
 				}
 			}
 		}

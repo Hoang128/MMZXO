@@ -42,11 +42,28 @@ function fncStateRun()
 					sonic[4] = instance_create_depth(x - 3 * image_xscale, y - 67, depth - 1, objE_HBSSonicMove);
 					sonic[5] = instance_create_depth(x - 19 * image_xscale, y - 67, depth - 1, objE_HBSSonicMove);
 					
-					sonic[0].direction = 20;
-					sonic[1].direction = -20;
+					if (image_xscale == 1)
+					{
+						sonic[0].direction = 20;
+						sonic[1].direction = -20;
 					
-					sonic[2].direction = 160;
-					sonic[3].direction = -160;
+						sonic[2].direction = 160;
+						sonic[3].direction = -160;
+						
+						sonic[4].direction = 110;
+						sonic[5].direction = 70;
+					}
+					else
+					{
+						sonic[0].direction = 160;
+						sonic[1].direction = -160;
+					
+						sonic[2].direction = 20;
+						sonic[3].direction = -20;
+						
+						sonic[4].direction = 70;
+						sonic[5].direction = 110;
+					}
 					
 					sonic[4].direction = 70;
 					sonic[5].direction = 110;

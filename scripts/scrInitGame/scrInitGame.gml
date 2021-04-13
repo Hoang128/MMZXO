@@ -125,10 +125,10 @@ function fncStaticInitKeyboardParams()
 
 function fncStaticInitKeypadParams()
 {
-	global.kpRight			= (gamepad_axis_value(0, gp_axislh) == 1);
-	global.kpLeft			= (gamepad_axis_value(0, gp_axislh) == -1);
-	global.kpUp				= (gamepad_axis_value(0, gp_axislv) == -1);
-	global.kpDown			= (gamepad_axis_value(0, gp_axislv) == 1);
+	global.kpRight			= gp_padr;
+	global.kpLeft			= gp_padl;
+	global.kpUp				= gp_padu;
+	global.kpDown			= gp_padd;
 	
 	global.kpDash			= gp_shoulderrb;
 	global.kpJump			= gp_face2;
@@ -282,56 +282,10 @@ function fncStaticHandleButtonHeld(keyMap)
 	}
 	if (global.input.gamepad)
 	{
-		//show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
-		//show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
 		var keyInput = fncStaticGetKeyPadMap(keyMap);
-		if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
-		{
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
-			{
-				//show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)
-				{
-					show_debug_message("left analog right");
-					return true;
-				}
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
-			{
-				//show_debug_message("axislh = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislh)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)
-				{
-					show_debug_message("left analog left");
-					return true;
-				}
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
-			{
-				//show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)
-				{
-					show_debug_message("left analog up");
-					return true;
-				}
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
-			{
-				//show_debug_message("axislv = " + string(gamepad_axis_value(global.input.gamepadSlot, gp_axislv)));
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)
-				{
-					show_debug_message("left analog down");
-					return true;
-				}
-			}
-		}
-		else
-		{
-			if (gamepad_button_check(global.input.gamepadSlot, keyInput))
-				handled = true;
-		}
+		
+		if (gamepad_button_check(global.input.gamepadSlot, keyInput))
+			handled = true;
 	}
 	
 	return handled;
@@ -352,37 +306,9 @@ function fncStaticHandleButtonPressed(keyMap)
 	if (global.input.gamepad)
 	{
 		var keyInput = fncStaticGetKeyPadMap(keyMap);
-		if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
-		{
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)
-					handled = true;
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)
-					handled = true;
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)
-					handled = true;
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)
-					handled = true;
-			}
-		}
-		else
-		{
-			if (gamepad_button_check_pressed(global.input.gamepadSlot, keyInput))
-				handled = true;
-		}
+		
+		if (gamepad_button_check_pressed(global.input.gamepadSlot, keyInput))
+			handled = true;
 	}
 	
 	return handled;
@@ -404,37 +330,9 @@ function fncStaticHandleButtonReleased(keyMap)
 	if (global.input.gamepad)
 	{
 		var keyInput = fncStaticGetKeyPadMap(keyMap);
-		if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)) ||
-			(keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
-		{
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == 1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) != 1)
-					handled = true;
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) == -1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislh) != -1)
-					handled = true;
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == 1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) != 1)
-					handled = true;
-			}
-			if ((keyInput == (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) == -1)))
-			{
-				if (gamepad_axis_value(global.input.gamepadSlot, gp_axislv) != -1)
-					handled = true;
-			}
-		}
-		else
-		{
-			if (gamepad_button_check_released(global.input.gamepadSlot, keyInput))
-				handled = true;
-		}
+		
+		if (gamepad_button_check_released(global.input.gamepadSlot, keyInput))
+			handled = true;
 	}
 	return handled;
 }
