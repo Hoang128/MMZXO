@@ -470,6 +470,7 @@
     {"id":{"name":"objUIKeyboardIndexer","path":"objects/objUIKeyboardIndexer/objUIKeyboardIndexer.yy",},"order":2,},
     {"id":{"name":"sprZXSlashSpinImg","path":"sprites/sprZXSlashSpinImg/sprZXSlashSpinImg.yy",},"order":8,},
     {"id":{"name":"sprPlayerZXLandShot3","path":"sprites/sprPlayerZXLandShot3/sprPlayerZXLandShot3.yy",},"order":16,},
+    {"id":{"name":"objE_HBSThunderClapOrb","path":"objects/objE_HBSThunderClapOrb/objE_HBSThunderClapOrb.yy",},"order":10,},
     {"id":{"name":"objPlayerStateZXSlashChargeClimb","path":"objects/objPlayerStateZXSlashChargeClimb/objPlayerStateZXSlashChargeClimb.yy",},"order":11,},
     {"id":{"name":"sprPlayerZXDashStartShot1","path":"sprites/sprPlayerZXDashStartShot1/sprPlayerZXDashStartShot1.yy",},"order":7,},
     {"id":{"name":"vfxVentRockOn","path":"sounds/vfxVentRockOn/vfxVentRockOn.yy",},"order":11,},
@@ -700,7 +701,7 @@
   ],
   "IncludedFiles": [],
   "MetaData": {
-    "IDEVersion": "2.3.2.556",
+    "IDEVersion": "2.3.2.558",
   },
   "resourceVersion": "1.4",
   "name": "MMZXO",

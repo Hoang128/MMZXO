@@ -7,4 +7,4 @@ event_inherited();
 orbNumber = 3;
 
 waitTime = 0;
-waitToCreate = 10;
+waitToCreate = 5;

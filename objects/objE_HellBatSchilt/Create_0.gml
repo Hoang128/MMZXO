@@ -24,7 +24,7 @@ ds_map_add(moveRatio, "release bat", 1);
 ds_map_add(moveRatio, "release sonic", 1);
 ds_map_add(moveRatio, "teleport", 1);
 ds_map_add(moveRatio, "shot down", 1);
-ds_map_add(moveRatio, "thunder clap", 5);
+ds_map_add(moveRatio, "thunder clap", 1);
 
 with(bossStateMachine)
 	fncStateChange(objHBSStateIdle);

@@ -5,7 +5,9 @@
 event_inherited();
 
 clapTime = 4;
-rootPos = {x:4, y:-4};
+rootPos = {x : 27, y : -35};
+space = 4;
+shot = false;
 
 function fncStateStart()
 {
@@ -20,6 +22,21 @@ function fncStateStart()
 
 function fncStateRun()
 {
+	with (core.id)
+	{
+		if (sprite_index == sprHellBatThunderClap)
+		{
+			if (image_index > 5)
+			{
+				if (other.shot == false)
+				{
+					var objOrb = instance_create_depth(x + other.rootPos.x * image_xscale, y + other.rootPos.y + other.space * irandom(3), depth + 1, objE_HBSThunderClapOrb);
+					objOrb.image_xscale = image_xscale;
+					other.shot = true;
+				}
+			}
+		}
+	}
 }
 
 function fncStateEnd()

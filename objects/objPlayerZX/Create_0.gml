@@ -5,6 +5,8 @@
 event_inherited();
 
 //Parameters
+jumpTimeMax = 1;
+airDashCountMax = 0;
 waitShot = 3;
 waitShotLong = 10;
 rapidMax = 3;

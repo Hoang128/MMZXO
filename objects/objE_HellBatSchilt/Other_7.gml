@@ -96,6 +96,7 @@ switch (sprite_index)
 		{
 			image_index = 0;
 			bossStateMachine.currentState.clapTime--;
+			bossStateMachine.currentState.shot = false;
 		}
 		else
 		{
