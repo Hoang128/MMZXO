@@ -142,6 +142,7 @@
     {"id":{"name":"sprPlayerZXSlashClimb","path":"sprites/sprPlayerZXSlashClimb/sprPlayerZXSlashClimb.yy",},"order":7,},
     {"id":{"name":"objPlayerStateZXSlashChargeSlide","path":"objects/objPlayerStateZXSlashChargeSlide/objPlayerStateZXSlashChargeSlide.yy",},"order":10,},
     {"id":{"name":"objE_HBSThunderBeam","path":"objects/objE_HBSThunderBeam/objE_HBSThunderBeam.yy",},"order":7,},
+    {"id":{"name":"objHBSStateThunderClap","path":"objects/objHBSStateThunderClap/objHBSStateThunderClap.yy",},"order":9,},
     {"id":{"name":"sprTrooperPiece","path":"sprites/sprTrooperPiece/sprTrooperPiece.yy",},"order":4,},
     {"id":{"name":"sprPlayerZXClimb","path":"sprites/sprPlayerZXClimb/sprPlayerZXClimb.yy",},"order":14,},
     {"id":{"name":"sprPlayerZXFallStartShot1","path":"sprites/sprPlayerZXFallStartShot1/sprPlayerZXFallStartShot1.yy",},"order":33,},

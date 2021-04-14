@@ -8,6 +8,12 @@ switch (sprite_index)
 		image_index = 0;
 	}	break;
 	
+	case sprHellBatFlyUpStart:
+	{
+		sprite_index = sprHellBatFlyDown;
+		image_index = 0;
+	}	break;
+	
 	case sprHellBatLand:
 	{
 		sprite_index = sprHellBatStand;
@@ -80,6 +86,22 @@ switch (sprite_index)
 				{
 					fncDoDequeueMove();
 				}
+			}
+		}
+	}	break;
+	
+	case sprHellBatThunderClap:
+	{
+		if (bossStateMachine.currentState.clapTime > 0)
+		{
+			image_index = 0;
+			bossStateMachine.currentState.clapTime--;
+		}
+		else
+		{
+			with (bossStateMachine.currentState)
+			{
+				fncDoDequeueMove();
 			}
 		}
 	}	break;

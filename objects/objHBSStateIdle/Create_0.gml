@@ -77,6 +77,16 @@ function fncGetBatMoveSequence(stringMove)
 				fncStateEnqueue(objHBSStateTeleAfterShot);
 			}
 		}	break;
+		
+		case "thunder clap":
+		{
+			with (stateMachine)
+			{
+				fncStateEnqueue(objHBSStateFlyDown);
+				fncStateEnqueue(objHBSStateThunderClap);
+				fncStateEnqueue(objHBSStateFlyUp);
+			}
+		}
 	}
 	with (stateMachine)
 	{
@@ -120,6 +130,10 @@ function fncStateRun()
 				else if (core.id.lastMove == "shot down")
 				{
 					stateMachine.currentState.customTele = "shot down";
+				}
+				else if (core.id.lastMove == "thunder clap")
+				{
+					stateMachine.currentState.spaceToEarth = 0;
 				}
 			}
 		}

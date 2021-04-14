@@ -23,7 +23,8 @@ moveRatio = ds_map_create();
 ds_map_add(moveRatio, "release bat", 1);
 ds_map_add(moveRatio, "release sonic", 1);
 ds_map_add(moveRatio, "teleport", 1);
-ds_map_add(moveRatio, "shot down", 3);
+ds_map_add(moveRatio, "shot down", 1);
+ds_map_add(moveRatio, "thunder clap", 5);
 
 with(bossStateMachine)
 	fncStateChange(objHBSStateIdle);

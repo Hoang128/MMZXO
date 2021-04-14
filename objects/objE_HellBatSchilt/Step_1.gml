@@ -2,7 +2,17 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-imgSpd = 0.5;
+switch (sprite_index)
+{
+	case sprHellBatThunderClap:
+	{
+		imgSpd = 0.25;
+	}	break;
+	default:
+	{
+		imgSpd = 0.5;
+	}	break;
+}
 
 event_inherited();
 

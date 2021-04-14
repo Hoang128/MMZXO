@@ -6,6 +6,7 @@ event_inherited();
 
 inited = false;
 spaceToEarth = 16;
+waitTime = 60;
 
 function fncStateStart()
 {
@@ -30,8 +31,22 @@ function fncStateRun()
 		{
 			if (other.spaceToEarth == 0)
 			{
-				sprite_index = sprHellBatLand;
-				image_index = 0;
+				if (sprite_index == sprHellBatFly)
+				{
+					sprite_index = sprHellBatLand;
+					image_index = 0;
+				}
+				else if (sprite_index == sprHellBatStand)
+				{
+					if (other.waitTime > 0)
+					{
+						other.waitTime -= TIME_SCALE;
+					}
+					else
+					{
+						fncDoDequeueMove();
+					}
+				}
 			}
 			else
 			{
