@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-if (instance_exists(core.id))
+if (instance_exists(core))
 {
 	x = core.x;
 	y = core.y - 16;

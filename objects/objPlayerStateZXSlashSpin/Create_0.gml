@@ -147,7 +147,7 @@ function fncChangeToZXStates()
 		{
 			if (image_index > 6)
 			{
-				with (other.stateMachine)
+				with (other.stateMachine)      
 				{
 					var currentDashJump = currentState.dashJump;
 					fncStateChange(objPlayerStateZXSlashSpin);
