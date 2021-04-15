@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "InsideCamZone",
-    "path": "folders/Sprites/Basic Templates/Zones/InsideCamZone.yy",
+    "name": "Inside Cam Zones",
+    "path": "folders/Sprites/Basic Templates/Zones/Inside Cam Zones.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprLockHCamZone",

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Common",
-    "path": "folders/Sprites/Basic Templates/Zones/Common.yy",
+    "name": "Common Zones",
+    "path": "folders/Sprites/Basic Templates/Zones/Common Zones.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprBossFightZone",

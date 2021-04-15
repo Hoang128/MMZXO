@@ -45,6 +45,7 @@ function fncStaticInitWorldParams()
 	//Physics
 	global.gravAcc = 0.2;
 	global.gravMax = 4;
+	global.waterMoveRatio = {x : 0.8, y : 0.4};
 	global.gravScale = 1;
 	global.waterGravScale = 0.2;
 	
@@ -228,6 +229,20 @@ function fncStaticInitStates()
 		BACKGROUND_2,
 		BACKGROUND_3,
 		BACKGROUND_4
+	}
+	
+	enum InWater
+	{
+		NONE,
+		HALF,
+		FULL
+	}
+	
+	enum InWind
+	{
+		NONE,
+		HALF,
+		FULL
 	}
 }
 

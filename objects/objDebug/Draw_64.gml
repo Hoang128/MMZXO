@@ -13,4 +13,5 @@ if (instance_exists(objPlayerZX))
 	draw_text(4, 120, "charge current 2 = " + string(objPlayerZX.chargeWp2.Current));
 	draw_text(4, 144, "air dash count = " + string(objPlayerZX.airDashCount));
 	draw_text(4, 168, "jump count = " + string(objPlayerZX.jumpTime));
+	draw_text(4, 192, "envi ratio = " + string(objPlayerZX.physic.enviMoveRatio));
 }

@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "LimitCamZone",
-    "path": "folders/Sprites/Basic Templates/Zones/LimitCamZone.yy",
+    "name": "Limit Cam Zones",
+    "path": "folders/Sprites/Basic Templates/Zones/Limit Cam Zones.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprLimitHCamZone",

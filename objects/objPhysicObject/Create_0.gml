@@ -8,7 +8,10 @@ physic =
 	gravAffect : 0,
 	thinBlockIgnore : false,
 	thinBlockIgnoreTime : 0,
-	thinBlockIgnoreTimeMax : 10
+	thinBlockIgnoreTimeMax : 10,
+	inWater : InWater.NONE,
+	inWind  : InWind.NONE,
+	enviMoveRatio : {x : 1, y : 1}
 }
 
 timeScale = 1;
@@ -25,7 +28,7 @@ function fncGravityCalculate()
 	if (physic.gravAffect == true)
 	{
 		
-		if (fncIsOnGround(global.gravMax))
+		if (fncIsOnGround(global.gravMax * physic.enviMoveRatio.y))
 		{
 			if (vspd >= 0)
 			{
@@ -36,10 +39,10 @@ function fncGravityCalculate()
 		{
 			if (!physic.onGround)
 			{
-				if (vspd < global.gravMax)
-					vspd += global.gravAcc * TIME_SCALE;
+				if (vspd < global.gravMax * physic.enviMoveRatio.y)
+					vspd += global.gravAcc * TIME_SCALE * physic.enviMoveRatio.y;
 				else
-					vspd = global.gravMax;
+					vspd = global.gravMax * physic.enviMoveRatio.y;
 			}
 			else
 			{
@@ -262,4 +265,43 @@ function fncIsThinFloorAhead(dir, distance, vDir)
 	}
 	
 	return true;
+}
+
+function fncDetectInWaterState()
+{
+	var colTopPart = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top + 1, objZoneWater, false, false);
+	var colBotPart = collision_rectangle(bbox_left, bbox_top + 2, bbox_right, bbox_bottom, objZoneWater, false, false);
+	if (colTopPart && colBotPart)
+	{
+		if (inWater != InWater.FULL)
+		{
+			vspd = vspd/global.gravMax * global.waterMoveRatio.y;
+			physic.enviMoveRatio.x *= global.waterMoveRatio.x;
+			physic.enviMoveRatio.y *= global.waterMoveRatio.y;
+		}
+		inWater = InWater.FULL;
+	}
+	else if (colBotPart && !colTopPart)
+	{
+		var water = colBotPart;
+		if(inWater != InWater.HALF)
+		{
+			if (inWater == InWater.FULL)
+			{
+				physic.enviMoveRatio.x /= global.waterMoveRatio.x;
+				physic.enviMoveRatio.y /= global.waterMoveRatio.y;
+			}
+			//Create effect
+			/*
+			instance_create_depth(x, water.bbox_top, depth - 2, obj_waterPulseEff);
+			objWaterEff = instance_create_depth(x, water.bbox_top, depth - 1, obj_waterEff);
+			objWaterEff.core = self;
+			*/
+		}
+		inWater = InWater.HALF;
+	}
+	else
+	{
+		inWater = InWater.NONE;
+	}
 }

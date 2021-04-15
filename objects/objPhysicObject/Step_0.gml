@@ -2,7 +2,9 @@
 // You can write your code in this editor
 
 if (physic.enable)
-{	
+{
+	fncDetectInWaterState();
+	
 	fncGravityCalculate();
 	
 	if (physic.thinBlockIgnore)
@@ -103,7 +105,7 @@ if (physic.enable)
 	}
 }
 
-x += hspd * TIME_SCALE;
+x += hspd * TIME_SCALE * physic.enviMoveRatio.x;
 y += vspd * TIME_SCALE;
 
 if (physic.enable && physic.onGround)
