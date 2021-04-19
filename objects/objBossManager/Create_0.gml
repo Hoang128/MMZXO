@@ -13,12 +13,14 @@ bossInstance = noone;
 bossSpawnPos = {x : VIEW_X + VIEW_W / 2, y : VIEW_Y + VIEW_H / 2};
 bossOpenCutsceneObj = noone;
 bossCloseCutsceneObj = noone;
+bossOpenCutEndObj = noone;
+bossOpenCutEndIns = noone;
 bossZone = noone;
 
 function fncChangeToEndCutsceneState()
 {
 	global.gameState = GameState.INGAME_CUTSCENE;
-	if (bossOpenCutsceneObj != noone)
+	if (bossCloseCutsceneObj != noone)
 	{
 		instance_create_depth(x, y, depth, bossCloseCutsceneObj);
 		state = bossFightState.END_CUTSCENE;

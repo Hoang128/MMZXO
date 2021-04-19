@@ -11,8 +11,6 @@ else
 	damageGot = 0;
 }
 
-show_debug_message("damage got = " + string(damageGot));
-
 if (damageGot > 0)
 {
 	if (damageGot < damageRecordLimitSingle)
@@ -20,6 +18,8 @@ if (damageGot > 0)
 	else
 		damageRecord = damageRecordLimit;
 }
+
+damageGot = 0;
 
 if (damageRecord >= damageRecordLimit)
 {

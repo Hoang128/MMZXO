@@ -7,7 +7,7 @@ switch (state)
 	{
 		if (bossOpenCutsceneObj != noone)
 		{
-			instance_create_depth(x, y, depth, bossOpenCutSceneObj);
+			instance_create_depth(x, y, depth, bossOpenCutsceneObj);
 			state = bossFightState.OPEN_CUTSCENE;
 		}
 		else
@@ -19,7 +19,9 @@ switch (state)
 	case bossFightState.OPEN_CUTSCENE:
 	{
 		if (!instance_exists(bossOpenCutsceneObj))
+		{
 			fncChangeToBossFightState();
+		}
 	}	break;
 	
 	case bossFightState.FIGHT:

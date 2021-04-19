@@ -28,8 +28,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Managers",
-    "path": "folders/Objects/Invi InGame/Game Managers.yy",
+    "name": "Templates",
+    "path": "folders/Objects/Invi InGame/Game Managers/Boss Managers/Templates.yy",
   },
   "resourceVersion": "1.0",
   "name": "objBossManager",

@@ -5,3 +5,5 @@
 event_inherited();
 
 boss = objE_HellBatSchilt;
+bossOpenCutsceneObj = objCutsceneHellbatSchiltStart;
+bossOpenCutEndObj = objCutscene_HBSFly;

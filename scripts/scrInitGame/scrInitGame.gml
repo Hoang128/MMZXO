@@ -67,7 +67,7 @@ function fncStaticInitGeneralParams()
 
 function fncStaticInitScreenParams()
 {
-	window_set_size(1920, 1080);
+	window_set_size(960, 540);
 	display_set_gui_size(VPORT_W, VPORT_H);
 	window_set_position((display_get_width() - window_get_width()) / 2, (display_get_height() - window_get_height()) / 2);
 	//gpu_set_texfilter(true);

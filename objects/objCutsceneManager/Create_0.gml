@@ -4,11 +4,26 @@
 // Inherit the parent event
 event_inherited();
 
-cutSegmentList = ds_list_create();
+inited = false;
+
+cutSegmentQueue = ds_queue_create();
 
 currentCutSegment = noone;
 
-function fncHandleCutscene()
+function fncCreateCutsceneSegment()
 {
-	
+	currentCutSegment = instance_create_depth(x, y, depth, ds_queue_dequeue(cutSegmentQueue));
+	currentCutSegment.core = self;
+}
+
+function fncHandleCutsceneSegment()
+{
+	if (ds_queue_size(cutSegmentQueue) > 0)
+	{
+		fncCreateCutsceneSegment();
+	}
+	else
+	{
+		instance_destroy();
+	}
 }

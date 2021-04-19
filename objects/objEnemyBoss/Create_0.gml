@@ -8,7 +8,7 @@ hp = 64;
 
 damageRecord = 0;
 damageRecordLimitSingle = 4;
-damageRecordLimit = 6;
+damageRecordLimit = 8;
 
 inviTime = 0;
 inviTimeMax = 180;

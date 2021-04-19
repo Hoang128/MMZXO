@@ -4,6 +4,16 @@
 // Inherit the parent event
 event_inherited();
 
+if (!inited)
+{
+	if (instance_exists(bossManager))
+	{
+		if (instance_exists(bossManager.bossOpenCutEndIns))
+			instance_destroy(bossManager.bossOpenCutEndIns);
+	}
+	inited = true;
+}
+
 if (inviTime > 0)
 {
 	inviTime -= TIME_SCALE;
