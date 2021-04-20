@@ -26,6 +26,8 @@ function fncStateStart()
 	{
 		sprite_index = sprHellBatSpamBatStart;
 		image_index = 0;
+		
+		audio_play_sound_on(global.emitterSFX.source, sfxBossHBSReleaseBat, false, true);
 	}
 }
 

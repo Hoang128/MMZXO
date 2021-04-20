@@ -1,6 +1,23 @@
 // Auto-generated stubs for each available event.
 
 //Sequence boss
+
+//General
+#region
+function fncOnSeqBossExplosion_0()
+{
+	if (instance_exists(objCutSegmentBossExplosion))
+	{
+		with (objCutSegmentBossExplosion)
+			{
+				layer_sequence_x(currentSeq, objBossManager.x);
+				layer_sequence_y(currentSeq, objBossManager.y);
+			}
+	}
+}
+#endregion
+
+//Hellbat Schiltz
 #region
 function fncOnSeqHellBatSchilt_0()
 {

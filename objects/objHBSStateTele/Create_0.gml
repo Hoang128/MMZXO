@@ -29,6 +29,8 @@ function fncCreateIllusion(isOut)
 		illusion.image_xscale = core.id.image_xscale;
 		phase = 1;
 		timeTele--;
+		
+		audio_play_sound_on(global.emitterSFX.source, sfxBossHBSSmile, false, true);
 	}
 	else
 	{

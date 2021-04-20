@@ -7,6 +7,7 @@ event_inherited();
 inited = false;
 spaceToEarth = 16;
 waitTime = 60;
+flySpd = 2;
 
 function fncStateStart()
 {
@@ -25,7 +26,7 @@ function fncStateRun()
 	{
 		if (!place_meeting(x, y + other.spaceToEarth, objBlock))
 		{
-			y += TIME_SCALE;
+			y += other.flySpd * TIME_SCALE;
 		}
 		else
 		{

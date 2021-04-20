@@ -3,6 +3,7 @@ event_inherited();
 inited = false;
 flyUpTime = 25;
 waitTime = 60;
+flySpd = 2;
 
 function fncStateStart()
 {
@@ -23,7 +24,7 @@ function fncStateRun()
 		{
 			if (other.flyUpTime > 0)
 			{
-				y -= TIME_SCALE;
+				y -= other.flySpd * TIME_SCALE;
 				other.flyUpTime -= TIME_SCALE;
 			}
 			else

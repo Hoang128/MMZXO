@@ -19,6 +19,8 @@ function fncStateStart()
 	{
 		sprite_index = sprHellBatSpamSonicStart;
 		image_index = 0;
+		
+		audio_play_sound_on(global.emitterSFX.source, sfxBossHBSReleaseSonic, false, true);
 	}
 }
 

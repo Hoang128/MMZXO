@@ -30,3 +30,5 @@ ds_map_add(moveRatio, "thunder clap", 1);
 
 with(bossStateMachine)
 	fncStateChange(objHBSStateIdle);
+	
+audio_play_sound_on(global.emitterSFX.source, sfxBossHBSIdleStart, false, true);

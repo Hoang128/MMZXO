@@ -12,7 +12,7 @@ illusionNumber = 3;
 illusionSpace = 56;
 rearSpace = 24;
 waitTime = 0;
-waitIllusion = 90;
+waitIllusion = 30;
 xPos = 0;
 yPos = 0;
 illusionArr = array_create(illusionNumber, noone);
@@ -21,6 +21,8 @@ function fncStateStart()
 {
 	show_debug_message("hell bat schilt enter shot down state");
 	
+	
+	audio_play_sound_on(global.emitterSFX.source, sfxBossHBSShotBeamDownStart, false, true);
 	fncStartIllusion(objGlobalManager.currentPlayer);
 }
 
@@ -121,6 +123,7 @@ function fncEndIllusion()
 		x = other.illusionArr[illusionChoose].x;
 		y = other.illusionArr[illusionChoose].y;
 		visible = 1;
+		audio_play_sound_on(global.emitterSFX.source, sfxBossHBSShotBeamDown, false, true);
 		
 		for (var i = 0; i < array_length(other.illusionArr); i++)
 		{
