@@ -7,6 +7,12 @@ event_inherited();
 hp = 64;
 damage = 2;
 
+destroySlashPiece.sprite = sprHellBatSlashPieces; 
+destroySlashPiece.hMove = 1;
+destroySlashPiece.waitTime = 240;
+
+deadImageByBuster = sprHellBatPieces;
+
 inited = false;
 
 bossStateMachine = instance_create_depth(x, y, depth, objStateMachine);

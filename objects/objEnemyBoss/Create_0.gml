@@ -10,6 +10,8 @@ damageRecord = 0;
 damageRecordLimitSingle = 4;
 damageRecordLimit = 8;
 
+deadImageByBuster = noone;
+
 inviTime = 0;
 inviTimeMax = 180;
 

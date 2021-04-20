@@ -23,6 +23,16 @@ switch (phase)
 	}	break;
 	case 1:
 	{
+		if (moveTime > 0)
+		{
+			moveTime -= TIME_SCALE;
+		}
+		else
+		{
+			moveTime = 0;
+			hspd = 0;
+			vspd = 0;
+		}
 		if (waitTime > 0)
 		{
 			waitTime -= TIME_SCALE;

@@ -6,6 +6,7 @@ event_inherited();
 
 imgSpd = 0;
 
+moveTime = 20;
 phase = 0;
 dropDown = false;
 hDir = 0;

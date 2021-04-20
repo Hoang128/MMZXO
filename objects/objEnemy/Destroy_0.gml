@@ -1,1 +1,1 @@
-fncOnDestroy();
+fncOnEnemyDestroy();

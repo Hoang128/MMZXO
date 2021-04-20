@@ -10,3 +10,4 @@ spritePiece = noone;
 inited = false;
 hMove = 0;
 vMove = 0;
+waitTime = 20;

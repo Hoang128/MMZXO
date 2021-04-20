@@ -38,7 +38,7 @@ explosionCount = 1;
 weaponTypeCauseDeath = noone;
 deathDir = 1;
 
-destroySlashPiece = {sprite : noone, hMove : 0, vMove : 0};
+destroySlashPiece = {sprite : noone, hMove : 0, vMove : 0, waitTime : 20};
 destroyPiece = {sprite : noone, number : 0};
 
 palette = noone;
@@ -85,7 +85,7 @@ function fncOnGetDamage(realDamage)
 	
 }
 
-function fncOnDestroy()
+function fncOnEnemyDestroy()
 {
 	/// @description Insert description here
 	// You can write your code in this editor
@@ -139,6 +139,7 @@ function fncOnDestroy()
 		objPieceCreater.hMove = destroySlashPiece.hMove;
 		objPieceCreater.vMove = destroySlashPiece.vMove;
 		objPieceCreater.image_xscale = image_xscale;
+		objPieceCreater.waitTime = destroySlashPiece.waitTime;
 	}
 	else
 	{

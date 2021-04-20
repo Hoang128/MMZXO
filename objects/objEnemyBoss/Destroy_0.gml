@@ -2,7 +2,14 @@
 // You can write your code in this editor
 
 // Inherit the parent event
-event_inherited();
+event_inherited(); 
+
+if (weaponTypeCauseDeath != PlayerWeaponType.MELEE)
+{
+	var objDeathImg = instance_create_depth(x, y, depth, objBossDeadByBuster);
+	objDeathImg.image_xscale = image_xscale;
+	objDeathImg.sprite_index = deadImageByBuster;
+}
 
 with (bossManager)
 {
