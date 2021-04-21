@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 
-draw_sprite_stretched(sprZeroZXBackground, 0, 0, 0, display_get_gui_width(), display_get_gui_height());
+draw_sprite(sprZeroZXBackground, 0, 0, 0);
 
 event_inherited();
 

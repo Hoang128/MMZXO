@@ -8,14 +8,14 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 1279,
+  "bbox_right": 1919,
   "bbox_top": 0,
-  "bbox_bottom": 719,
+  "bbox_bottom": 1079,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 1280,
-  "height": 720,
+  "width": 1920,
+  "height": 1080,
   "textureGroupId": {
     "name": "texgroupUIImage",
     "path": "texturegroups/texgroupUIImage",
@@ -24,9 +24,9 @@
   "gridX": 0,
   "gridY": 0,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"e91b13b4-6398-42e5-8f34-e1a5fe8c6c8b","path":"sprites/sprStartBackground/sprStartBackground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"e91b13b4-6398-42e5-8f34-e1a5fe8c6c8b","path":"sprites/sprStartBackground/sprStartBackground.yy",},"LayerId":{"name":"78fb335d-6a42-43cf-b385-7495b33c658c","path":"sprites/sprStartBackground/sprStartBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"sprStartBackground","path":"sprites/sprStartBackground/sprStartBackground.yy",},"resourceVersion":"1.0","name":"e91b13b4-6398-42e5-8f34-e1a5fe8c6c8b","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"5ef35cfe-b4ed-4318-9dad-fd1b81886711","path":"sprites/sprStartBackground/sprStartBackground.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"5ef35cfe-b4ed-4318-9dad-fd1b81886711","path":"sprites/sprStartBackground/sprStartBackground.yy",},"LayerId":{"name":"e23743cc-814b-40df-909e-c13a7ce8f86d","path":"sprites/sprStartBackground/sprStartBackground.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"sprStartBackground","path":"sprites/sprStartBackground/sprStartBackground.yy",},"resourceVersion":"1.0","name":"5ef35cfe-b4ed-4318-9dad-fd1b81886711","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"sprStartBackground","path":"sprites/sprStartBackground/sprStartBackground.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"ffb83cd4-1c7c-49e0-aff5-482f50081688","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"e91b13b4-6398-42e5-8f34-e1a5fe8c6c8b","path":"sprites/sprStartBackground/sprStartBackground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"bc926972-1fad-4241-b2f0-13ea2214b3df","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"5ef35cfe-b4ed-4318-9dad-fd1b81886711","path":"sprites/sprStartBackground/sprStartBackground.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,7 +65,7 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"78fb335d-6a42-43cf-b385-7495b33c658c","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"e23743cc-814b-40df-909e-c13a7ce8f86d","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
