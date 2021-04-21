@@ -139,6 +139,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"8a6cbc3b-574e-409f-97a2-fc031cc9d293","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ac912a7b-0e91-4bf9-951d-45a0dac6d7ff","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Slash",
     "path": "folders/Sprites/Characters/ZX/Attack/Slash.yy",

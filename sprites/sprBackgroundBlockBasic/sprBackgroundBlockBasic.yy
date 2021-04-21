@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"3531c72e-962b-4393-8200-aec97bad4683","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Background Blocks",
     "path": "folders/Sprites/Basic Templates/Background Blocks.yy",

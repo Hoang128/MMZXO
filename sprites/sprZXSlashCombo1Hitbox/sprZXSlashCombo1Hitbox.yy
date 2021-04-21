@@ -119,6 +119,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 2","resourceVersion":"1.0","name":"5c551035-a0c1-4efc-bc8a-a2d1b46f318c","tags":[],"resourceType":"GMImageLayer",},
     {"visible":false,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"ba7b9a69-9fe6-44e4-b286-135c95a8bdb9","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Hitbox",
     "path": "folders/Sprites/Characters/ZX/Weapons/ZXSaber/Hitbox.yy",

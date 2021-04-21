@@ -87,6 +87,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"2f2704e9-9c60-4a89-ae1b-a1416eb6d27d","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Charge",
     "path": "folders/Sprites/Effects/Common/Charge.yy",

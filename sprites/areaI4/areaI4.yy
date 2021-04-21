@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"48e9d3f8-d907-4475-b8dc-61d2f3284abc","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Abadoned Power Plant",
     "path": "folders/Sprites/Stage Tilesets/Abadoned Power Plant.yy",

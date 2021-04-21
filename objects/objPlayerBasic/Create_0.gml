@@ -5,7 +5,11 @@ event_inherited();
 depth = 0;
 
 //General Parameters
-hp = global.hpMax;
+hp = global.defaultParams.playerHpMax + global.itemsNumber.hpTank * global.upgradeItemEff.hpTank;
+wp = global.defaultParams.playerWpMax + global.itemsNumber.wpTank * global.upgradeItemEff.wpTank;
+
+hpMax = hp;
+wpMax = wp;
 
 runSpd = 2;
 

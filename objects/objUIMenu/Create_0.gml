@@ -14,7 +14,9 @@ closeMenuCloseEffObj = noone;
 UIBackground = 
 {
 	actived   : true,
-	backColor : c_black,
+	sprite	  : sprUIFrame,
+	spriteW   : 648,
+	spriteH   : 136,
 	alpha     : 0.7,
 	xStart    : 40,
 	yStart    : 60,

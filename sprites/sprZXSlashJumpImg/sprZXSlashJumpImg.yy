@@ -114,6 +114,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"4c6eacb1-49b4-4da2-99bf-fdc9d87618fe","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"135370f7-2cbd-4193-9027-671820cab1e4","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Image",
     "path": "folders/Sprites/Characters/ZX/Weapons/ZXSaber/Image.yy",

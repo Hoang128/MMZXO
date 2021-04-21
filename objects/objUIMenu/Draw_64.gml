@@ -55,11 +55,19 @@ if (phase == 0)
 
 if (UIBackground.actived)
 {
-	draw_set_color(UIBackground.backColor);
-	draw_set_alpha(UIBackground.alpha);
-	draw_rectangle(UIBackground.xStart, UIBackground.yStart, UIBackground.xEnd, UIBackground.yEnd, false);
-	draw_set_color(c_white);
-	draw_set_alpha(1);
+	draw_sprite_ext(
+	UIBackground.sprite, 
+	0, 
+	UIBackground.xStart,
+	UIBackground.yStart,
+	1/UIBackground.spriteW*(UIBackground.xEnd - UIBackground.xStart), 
+	1/UIBackground.spriteH*(UIBackground.yEnd - UIBackground.yStart),
+	0, c_white, 1);
+	//draw_set_color(UIBackground.backColor);
+	//draw_set_alpha(UIBackground.alpha);
+	//draw_rectangle(UIBackground.xStart, UIBackground.yStart, UIBackground.xEnd, UIBackground.yEnd, false);
+	//draw_set_color(c_white);
+	//draw_set_alpha(1);
 }
 
 if (phase == 3)

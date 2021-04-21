@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"c105d5af-31b8-4340-a280-352e2f7ce4a5","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Basic Blocks",
     "path": "folders/Sprites/Basic Templates/Physic Blocks/Basic Blocks.yy",

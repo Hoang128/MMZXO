@@ -1,5 +1,8 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprUIFrame",
+    "path": "sprites/sprUIFrame/sprUIFrame.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,

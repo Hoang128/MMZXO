@@ -9,6 +9,7 @@ UIContext.childVSpace = 96;
 UIContext.titleVMargin = 256;
 UIContext.childVMargin = 256;
 
+UIBackground.actived = false;
 UIBackground.xStart = 200;
 UIBackground.yStart = 0;
 UIBackground.UIWidth = 480;

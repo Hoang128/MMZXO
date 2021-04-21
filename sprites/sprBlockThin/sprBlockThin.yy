@@ -67,6 +67,7 @@
   "layers": [
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"1db207f8-216c-437e-a0b4-48194239af73","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Thin Blocks",
     "path": "folders/Sprites/Basic Templates/Physic Blocks/Thin Blocks.yy",

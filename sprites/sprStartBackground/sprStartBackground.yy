@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "UI",
-    "path": "folders/Sprites/UI.yy",
+    "name": "Background",
+    "path": "folders/Sprites/UI/Background.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprStartBackground",

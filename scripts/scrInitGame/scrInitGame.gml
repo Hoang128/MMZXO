@@ -4,7 +4,7 @@ function fncStaticInitGame(){
 	fncStaticInitDevParams();
 	fncStaticInitStates();
 	fncStaticInitWorldParams();
-	fncStaticInitGeneralParams();
+	fncInitGameplayParams();
 	fncStaticInitInputParams();
 	fncStaticInitScreenParams();
 	fncStaticInitSoundParams();
@@ -56,13 +56,6 @@ function fncStaticInitWorldParams()
 		x : 0,
 		y : 0
 	};
-}
-
-function fncStaticInitGeneralParams()
-{
-	global.hpMax = 16;
-	global.mpMax = 16;
-	global.crystal = 0;
 }
 
 function fncStaticInitScreenParams()
@@ -244,6 +237,30 @@ function fncStaticInitStates()
 		HALF,
 		FULL
 	}
+}
+
+function fncInitGameplayParams()
+{
+	global.defaultParams = 
+	{
+		playerHpMax : 16,
+		playerWpMax : 16
+	};
+	
+	global.itemsNumber = 
+	{
+		hpTank : 0,
+		wpTank : 0,
+		crystal : 0
+	};
+	
+	global.upgradeItemEff =
+	{
+		hpTank : 2,
+		wpTank : 2
+	};
+	
+	global.eTank = array_create(4, false);
 }
 
 /// @function					fncStaticHandleButton(keyMap, keyAction);

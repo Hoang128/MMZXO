@@ -69,6 +69,7 @@
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"cec36f89-2acc-4781-ab31-1d66cba4a9c8","tags":[],"resourceType":"GMImageLayer",},
     {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"Layer 1","resourceVersion":"1.0","name":"af36d7dd-889d-4f5b-b887-142c94fdf527","tags":[],"resourceType":"GMImageLayer",},
   ],
+  "nineSlice": null,
   "parent": {
     "name": "Ladder Blocks",
     "path": "folders/Sprites/Basic Templates/Physic Blocks/Ladder Blocks.yy",
