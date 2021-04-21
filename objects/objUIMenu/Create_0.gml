@@ -49,6 +49,7 @@ UIMenuLimit =
 
 UIControl =
 {
+	isEnable : true,
 	fireRateMax : 10,
 	firate : 0
 }
@@ -58,6 +59,16 @@ UISFX =
 	enterSFX  : sfxUIEnter,
 	exitSFX   : sfxUIBack,
 	deniedSFX : sfxUIDenied
+}
+
+UITransPos =
+{
+	isEnable          : false,
+	UIDiffPosX        : 0,
+	UIDiffPosY        : 0,
+	UICurrentDiffPosX : 0,
+	UICurrentDiffPosY : 0,
+	UIMoveSpd         : 20
 }
 
 UIAnim =
@@ -229,4 +240,52 @@ function fncUIOpenSubMenuAfter(time, effectClose, effectOpen)
 	objUIManager.UICurrentInUse = noone;
 }
 
-//Debug init child menu's props
+function fncDrawMenuDebugInfo()
+{
+	draw_set_font(fontDebug);
+	
+	switch(object_index)
+	{
+		case objUIKeyboardMenu:
+		{
+			draw_text(UIBackground.xStart, UIBackground.yStart + 32, "keyboard menu");
+		}	break;
+	}
+	
+	draw_text(UIBackground.xStart, UIBackground.yStart + 64, "start vector =  " + string(UIBackground.xStart) + ", " + string(UIBackground.yStart));
+	draw_text(UIBackground.xStart, UIBackground.yStart + 96, "end vector =  " + string(UIBackground.xEnd) + ", " + string(UIBackground.yEnd));
+}
+
+function fncDrawUITitle(xPos, yPos, context)
+{
+	draw_set_font(UIContext.titleFont);
+	if (UIContext.shadow)
+	{
+		draw_set_color(c_black);
+		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, context);
+	}
+	
+	draw_set_color(c_white);
+	draw_text(xPos, yPos, context);
+	draw_set_color(c_white);
+}
+
+function fncDrawUIChildContext(xPos, yPos, childContext)
+{
+	draw_set_font(UIContext.childFont);
+	if (UIContext.shadow)
+	{
+		draw_set_color(c_black);
+		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, childContext.context);
+	}
+	
+	if (childContext.actived)
+	{
+		if (childContext.selected)
+			draw_set_color(c_yellow);
+		else
+			draw_set_color(c_white);
+	}	else	draw_set_color(c_gray);
+	draw_text(xPos, yPos, childContext.context);
+	draw_set_color(c_white);
+}

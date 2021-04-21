@@ -4,8 +4,22 @@ switch (phase)
 {
 	case 0:
 	{
-		UIBackground.xEnd = UIBackground.xStart + UIAnim.UIWidthMin;
-		UIBackground.yEnd = UIBackground.yStart + UIAnim.UIHeightMin;
+		if (UIAnim.isEnable)
+		{
+			UIBackground.xEnd = UIBackground.xStart + UIAnim.UIWidthMin;
+			UIBackground.yEnd = UIBackground.yStart + UIAnim.UIHeightMin;
+		}
+		else
+		{
+			UIBackground.xEnd = UIBackground.xStart + UIBackground.UIWidth;
+			UIBackground.yEnd = UIBackground.yStart + UIBackground.UIHeight;
+		}
+		
+		if (UITransPos.isEnable)
+		{
+			UITransPos.UICurrentDiffPosX = UITransPos.UIDiffPosX;
+			UITransPos.UICurrentDiffPosY = UITransPos.UIDiffPosY;
+		}
 		
 		for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
 		{
@@ -13,7 +27,7 @@ switch (phase)
 			if (currentContext.childContextType != noone)
 			{
 				childContext = instance_create_depth(x, y, depth - 1, currentContext.childContextType);
-				childContext.parent = self;
+				childContext.parentMenu = self;
 				childContext.index = i;
 				childContext.UIContext.font = UIContext.childFont;
 			}
@@ -21,8 +35,42 @@ switch (phase)
 		
 		fncUIUpdateSelectedContext();
 		
-		phase = 1;
+		phase = 0.5;
 	}	break;
+	
+	case 0.5:
+	{
+		if (UITransPos.isEnable)
+		{
+			if (abs(UITransPos.UICurrentDiffPosX - 0) < UITransPos.UIMoveSpd)
+			{
+				UITransPos.UICurrentDiffPosX = 0;
+			}
+			else
+			{
+				UITransPos.UICurrentDiffPosX -= sign(UITransPos.UICurrentDiffPosX) * UITransPos.UIMoveSpd;
+			}
+			
+			if (abs(UITransPos.UICurrentDiffPosY - 0) < UITransPos.UIMoveSpd)
+			{
+				UITransPos.UICurrentDiffPosY = 0;
+			}
+			else
+			{
+				UITransPos.UICurrentDiffPosY -= sign(UITransPos.UICurrentDiffPosY) * UITransPos.UIMoveSpd;
+			}
+			
+			if ((UITransPos.UICurrentDiffPosX == 0) && (UITransPos.UICurrentDiffPosY == 0))
+			{
+				phase = 1;
+			}
+		}
+		else
+		{
+			phase = 1;
+		}
+	}	break;
+	
 	case 1:
 	{
 		if (UIAnim.isEnable)
@@ -58,10 +106,13 @@ switch (phase)
 	{
 		if (objUIManager.UICurrentInUse == self)
 		{
-			fncUISelect();
-			fncUIMoveUp();
-			fncUIMoveDown();
-			fncUIExit();
+			if (UIControl.isEnable)
+			{
+				fncUISelect();
+				fncUIMoveUp();
+				fncUIMoveDown();
+				fncUIExit();
+			}
 		}
 	}	break;
 	case 4:
@@ -91,6 +142,38 @@ switch (phase)
 		else
 		{
 			UIBackground.xEnd = (UIBackground.xStart + UIAnim.UIWidthMin);
+			phase = 5.5;
+		}
+	}	break;
+	case 5.5:
+	{
+		if (UITransPos.isEnable)
+		{
+			if (abs(UITransPos.UICurrentDiffPosX - UITransPos.UIDiffPosX) < UITransPos.UIMoveSpd)
+			{
+				UITransPos.UICurrentDiffPosX = UITransPos.UIDiffPosX;
+			}
+			else
+			{
+				UITransPos.UICurrentDiffPosX += sign(UITransPos.UIDiffPosX - UITransPos.UICurrentDiffPosX) * UITransPos.UIMoveSpd;
+			}
+			
+			if (abs(UITransPos.UICurrentDiffPosY - UITransPos.UIDiffPosY) < UITransPos.UIMoveSpd)
+			{
+				UITransPos.UICurrentDiffPosY = UITransPos.UIDiffPosY;
+			}
+			else
+			{
+				UITransPos.UICurrentDiffPosY += sign(UITransPos.UIDiffPosY - UITransPos.UICurrentDiffPosY) * UITransPos.UIMoveSpd;
+			}
+			
+			if ((UITransPos.UICurrentDiffPosX == UITransPos.UIDiffPosX) && (UITransPos.UICurrentDiffPosY == UITransPos.UIDiffPosY))
+			{
+				phase = 6;
+			}
+		}
+		else
+		{
 			phase = 6;
 		}
 	}	break;

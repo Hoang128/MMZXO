@@ -124,6 +124,7 @@
     {"id":{"name":"objPlayerZX","path":"objects/objPlayerZX/objPlayerZX.yy",},"order":1,},
     {"id":{"name":"sfxBossHBSIdleStart","path":"sounds/sfxBossHBSIdleStart/sfxBossHBSIdleStart.yy",},"order":0,},
     {"id":{"name":"sprLimitHCamZone","path":"sprites/sprLimitHCamZone/sprLimitHCamZone.yy",},"order":0,},
+    {"id":{"name":"objUITextChainMenu","path":"objects/objUITextChainMenu/objUITextChainMenu.yy",},"order":0,},
     {"id":{"name":"sprBossMainExplosionStart","path":"sprites/sprBossMainExplosionStart/sprBossMainExplosionStart.yy",},"order":2,},
     {"id":{"name":"objPlayerStateZXSlashChargeJump","path":"objects/objPlayerStateZXSlashChargeJump/objPlayerStateZXSlashChargeJump.yy",},"order":9,},
     {"id":{"name":"objE_GunJumperBullet","path":"objects/objE_GunJumperBullet/objE_GunJumperBullet.yy",},"order":1,},
@@ -738,6 +739,7 @@
     {"folderPath":"folders/Sprites/UI/HUD/Boss.yy","order":1,"resourceVersion":"1.0","name":"Boss","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/UI/Menu.yy","order":5,"resourceVersion":"1.0","name":"Menu","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/UI/Background.yy","order":6,"resourceVersion":"1.0","name":"Background","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Visible InGame/UI Menu/Text menus.yy","order":3,"resourceVersion":"1.0","name":"Text menus","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},

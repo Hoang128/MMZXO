@@ -2,7 +2,7 @@
 // You can write your code in this editor
 ds_list_clear(childMenuNodeList);
 
-if (parent != noone)
-	objUIManager.UICurrentInUse = parent;
+if (parentMenu != noone)
+	objUIManager.UICurrentInUse = parentMenu;
 else
 	objUIManager.UICurrentInUse = noone;
