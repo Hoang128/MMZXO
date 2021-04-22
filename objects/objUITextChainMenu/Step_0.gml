@@ -1,51 +1,27 @@
 /// @description Insert description here
 // You can write your code in this editor
-
-// Inherit the parent event
-if (!inited)
+if (inited == 0)
 {
-	UIMessReader.contextNumber = array_length(UIMessContext);
-	inited = true;
+	messArr[0].inited = 0;
+	inited = 1;
 }
 else
 {
-	event_inherited();
-	
-
-	if (phase == 3)
+	if (messChain == 0)
 	{
-		if (UIMessReader.charCursorMax == 0)
+		instance_destroy();
+	}
+	else
+	{
+		if (!instance_exists(messArr[messCurrent]))
 		{
-			UIMessReader.charCursorMax = string_length(UIMessContext[UIMessReader.contextCurrent]);
-			UIMessReader.charCursor = 0;
-			UIMessReader.messageIndex = "";
-		}
-		else
-		{
-			if (UIMessReader.charCursor < UIMessReader.charCursorMax)
+			if (messCurrent < messChain - 1)
 			{
-				var ratio = 1;
-				if (keyboard_check(vk_anykey))
-					ratio = 2;
-				if ((UIMessReader.charCursor + ratio * UIMessReader.contextRevealSpd) < UIMessReader.charCursorMax)
-					UIMessReader.charCursor += ratio * UIMessReader.contextRevealSpd;
-				else
-					UIMessReader.charCursor = UIMessReader.charCursorMax;
-				UIMessReader.messageIndex = string_copy(UIMessContext[UIMessReader.contextCurrent], 0, floor(UIMessReader.charCursor));
+				messCurrent++;
+				messArr[messCurrent].inited = 0;
 			}
-		}
-		if (fncStaticHandleButton(KeyMap.UI_CONFIRM, KeyAction.PRESSED))
-		{
-			if (UIMessReader.charCursor == UIMessReader.charCursorMax)
-			{
-				if (UIMessReader.contextCurrent < (UIMessReader.contextNumber - 1))
-				{
-					UIMessReader.contextCurrent++;
-					UIMessReader.charCursorMax = 0;
-				}
-				else
-					phase = 4;
-			}
+			else
+				instance_destroy();
 		}
 	}
 }

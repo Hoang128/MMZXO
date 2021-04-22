@@ -58,7 +58,7 @@ switch (state)
 		}
 	}	break;
 	
-	case evilBatState.FLY_UP:
+case evilBatState.FLY_UP:
 	{
 		if (!place_meeting(x, y - flySpd, objBlock))
 		{

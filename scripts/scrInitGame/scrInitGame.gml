@@ -124,14 +124,14 @@ function fncStaticInitKeypadParams()
 	global.kpUp				= gp_padu;
 	global.kpDown			= gp_padd;
 	
-	global.kpDash			= gp_shoulderrb;
-	global.kpJump			= gp_face2;
+	global.kpDash			= gp_shoulderl;
+	global.kpJump			= gp_face1;
 	global.kpAtk1			= gp_face3;
-	global.kpAtk2			= gp_face1;
-	global.kpChangeL		= gp_shoulderl;
-	global.kpChangeR		= gp_shoulderr;
+	global.kpAtk2			= gp_shoulderr;
+	global.kpChangeL		= gp_shoulderlb;
+	global.kpChangeR		= gp_shoulderrb;
 	global.kpMoveL			= gp_face4;
-	global.kpMoveR			= gp_shoulderlb;
+	global.kpMoveR			= gp_face2;
 	
 	global.kpUIRight		= gp_padr;
 	global.kpUILeft			= gp_padl;

@@ -130,18 +130,24 @@ switch (phase)
 		}
 		else
 		{
-			UIBackground.xEnd = (UIBackground.xStart + UIAnim.UIWidthMin);
 			phase = 5;
 		}
 	}	break;
 	case 5:
 	{
-		//Close width
-		if (UIBackground.xEnd > (UIBackground.xStart + UIAnim.UIWidthMin))
-			UIBackground.xEnd -= UIAnim.animSpd;
+		if (UIAnim.isEnable)
+		{
+			//Close width
+			if (UIBackground.xEnd > (UIBackground.xStart + UIAnim.UIWidthMin))
+				UIBackground.xEnd -= UIAnim.animSpd;
+			else
+			{
+				UIBackground.xEnd = (UIBackground.xStart + UIAnim.UIWidthMin);
+				phase = 5.5;
+			}
+		}
 		else
 		{
-			UIBackground.xEnd = (UIBackground.xStart + UIAnim.UIWidthMin);
 			phase = 5.5;
 		}
 	}	break;

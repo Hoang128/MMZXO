@@ -8,7 +8,7 @@ hp = 64;
 damage = 2;
 
 destroySlashPiece.sprite = sprHellBatSlashPieces; 
-destroySlashPiece.hMove = 1;
+destroySlashPiece.hMove = 2;
 destroySlashPiece.waitTime = 240;
 
 deadImageByBuster = sprHellBatPieces;
