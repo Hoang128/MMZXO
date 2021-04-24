@@ -7,6 +7,7 @@ global.playerStartPosition.y = 80;
 
 //room_goto(roomTest);
 
+/*
 fncStaticCreateTextMessChain
 (
 	fncStaticCreateTextMessage

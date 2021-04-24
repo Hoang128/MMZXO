@@ -497,6 +497,7 @@
     {"id":{"name":"objE_HBSSonicTrail","path":"objects/objE_HBSSonicTrail/objE_HBSSonicTrail.yy",},"order":4,},
     {"id":{"name":"objCircleDust","path":"objects/objCircleDust/objCircleDust.yy",},"order":2,},
     {"id":{"name":"objSlashKillEff","path":"objects/objSlashKillEff/objSlashKillEff.yy",},"order":13,},
+    {"id":{"name":"RoomInitGame","path":"rooms/RoomInitGame/RoomInitGame.yy",},"order":4,},
     {"id":{"name":"objPlayerShadow","path":"objects/objPlayerShadow/objPlayerShadow.yy",},"order":1,},
     {"id":{"name":"sfxBossHBSHurt","path":"sounds/sfxBossHBSHurt/sfxBossHBSHurt.yy",},"order":7,},
     {"id":{"name":"objZXBusterFlareCtrl","path":"objects/objZXBusterFlareCtrl/objZXBusterFlareCtrl.yy",},"order":4,},
@@ -577,6 +578,7 @@
     "children": [],
   },
   "RoomOrderNodes": [
+    {"roomId":{"name":"RoomInitGame","path":"rooms/RoomInitGame/RoomInitGame.yy",},},
     {"roomId":{"name":"RoomStart","path":"rooms/RoomStart/RoomStart.yy",},},
     {"roomId":{"name":"roomTest","path":"rooms/roomTest/roomTest.yy",},},
     {"roomId":{"name":"roomTestTileSet","path":"rooms/roomTestTileSet/roomTestTileSet.yy",},},

@@ -4,5 +4,4 @@ ds_list_clear(childMenuNodeList);
 
 if (parentMenu != noone)
 	objUIManager.UICurrentInUse = parentMenu;
-else
-	objUIManager.UICurrentInUse = noone;
+else UICurrentInUse = noone;
