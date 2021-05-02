@@ -12,11 +12,18 @@ roomInfo =
 roomToChange = noone;
 waitTimeToChange = 60;
 
-function fncChangeRoomTo(newRoom)
+function fncChangeRoomTo(newRoom, haveEffect)
 {
-	roomToChange = newRoom;
+	if (haveEffect)
+	{
+		roomToChange = newRoom;
 	
-	var objSceneFade = instance_create_depth(x, y, depth, objSceneFadeInColor);
-	objSceneFade.fadeSpd = 0.025;
-	objSceneFade.colorVal = c_black;
+		var objSceneFade = instance_create_depth(x, y, depth, objSceneFadeInColor);
+		objSceneFade.fadeSpd = 0.025;
+		objSceneFade.colorVal = c_black;
+	}
+	else
+	{
+		room_goto(newRoom);
+	}
 }

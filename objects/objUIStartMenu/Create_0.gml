@@ -28,7 +28,7 @@ function fncUIHandleSelect()
 		case 0:
 		{
 			with(objRoomManager)
-				fncChangeRoomTo(roomTest);
+				fncChangeRoomTo(roomTest, false);
 			objUIManager.UICurrentInUse = noone;
 		}	
 		break;

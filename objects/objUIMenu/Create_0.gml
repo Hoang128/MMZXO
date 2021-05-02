@@ -201,16 +201,19 @@ function fncUIUpdateUIMenuDisplayCursorUp()
 
 function fncUIUpdateSelectedContext()
 {
-	if (ds_list_size(childMenuNodeList) > 0)
+	if ((menuCursor >= 0) && (menuCursor <= ds_list_size(childMenuNodeList)))
 	{
-		for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+		if (ds_list_size(childMenuNodeList) > 0)
 		{
-			if (ds_list_find_value(childMenuNodeList, i).selected)
-				ds_list_find_value(childMenuNodeList, i).selected = false;
-		}
+			for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+			{
+				if (ds_list_find_value(childMenuNodeList, i).selected)
+					ds_list_find_value(childMenuNodeList, i).selected = false;
+			}
 	
-		ds_list_find_value(childMenuNodeList, menuCursor).selected = true;
-	}	else	menuCursor = -1;
+			ds_list_find_value(childMenuNodeList, menuCursor).selected = true;
+		}	else	menuCursor = -1;
+	}
 }
 
 function fncUIHandleExit()

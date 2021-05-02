@@ -105,4 +105,10 @@ function fncStaticPlayerTeleUp()
 	}
 }
 
+function fncStaticGoToScoreRoom()
+{
+	with (objRoomManager)
+		fncChangeRoomTo(roomScore);
+}
+
 #endregion

@@ -157,6 +157,7 @@
     {"id":{"name":"objE_HBSSonicMove","path":"objects/objE_HBSSonicMove/objE_HBSSonicMove.yy",},"order":3,},
     {"id":{"name":"sprPowerPlantBackgroundLow2","path":"sprites/sprPowerPlantBackgroundLow2/sprPowerPlantBackgroundLow2.yy",},"order":9,},
     {"id":{"name":"sprPlayerZXSlashClimb","path":"sprites/sprPlayerZXSlashClimb/sprPlayerZXSlashClimb.yy",},"order":7,},
+    {"id":{"name":"objUIScoreMenu","path":"objects/objUIScoreMenu/objUIScoreMenu.yy",},"order":0,},
     {"id":{"name":"objPlayerStateZXSlashChargeSlide","path":"objects/objPlayerStateZXSlashChargeSlide/objPlayerStateZXSlashChargeSlide.yy",},"order":10,},
     {"id":{"name":"objE_HBSThunderBeam","path":"objects/objE_HBSThunderBeam/objE_HBSThunderBeam.yy",},"order":7,},
     {"id":{"name":"objHBSStateThunderClap","path":"objects/objHBSStateThunderClap/objHBSStateThunderClap.yy",},"order":9,},
@@ -511,6 +512,7 @@
     {"id":{"name":"sfxzxc","path":"sounds/sfxzxc/sfxzxc.yy",},"order":5,},
     {"id":{"name":"sprPlayerZXFallShot1","path":"sprites/sprPlayerZXFallShot1/sprPlayerZXFallShot1.yy",},"order":30,},
     {"id":{"name":"sprPlayerHUDMPFrame","path":"sprites/sprPlayerHUDMPFrame/sprPlayerHUDMPFrame.yy",},"order":6,},
+    {"id":{"name":"roomScore","path":"rooms/roomScore/roomScore.yy",},"order":6,},
     {"id":{"name":"sprZXSlashChargeJumpImg","path":"sprites/sprZXSlashChargeJumpImg/sprZXSlashChargeJumpImg.yy",},"order":9,},
     {"id":{"name":"sprBlockSlope2","path":"sprites/sprBlockSlope2/sprBlockSlope2.yy",},"order":2,},
     {"id":{"name":"objEnemyReal","path":"objects/objEnemyReal/objEnemyReal.yy",},"order":3,},
@@ -590,6 +592,7 @@
     {"roomId":{"name":"roomTestTileSet","path":"rooms/roomTestTileSet/roomTestTileSet.yy",},},
     {"roomId":{"name":"rm_example","path":"rooms/rm_example/rm_example.yy",},},
     {"roomId":{"name":"roomStageSelect","path":"rooms/roomStageSelect/roomStageSelect.yy",},},
+    {"roomId":{"name":"roomScore","path":"rooms/roomScore/roomScore.yy",},},
   ],
   "Folders": [
     {"folderPath":"folders/Sprites.yy","order":1,"resourceVersion":"1.0","name":"Sprites","tags":[],"resourceType":"GMFolder",},
@@ -756,6 +759,7 @@
     {"folderPath":"folders/Objects/Visible InGame/UI Menu/Text menus.yy","order":3,"resourceVersion":"1.0","name":"Text menus","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Scripts/UI.yy","order":10,"resourceVersion":"1.0","name":"UI","tags":[],"resourceType":"GMFolder",},
     {"folderPath":"folders/Sprites/UI/MugShot.yy","order":7,"resourceVersion":"1.0","name":"MugShot","tags":[],"resourceType":"GMFolder",},
+    {"folderPath":"folders/Objects/Visible InGame/UI Menu/Sub menus.yy","order":4,"resourceVersion":"1.0","name":"Sub menus","tags":[],"resourceType":"GMFolder",},
   ],
   "AudioGroups": [
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
