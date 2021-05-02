@@ -3,15 +3,18 @@
 
 if (!other.isIllusion)
 {
-	if (inviTime == 0)
+	if (canGetDamage)
 	{
-		hp -= other.damage;
+		if (inviTime == 0)
+		{
+			hp -= other.damage;
 	
-		if (hp < 0) hp = 0;
+			if (hp < 0) hp = 0;
 	
-		inviTime = inviAfterStunMax;
-		with (playerStateMachine)
-			fncStateChange(objPlayerStateStunNor);
+			inviTime = inviAfterStunMax;
+			with (playerStateMachine)
+				fncStateChange(objPlayerStateStunNor);
+		}
 	}
 
 	with (other)

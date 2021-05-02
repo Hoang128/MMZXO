@@ -27,6 +27,7 @@ function fncStateStart()
 		visible = 0;
 		move_contact_solid(270, 0);
 		other.depth = depth - 1;
+		canGetDamage = false;
 	}
 }
 
@@ -97,4 +98,8 @@ function fncStateRun()
 function fncStateEnd()
 {
 	global.gameState = GameState.INGAME_GAMEPLAY;
+	with (core.id)
+	{
+		canGetDamage = true;
+	}
 }

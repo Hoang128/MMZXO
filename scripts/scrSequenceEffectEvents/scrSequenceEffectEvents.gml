@@ -97,4 +97,12 @@ function fncStaticDestroyFadeInScene()
 	}
 }
 
+function fncStaticPlayerTeleUp()
+{
+	with (objGlobalManager.currentPlayer.playerStateMachine)
+	{
+		fncStateChange(objPlayerStateTeleUp);
+	}
+}
+
 #endregion

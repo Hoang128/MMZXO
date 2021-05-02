@@ -73,6 +73,7 @@ climbEndDelay = 0;
 hMove = 0;
 vMove = 0;
 canClimb = 1;
+canGetDamage = true;
 weaponMeleeMgr = noone;
 
 //Sprite struct

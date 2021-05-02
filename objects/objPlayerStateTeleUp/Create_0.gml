@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-waitPhase1 = 60;
+waitPhase1 = 5;
 waitPhase2 = 45;
 waitTime = waitPhase1;
 teleTimeMax = 15;
@@ -27,6 +27,8 @@ function fncStateStart()
 		visible = 0;
 		move_contact_solid(270, 0);
 		other.depth = depth - 1;
+		
+		canGetDamage = false;
 	}
 }
 
