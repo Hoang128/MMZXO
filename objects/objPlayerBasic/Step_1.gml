@@ -17,6 +17,7 @@ switch (sprite_index)
 	case sprPlayer.sprClimb:		imgSpd = 0.5 * -climbDir;	break;
 	case sprPlayer.sprClimbEnd:		imgSpd = 0;					break;
 	case sprPlayer.sprDashEnd:		imgSpd = 0.5;				break;
+	case sprPlayer.sprStand:		imgSpd = 0.1;				break;
 	default:						imgSpd = 0.5;
 }
 

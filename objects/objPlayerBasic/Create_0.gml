@@ -101,6 +101,16 @@ sprPlayer =
 	sprStandEnd : sprPlayerZXStandEnd
 };
 
+//Sprite properties
+sprProp =
+{
+	x : 0,
+	y : 0,
+	visible : 1,
+	blendColor : c_white,
+	blendTime : 0
+};
+
 vfxPlayer =
 {
 	vfxHurt : vfxVentHurt

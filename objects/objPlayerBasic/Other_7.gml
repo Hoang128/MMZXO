@@ -14,6 +14,12 @@ switch (sprite_index)
 		}
 	}	break;
 	
+	case sprPlayer.sprStandStart:
+	{
+		sprite_index = sprPlayer.sprStand;
+		image_index = 0;
+	}	break;
+	
 	case sprPlayer.sprJumpStart:
 	{
 		sprite_index = sprPlayer.sprJump;

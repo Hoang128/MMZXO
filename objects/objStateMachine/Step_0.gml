@@ -8,3 +8,8 @@ if (core == noone)
 {
 	show_message("INVALID STATE MACHINE TYPE!");
 }
+else
+{
+	x = core.x;
+	y = core.y;
+}

@@ -1,14 +1,28 @@
 /// @description Insert description here
 // You can write your code in this editor
-draw_self();
 
-if ((inviTime > 0) && (blinkTime > (blinkTimeMax / 2)))
+if (visible)
 {
-	draw_set_alpha(0.8);
-	gpu_set_blendmode(bm_add);
-	draw_sprite_ext(sprite_index, image_index, x, y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
-	draw_set_alpha(1);
-	gpu_set_blendmode(bm_normal);
+	draw_sprite_ext(sprite_index, image_index, x + sprProp.x, y + sprProp.y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+
+	if ((inviTime > 0) && (blinkTime > (blinkTimeMax / 2)))
+	{
+		draw_set_alpha(0.8);
+		gpu_set_blendmode(bm_add);
+		draw_sprite_ext(sprite_index, image_index, x + sprProp.x, y + sprProp.y, image_xscale, image_yscale, image_angle, c_white, image_alpha);
+		draw_set_alpha(1);
+		gpu_set_blendmode(bm_normal);
+	}
+
+	if (sprProp.blendTime > 0)
+	{
+		for (var i = 0; i < sprProp.blendTime; i++)
+		{
+			gpu_set_blendmode(bm_add);
+			draw_sprite_ext(sprite_index, image_index, x + sprProp.x, y + sprProp.y, image_xscale, image_yscale, image_angle, sprProp.blendColor, image_alpha);
+			gpu_set_blendmode(bm_normal);
+		}
+	}
 }
 
 if (instance_exists(objDebug))
