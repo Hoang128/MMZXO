@@ -1,1 +1,2 @@
 fncStaticCreateFadeFromWhiteToNorScene();
+scrStaticInitRoom(RoomState.MENU);
