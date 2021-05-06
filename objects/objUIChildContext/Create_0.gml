@@ -4,25 +4,47 @@
 // Inherit the parent event
 event_inherited();
 phase = 0;
+parentMenu = noone;
 
-objUIManager.UICurrentInUse = self;
 index = 0;
 context = "";
 
 UIContext = 
 {
-	font : fontMenuS,
-	titleVMargin   : 80,
-	titleHMargin   : 60,
-	childHMargin   : 90,
-	childVMargin   : 64,
-	childVSpace    : 64,
+	isVisible      : true,
+	font           : fontMenuS,
 	shadow         : true,
-	shadowDistance : 4
+	shadowDistance : 4,
+	hAlignSpace    : 0
 };
+
+UIController =
+{
+	isEnabled : true,
+	isHSpinner : true
+};
+
+function fncUISetContextVisible(isVisible)
+{
+	if (isVisible)
+	{
+		UIContext.isVisible = true;
+	}
+	else
+	{
+		UIContext.isVisible = false;
+	}
+}
 
 function fncUISetContextPosition(newX, newY)
 {
-	x = newX;
+	if (UIContext.hAlignSpace == 0)
+	{
+		x = newX;
+	}
+	else
+	{
+		x = UIContext.hAlignSpace;
+	}
 	y = newY;
 }

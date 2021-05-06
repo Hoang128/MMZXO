@@ -15,3 +15,11 @@ if (global.roomState == RoomState.STAGE)
 		depth, 
 		objGameView);
 }
+else
+{
+	
+	if (instance_exists(objScoreMgr))
+	{
+		instance_destroy(objScoreMgr);
+	}
+}

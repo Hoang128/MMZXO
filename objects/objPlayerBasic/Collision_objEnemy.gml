@@ -8,6 +8,10 @@ if (!other.isIllusion)
 		if (inviTime == 0)
 		{
 			hp -= other.damage;
+			if (instance_exists(objScoreMgr))
+			{
+				objScoreMgr.resultCaculator.damageGot += other.damage;
+			}
 	
 			if (hp < 0) hp = 0;
 	

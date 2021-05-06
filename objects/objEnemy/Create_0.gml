@@ -155,4 +155,12 @@ function fncOnEnemyDestroy()
 			}
 		}
 	}
+	
+	if (instance_exists(objScoreMgr))
+	{
+		if (hp <= 0)
+		{
+			objScoreMgr.resultCaculator.enemiesDestroyed++;
+		}
+	}
 }

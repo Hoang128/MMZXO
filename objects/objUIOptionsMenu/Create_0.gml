@@ -18,12 +18,12 @@ UIBackground.UIWidth = 540;
 UIBackground.UIHeight = 952;
 
 titleContext = "Cài đặt";
-fncInitUIChildMenuNode("Cài đặt bàn phím", objUIKeyboardMenu, noone, true);
-fncInitUIChildMenuNode("Cài đặt tay cầm", noone, noone, true);
-fncInitUIChildMenuNode("Cài đặt chung", noone, noone, false);
-fncInitUIChildMenuNode("Đồ họa", noone, noone, true);
-fncInitUIChildMenuNode("Âm thanh", noone, noone, true);
-fncInitUIChildMenuNode("Trở lại", noone, noone, true);
+fncInitUIChildMenuNode("Cài đặt bàn phím", objUIKeyboardMenu, noone, true, true);
+fncInitUIChildMenuNode("Cài đặt tay cầm", noone, noone, true, true);
+fncInitUIChildMenuNode("Cài đặt chung", noone, noone, false, true);
+fncInitUIChildMenuNode("Đồ họa", noone, noone, true, true);
+fncInitUIChildMenuNode("Âm thanh", noone, noone, true, true);
+fncInitUIChildMenuNode("Trở lại", noone, noone, true, true);
 
 function fncUIHandleSelect()
 {

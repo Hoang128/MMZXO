@@ -4,3 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
+UIContext.hAlignSpace = 1320;

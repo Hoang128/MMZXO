@@ -87,14 +87,14 @@ titleContext = "UI Menu (UI Menu Tiếng Việt)";
 
 childMenuNodeList = ds_list_create();
 
-function fncInitUIChildMenuNode(context, childMenuType, childContextType, actived)
+function fncInitUIChildMenuNode(context, childMenuType, childContextType, actived, visible)
 {
 	var childMenuNode =
 	{
+		contextVisible : visible,
 		context : "Child Context",
 		childMenuType : noone,
 		childContextType : noone,
-		childMenu : noone,
 		childContext : noone,
 		actived : true,
 		selected : false
@@ -102,10 +102,15 @@ function fncInitUIChildMenuNode(context, childMenuType, childContextType, active
 	childMenuNode.context = context;
 	childMenuNode.childMenuType = childMenuType;
 	childMenuNode.childContextType = childContextType;
-	childMenuNode.childMenu = noone;
-	childMenuNode.childContext = noone;
 	childMenuNode.actived = actived;
 	childMenuNode.selected = false;
+	if (childMenuNode.childContextType != noone)
+	{
+		childMenuNode.childContext = instance_create_depth(x, y, depth - 1, childContextType);
+		childMenuNode.childContext.parentMenu = self;
+		childMenuNode.childContext.index = ds_list_size(childMenuNodeList);
+		childMenuNode.childContext.UIContext.font = UIContext.childFont;
+	}
 	
 	ds_list_add(childMenuNodeList, childMenuNode);
 }
@@ -180,8 +185,21 @@ function fncUIUpdateUIMenuDisplayCursorDown()
 			UIMenuLimit.firstRow = 0;
 		else
 		{
-		
 			UIMenuLimit.firstRow = menuCursor - UIMenuLimit.maxRow;
+		}
+	}
+	
+	for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+	{
+		if ((i >= UIMenuLimit.firstRow) && (i <= (UIMenuLimit.firstRow + UIMenuLimit.maxRow)))
+		{
+			ds_list_find_value(childMenuNodeList, i).contextVisible = true;
+			ds_list_find_value(childMenuNodeList, i).childContext.UIContext.isVisible = true;
+		}
+		else
+		{
+			ds_list_find_value(childMenuNodeList, i).contextVisible = false;
+			ds_list_find_value(childMenuNodeList, i).childContext.UIContext.isVisible = false;
 		}
 	}
 }
@@ -195,6 +213,20 @@ function fncUIUpdateUIMenuDisplayCursorUp()
 		else
 		{
 			UIMenuLimit.firstRow = menuCursor;
+		}
+	}
+	
+	for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+	{
+		if ((i >= UIMenuLimit.firstRow) && (i <= (UIMenuLimit.firstRow + UIMenuLimit.maxRow)))
+		{
+			ds_list_find_value(childMenuNodeList, i).contextVisible = true;
+			ds_list_find_value(childMenuNodeList, i).childContext.UIContext.isVisible = true;
+		}
+		else
+		{
+			ds_list_find_value(childMenuNodeList, i).contextVisible = false;
+			ds_list_find_value(childMenuNodeList, i).childContext.UIContext.isVisible = false;
 		}
 	}
 }
@@ -228,6 +260,15 @@ function fncUIHandleSelect()
 
 function fncUICloseMenu()
 {
+	if (ds_list_size(childMenuNodeList) > 0)
+	{
+		for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
+		{
+			if (instance_exists(ds_list_find_value(childMenuNodeList, i).childContext))
+				instance_destroy(ds_list_find_value(childMenuNodeList, i).childContext);
+		}
+	}
+	
 	phase = 4;
 }
 
@@ -275,20 +316,23 @@ function fncDrawUITitle(xPos, yPos, context)
 
 function fncDrawUIChildContext(xPos, yPos, childContext)
 {
-	draw_set_font(UIContext.childFont);
-	if (UIContext.shadow)
+	if (childContext.contextVisible)
 	{
-		draw_set_color(c_black);
-		draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, childContext.context);
-	}
+		draw_set_font(UIContext.childFont);
+		if (UIContext.shadow)
+		{
+			draw_set_color(c_black);
+			draw_text(xPos + UIContext.shadowDistance, yPos + UIContext.shadowDistance, childContext.context);
+		}
 	
-	if (childContext.actived)
-	{
-		if (childContext.selected)
-			draw_set_color(c_yellow);
-		else
-			draw_set_color(c_white);
-	}	else	draw_set_color(c_gray);
-	draw_text(xPos, yPos, childContext.context);
-	draw_set_color(c_white);
+		if (childContext.actived)
+		{
+			if (childContext.selected)
+				draw_set_color(c_yellow);
+			else
+				draw_set_color(c_white);
+		}	else	draw_set_color(c_gray);
+		draw_text(xPos, yPos, childContext.context);
+		draw_set_color(c_white);
+	}
 }

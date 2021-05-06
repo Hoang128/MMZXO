@@ -21,18 +21,6 @@ switch (phase)
 			UITransPos.UICurrentDiffPosY = UITransPos.UIDiffPosY;
 		}
 		
-		for (var i = 0; i < ds_list_size(childMenuNodeList); i++)
-		{
-			var currentContext = ds_list_find_value(childMenuNodeList, i);
-			if (currentContext.childContextType != noone)
-			{
-				childContext = instance_create_depth(x, y, depth - 1, currentContext.childContextType);
-				childContext.parentMenu = self;
-				childContext.index = i;
-				childContext.UIContext.font = UIContext.childFont;
-			}
-		}
-		
 		fncUIUpdateSelectedContext();
 		
 		phase = 0.5;

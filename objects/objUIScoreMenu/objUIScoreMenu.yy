@@ -23,12 +23,13 @@
   "eventList": [
     {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
     {"isDnD":false,"eventNum":0,"eventType":1,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
+    {"isDnD":false,"eventNum":0,"eventType":3,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
   ],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Sub menus",
-    "path": "folders/Objects/Visible InGame/UI Menu/Sub menus.yy",
+    "name": "Score menu",
+    "path": "folders/Objects/Visible InGame/UI Menu/Sub menus/Score menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIScoreMenu",

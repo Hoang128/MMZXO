@@ -22,18 +22,18 @@ UIMenuLimit.maxRow = 5;
 listKeyboardMap = ds_list_create();
 
 titleContext = "Cài đặt bàn phím";
-fncInitUIChildMenuNode("Di chuyển trái", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Di chuyển phải", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Di chuyển lên", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Di chuyển xuống", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Nhảy", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Trượt", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Dùng vũ khí 1", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Dùng vũ khí 2", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Tuyệt chiêu 1", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Tuyệt chiêu 2", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Đổi dạng", noone, objUIKeyboardIndexer, true);
-fncInitUIChildMenuNode("Xem bản đồ", noone, objUIKeyboardIndexer, true);
+fncInitUIChildMenuNode("Di chuyển trái", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Di chuyển phải", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Di chuyển lên", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Di chuyển xuống", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Nhảy", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Trượt", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Dùng vũ khí 1", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Dùng vũ khí 2", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Tuyệt chiêu 1", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Tuyệt chiêu 2", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Đổi dạng", noone, objUIKeyboardIndexer, true, true);
+fncInitUIChildMenuNode("Xem bản đồ", noone, objUIKeyboardIndexer, true, true);
 
 function fncUIHandleExit()
 {
@@ -70,3 +70,5 @@ function fncInitCheckDuplicateKey(key, index)
 	
 	return false;
 }
+
+fncInitlistKeyboardMap();

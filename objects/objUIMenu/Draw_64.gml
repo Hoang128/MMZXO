@@ -44,7 +44,12 @@ if (phase == 3)
 		var currentContext = ds_list_find_value(childMenuNodeList, i + UIMenuLimit.firstRow);
 		xPos = xStartPos + UITransPos.UICurrentDiffPosX;
 		yPos = yStartPos + UIContext.childVSpace * i + UITransPos.UICurrentDiffPosY;
-	
+		
+		with (currentContext.childContext)
+		{
+			fncUISetContextPosition(xPos, yPos);
+		}
+		
 		fncDrawUIChildContext(xPos, yPos, currentContext);
 	}
 }

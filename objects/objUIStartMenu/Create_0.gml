@@ -19,10 +19,10 @@ UIBackground.UIWidth = 480;
 UIBackground.UIHeight = 1080;
 
 titleContext = "";
-fncInitUIChildMenuNode("Chơi đơn", noone, noone, true);
-fncInitUIChildMenuNode("Chơi mạng", noone, noone, false);
-fncInitUIChildMenuNode("Cài đặt", objUIOptionsMenu, noone, true);
-fncInitUIChildMenuNode("Thoát", noone, noone, true);
+fncInitUIChildMenuNode("Chơi đơn", noone, noone, true, true);
+fncInitUIChildMenuNode("Chơi mạng", noone, noone, false, true);
+fncInitUIChildMenuNode("Cài đặt", objUIOptionsMenu, noone, true, true);
+fncInitUIChildMenuNode("Thoát", noone, noone, true, true);
 
 function fncUIHandleSelect()
 {
@@ -31,7 +31,7 @@ function fncUIHandleSelect()
 		case 0:
 		{
 			with(objRoomManager)
-				fncChangeRoomTo(roomTest, false);
+				fncChangeRoomTo(roomTest, true);
 			objUIManager.UICurrentInUse = noone;
 		}	
 		break;
