@@ -1,6 +1,4 @@
 
-
-fncStaticInitGame();
 scrStaticInitRoom(RoomState.MENU);
 
 global.playerStartPosition.x = 120;
