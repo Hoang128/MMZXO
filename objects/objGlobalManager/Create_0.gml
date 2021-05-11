@@ -44,6 +44,9 @@ if (global.debug == true)
 	}
 }
 
+if (!instance_exists(objSaveDataManager))
+	instance_create_depth(x, y, depth, objSaveDataManager);
+
 if (!instance_exists(objRoomManager))
 	instance_create_depth(x, y, depth, objRoomManager);
 	

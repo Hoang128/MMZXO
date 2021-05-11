@@ -1,5 +1,5 @@
 //Init extensions
-DerpXml_Init();
+/*
 DerpXmlRead_OpenFile("saveData.xml")
 while DerpXmlRead_Read() 
 {
@@ -32,6 +32,7 @@ while DerpXmlRead_Read()
 	}
 }
 DerpXmlRead_CloseFile();
+*/
 
 
 //Init game
