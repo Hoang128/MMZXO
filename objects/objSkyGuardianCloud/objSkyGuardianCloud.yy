@@ -1,13 +1,13 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprSkyGuardianCloud",
+    "path": "sprites/sprSkyGuardianCloud/sprSkyGuardianCloud.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
-  "parentObjectId": {
-    "name": "objNonPhysicObject",
-    "path": "objects/objNonPhysicObject/objNonPhysicObject.yy",
-  },
+  "parentObjectId": null,
   "physicsObject": false,
   "physicsSensor": false,
   "physicsShape": 1,
@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Managers",
-    "path": "folders/Objects/Invi InGame/Game Managers.yy",
+    "name": "Area X",
+    "path": "folders/Objects/Visible InGame/Stage Background/Area X.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objUI",
+  "name": "objSkyGuardianCloud",
   "tags": [],
   "resourceType": "GMObject",
 }

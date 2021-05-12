@@ -1,1 +1,2 @@
+fncStaticCreateFadeFromBlackToNorScene();
 scrStaticInitRoom(RoomState.MENU);

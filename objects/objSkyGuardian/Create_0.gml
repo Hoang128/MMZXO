@@ -1,0 +1,8 @@
+/// @description Insert description here
+// You can write your code in this editor
+
+// Inherit the parent event
+event_inherited();
+
+backgroundDepth = LayerDepthState.BACKGROUND_4;
+customDepth = 1;

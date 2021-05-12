@@ -5,5 +5,8 @@ if (roomToChange != noone)
 	if (waitTimeToChange > 0)
 		waitTimeToChange -= TIME_SCALE;
 	else
+	{
 		room_goto(roomToChange);
+		roomToChange = noone;
+	}
 }

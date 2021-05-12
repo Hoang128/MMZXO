@@ -2,8 +2,8 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Physics",
-    "path": "folders/Scripts/Physics.yy",
+    "name": "Statics",
+    "path": "folders/Scripts/Statics.yy",
   },
   "resourceVersion": "1.0",
   "name": "scrGeneralFunctions",

@@ -1,12 +1,15 @@
 {
-  "spriteId": null,
+  "spriteId": {
+    "name": "sprSkyGuardianTop",
+    "path": "sprites/sprSkyGuardianTop/sprSkyGuardianTop.yy",
+  },
   "solid": false,
   "visible": true,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objNonPhysicObject",
-    "path": "objects/objNonPhysicObject/objNonPhysicObject.yy",
+    "name": "objSkyGuardian",
+    "path": "objects/objSkyGuardian/objSkyGuardian.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -20,17 +23,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Managers",
-    "path": "folders/Objects/Invi InGame/Game Managers.yy",
+    "name": "Area X",
+    "path": "folders/Objects/Visible InGame/Stage Background/Area X.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objUI",
+  "name": "objSkyGuardianTop",
   "tags": [],
   "resourceType": "GMObject",
 }

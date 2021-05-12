@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objNonPhysicObject",
-    "path": "objects/objNonPhysicObject/objNonPhysicObject.yy",
+    "name": "objUI",
+    "path": "objects/objUI/objUI.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -20,17 +20,15 @@
   "physicsStartAwake": true,
   "physicsKinematic": false,
   "physicsShapePoints": [],
-  "eventList": [
-    {"isDnD":false,"eventNum":0,"eventType":0,"collisionObjectId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMEvent",},
-  ],
+  "eventList": [],
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Managers",
-    "path": "folders/Objects/Invi InGame/Game Managers.yy",
+    "name": "Stage menus",
+    "path": "folders/Objects/Visible InGame/UI Menu/Stage menus.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objUI",
+  "name": "objUIStageIcon",
   "tags": [],
   "resourceType": "GMObject",
 }

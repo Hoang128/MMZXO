@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objNonPhysicObject",
-    "path": "objects/objNonPhysicObject/objNonPhysicObject.yy",
+    "name": "objParallaxBackground",
+    "path": "objects/objParallaxBackground/objParallaxBackground.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Managers",
-    "path": "folders/Objects/Invi InGame/Game Managers.yy",
+    "name": "Area X",
+    "path": "folders/Objects/Visible InGame/Stage Background/Area X.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objUI",
+  "name": "objSkyGuardian",
   "tags": [],
   "resourceType": "GMObject",
 }

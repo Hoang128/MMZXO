@@ -5,8 +5,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objNonPhysicObject",
-    "path": "objects/objNonPhysicObject/objNonPhysicObject.yy",
+    "name": "objUIMenu",
+    "path": "objects/objUIMenu/objUIMenu.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,
@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Game Managers",
-    "path": "folders/Objects/Invi InGame/Game Managers.yy",
+    "name": "Stage menus",
+    "path": "folders/Objects/Visible InGame/UI Menu/Stage menus.yy",
   },
   "resourceVersion": "1.0",
-  "name": "objUI",
+  "name": "objUIActionMenu",
   "tags": [],
   "resourceType": "GMObject",
 }

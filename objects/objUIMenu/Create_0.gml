@@ -54,13 +54,6 @@ UIControl =
 	firate : 0
 }
 
-UISFX =
-{
-	enterSFX  : sfxUIEnter,
-	exitSFX   : sfxUIBack,
-	deniedSFX : sfxUIDenied
-}
-
 UITransPos =
 {
 	isEnable          : false,
