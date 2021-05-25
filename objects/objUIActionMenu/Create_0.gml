@@ -23,6 +23,7 @@ UITransPos.UIMoveSpd = 40;
 titleContext = "Action";
 
 fncInitUIChildMenuNode("Stage Select", noone, noone, true, true);
+fncInitUIChildMenuNode("Skill Menu", noone, noone, false, true);
 fncInitUIChildMenuNode("Load Game", noone, noone, true, true);
 fncInitUIChildMenuNode("Option Menu", objUIOptionsMenu, noone, true, true);
 fncInitUIChildMenuNode("Exit", noone, noone, true, true);
@@ -46,11 +47,17 @@ function fncUIHandleSelect()
 		
 		case 2:
 		{
-			fncUIOpenSubMenuAfter(2, objSceneFadeInColor, objSceneFadeOutColor);
+			
 		}	
 		break;
 		
 		case 3:
+		{
+			fncUIOpenSubMenuAfter(2, objSceneFadeInColor, objSceneFadeOutColor);
+		}	
+		break;
+		
+		case 4:
 		{
 			with(objRoomManager)
 				fncChangeRoomTo(roomStart, true);

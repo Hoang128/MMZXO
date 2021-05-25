@@ -133,6 +133,8 @@ currentForm = noone;
 currentStage = 0;
 currentSkill = 0;
 
+playSlot = 0;
+
 function fncCreateTempGameData()
 {
 	for (var i = 0; i < array_length(fileSaveDataList); i++)
@@ -607,3 +609,4 @@ fncCreateTempGameData();
 fncInitGameData();
 fncInitConfigData();
 fncLoadGameData();
+fncLoadGameDataSlot(playSlot);

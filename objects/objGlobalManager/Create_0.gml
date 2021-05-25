@@ -4,6 +4,7 @@
 global.debug = true;
 currentPlayer = noone;
 currentCamera = noone;
+charToStart = noone;
 slowEffTime = -10;
 
 function fncSetTimeScale(newTimeScale, time)
@@ -23,7 +24,7 @@ function fncSetTimeScale(newTimeScale, time)
 function fncCreatePlayer(player)
 {
 	var objPlayer = instance_create_depth(global.playerStartPosition.x, global.playerStartPosition.y, depth, player);
-	currentPlayer = objPlayer.id
+	currentPlayer = objPlayer.id;
 }
 
 function fncChangePlayer(newPlayer)
