@@ -14,7 +14,6 @@ SaveSlotData = function(_slotId) constructor
 {
 	slotId				= _slotId;
 	active       		= false;
-	playerName			= "NO DATA";
 	lastTimeSave		=
 	{
 		day    : 0,
@@ -227,10 +226,6 @@ function fncLoadGameData()
 			{
 				switch (currentTag)
 				{
-					case "playerName":
-					{
-						fileSaveDataList[currentSlot].playerName = DerpXmlRead_CurValue();
-					}	break;
 					case "totalTime":
 					{
 						fileSaveDataList[currentSlot].totalTime = real(DerpXmlRead_CurValue());
@@ -362,10 +357,6 @@ function fncSaveGameData()
 		DerpXmlWrite_OpenTag("slot");
 		DerpXmlWrite_Attribute("id", string(fileSaveDataList[i].slotId));
 		DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].active));
-		
-			DerpXmlWrite_OpenTag("playerName");
-			DerpXmlWrite_Text(string(fileSaveDataList[i].playerName));
-			DerpXmlWrite_CloseTag();
 		
 			DerpXmlWrite_OpenTag("totalTime");
 			DerpXmlWrite_Text(string(fileSaveDataList[i].totalTime));
