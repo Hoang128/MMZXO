@@ -6,7 +6,7 @@ event_inherited();
 
 stageBossSprite = sprMShotBoss;
 stageBossId = 0;
-stageRoom = roomTestTileSet;
+stageRoom = roomTest;
 cursorOn = false;
 
 indexPoint = {x : 0, y : 0};

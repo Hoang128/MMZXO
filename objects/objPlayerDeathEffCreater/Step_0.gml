@@ -31,10 +31,7 @@ switch (phase)
 		}
 		else
 		{
-			with (objRoomManager)
-			{
-				fncChangeRoomTo(room);
-			}
+			instance_create_depth(x, y, depth, objUIEndStageMenu);
 			phase = 2;
 		}
 	}	break;

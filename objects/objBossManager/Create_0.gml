@@ -10,6 +10,7 @@ state = bossFightState.INIT;
 
 boss = objEnemyBoss;
 bossInstance = noone;
+bossHpBar = noone;
 bossSpawnPos = {x : VIEW_X + VIEW_W / 2, y : VIEW_Y + VIEW_H / 2};
 bossOpenCutsceneObj = noone;
 bossCloseCutsceneObj = noone;
@@ -20,6 +21,7 @@ bossZone = noone;
 function fncChangeToEndCutsceneState()
 {
 	global.gameState = GameState.INGAME_CUTSCENE;
+	bossHpBar.phase = 2;
 	if (bossCloseCutsceneObj != noone)
 	{
 		instance_create_depth(x, y, depth, bossCloseCutsceneObj);
@@ -37,4 +39,6 @@ function fncChangeToBossFightState()
 	global.gameState = GameState.INGAME_GAMEPLAY;
 	bossInstance = instance_create_depth(bossSpawnPos.x, bossSpawnPos.y, depth, boss);
 	bossInstance.bossManager = self;
+	bossHpBar = instance_create_depth(x, y, depth, objHUDBoss);
+	bossHpBar.boss = bossInstance;
 }

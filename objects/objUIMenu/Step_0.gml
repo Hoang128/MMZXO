@@ -92,7 +92,7 @@ switch (phase)
 	}	break;
 	case 3:
 	{
-		if (objUIManager.UICurrentInUse == self)
+		if (objUIManager.UICurrentInUse == self.id)
 		{
 			if (UIControl.isEnable)
 			{

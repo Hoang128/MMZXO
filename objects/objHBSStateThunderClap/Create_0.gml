@@ -6,7 +6,7 @@ event_inherited();
 
 clapTime = 4;
 rootPos = {x : 27, y : -35};
-space = 10;
+space = 8;
 shot = false;
 
 function fncStateStart()

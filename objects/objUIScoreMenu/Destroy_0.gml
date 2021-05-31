@@ -6,5 +6,5 @@ event_inherited();
 
 with (objRoomManager)
 {
-	fncChangeRoomTo(RoomStart, true);
+	fncChangeRoomTo(roomStageSelect, true);
 }

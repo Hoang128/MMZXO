@@ -8,7 +8,10 @@ if (global.roomState == RoomState.STAGE)
 		instance_create_depth(x, y, depth, objScoreMgr);
 	}
 	if (charToStart!=noone)
+	{
 		fncCreatePlayer(charToStart);
+		instance_create_depth(x, y, depth, objHUDPlayer);
+	}
 	
 	currentCamera = instance_create_depth(
 		global.playerStartPosition.x, 

@@ -84,7 +84,7 @@ function fncUIChangeStage()
 	{
 		if (cursor < ds_list_size(stageIconList) - 1)
 		{
-			audio_play_sound(UISFX.exitSFX, global.emitterSFX.source, false);
+			audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
 			cursor++;
 			for (var i = 0; i < ds_list_size(stageIconList); i++)
 			{
@@ -103,6 +103,7 @@ function fncUISelectStage()
 {
 	if (fncStaticHandleButton(KeyMap.UI_CONFIRM,KeyAction.PRESSED))
 	{
+		audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
 		var stage = noone;
 		with (ds_list_find_value(stageIconList, cursor))
 		{

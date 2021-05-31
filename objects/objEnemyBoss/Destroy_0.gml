@@ -18,6 +18,11 @@ with (bossManager)
 	y = (other.bbox_top + other.bbox_bottom) / 2;
 }
 
+with (objGlobalManager)
+{
+	currentPlayer.canGetDamage = false;
+}
+
 if (instance_exists(objScoreMgr))
 {
 	if (objScoreMgr.state == ScoreMgrState.CACULATE)

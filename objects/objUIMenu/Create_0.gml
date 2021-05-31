@@ -4,7 +4,7 @@
 //Display UI props
 event_inherited();
 
-objUIManager.UICurrentInUse = self;
+objUIManager.UICurrentInUse = self.id;
 phase = 0;
 menuCursor = 0;
 closeTime = 0;
