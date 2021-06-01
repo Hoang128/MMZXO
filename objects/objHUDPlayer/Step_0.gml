@@ -21,14 +21,27 @@ switch (phase)
 		{
 			if (objGlobalManager.currentPlayer.hp != hp)
 			{
-				if (animateTime > 0)
+				if (animateTimeHp > 0)
 				{
-					animateTime--;
+					animateTimeHp--;
 				}
 				else
 				{
 					hp += sign(objGlobalManager.currentPlayer.hp - hp);
-					animateTime = animateTimeMax;
+					animateTimeHp = animateTimeMax;
+				}
+			}
+			
+			if (objGlobalManager.currentPlayer.wp != wp)
+			{
+				if (animateTimeWp > 0)
+				{
+					animateTimeWp--;
+				}
+				else
+				{
+					wp += sign(objGlobalManager.currentPlayer.wp - wp);
+					animateTimeWp = animateTimeMax;
 				}
 			}
 		}

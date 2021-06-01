@@ -7,9 +7,10 @@ event_inherited();
 phase = 0;
 moveSpd = 20;
 hp = objGlobalManager.currentPlayer.hp;
-maxHpBar = 32;
+wp = objGlobalManager.currentPlayer.wp;
 animateTimeMax = 2;
-animateTime = animateTimeMax;
+animateTimeHp = animateTimeMax;
+animateTimeWp = animateTimeMax;
 
 ratio = 4;
 
@@ -41,5 +42,22 @@ hpBarStartPoint =
 	y : 14
 }
 
-hpAtCore = 16;
+wpStartPoint =
+{
+	x : 31,
+	y : 20
+}
+
+wpBarStartPoint =
+{
+	x : 31,
+	y : 19
+}
+
+hpAtCore = 15;
+wpAtCore = 15;
 hpBarUnitW = 6;
+wpBarUnitW = 5;
+
+hpBarBotLim = hpBarUnitW * (hp) + 1;
+wpBarTopLim = wpBarUnitW * (wp) + 4 + 1;
