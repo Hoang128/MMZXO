@@ -4,6 +4,17 @@
 // Inherit the parent event
 event_inherited();
 
+avatar = sprPlayerHUDAvatar;
+avatarImg = 1;
+avatarRatio = 0.5;
+switch (objGlobalManager.currentPlayer.object_index)
+{
+	case objPlayerZX:
+		avatarImg = 0;
+		break;
+	default: avatarImg = 1;
+}
+
 phase = 0;
 moveSpd = 20;
 hp = objGlobalManager.currentPlayer.hp;

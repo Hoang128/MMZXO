@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+draw_sprite_ext(sprMShotBoss, avatarImg, drawPoint.x - 27 * ratio, drawPoint.y + 3 * ratio, ratio * avatarRatio, ratio * avatarRatio, 0, c_white, 1);
 draw_sprite_ext(sprBossHUDCore, 0, drawPoint.x, drawPoint.y, ratio, ratio, 0, c_white, 1);
 for (var i = hpAtCore; i < 32; i++)
 {

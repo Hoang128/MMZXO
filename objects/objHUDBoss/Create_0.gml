@@ -4,6 +4,9 @@
 // Inherit the parent event
 event_inherited();
 
+avatar = sprMShotBoss;
+avatarImg = 0;
+avatarRatio = 0.5;
 phase = 0;
 moveSpd = 20;
 boss = noone;

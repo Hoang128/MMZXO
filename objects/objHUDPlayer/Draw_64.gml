@@ -3,6 +3,7 @@
 var bonusHp = global.itemsNumber.hpTank * global.upgradeItemEff.hpTank;
 var bonusWp = global.itemsNumber.wpTank * global.upgradeItemEff.wpTank;
 
+draw_sprite_ext(sprPlayerHUDAvatar, avatarImg, drawPoint.x + ratio * 3, drawPoint.y + ratio * 3, avatarRatio * ratio, avatarRatio * ratio, 0, c_white, 1);
 draw_sprite_ext(sprPlayerHUDCore, 0, drawPoint.x, drawPoint.y, ratio, ratio, 0, c_white, 1);
 
 //Draw hp

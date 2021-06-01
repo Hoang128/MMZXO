@@ -249,8 +249,8 @@ function fncInitGameplayParams()
 	
 	global.itemsNumber = 
 	{
-		hpTank : 4,
-		wpTank : 4,
+		hpTank : 0,
+		wpTank : 0,
 		crystal : 0
 	};
 	

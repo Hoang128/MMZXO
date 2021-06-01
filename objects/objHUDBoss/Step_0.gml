@@ -4,6 +4,14 @@ switch (phase)
 {
 	case 0:
 	{
+		switch (boss.object_index)
+		{
+			case objE_HellBatSchilt:
+				avatarImg = 4;
+				break;
+			default:
+				avatarImg = 0;
+		}
 		if (abs(drawPoint.y - drawPointFight.y) > moveSpd)
 		{
 			drawPoint.y += sign(drawPointFight.y - drawPoint.y) * moveSpd;
