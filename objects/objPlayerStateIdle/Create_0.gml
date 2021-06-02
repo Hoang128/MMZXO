@@ -25,10 +25,7 @@ function fncStateEnd()
 function fncPlayerIdleStart()
 {
 	with(core.id)
-	{
-		sprite_index = sprPlayer.sprIdle;
-		image_index = 0;
-		
+	{	
 		vspd = 0;
 		jumpTime = jumpTimeMax;
 		airDashCount = airDashCountMax;
@@ -40,6 +37,12 @@ function fncPlayerIdleRun()
 {
 	with(core.id)
 	{
+		if ((other.lastState == "dash") || (other.lastState == "slash dash"))
+		{
+			if (abs(hspd) > 0)	hspd -= dashAccDown * charDir;
+			if ((hspd * charDir) <= 0)	hspd = 0;
+		}
+		
 		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 		{
 			if (fncStaticHandleButton(KeyMap.DOWN, KeyAction.HELD))
@@ -196,7 +199,11 @@ function fncStateInit()
 			default: 
 			{
 				with(core.id)
+				{
+					sprite_index = sprPlayer.sprIdle;
+					image_index = 0;
 					hspd = 0;	
+				}
 			}	break;
 		}
 		inited = true;
@@ -205,12 +212,5 @@ function fncStateInit()
 
 function fncChangeToZXStates()
 {
-	with (core.id)
-	{
-		if ((other.lastState == "dash") || (other.lastState == "slash dash"))
-		{
-			if (abs(hspd) > 0)	hspd -= dashAccDown * charDir;
-			if ((hspd * charDir) <= 0)	hspd = 0;
-		}
-	}
+	
 }

@@ -99,7 +99,9 @@ sprPlayer =
 	sprStunHard : sprPlayerZXStun2,
 	sprStand : sprPlayerZXStand,
 	sprStandStart : sprPlayerZXStandStart,
-	sprStandEnd : sprPlayerZXStandEnd
+	sprStandEnd : sprPlayerZXStandEnd,
+	sprAirDashStart : sprPlayerZXDashStart,
+	sprAirDash : sprPlayerZXDash,
 };
 
 //Sprite properties

@@ -7,3 +7,7 @@ core = noone;
 waitTimeMax = 3;
 
 waitTime = 0;
+
+color = c_red;
+
+inited = false;

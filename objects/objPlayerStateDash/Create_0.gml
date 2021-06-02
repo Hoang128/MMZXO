@@ -29,10 +29,7 @@ function fncPlayerDashStart()
 	shadowEffCreater = instance_create_depth(core.x , core.y, depth - 1, objPlayerShadowCreater);
 	shadowEffCreater.core = self.core;
 	with(core.id)
-	{
-		sprite_index = sprPlayer.sprDashStart;
-		image_index = 0;
-		
+	{	
 		var dashEff = instance_create_depth(x + charDir * 12, bbox_bottom - 12, depth - 2, objMoveImpactEff);
 		dashEff.image_xscale = self.charDir;
 		
@@ -194,7 +191,13 @@ function fncPlayerDashRun()
 		{
 			with(other.stateMachine)
 			{
-				if (fncIsOnGround(2))
+				var playerOnGround = true;
+				with (core.id)
+				{
+					playerOnGround = fncIsOnGround(2);
+				}
+				
+				if (playerOnGround)
 				{
 					fncStateChange(objPlayerStateIdle);
 					currentState.lastState = "dash";
@@ -227,11 +230,23 @@ function fncStateInit()
 	{
 		if (!airDash)
 		{
+			with (core.id)
+			{
+				sprite_index = sprPlayer.sprDashStart;
+				image_index = 0;
+			}
+			
 			var dashDust = instance_create_depth(core.id.x, core.id.y, core.id.depth - 1, objSideDust);
 			dashDust.image_xscale = core.id.charDir;
 		}
 		else
 		{
+			with (core.id)
+			{
+				sprite_index = sprPlayer.sprAirDashStart;
+				image_index = 0;
+			}
+			
 			with (core.id)
 				physic.gravAffect = false;
 		}

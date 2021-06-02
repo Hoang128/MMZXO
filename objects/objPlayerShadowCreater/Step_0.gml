@@ -2,6 +2,17 @@
 // You can write your code in this editor
 event_inherited();
 
+if (!inited)
+{
+	switch (core.object_index)
+	{
+		case objPlayerZX:
+			color = c_red;	break;
+		case objPlayerH:
+			color = c_green;	break;
+	}
+}
+
 if (instance_exists(core))
 {
 	x = core.x;
@@ -14,6 +25,7 @@ if (instance_exists(core))
 		objShadow.image_index = core.image_index;
 		objShadow.image_xscale = core.image_xscale;
 		objShadow.image_speed = 0;
+		objShadow.color = color;
 		waitTime = waitTimeMax;
 	}
 	else

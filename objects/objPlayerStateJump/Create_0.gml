@@ -7,6 +7,7 @@ dashJump = false;
 shadowEffCreater = noone;
 afterWallKick = 0;
 lastState = noone;
+ableToBoostUp = false;
 
 function fncStateStart()
 {
@@ -42,6 +43,8 @@ function fncPlayerJumpStart()
 			image_index = 0;
 		}
 		
+		if (object_index == objPlayerH)
+			other.ableToBoostUp = true;
 		physic.onGround = false;
 	}
 }
@@ -132,15 +135,18 @@ function fncPlayerJumpRun()
 			{
 				if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
 				{
-					airDashCount--;
-					if (!mixAirDashJump)
-						jumpTime = 0;
-					with(other.stateMachine)
+					if (!other.ableToBoostUp) || (!fncStaticHandleButton(KeyMap.UP, KeyAction.HELD))
 					{
-						var currentAirDash = true;
-						fncStateChange(objPlayerStateDash);
-						currentState.airDash = currentAirDash;
-						return;
+						airDashCount--;
+						if (!mixAirDashJump)
+							jumpTime = 0;
+						with(other.stateMachine)
+						{
+							var currentAirDash = true;
+							fncStateChange(objPlayerStateDash);
+							currentState.airDash = currentAirDash;
+							return;
+						}
 					}
 				}
 			}
@@ -232,4 +238,33 @@ function fncPlayerJumpEnd()
 function fncChangeToZXStates()
 {
 	
+}
+
+function fncChangeToHXStates()
+{
+	with (core.id)
+	{
+		if (airDashCount > 0)
+		{
+			if ((airDashWhenFastMove == true)
+			|| ((airDashWhenFastMove == false) && other.dashJump == false))
+			{
+				if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
+				{
+					if (fncStaticHandleButton(KeyMap.UP, KeyAction.HELD))
+					{
+						airDashCount--;
+						if (!mixAirDashJump)
+							jumpTime = 0;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateHBoostUp);
+							currentState.airDash = true;
+							return;
+						}
+					}
+				}
+			}
+		}
+	}
 }

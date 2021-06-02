@@ -13,11 +13,11 @@ function fncChangeToUniqueStates()
 	switch(core.object_index)
 	{
 		case objPlayerZX:	fncChangeToZXStates();	break;
-		case objPlayerHX:	fncChangeToHXStates();	break;
-		case objPlayerPX:	fncChangeToPXStates();	break;
-		case objPlayerLX:	fncChangeToLXStates();	break;
-		case objPlayerFX:	fncChangeToFXStates();	break;
-		case objPlayerOX:	fncChangeToOXStates();	break;
+		case objPlayerH:	fncChangeToHXStates();	break;
+		case objPlayerP:	fncChangeToPXStates();	break;
+		case objPlayerL:	fncChangeToLXStates();	break;
+		case objPlayerF:	fncChangeToFXStates();	break;
+		case objPlayerO:	fncChangeToOXStates();	break;
 		case objPlayerA:	fncChangeToAStates();	break;
 		default:	return;
 			

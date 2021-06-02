@@ -21,7 +21,7 @@ switch (phase)
 				var objIcon = instance_create_depth(x, y, depth, objUICharIconMenu);
 				objIcon.backColor = c_green;
 				objIcon.imageChar = sprArtModelH;
-				objIcon.charObj = objPlayerZX;
+				objIcon.charObj = objPlayerH;
 				ds_list_add(charIconList, objIcon);
 			}
 			

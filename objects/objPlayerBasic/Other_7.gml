@@ -42,6 +42,11 @@ switch (sprite_index)
 		sprite_index = sprPlayer.sprDash;
 		image_index = 0;
 	}	break;
+	case sprPlayer.sprAirDashStart:
+	{
+		sprite_index = sprPlayer.sprAirDash;
+		image_index = 0;
+	}	break;
 	case sprPlayer.sprDashEnd:
 	{
 		sprite_index = sprPlayer.sprIdle;
