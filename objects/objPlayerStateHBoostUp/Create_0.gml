@@ -30,8 +30,8 @@ function fncPlayerHBoostUpStart()
 		sprite_index = sprPlayerHBoostUpStart;
 		image_index = 0;
 		
-		var dashEff = instance_create_depth(x + charDir * 12, bbox_bottom - 12, depth - 2, objMoveImpactEff);
-		dashEff.image_xscale = self.charDir;
+		var dashEff = instance_create_depth(x, bbox_top + 12, depth - 2, objMoveImpactEff);
+		dashEff.image_angle = 90;
 		
 		dashTime = dashTimeMax;
 		hspd = 0;
@@ -45,6 +45,7 @@ function fncStateInit()
 	{
 		with (core.id)
 			physic.gravAffect = false;
+		inited = true;
 	}
 }
 
@@ -70,6 +71,30 @@ function fncPlayerHBoostUpRun()
 						{
 							fncStateChange(objPlayerStateClimb);
 							currentState.climbFromFirstImage = climbFromFirstImageTemp;
+							return;
+						}
+					}
+				}
+			}
+		}
+		
+		if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+		{
+			if (!place_meeting(x + charDir * distanceCanWKick, y, objBlock))
+			{
+				if ((airJumpWhenFastMove == true)
+				|| ((airJumpWhenFastMove == false) && other.dashJump == false))
+				{
+					if (jumpTime > 0)
+					{
+						vspd = -jumpSpd;
+						jumpTime--;
+						if (!mixAirDashJump)
+							airDashCount = 0;
+					
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateHHover);
 							return;
 						}
 					}

@@ -161,7 +161,7 @@ function fncChangeToZXStates()
 					fncDestroyMeleeWeapon();
 				}
 				
-				with (other.stateMachine)
+				with (playerStateMachine)
 				{
 					var currentDashJump = currentState.dashJump;
 					fncStateChange(objPlayerStateZXSlashSpin);

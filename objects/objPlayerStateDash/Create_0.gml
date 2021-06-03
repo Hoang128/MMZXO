@@ -258,3 +258,35 @@ function fncChangeToZXStates()
 {
 
 }
+
+function fncChangeToHXStates()
+{
+	with (core.id)
+	{
+		if (vspd >= 0)
+		{
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+			{
+				if (!place_meeting(x + charDir * distanceCanWKick, y, objBlock))
+				{
+					if (airJumpWhenFastMove == true)
+					{
+						if (jumpTime > 0)
+						{
+							vspd = -jumpSpd;
+							jumpTime--;
+							if (!mixAirDashJump)
+								airDashCount = 0;
+					
+							with(other.stateMachine)
+							{
+								fncStateChange(objPlayerStateHHover);
+								return;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

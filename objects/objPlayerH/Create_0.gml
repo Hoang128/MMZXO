@@ -5,8 +5,11 @@
 event_inherited();
 
 //Parameters
-jumpTimeMax = 1;
+jumpTimeMax = 2;
 airDashCountMax = 1;
+hoverSpd = 1;
+mixAirDashJump = true;
+airJumpWhenFastMove = true;
 
 sprPlayer =
 {

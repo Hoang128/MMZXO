@@ -11,4 +11,10 @@ switch (sprite_index)
 		sprite_index = sprPlayerHBoostUp;
 		image_index = 0;
 	}	break;
+	
+	case sprPlayerHHoverStart:
+	{
+		sprite_index = sprPlayerHHover;
+		image_index = 0;
+	}	break;
 }

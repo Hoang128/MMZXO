@@ -100,6 +100,7 @@
     {"id":{"name":"objEnemyShield","path":"objects/objEnemyShield/objEnemyShield.yy",},"order":8,},
     {"id":{"name":"sprMeleeSlashEff","path":"sprites/sprMeleeSlashEff/sprMeleeSlashEff.yy",},"order":11,},
     {"id":{"name":"sprArtModelL","path":"sprites/sprArtModelL/sprArtModelL.yy",},"order":2,},
+    {"id":{"name":"objPlayerStateHHover","path":"objects/objPlayerStateHHover/objPlayerStateHHover.yy",},"order":1,},
     {"id":{"name":"sprBossMainExplosion","path":"sprites/sprBossMainExplosion/sprBossMainExplosion.yy",},"order":0,},
     {"id":{"name":"DerpXmlRead_CloseFile","path":"scripts/DerpXmlRead_CloseFile/DerpXmlRead_CloseFile.yy",},"order":0,},
     {"id":{"name":"objBossExplosionCreater","path":"objects/objBossExplosionCreater/objBossExplosionCreater.yy",},"order":1,},
