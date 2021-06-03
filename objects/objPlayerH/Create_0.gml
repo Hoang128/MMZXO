@@ -61,6 +61,25 @@ function fncPerformWeapon1()
 					fncStateChange(objPlayerStateHSlashH);	
 					return;
 			}	break;
+			
+			case objPlayerStateDash:
+			{
+				with(playerStateMachine)
+					fncStateChange(objPlayerStateHSlashDash);	
+					return;
+			}	break;
+			
+			case objPlayerStateJump:
+			case objPlayerStateWallKick:
+			{
+				with(playerStateMachine)
+				{
+					var currentDashJump = currentState.dashJump;
+					fncStateChange(objPlayerStateHSlashJump);	
+					currentState.dashJump = currentDashJump;
+					return;
+				}
+			}	break;
 		}
 	}
 }
@@ -76,6 +95,25 @@ function fncPerformWeapon2()
 				with(playerStateMachine)
 					fncStateChange(objPlayerStateHSlashV);	
 				return;
+			}	break;
+			
+			case objPlayerStateDash:
+			{
+				with(playerStateMachine)
+					fncStateChange(objPlayerStateHSlashDash);	
+					return;
+			}	break;
+			
+			case objPlayerStateJump:
+			case objPlayerStateWallKick:
+			{
+				with(playerStateMachine)
+				{
+					var currentDashJump = currentState.dashJump;
+					fncStateChange(objPlayerStateHSlashJump);	
+					currentState.dashJump = currentDashJump;
+					return;
+				}
 			}	break;
 		}
 	}
