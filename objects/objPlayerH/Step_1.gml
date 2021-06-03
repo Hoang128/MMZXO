@@ -11,9 +11,12 @@ switch (sprite_index)
 	case sprPlayerHSlashDouble:
 	case sprPlayerHSlashDash:
 	case sprPlayerHSlashDashAir:
-	case sprPlayerHSlashJump:
 	case sprPlayerHSlashClimb:
 	case sprPlayerHSlashSlide:
 		imgSpd = 1;
+		break;
+		
+	case sprPlayerHSlashJump:
+		imgSpd = 2;
 		break;
 }

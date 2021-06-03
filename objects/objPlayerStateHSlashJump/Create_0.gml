@@ -6,6 +6,7 @@ event_inherited();
 slashEnd = false;
 dashJump = false;
 shadowEffCreater = noone;
+createCyclone = 0;
 
 function fncStateStart()
 {
@@ -32,12 +33,10 @@ function fncPlayerHSlashJumpStart()
 		sprite_index = sprPlayerHSlashJump;
 		image_index = 0;
 		
-		/*
 		with (weaponMeleeMgr)
 		{
-			fncCreateMeleeWeapon(objZXDagger, sprZXSlashJumpHitbox);
+			fncCreateMeleeWeapon(objHDaggers, sprHSlashJumpHitbox);
 		}
-		*/
 	}
 }
 
@@ -64,6 +63,20 @@ function fncPlayerHSlashJumpRun()
 	}
 	else
 	{
+		if (createCyclone > 0)
+		{
+			with (core.id)
+			{
+				if (image_index > 2)
+				{
+					var objCycloneC = instance_create_depth(x, y - 16, depth, objHCycloneCreater);
+					objCycloneC.image_xscale = image_xscale;
+					objCycloneC.pattern = other.createCyclone - 1;
+					other.createCyclone = 0;
+				}
+			}
+		}
+		
 		with (core.id)
 		{
 			if (hMove != 0)

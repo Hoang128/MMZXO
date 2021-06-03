@@ -124,11 +124,6 @@ playerStateMachine = instance_create_depth(x, y, depth, objStateMachine);
 playerStateMachine.core = self;
 playerStateMachine.coreType = "player";
 
-with(playerStateMachine)
-{
-	fncStateChange(objPlayerStateTeleDown);
-}
-
 function fncSetupProperties()
 {
 	hMove = fncStaticHandleButton(KeyMap.RIGHT, KeyAction.HELD) - fncStaticHandleButton(KeyMap.LEFT, KeyAction.HELD);

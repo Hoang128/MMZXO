@@ -5,6 +5,7 @@
 event_inherited();
 slashEnd = false;
 slashNext = false;
+createCyclone = 0;
 
 function fncStateStart()
 {
@@ -29,13 +30,11 @@ function fncPlayerHSlashHStart()
 		sprite_index = sprPlayerHSlash1;
 		image_index = 0;
 		
-		/*
 		with (weaponMeleeMgr)
 		{
-			fncCreateMeleeWeapon(objZXDagger, sprZXSlashCombo1Hitbox);
+			fncCreateMeleeWeapon(objHDaggers, sprHSlash1Hitbox);
 			weaponSlash.destroyWhenChangeState = true;
 		}
-		*/
 		
 		hspd = 0;
 		vspd = 0;
@@ -48,6 +47,22 @@ function fncPlayerHSlashHRun()
 	{
 		with(stateMachine)
 			fncStateChange(objPlayerStateIdle);
+	}
+	else
+	{
+		if (createCyclone > 0)
+		{
+			with (core.id)
+			{
+				if (image_index > 2)
+				{
+					var objCycloneC = instance_create_depth(x, y - 16, depth, objHCycloneCreater);
+					objCycloneC.image_xscale = image_xscale;
+					objCycloneC.pattern = other.createCyclone - 1;
+					other.createCyclone = 0;
+				}
+			}
+		}
 	}
 }
 

@@ -17,16 +17,16 @@
   "width": 202,
   "height": 203,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupUI",
+    "path": "texturegroups/texgroupUI",
   },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"cb5ff44a-0bf6-40db-b821-e3e1e418fb09","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"cb5ff44a-0bf6-40db-b821-e3e1e418fb09","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"LayerId":{"name":"cdfea643-06c7-4467-b8eb-427eea388ce4","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"cb5ff44a-0bf6-40db-b821-e3e1e418fb09","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"LayerId":{"name":"84714bf4-a184-46ee-9efc-cd7b7d053279","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+        {"FrameId":{"name":"cb5ff44a-0bf6-40db-b821-e3e1e418fb09","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"LayerId":{"name":"cdfea643-06c7-4467-b8eb-427eea388ce4","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprUIStageIcon","path":"sprites/sprUIStageIcon/sprUIStageIcon.yy",},"resourceVersion":"1.0","name":"cb5ff44a-0bf6-40db-b821-e3e1e418fb09","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

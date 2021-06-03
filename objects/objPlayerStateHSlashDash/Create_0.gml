@@ -37,19 +37,22 @@ function fncPlayerHSlashDashStart()
 		{
 			sprite_index = sprPlayerHSlashDash;
 			image_index = 0;
+			
+			with (weaponMeleeMgr)
+			{
+				fncCreateMeleeWeapon(objHDaggers, sprHSlashDashHitbox);
+			}
 		}
 		else
 		{
 			sprite_index = sprPlayerHSlashDashAir;
 			image_index = 0;
+			
+			with (weaponMeleeMgr)
+			{
+				fncCreateMeleeWeapon(objHDaggers, sprHSlashDashAirHitbox);
+			}
 		}
-		
-		/*
-		with (weaponMeleeMgr)
-		{
-			fncCreateMeleeWeapon(objZXDagger, sprZXSlashDashHitbox);
-		}
-		*/
 	}
 }
 

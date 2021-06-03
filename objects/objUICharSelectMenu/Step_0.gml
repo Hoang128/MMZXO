@@ -30,7 +30,7 @@ switch (phase)
 				var objIcon = instance_create_depth(x, y, depth, objUICharIconMenu);
 				objIcon.backColor = c_purple;
 				objIcon.imageChar = sprArtModelP;
-				objIcon.charObj = objPlayerZX;
+				objIcon.charObj = objPlayerP;
 				ds_list_add(charIconList, objIcon);
 			}
 			
@@ -39,7 +39,7 @@ switch (phase)
 				var objIcon = instance_create_depth(x, y, depth, objUICharIconMenu);
 				objIcon.backColor = c_blue;
 				objIcon.imageChar = sprArtModelL;
-				objIcon.charObj = objPlayerZX;
+				objIcon.charObj = objPlayerL;
 				ds_list_add(charIconList, objIcon);
 			}
 			
@@ -48,7 +48,7 @@ switch (phase)
 				var objIcon = instance_create_depth(x, y, depth, objUICharIconMenu);
 				objIcon.backColor = c_orange;
 				objIcon.imageChar = sprArtModelF;
-				objIcon.charObj = objPlayerZX;
+				objIcon.charObj = objPlayerF;
 				ds_list_add(charIconList, objIcon);
 			}
 		}

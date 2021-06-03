@@ -17,8 +17,8 @@
   "width": 22,
   "height": 23,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupBossHellBat",
+    "path": "texturegroups/texgroupBossHellBat",
   },
   "swatchColours": null,
   "gridX": 0,

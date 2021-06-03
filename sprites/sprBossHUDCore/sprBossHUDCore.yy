@@ -17,19 +17,15 @@
   "width": 94,
   "height": 30,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupUIImage",
+    "path": "texturegroups/texgroupUIImage",
   },
   "swatchColours": null,
   "gridX": 0,
   "gridY": 0,
   "frames": [
     {"compositeImage":{"FrameId":{"name":"b806331b-7818-469a-b7f9-e7ea6279d23b","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"b806331b-7818-469a-b7f9-e7ea6279d23b","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"LayerId":{"name":"2d530921-1b30-454a-8daf-558d84477934","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"b806331b-7818-469a-b7f9-e7ea6279d23b","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"LayerId":{"name":"d7b72fff-01db-4acd-97ba-39c0805469a1","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"b806331b-7818-469a-b7f9-e7ea6279d23b","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"LayerId":{"name":"5419f7f7-2410-453e-94ae-d989049ae1a4","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
         {"FrameId":{"name":"b806331b-7818-469a-b7f9-e7ea6279d23b","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"LayerId":{"name":"cb94c3b3-9f11-4292-88c7-48776376d8cb","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-        {"FrameId":{"name":"b806331b-7818-469a-b7f9-e7ea6279d23b","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"LayerId":{"name":"e00d2bcd-46ee-4517-9352-8cb9b7f3899a","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
       ],"parent":{"name":"sprBossHUDCore","path":"sprites/sprBossHUDCore/sprBossHUDCore.yy",},"resourceVersion":"1.0","name":"b806331b-7818-469a-b7f9-e7ea6279d23b","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {

@@ -33,7 +33,7 @@ function fncPlayerHBoostUpStart()
 		var dashEff = instance_create_depth(x, bbox_top + 12, depth - 2, objMoveImpactEff);
 		dashEff.image_angle = 90;
 		
-		dashTime = dashTimeMax;
+		dashTime = dashTimeMax / 3 * 2;
 		hspd = 0;
 		vspd = 0;
 	}

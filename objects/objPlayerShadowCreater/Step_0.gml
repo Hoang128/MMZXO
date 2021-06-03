@@ -7,9 +7,15 @@ if (!inited)
 	switch (core.object_index)
 	{
 		case objPlayerZX:
-			color = c_red;	break;
+			color = c_red;		break;
 		case objPlayerH:
 			color = c_green;	break;
+		case objPlayerL:
+			color = c_blue;		break;
+		case objPlayerP:
+			color = c_purple;	break;
+		case objPlayerF:
+			color = c_orange;	break;
 	}
 }
 

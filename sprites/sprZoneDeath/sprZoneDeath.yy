@@ -17,8 +17,8 @@
   "width": 8,
   "height": 8,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupPhysics",
+    "path": "texturegroups/texgroupPhysics",
   },
   "swatchColours": null,
   "gridX": 0,

@@ -12,6 +12,18 @@ switch (objGlobalManager.currentPlayer.object_index)
 	case objPlayerZX:
 		avatarImg = 0;
 		break;
+	case objPlayerH:
+		avatarImg = 1;
+		break;
+	case objPlayerL:
+		avatarImg = 2;
+		break;
+	case objPlayerP:
+		avatarImg = 3;
+		break;
+	case objPlayerF:
+		avatarImg = 4;
+		break;
 	default: avatarImg = 1;
 }
 

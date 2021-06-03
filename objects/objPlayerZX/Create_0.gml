@@ -30,6 +30,12 @@ rapidCount = rapidMax;
 weaponMeleeMgr = instance_create_depth(x, y, depth, objPlayerWeaponMeleeMgr);
 weaponMeleeMgr.core = self;
 
+//Start State
+with(playerStateMachine)
+{
+	fncStateChange(objPlayerStateTeleDown);
+}
+
 function fncSetupZXProperties()
 {
 	if ((canShot < 1) && (canShot >= -waitShotLong))
@@ -134,8 +140,10 @@ function fncPerformWeapon1()
 			case objPlayerStateIdle:
 			{
 				with(playerStateMachine)
+				{
 					fncStateChange(objPlayerStateZXSlashCombo1);	
-					return;
+				}
+				return;
 			}	break;
 		
 			case objPlayerStateJump:
@@ -146,8 +154,8 @@ function fncPerformWeapon1()
 					var currentDashJump = currentState.dashJump;
 					fncStateChange(objPlayerStateZXSlashJump);	
 					currentState.dashJump = currentDashJump;
-					return;
 				}
+				return;
 			}	break;
 		
 			case objPlayerStateDash:
@@ -157,8 +165,8 @@ function fncPerformWeapon1()
 					var currentAirDash = currentState.airDash;
 					fncStateChange(objPlayerStateZXSlashDash);	
 					currentState.airDash = currentAirDash;
-					return;
 				}
+				return;
 			}	break;
 		
 			case objPlayerStateSlide:
@@ -177,8 +185,8 @@ function fncPerformWeapon1()
 					fncStateChange(objPlayerStateZXSlashSlide);
 					currentState.startFrame = startFrame;
 					currentState.slideEff = currentDustEff;
-					return;
 				}
+				return;
 			}	break;
 		
 			case objPlayerStateClimb:
@@ -188,9 +196,9 @@ function fncPerformWeapon1()
 					with(playerStateMachine)
 					{
 						fncStateChange(objPlayerStateZXSlashClimb);	
-						return;
 					}
 				}
+				return;
 			}	break;
 		
 			case objPlayerStateRun:
