@@ -49,3 +49,34 @@ runSlashPhase2Timemax = 10;
 weaponMeleeMgr = instance_create_depth(x, y, depth, objPlayerWeaponMeleeMgr);
 weaponMeleeMgr.core = self;
 
+function fncPerformWeapon1()
+{
+	if (weaponMeleeMgr.weaponSlash == noone)
+	{
+		switch (playerStateMachine.currentState.object_index)
+		{
+			case objPlayerStateIdle:
+			{
+				with(playerStateMachine)
+					fncStateChange(objPlayerStateHSlashH);	
+					return;
+			}	break;
+		}
+	}
+}
+
+function fncPerformWeapon2()
+{
+	if (weaponMeleeMgr.weaponSlash == noone)
+	{
+		switch (playerStateMachine.currentState.object_index)
+		{
+			case objPlayerStateIdle:
+			{
+				with(playerStateMachine)
+					fncStateChange(objPlayerStateHSlashV);	
+				return;
+			}	break;
+		}
+	}
+}

@@ -1,5 +1,6 @@
 {
   "resources": [
+    {"id":{"name":"objPlayerStateHSlashH","path":"objects/objPlayerStateHSlashH/objPlayerStateHSlashH.yy",},"order":2,},
     {"id":{"name":"sfxBossHBSDead","path":"sounds/sfxBossHBSDead/sfxBossHBSDead.yy",},"order":8,},
     {"id":{"name":"palCharge","path":"sprites/palCharge/palCharge.yy",},"order":2,},
     {"id":{"name":"objPlayerStateZXSlashDash","path":"objects/objPlayerStateZXSlashDash/objPlayerStateZXSlashDash.yy",},"order":6,},
@@ -428,6 +429,7 @@
     {"id":{"name":"sprPlayerZXClimbShot1","path":"sprites/sprPlayerZXClimbShot1/sprPlayerZXClimbShot1.yy",},"order":1,},
     {"id":{"name":"objCutsceneHellbatSchiltStart","path":"objects/objCutsceneHellbatSchiltStart/objCutsceneHellbatSchiltStart.yy",},"order":0,},
     {"id":{"name":"sprPlayerHDashEnd","path":"sprites/sprPlayerHDashEnd/sprPlayerHDashEnd.yy",},"order":9,},
+    {"id":{"name":"objPlayerStateHSlashV","path":"objects/objPlayerStateHSlashV/objPlayerStateHSlashV.yy",},"order":3,},
     {"id":{"name":"sprPlayerZXDashEnd","path":"sprites/sprPlayerZXDashEnd/sprPlayerZXDashEnd.yy",},"order":9,},
     {"id":{"name":"objPlayerWeaponBuster","path":"objects/objPlayerWeaponBuster/objPlayerWeaponBuster.yy",},"order":1,},
     {"id":{"name":"sprLadderTop","path":"sprites/sprLadderTop/sprLadderTop.yy",},"order":1,},
@@ -642,6 +644,7 @@
     {"id":{"name":"sprHellBatSpamSonicStart","path":"sprites/sprHellBatSpamSonicStart/sprHellBatSpamSonicStart.yy",},"order":14,},
     {"id":{"name":"sprGateOpen","path":"sprites/sprGateOpen/sprGateOpen.yy",},"order":3,},
     {"id":{"name":"objViewStateFollow","path":"objects/objViewStateFollow/objViewStateFollow.yy",},"order":1,},
+    {"id":{"name":"objPlayerStateHSlashDouble","path":"objects/objPlayerStateHSlashDouble/objPlayerStateHSlashDouble.yy",},"order":4,},
     {"id":{"name":"objPlayerStateZXSlashChargeGround","path":"objects/objPlayerStateZXSlashChargeGround/objPlayerStateZXSlashChargeGround.yy",},"order":8,},
     {"id":{"name":"DerpXmlExample_Write","path":"scripts/DerpXmlExample_Write/DerpXmlExample_Write.yy",},"order":3,},
     {"id":{"name":"sprLockVCamZone","path":"sprites/sprLockVCamZone/sprLockVCamZone.yy",},"order":1,},

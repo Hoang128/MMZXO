@@ -17,4 +17,17 @@ switch (sprite_index)
 		sprite_index = sprPlayerHHover;
 		image_index = 0;
 	}	break;
+	
+	case sprPlayerHSlash1:
+	case sprPlayerHSlash2:
+	case sprPlayerHSlashDouble:
+	case sprPlayerHSlashJump:
+	case sprPlayerHSlashDash:
+	case sprPlayerHSlashDashAir:
+	case sprPlayerHSlashClimb:
+	case sprPlayerHSlashSlide:
+	{
+		with (playerStateMachine.currentState)
+			slashEnd = true;
+	}	break;
 }
