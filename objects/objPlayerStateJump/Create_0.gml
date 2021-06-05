@@ -316,16 +316,43 @@ function fncChangeToLXStates()
 					if ((airJumpWhenFastMove == true)
 					|| ((airJumpWhenFastMove == false) && other.dashJump == false))
 					{
-						if ((hMove == 0) && (vMove == 0))
+						if (inWater == InWater.FULL)
 						{
-							if (inWater == InWater.FULL)
+							if ((hMove == 0) && (vMove == 0))
 							{
+							
 								with(other.stateMachine)
 								{
 									fncStateChange(objPlayerStateLDiveIdle);
+									currentState.lastAction = "jump";
 									return;
 								}
 							}
+							else
+							{
+								with(other.stateMachine)
+								{
+									fncStateChange(objPlayerStateLDiveMove);
+									return;
+								}
+							}
+						}
+					}
+				}
+			}
+			
+			if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
+			{
+				if ((airDashWhenFastMove == true)
+				|| ((airDashWhenFastMove == false) && other.dashJump == false))
+				{
+					if (inWater == InWater.FULL)
+					{
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateLDiveDash);
+							currentState.lastAction = "jump";
+							return;
 						}
 					}
 				}

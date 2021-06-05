@@ -10,6 +10,13 @@ switch (sprite_index)
 	{
 		sprite_index = sprPlayerLDiveIdle;
 		image_index = 0;
-	}
-	break;
+	}	break;
+	case sprPlayerLDiveDashDown:
+	case sprPlayerLDiveDashDownForward:
+	case sprPlayerLDiveDashForward:
+	case sprPlayerLDiveDashUpForward:
+	case sprPlayerLDiveDashUp:
+	{
+		image_index = 1;
+	}	break;
 }
