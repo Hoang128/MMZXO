@@ -13,7 +13,7 @@ function fncStaticInitGame(){
 
 function fncStaticInitDevParams()
 {
-	global.debug = false;
+	global.debug = true;
 }
 
 function fncStaticInitMacros()

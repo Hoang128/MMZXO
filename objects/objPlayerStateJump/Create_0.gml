@@ -286,7 +286,6 @@ function fncChangeToHXStates()
 					{
 						if (jumpTime > 0)
 						{
-							vspd = -jumpSpd;
 							jumpTime--;
 							if (!mixAirDashJump)
 								airDashCount = 0;
@@ -295,6 +294,37 @@ function fncChangeToHXStates()
 							{
 								fncStateChange(objPlayerStateHHover);
 								return;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+function fncChangeToLXStates()
+{
+	with (core.id)
+	{
+		if (vspd >= 0)
+		{
+			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+			{
+				if (!place_meeting(x + charDir * distanceCanWKick, y, objBlock))
+				{
+					if ((airJumpWhenFastMove == true)
+					|| ((airJumpWhenFastMove == false) && other.dashJump == false))
+					{
+						if ((hMove == 0) && (vMove == 0))
+						{
+							if (inWater == InWater.FULL)
+							{
+								with(other.stateMachine)
+								{
+									fncStateChange(objPlayerStateLDiveIdle);
+									return;
+								}
 							}
 						}
 					}

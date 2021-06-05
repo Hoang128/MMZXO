@@ -17,8 +17,8 @@
   "width": 45,
   "height": 30,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupCharL",
+    "path": "texturegroups/texgroupCharL",
   },
   "swatchColours": null,
   "gridX": 0,

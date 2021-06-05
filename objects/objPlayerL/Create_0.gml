@@ -11,6 +11,9 @@ hoverSpd = 1;
 mixAirDashJump = true;
 airJumpWhenFastMove = true;
 
+vAccDive = 0.05; 
+
+
 sprPlayer =
 {
 	sprIdle : sprPlayerLIdle,

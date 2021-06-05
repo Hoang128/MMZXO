@@ -9,12 +9,12 @@ if (global.debug)
 	draw_text(4, 24, "global time scale = " + string(global.timeScale) + " room speed = " + string(room_speed));
 	if (instance_exists(objPlayerZX))
 	{
-		draw_text(4, 48, "hspd = " + string(objPlayerZX.hspd));
-		draw_text(4, 72, "vspd = " + string(objPlayerZX.vspd));
-		draw_text(4, 96, "charge current 1 = " + string(objPlayerZX.chargeWp1.Current));
-		draw_text(4, 120, "charge current 2 = " + string(objPlayerZX.chargeWp2.Current));
-		draw_text(4, 144, "air dash count = " + string(objPlayerZX.airDashCount));
-		draw_text(4, 168, "jump count = " + string(objPlayerZX.jumpTime));
-		draw_text(4, 192, "envi ratio = " + string(objPlayerZX.physic.enviMoveRatio));
+		draw_text(4, 48, "player hspd = " + string(objGlobalManager.currentPlayer.hspd));
+		draw_text(4, 72, "player vspd = " + string(objGlobalManager.currentPlayer.vspd));
+		draw_text(4, 96, "charge current 1 = " + string(objGlobalManager.currentPlayer.chargeWp1.Current));
+		draw_text(4, 120, "charge current 2 = " + string(objGlobalManager.currentPlayer.chargeWp2.Current));
+		draw_text(4, 144, "state object number = " + string(instance_number(objState)));
+		draw_text(4, 168, "state machine number = " + string(instance_number(objStateMachine)));
+		draw_text(4, 192, "envi ratio = " + string(objGlobalManager.currentPlayer.physic.enviMoveRatio));
 	}
 }
