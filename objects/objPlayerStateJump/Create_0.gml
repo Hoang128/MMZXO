@@ -127,30 +127,6 @@ function fncPlayerJumpRun()
 		{
 			if (vspd < 0) vspd = 0;
 		}
-		
-		if (airDashCount > 0)
-		{
-			if ((airDashWhenFastMove == true)
-			|| ((airDashWhenFastMove == false) && other.dashJump == false))
-			{
-				if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
-				{
-					if (!other.ableToBoostUp) || (!fncStaticHandleButton(KeyMap.UP, KeyAction.HELD))
-					{
-						airDashCount--;
-						if (!mixAirDashJump)
-							jumpTime = 0;
-						with(other.stateMachine)
-						{
-							var currentAirDash = true;
-							fncStateChange(objPlayerStateDash);
-							currentState.airDash = currentAirDash;
-							return;
-						}
-					}
-				}
-			}
-		}
 	
 		if (vspd >= 0)
 		{
@@ -158,19 +134,6 @@ function fncPlayerJumpRun()
 			{
 				sprite_index = sprPlayer.sprFallStart;
 				image_index = 0;
-			}
-			
-			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
-			{
-				if (place_meeting(x + charDir * distanceCanWKick, y, objBlock))
-				{
-					with(other.stateMachine)
-					{
-						fncStateChange(objPlayerStateWallKick);
-						currentState.dashJump = fncStaticHandleButton(KeyMap.DASH, KeyAction.HELD);
-						return;
-					}
-				}
 			}
 			
 			if (place_meeting(x + charDir, y, objBlock))
@@ -268,6 +231,30 @@ function fncChangeToHXStates()
 						{
 							fncStateChange(objPlayerStateHBoostUp);
 							currentState.airDash = true;
+							return;
+						}
+					}
+				}
+			}
+		}
+		
+		if (airDashCount > 0)
+		{
+			if ((airDashWhenFastMove == true)
+			|| ((airDashWhenFastMove == false) && other.dashJump == false))
+			{
+				if (fncStaticHandleButton(KeyMap.DASH, KeyAction.PRESSED))
+				{
+					if (!other.ableToBoostUp) || (!fncStaticHandleButton(KeyMap.UP, KeyAction.HELD))
+					{
+						airDashCount--;
+						if (!mixAirDashJump)
+							jumpTime = 0;
+						with(other.stateMachine)
+						{
+							var currentAirDash = true;
+							fncStateChange(objPlayerStateDash);
+							currentState.airDash = currentAirDash;
 							return;
 						}
 					}

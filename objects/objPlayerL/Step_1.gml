@@ -15,4 +15,14 @@ switch (sprite_index)
 	{
 		imgSpd = 0.1;
 	}	break;
+	
+	case sprPlayerLSlashStand:
+	case sprPlayerLSlashJump:
+	case sprPlayerLSlashClimb:
+	case sprPlayerLSlashSlide:
+	case sprPlayerLSlashGiga:
+	case sprPlayerLSpinDive:
+	{
+		imgSpd = 1;
+	}	break;
 }

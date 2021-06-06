@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 lastAction = "jump";
+accSlow = 0;
 
 function fncStateStart()
 {
@@ -40,12 +41,27 @@ function fncStateInit()
 			{
 				core.id.sprite_index = sprPlayerLDiveNorStart;
 				core.id.image_index = 0;
+				accSlow = core.id.accDive;
 			}
 			case "dive move":
+			{
+				core.id.sprite_index = sprPlayerLDiveIdle;
+				core.id.image_index = 0;
+				accSlow = core.id.accDive;
+				
+			}
 			case "dive dash":
 			{
 				core.id.sprite_index = sprPlayerLDiveIdle;
 				core.id.image_index = 0;
+				accSlow = core.id.accDiveDash;
+				
+			}
+			case "spin":
+			{
+				core.id.sprite_index = sprPlayerLDiveIdle;
+				core.id.image_index = 0;
+				accSlow = core.id.accDiveDash;
 			}
 		}
 		inited = true;
@@ -56,16 +72,31 @@ function fncPlayerLDiveRun()
 {
 	with (core.id)
 	{
-		if (abs(vspd) >= accDive)
+		if (vspd < 0)
 		{
-			vspd -= sign(vspd) * accDive;
+			if (!collision_rectangle(bbox_left, bbox_top - 1, bbox_right, bbox_top, objZoneWater, false, false))
+			{
+				vspd = 0;
+			}
+		}
+		else if (vspd > 0)
+		{
+			if (!collision_rectangle(bbox_left, bbox_bottom, bbox_right, bbox_bottom + 1, objZoneWater, false, false))
+			{
+				vspd = 0;
+			}
+		}
+		
+		if (abs(vspd) >= other.accSlow)
+		{
+			vspd -= sign(vspd) * other.accSlow;
 		}
 		else
 			vspd = 0;
 			
-		if (abs(hspd) >= accDive)
+		if (abs(hspd) >= other.accSlow)
 		{
-			hspd -= sign(hspd) * accDive;
+			hspd -= sign(hspd) * other.accSlow;
 		}
 		else
 			hspd = 0;

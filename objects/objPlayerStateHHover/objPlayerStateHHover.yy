@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "States",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model HX/States.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model H/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerStateHHover",

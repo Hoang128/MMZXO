@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "States",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model LX/States.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model L/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerStateLDiveIdle",

@@ -10,6 +10,7 @@ physic =
 	thinBlockIgnoreTime : 0,
 	thinBlockIgnoreTimeMax : 10,
 	inWater : InWater.NONE,
+	waterRatio : global.waterMoveRatio,
 	inWind  : InWind.NONE,
 	enviMoveRatio : {x : 1, y : 1}
 }
@@ -276,8 +277,8 @@ function fncDetectInWaterState()
 		if (inWater != InWater.FULL)
 		{
 			vspd = vspd/global.gravMax * global.waterMoveRatio.y;
-			physic.enviMoveRatio.x *= global.waterMoveRatio.x;
-			physic.enviMoveRatio.y *= global.waterMoveRatio.y;
+			physic.enviMoveRatio.x *= physic.waterRatio.x;
+			physic.enviMoveRatio.y *= physic.waterRatio.y;
 		}
 		inWater = InWater.FULL;
 	}
@@ -288,8 +289,8 @@ function fncDetectInWaterState()
 		{
 			if (inWater == InWater.FULL)
 			{
-				physic.enviMoveRatio.x /= global.waterMoveRatio.x;
-				physic.enviMoveRatio.y /= global.waterMoveRatio.y;
+				physic.enviMoveRatio.x /= physic.waterRatio.x;
+				physic.enviMoveRatio.y /= physic.waterRatio.y;
 			}
 			//Create effect
 			/*

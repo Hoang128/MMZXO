@@ -6,6 +6,53 @@ event_inherited();
 hMove = 0;
 vMove = 0;
 isNeedAccUp = true;
+effTimeMax = 8;
+effTime = effTimeMax;
+
+function fncCreateJetEffect()
+{
+	with (core.id)
+	{
+		var effPlace = {x : 0, y : 0, direction : 0};
+		switch (sprite_index)
+		{
+			case sprPlayerLDiveForward:
+			{
+				effPlace.x = -7;
+				effPlace.y = -32;
+				effPlace.direction = 90 + image_xscale * 90;
+			}	break;
+			case sprPlayerLDiveUpForward:
+			{
+				effPlace.x = -16;
+				effPlace.y = -22;
+				effPlace.direction = 270 - image_xscale * 45;
+			}	break;
+			case sprPlayerLDiveDownForward:
+			{
+				effPlace.x = -6;
+				effPlace.y = -39;
+				effPlace.direction = 90 + image_xscale * 45;
+			}	break;
+			case sprPlayerLDiveUp:
+			{
+				effPlace.x = -13;
+				effPlace.y = -19;
+				effPlace.direction = 270;
+			}	break;
+			case sprPlayerLDiveDown:
+			{
+				effPlace.x = 9;
+				effPlace.y = -40;
+				effPlace.direction = 90;
+			}	break;
+		}
+	
+		var objJetEff = instance_create_depth(x + effPlace.x * image_xscale, y + effPlace.y, depth, objLIceJetEff);
+		objJetEff.moveDir = effPlace.direction;
+		objJetEff.vDir = 0;
+	}
+}
 
 function fncDiveWithSpeed(diveSpeed)
 {
@@ -100,6 +147,17 @@ function fncPlayerLDiveMoveRun()
 {
 	with (core.id)
 	{	
+		if (other.effTime > 0)
+		{
+			other.effTime -= TIME_SCALE;
+		}
+		else
+		{
+			with (other)
+				fncCreateJetEffect();
+			other.effTime = other.effTimeMax;
+		}
+		
 		if ((hMove == 0) && (vMove == 0))
 		{
 			with(other.stateMachine)

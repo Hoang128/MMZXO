@@ -31,8 +31,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "ZX",
-    "path": "folders/Objects/Visible InGame/Player/Player Weapons/ZX.yy",
+    "name": "Weapon",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model ZX/Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "objZXBusterFlare",

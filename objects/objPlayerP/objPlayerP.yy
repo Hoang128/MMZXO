@@ -24,8 +24,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Model PX",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model PX.yy",
+    "name": "Model P",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model P.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerP",

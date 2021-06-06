@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Melee",
-    "path": "folders/Objects/Visible InGame/Player/Player Weapons/Base/Melee.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Base/Weapon/Melee.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerWeaponMeleeMgr",

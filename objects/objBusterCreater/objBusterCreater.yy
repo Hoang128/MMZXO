@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Buster",
-    "path": "folders/Objects/Visible InGame/Player/Player Weapons/Base/Buster.yy",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Base/Weapon/Buster.yy",
   },
   "resourceVersion": "1.0",
   "name": "objBusterCreater",

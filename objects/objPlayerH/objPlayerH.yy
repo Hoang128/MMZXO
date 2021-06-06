@@ -35,8 +35,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Model HX",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model HX.yy",
+    "name": "Model H",
+    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model H.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerH",
