@@ -71,9 +71,14 @@ function fncPlayerLSlashJumpRun()
 				{
 					if (other.createIce == 1)
 					{
-						var objIce = instance_create_depth(x + 24 * image_xscale, y - 16, depth,objLIce);
+						var objIce = instance_create_depth(x + 24 * image_xscale, y - 24, depth,objLIce);
 						objIce.image_xscale = image_xscale;
 						objIce.firstSlash = weaponMeleeMgr.weaponSlash;
+					}
+					else if (other.createIce == 2)
+					{
+						var objIce = instance_create_depth(x, y - 16, depth, objLArrow);
+						objIce.image_xscale = image_xscale;
 					}
 					other.createIce = 0;
 				}
