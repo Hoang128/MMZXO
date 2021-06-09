@@ -64,10 +64,12 @@ function fncPlayerLSlashSlideRun()
 		{
 			if (image_index > 5)
 			{
-				/*
-				var objIce = instance_create_depth(x, y - 16, depth, ---------------);
-				objIce.image_xscale = -image_xscale;
-				*/
+				if (other.createIce == 1)
+				{
+					var objIce = instance_create_depth(x + 24 * image_xscale, y - 16, depth,objLIce);
+					objIce.image_xscale = image_xscale;
+					objIce.firstSlash = weaponMeleeMgr.weaponSlash;
+				}
 				other.createIce = 0;
 			}
 		}

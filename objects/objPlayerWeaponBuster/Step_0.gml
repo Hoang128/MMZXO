@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 
-//if (phase == 2)
+if (defaultFly)
 	hspd = flySpeed * image_xscale;
 	
 if (colWithGuard)

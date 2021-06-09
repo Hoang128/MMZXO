@@ -274,20 +274,20 @@ function fncDetectInWaterState()
 	var colBotPart = collision_rectangle(bbox_left, bbox_top + 2, bbox_right, bbox_bottom, objZoneWater, false, false);
 	if (colTopPart && colBotPart)
 	{
-		if (inWater != InWater.FULL)
+		if (physic.inWater != InWater.FULL)
 		{
 			vspd = vspd/global.gravMax * global.waterMoveRatio.y;
 			physic.enviMoveRatio.x *= physic.waterRatio.x;
 			physic.enviMoveRatio.y *= physic.waterRatio.y;
 		}
-		inWater = InWater.FULL;
+		physic.inWater = InWater.FULL;
 	}
 	else if (colBotPart && !colTopPart)
 	{
 		var water = colBotPart;
-		if(inWater != InWater.HALF)
+		if(physic.inWater != InWater.HALF)
 		{
-			if (inWater == InWater.FULL)
+			if (physic.inWater == InWater.FULL)
 			{
 				physic.enviMoveRatio.x /= physic.waterRatio.x;
 				physic.enviMoveRatio.y /= physic.waterRatio.y;
@@ -299,10 +299,10 @@ function fncDetectInWaterState()
 			objWaterEff.core = self;
 			*/
 		}
-		inWater = InWater.HALF;
+		physic.inWater = InWater.HALF;
 	}
 	else
 	{
-		inWater = InWater.NONE;
+		physic.inWater = InWater.NONE;
 	}
 }

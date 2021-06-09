@@ -303,7 +303,7 @@ function fncChangeToLXStates()
 					if ((airJumpWhenFastMove == true)
 					|| ((airJumpWhenFastMove == false) && other.dashJump == false))
 					{
-						if (inWater == InWater.FULL)
+						if (physic.inWater == InWater.FULL)
 						{
 							if ((hMove == 0) && (vMove == 0))
 							{
@@ -333,7 +333,7 @@ function fncChangeToLXStates()
 				if ((airDashWhenFastMove == true)
 				|| ((airDashWhenFastMove == false) && other.dashJump == false))
 				{
-					if (inWater == InWater.FULL)
+					if (physic.inWater == InWater.FULL)
 					{
 						with(other.stateMachine)
 						{

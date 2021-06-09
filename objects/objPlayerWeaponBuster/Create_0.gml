@@ -16,6 +16,7 @@ destroyOutScreen = true;
 colWithGuard = false;
 destroyEff = noone;
 destroyGuardEff = noone;
+defaultFly = true;
 
 //Props
 phase = 1;
