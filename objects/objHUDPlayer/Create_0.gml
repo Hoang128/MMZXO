@@ -4,26 +4,40 @@
 // Inherit the parent event
 event_inherited();
 
+fncStaticPalSwapInitSystem(shd_pal_swapper);
+
 avatar = sprPlayerHUDAvatar;
 avatarImg = 1;
 avatarRatio = 0.5;
+HUDColor = 0;
+HUDPal = sprPlayerHUDPal;
 switch (objGlobalManager.currentPlayer.object_index)
 {
 	case objPlayerZX:
+	{
 		avatarImg = 0;
-		break;
+		HUDColor = 1;
+	}	break;
 	case objPlayerH:
+	{
 		avatarImg = 1;
-		break;
+		HUDColor = 2;
+	}	break;
 	case objPlayerL:
+	{
 		avatarImg = 2;
-		break;
+		HUDColor = 5;
+	}	break;
 	case objPlayerP:
+	{
 		avatarImg = 3;
-		break;
+		HUDColor = 4;
+	}	break;
 	case objPlayerF:
+	{
 		avatarImg = 4;
-		break;
+		HUDColor = 3;
+	}	break;
 	default: avatarImg = 1;
 }
 

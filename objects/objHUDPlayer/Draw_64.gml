@@ -4,7 +4,10 @@ var bonusHp = global.itemsNumber.hpTank * global.upgradeItemEff.hpTank;
 var bonusWp = global.itemsNumber.wpTank * global.upgradeItemEff.wpTank;
 
 draw_sprite_ext(sprPlayerHUDAvatar, avatarImg, drawPoint.x + ratio * 3, drawPoint.y + ratio * 3, avatarRatio * ratio, avatarRatio * ratio, 0, c_white, 1);
+
+fncStaticPalSwapSet(HUDPal, HUDColor, false);
 draw_sprite_ext(sprPlayerHUDCore, 0, drawPoint.x, drawPoint.y, ratio, ratio, 0, c_white, 1);
+fncStaticPalSwapReset();
 
 //Draw hp
 for (var i = hpAtCore; i < (hpAtCore + 1 + bonusHp); i++)
@@ -21,7 +24,9 @@ for (var i = hpAtCore; i < (hpAtCore + 1 + bonusHp); i++)
 		y : drawPoint.y + hpBarStartPoint.y * ratio
 	}
 	
+	fncStaticPalSwapSet(HUDPal, HUDColor, false);
 	draw_sprite_ext(barSprite, 0, barDrawPoint.x, barDrawPoint.y, ratio, ratio, 0, c_white, 1);
+	fncStaticPalSwapReset();
 }
 
 for (var i = 0; i < hp; i++)
