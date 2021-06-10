@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-damage = 2;
+damage = 5;
 
 destroyWhenHit = false;
 createDestroyEff = false;

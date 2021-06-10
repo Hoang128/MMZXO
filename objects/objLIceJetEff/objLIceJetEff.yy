@@ -32,7 +32,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Effects",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model L/Effects.yy",
+    "path": "folders/Objects/Visible InGame/Player/Model L/Effects.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLIceJetEff",

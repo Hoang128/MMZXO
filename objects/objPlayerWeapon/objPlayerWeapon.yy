@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Weapon",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Base/Weapon.yy",
+    "path": "folders/Objects/Visible InGame/Player/Base/Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerWeapon",

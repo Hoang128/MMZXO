@@ -28,7 +28,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "States",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Base/States.yy",
+    "path": "folders/Objects/Visible InGame/Player/Base/States.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerStateTeleDown",

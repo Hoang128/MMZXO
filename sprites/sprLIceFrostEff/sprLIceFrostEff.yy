@@ -17,8 +17,8 @@
   "width": 21,
   "height": 18,
   "textureGroupId": {
-    "name": "Default",
-    "path": "texturegroups/Default",
+    "name": "texgroupCharWeaponL",
+    "path": "texturegroups/texgroupCharWeaponL",
   },
   "swatchColours": null,
   "gridX": 8,

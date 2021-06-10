@@ -32,7 +32,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Model L",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model L.yy",
+    "path": "folders/Objects/Visible InGame/Player/Model L.yy",
   },
   "resourceVersion": "1.0",
   "name": "objPlayerL",

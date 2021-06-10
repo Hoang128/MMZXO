@@ -9,5 +9,5 @@ createDestroyEff = false;
 
 bullet = true;
 
-damage = 2;
+damage = 8;
 moveSpd = 3;

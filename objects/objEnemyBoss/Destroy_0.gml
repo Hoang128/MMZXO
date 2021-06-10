@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited(); 
-
+ds_map_destroy(moveRatio);
 if (weaponTypeCauseDeath != PlayerWeaponType.MELEE)
 {
 	var objDeathImg = instance_create_depth(x, y, depth, objBossDeadByBuster);

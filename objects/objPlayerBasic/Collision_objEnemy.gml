@@ -16,6 +16,10 @@ if (!other.isIllusion)
 			if (hp < 0) hp = 0;
 	
 			inviTime = inviAfterStunMax;
+			with (weaponMeleeMgr)
+			{
+				fncDestroyMeleeWeapon();
+			}
 			with (playerStateMachine)
 				fncStateChange(objPlayerStateStunNor);
 		}

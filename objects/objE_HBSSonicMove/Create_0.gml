@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
+damage = 3;
 bullet = 1;
 destroyWhenHit = false;
 direction = 30;

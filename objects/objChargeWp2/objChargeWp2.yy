@@ -33,7 +33,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Effect",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Base/Effect.yy",
+    "path": "folders/Objects/Visible InGame/Player/Base/Effect.yy",
   },
   "resourceVersion": "1.0",
   "name": "objChargeWp2",

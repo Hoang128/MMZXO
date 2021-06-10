@@ -4,4 +4,4 @@
 // Inherit the parent event
 event_inherited();
 
-ds_map_destroy(moveRatio);
+ds_queue_enqueue(cutSegmentQueue, objCutSegmentBossExplosion);

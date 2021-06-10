@@ -31,7 +31,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Weapon",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model H/Weapon.yy",
+    "path": "folders/Objects/Visible InGame/Player/Model H/Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "objHSonicBeam",

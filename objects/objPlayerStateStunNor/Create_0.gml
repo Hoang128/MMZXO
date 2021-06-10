@@ -41,11 +41,6 @@ function fncPlayerStunNorStart()
 			audio_play_sound_on(global.emitterSFX.source, vfxPlayer.vfxHurt, false, false);
 		}
 		vspd = 0;	
-		
-		with (weaponMeleeMgr)
-			fncDestroyMeleeWeapon();
-		
-		
 	}
 }
 

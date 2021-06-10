@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Weapon",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model L/Weapon.yy",
+    "path": "folders/Objects/Visible InGame/Player/Model L/Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "objLJavelin",

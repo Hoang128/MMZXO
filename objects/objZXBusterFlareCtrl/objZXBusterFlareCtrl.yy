@@ -29,7 +29,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Weapon",
-    "path": "folders/Objects/Visible InGame/Player/Player Characters/Model ZX/Weapon.yy",
+    "path": "folders/Objects/Visible InGame/Player/Model ZX/Weapon.yy",
   },
   "resourceVersion": "1.0",
   "name": "objZXBusterFlareCtrl",

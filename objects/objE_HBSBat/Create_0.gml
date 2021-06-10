@@ -5,7 +5,7 @@
 event_inherited();
 
 hp = 1;
-damage = 1;
+damage = 3;
 
 inPool = true;
 

@@ -22,3 +22,8 @@ else
 {
 	inviTime = 0;
 }
+
+with (bossStateMachine)
+{
+	fncStateHandle();
+}

@@ -7,7 +7,7 @@ event_inherited();
 //Parameters
 jumpTimeMax = 2;
 airDashCountMax = 1;
-hoverSpd = 1;
+hoverSpd = 0.5;
 mixAirDashJump = true;
 airJumpWhenFastMove = true;
 
