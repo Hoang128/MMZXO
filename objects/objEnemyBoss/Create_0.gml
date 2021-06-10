@@ -20,6 +20,8 @@ bossStateMachine.core = self;
 
 bossManager = noone;
 
+bossBGM = bgmMMZLCrash;
+
 lastMove = "no move";
 moveRatio = ds_map_create();
 

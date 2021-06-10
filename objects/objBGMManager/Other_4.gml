@@ -1,0 +1,1 @@
+fncBGMSet(fncBGMGetByRoom(room), true);

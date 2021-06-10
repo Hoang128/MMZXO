@@ -8,19 +8,22 @@ stateType = "player";
 
 function fncChangeToUniqueStates()
 {
-	fncWeaponHandle();
-	
-	switch(core.object_index)
+	if (stateMachine.currentState.id == self.id)
 	{
-		case objPlayerZX:	fncChangeToZXStates();	break;
-		case objPlayerH:	fncChangeToHXStates();	break;
-		case objPlayerP:	fncChangeToPXStates();	break;
-		case objPlayerL:	fncChangeToLXStates();	break;
-		case objPlayerF:	fncChangeToFXStates();	break;
-		case objPlayerO:	fncChangeToOXStates();	break;
-		case objPlayerA:	fncChangeToAStates();	break;
-		default:	return;
+		fncWeaponHandle();
+	
+		switch(core.object_index)
+		{
+			case objPlayerZX:	fncChangeToZXStates();	break;
+			case objPlayerH:	fncChangeToHXStates();	break;
+			case objPlayerP:	fncChangeToPXStates();	break;
+			case objPlayerL:	fncChangeToLXStates();	break;
+			case objPlayerF:	fncChangeToFXStates();	break;
+			case objPlayerO:	fncChangeToOXStates();	break;
+			case objPlayerA:	fncChangeToAStates();	break;
+			default:	return;
 			
+		}
 	}
 }
 

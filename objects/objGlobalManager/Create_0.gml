@@ -56,6 +56,9 @@ if (!instance_exists(objInputManager))
 	
 if (!instance_exists(objUIManager))
 	instance_create_depth(x, y, depth, objUIManager);
+	
+if (!instance_exists(objBGMManager))
+	instance_create_depth(x, y, depth, objBGMManager);
 
 //Deactivate object variables
 activateCount = 0;

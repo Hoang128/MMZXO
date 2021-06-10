@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 event_inherited(); 
+
 ds_map_destroy(moveRatio);
 if (weaponTypeCauseDeath != PlayerWeaponType.MELEE)
 {
@@ -29,4 +30,9 @@ if (instance_exists(objScoreMgr))
 	{
 		objScoreMgr.state = ScoreMgrState.PAUSE;
 	}
+}
+
+with (objBGMManager)
+{
+	fncBGMStop();
 }

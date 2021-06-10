@@ -11,6 +11,11 @@ if (!inited)
 		if (instance_exists(bossManager.bossOpenCutEndIns))
 			instance_destroy(bossManager.bossOpenCutEndIns);
 	}
+	
+	with (objBGMManager)
+	{
+		fncBGMSet(other.bossBGM, false);
+	}
 	inited = true;
 }
 

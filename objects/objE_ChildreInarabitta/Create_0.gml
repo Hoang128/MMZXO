@@ -23,8 +23,6 @@ moveRatio = ds_map_create();
 
 with(bossStateMachine)
 	fncStateChange(objCIStateIdle);
-	
-audio_play_sound_on(global.emitterSFX.source, sfxBossHBSIdleStart, false, true);
 
 //for debug
 move_contact_solid(270, 0);

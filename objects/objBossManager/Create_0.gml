@@ -18,6 +18,11 @@ bossOpenCutEndObj = noone;
 bossOpenCutEndIns = noone;
 bossZone = noone;
 
+with (objBGMManager)
+{
+	fncBGMStop();
+}
+
 function fncChangeToEndCutsceneState()
 {
 	global.gameState = GameState.INGAME_CUTSCENE;
