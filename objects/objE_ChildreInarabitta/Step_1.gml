@@ -2,6 +2,12 @@
 // You can write your code in this editor
 
 // Inherit the parent event
+
+switch (sprite_index)
+{
+	default:	imgSpd = 0.5;
+}
+
 event_inherited();
 
 switch (sprite_index)

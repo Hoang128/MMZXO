@@ -22,73 +22,34 @@ bossFightZone = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_bottom
 moveRatio = ds_map_create();
 
 with(bossStateMachine)
-	fncStateChange(objCIStateIdle);
+	fncStateChange(objCIState_Idle);
 
 //for debug
 move_contact_solid(270, 0);
 
-/*
-ds_map_add(moveRatio, "release bat", 1);
-ds_map_add(moveRatio, "release sonic", 1);
-ds_map_add(moveRatio, "teleport", 1);
-ds_map_add(moveRatio, "shot down", 1);
-ds_map_add(moveRatio, "thunder clap", 1);
-*/
+ds_map_add(moveRatio, "launch missle", 1);
+//ds_map_add(moveRatio, "drill down", 1);
+//ds_map_add(moveRatio, "set mines", 1);
+//ds_map_add(moveRatio, "ice arrow", 1);
 
-/*
-function fncGetBatMoveSequence(stringMove)
+
+
+function fncGetBossMoveSequence(stringMove)
 {
 	switch (stringMove)
 	{
-		case "release bat":
+		case "launch missle":
 		{
 			with (bossStateMachine)
 			{
-				fncStateEnqueue(objHBSStateFlyDown);
-				fncStateEnqueue(objHBSStateSpamBat);
+				fncStateEnqueue(objCIState_LaunchMissle);
 			}
-		}	break;
-		
-		case "release sonic":
-		{
-			with (bossStateMachine)
-			{
-				fncStateEnqueue(objHBSStateTele);
-				fncStateEnqueue(objHBSStateSpamSonic);
-			}
-		}	break;
-		
-		case "teleport":
-		{
-			with (bossStateMachine)
-			{
-				fncStateEnqueue(objHBSStateTele);
-			}
-		}	break;
-		
-		case "shot down":
-		{
-			with (bossStateMachine)
-			{
-				fncStateEnqueue(objHBSStateTele);
-				fncStateEnqueue(objHBSStateShotDown);
-				fncStateEnqueue(objHBSStateTeleAfterShot);
-			}
-		}	break;
-		
-		case "thunder clap":
-		{
-			with (bossStateMachine)
-			{
-				fncStateEnqueue(objHBSStateFlyDown);
-				fncStateEnqueue(objHBSStateThunderClap);
-				fncStateEnqueue(objHBSStateFlyUp);
-			}
-		}
+		}	break;	
 	}
+	
 	with (bossStateMachine)
 	{
-		fncStateEnqueue(objHBSStateIdle);
+		fncStateEnqueue(objCIState_Idle);
 	}
 	
 	lastMove = stringMove;
