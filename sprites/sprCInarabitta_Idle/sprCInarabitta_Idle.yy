@@ -1,6 +1,6 @@
 {
   "bboxMode": 2,
-  "collisionKind": 1,
+  "collisionKind": 5,
   "type": 0,
   "origin": 9,
   "preMultiplyAlpha": false,
@@ -9,7 +9,7 @@
   "swfPrecision": 2.525,
   "bbox_left": 5,
   "bbox_right": 29,
-  "bbox_top": 9,
+  "bbox_top": 8,
   "bbox_bottom": 32,
   "HTile": false,
   "VTile": false,

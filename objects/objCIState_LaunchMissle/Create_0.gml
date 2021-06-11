@@ -3,13 +3,14 @@
 
 // Inherit the parent event
 event_inherited();
-missleNumber = 5;
+missleNumber = 4;
 changeState = false;
 shot = false;
 
 function fncShotMissle()
 {
-	instance_create_depth(x + 5 * core.id.image_xscale, core.id.y - 34, depth, objCI_Missle);
+	var objMissle = instance_create_depth(x + 5 * core.id.image_xscale, core.id.y - 34, depth, objCI_Missle);
+	objMissle.hDir = core.id.image_xscale;
 }
 
 function fncStateStart()

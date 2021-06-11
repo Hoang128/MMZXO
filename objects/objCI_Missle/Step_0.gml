@@ -8,41 +8,48 @@ switch (phase)
 {
 	case 0:
 	{
-	}	break;
-	case 1:
-	{
 		if (changeDirTime > 0)
 		{
 			changeDirTime -= TIME_SCALE;
 		}
 		else
 		{
-			changeDirTime = changeDirTimeMax;
-			var playerAngle = noone;
-			if (instance_exists(objGlobalManager.currentPlayer))
+			if (defaultChangeDirTime == 0)
 			{
-				var playerCenterPoint =
-				{
-					x : (objGlobalManager.currentPlayer.bbox_left + objGlobalManager.currentPlayer.bbox_right) / 2,
-					y : (objGlobalManager.currentPlayer.bbox_top + objGlobalManager.currentPlayer.bbox_bottom) / 2
-				}
-				playerAngle = point_direction(x, y, playerCenterPoint.x, playerCenterPoint.y);
+				phase = 1;
 			}
-			
-			if (playerAngle != noone)
+			changeDirTime = changeDirTimeMax;
+			defaultChangeDirTime--;
+			direction -= hDir * 45;
+			image_angle = direction;
+		}
+	}	break;
+	case 1:
+	{
+		var playerAngle = noone;
+		if (instance_exists(objGlobalManager.currentPlayer))
+		{
+			var playerCenterPoint =
 			{
-				var angleDiff = angle_difference(playerAngle, image_angle);
-				if (abs(angleDiff) > 45)
-				{
-					direction += sign(angleDiff) * 45;
-					image_angle = direction;
-				}
+				x : (objGlobalManager.currentPlayer.bbox_left + objGlobalManager.currentPlayer.bbox_right) / 2,
+				y : (objGlobalManager.currentPlayer.bbox_top + objGlobalManager.currentPlayer.bbox_bottom) / 2
+			}
+			playerAngle = point_direction(x, y, playerCenterPoint.x, playerCenterPoint.y);
+		}
+			
+		if (playerAngle != noone)
+		{
+			var angleDiff = angle_difference(playerAngle, image_angle);
+			if (abs(angleDiff) > 45)
+			{
+				direction += sign(angleDiff) * 45;
+				image_angle = direction;
 			}
 		}
-		
-		motion_set(direction, moveSpd * TIME_SCALE);
 	}	break;
 }
+
+motion_set(direction, moveSpd * TIME_SCALE);
 
 if (place_meeting(x, y, objBlock))
 	instance_destroy();

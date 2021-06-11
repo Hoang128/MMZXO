@@ -25,4 +25,15 @@ switch (sprite_index)
 		bossStateMachine.currentState.changeState = true;
 		image_index = 2;
 	}	break;
+	
+	case sprCInarabitta_Land:
+	{
+		bossStateMachine.currentState.changeToStand = true;
+	}	break;
+	case sprCInarabitta_JumpToWall:
+	{
+		sprite_index = sprCInarabitta_IdleWall;
+		image_index = 0;
+		bossStateMachine.currentState.changeState = true;
+	}	break;
 }

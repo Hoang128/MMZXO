@@ -5,7 +5,11 @@
 
 switch (sprite_index)
 {
-	default:	imgSpd = 0.5;
+	case sprCInarabitta_Jump:
+		imgSpd = 0;
+		break;
+	default:	
+		imgSpd = 0.5;
 }
 
 event_inherited();

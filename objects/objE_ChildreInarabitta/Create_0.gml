@@ -5,7 +5,9 @@
 event_inherited();
 
 hp = 64;
-damage = 2;
+damage = 3;
+
+physic.waterRatio.y = 1;
 
 destroySlashPiece.sprite = sprCInarabitta_SlashPieces; 
 destroySlashPiece.hMove = 2;
@@ -28,7 +30,7 @@ with(bossStateMachine)
 move_contact_solid(270, 0);
 
 ds_map_add(moveRatio, "launch missle", 1);
-//ds_map_add(moveRatio, "drill down", 1);
+ds_map_add(moveRatio, "drill down", 1);
 //ds_map_add(moveRatio, "set mines", 1);
 //ds_map_add(moveRatio, "ice arrow", 1);
 
@@ -45,6 +47,17 @@ function fncGetBossMoveSequence(stringMove)
 				fncStateEnqueue(objCIState_LaunchMissle);
 			}
 		}	break;	
+		
+		case "drill down":
+		{
+			with (bossStateMachine)
+			{
+				fncStateEnqueue(objCIState_MoveH);
+				fncStateEnqueue(objCIState_MoveToWall);
+				fncStateEnqueue(objCIState_MoveV);
+				fncStateEnqueue(objCIState_DrillDown);
+			}
+		}	break;
 	}
 	
 	with (bossStateMachine)

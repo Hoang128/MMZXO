@@ -12,6 +12,10 @@ function fncStateStart()
 	
 	with(core.id)
 	{
+		physic.enable = true;
+		physic.gravAffect = true;
+		physic.onGround = true;
+
 		sprite_index = sprCInarabitta_Idle;
 		image_index = 0;
 		
