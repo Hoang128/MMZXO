@@ -6,8 +6,8 @@ event_inherited();
 phase = 0;
 canCheckColDown = false;
 changeState = false;
-jumpSpd = 2.2;
-moveSpd = 2.2;
+jumpSpd = 2.5;
+moveSpd = 2.5;
 jumpTime = 4;
 
 function fncDoJump()
