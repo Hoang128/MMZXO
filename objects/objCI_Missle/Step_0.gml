@@ -4,6 +4,18 @@
 // Inherit the parent event
 event_inherited();
 
+if (existTime > 0)
+{
+	existTime -= TIME_SCALE;
+}
+else
+{
+	instance_destroy();
+}
+
+if (!place_meeting(x, y, objZoneWater))
+	instance_destroy();
+
 switch (phase)
 {
 	case 0:

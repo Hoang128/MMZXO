@@ -31,8 +31,8 @@ move_contact_solid(270, 0);
 
 ds_map_add(moveRatio, "launch missle", 1);
 ds_map_add(moveRatio, "drill down", 1);
-//ds_map_add(moveRatio, "drop mines", 1);
-//ds_map_add(moveRatio, "ice arrow", 1);
+ds_map_add(moveRatio, "drop mines", 1);
+ds_map_add(moveRatio, "ice arrow", 1);
 
 
 
@@ -57,6 +57,25 @@ function fncGetBossMoveSequence(stringMove)
 				fncStateEnqueue(objCIState_MoveV);
 				fncStateEnqueue(objCIState_DrillDown);
 				fncStateEnqueue(objCIState_JumpBack);
+			}
+		}	break;
+		
+		case "drop mines":
+		{
+			with (bossStateMachine)
+			{
+				fncStateEnqueue(objCIState_MoveH);
+				fncStateEnqueue(objCIState_MoveToWall);
+				fncStateEnqueue(objCIState_MoveV);
+				fncStateEnqueue(objCIState_DropMines);
+			}
+		}	break;
+		
+		case "ice arrow":
+		{
+			with (bossStateMachine)
+			{
+				fncStateEnqueue(objCIState_Slash);
 			}
 		}	break;
 	}

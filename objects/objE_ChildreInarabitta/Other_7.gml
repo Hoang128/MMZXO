@@ -52,5 +52,14 @@ switch (sprite_index)
 	{
 		bossStateMachine.currentState.changeState = true;
 		image_index = 6;
+		
+		with (bossStateMachine.currentState)
+			fncCreateIceSpike();
+	}	break;
+	
+	case sprCInarabitta_SlashArrow:
+	{
+		bossStateMachine.currentState.changeState = true;
+		image_index = 11;
 	}	break;
 }

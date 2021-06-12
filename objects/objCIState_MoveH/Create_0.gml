@@ -6,10 +6,10 @@ event_inherited();
 phase = 0;
 jumpSpd = 3;
 moveSpd = 3;
-standWaitMax = 5;
+standWaitMax = 1;
 standWait = standWaitMax;
 changeToStand = false;
-distanceToWallJump = 32;
+distanceToWallJump = 64;
 
 function fncDoJump()
 {

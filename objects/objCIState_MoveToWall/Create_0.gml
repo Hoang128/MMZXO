@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-jumpSpd = 3;
+jumpSpd = 5;
 moveSpd = 3;
 changeState = false;
 

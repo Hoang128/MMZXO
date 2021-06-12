@@ -9,10 +9,33 @@ drillSpd = 4;
 drillSpace = 16;
 canCheckColDown = false;
 changeState = false;
+xDrill = 0;
+shot = false;
+
+function fncCreateIceSpike()
+{
+	var objSpike0 = instance_create_depth(x + 24, y + 14, depth - 1, objCI_IceSpike);
+	objSpike0.moveDir = 20;
+	objSpike0.image_xscale = 1;
+	
+	var objSpike1 = instance_create_depth(x - 24, y + 14, depth - 1, objCI_IceSpike);
+	objSpike1.moveDir = 20;
+	objSpike1.image_xscale = -1;
+	
+	var objSpike2 = instance_create_depth(x + 21, y + 7, depth - 1, objCI_IceSpike);
+	objSpike2.moveDir = 40;
+	objSpike2.image_xscale = 1;
+	objSpike2.image_index = 1;
+	
+	var objSpike3 = instance_create_depth(x - 21, y + 7, depth - 1, objCI_IceSpike);
+	objSpike3.moveDir = 40;
+	objSpike3.image_xscale = -1;
+	objSpike3.image_index = 1;
+}
 
 function fncStateStart()
 {
-	
+	xDrill = (core.id.bossFightZone.bbox_left + core.id.bossFightZone.bbox_right) / 2;
 }
 
 function fncStateRun()
@@ -38,7 +61,10 @@ function fncStateRun()
 					sprite_index = sprCInarabitta_DrillDown;
 					image_index = 0;
 					
-					x = clamp(objGlobalManager.currentPlayer.x, bossFightZone.bbox_left + 24, bossFightZone.bbox_right - 24);
+					if (instance_exists(objGlobalManager.currentPlayer))
+						other.xDrill = objGlobalManager.currentPlayer.x;
+					
+					x = clamp(other.xDrill, bossFightZone.bbox_left + 24, bossFightZone.bbox_right - 24);
 					vspd = other.drillSpd;
 				}
 			}
