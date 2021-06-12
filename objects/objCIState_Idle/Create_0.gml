@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-waitTime = 30;
+waitTime = 20;
 
 function fncStateStart()
 {
@@ -30,31 +30,31 @@ function fncStateRun()
 		if (other.waitTime > 0)
 		{
 			other.waitTime -= TIME_SCALE;
+			
+			if (sprite_index != sprCInarabitta_TurnAround)
+			{
+				if (instance_exists(objGlobalManager.currentPlayer))
+				{
+					if (image_xscale != sign(objGlobalManager.currentPlayer.x - self.x))
+					{
+						sprite_index = sprCInarabitta_TurnAround;
+						image_index = 0;
+					}
+				}
+			}
 		}
 		else
 		{
-			with (other)
+			if (sprite_index == sprCInarabitta_Idle)
 			{
-				with (core.id)
+				with (other)
 				{
-					fncChooseMove();
+					with (core.id)
+					{
+						fncChooseMove();
+					}
+					fncDoDequeueMove();
 				}
-				fncDoDequeueMove();
-				
-				/*
-				if (core.id.lastMove == "release sonic")
-				{
-					stateMachine.currentState.customTele = "release sonic";
-				}
-				else if (core.id.lastMove == "shot down")
-				{
-					stateMachine.currentState.customTele = "shot down";
-				}
-				else if (core.id.lastMove == "thunder clap")
-				{
-					stateMachine.currentState.spaceToEarth = 0;
-				}
-				*/
 			}
 		}
 	}

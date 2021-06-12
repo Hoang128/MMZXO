@@ -3,6 +3,13 @@
 
 switch (sprite_index)
 {
+	case sprCInarabitta_TurnAround:
+	{
+		sprite_index = sprCInarabitta_Idle;
+		image_index = 0;
+		image_xscale *= -1;
+	}	break;
+	
 	case sprCInarabitta_LaunchMissleStart:
 	{
 		sprite_index = sprCInarabitta_LaunchMissle;
@@ -35,5 +42,15 @@ switch (sprite_index)
 		sprite_index = sprCInarabitta_IdleWall;
 		image_index = 0;
 		bossStateMachine.currentState.changeState = true;
+	}	break;
+	case sprCInarabitta_LandWall:
+	{
+		bossStateMachine.currentState.changeToStand = true;
+	}	break;
+	
+	case sprCInarabitta_DrillDownEnd:
+	{
+		bossStateMachine.currentState.changeState = true;
+		image_index = 6;
 	}	break;
 }

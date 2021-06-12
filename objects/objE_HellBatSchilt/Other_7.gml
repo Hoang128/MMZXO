@@ -2,6 +2,13 @@
 // You can write your code in this editor
 switch (sprite_index)
 {
+	case sprHellBatChangeDir:
+	{
+		sprite_index = sprHellBatFly;
+		image_index = 0;
+		image_xscale *= -1;
+	}	break;
+	
 	case sprHellBatFlyDownStart:
 	{
 		sprite_index = sprHellBatFlyDown;

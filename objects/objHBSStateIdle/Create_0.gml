@@ -4,7 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
-waitTime = 30;
+waitTime = 20;
 
 function fncStateStart()
 {
@@ -25,28 +25,42 @@ function fncStateRun()
 	{
 		if (other.waitTime > 0)
 		{
+			if (sprite_index != sprHellBatChangeDir)
+			{
+				if (instance_exists(objGlobalManager.currentPlayer))
+				{
+					if (image_xscale != sign(objGlobalManager.currentPlayer.x - self.x))
+					{
+						sprite_index = sprHellBatChangeDir;
+						image_index = 0;
+					}
+				}
+			}
 			other.waitTime -= TIME_SCALE;
 		}
 		else
 		{
-			with (other)
+			if (sprite_index != sprHellBatChangeDir)
 			{
-				with (core.id)
+				with (other)
 				{
-					fncChooseMove();
-				}
-				fncDoDequeueMove();
-				if (core.id.lastMove == "release sonic")
-				{
-					stateMachine.currentState.customTele = "release sonic";
-				}
-				else if (core.id.lastMove == "shot down")
-				{
-					stateMachine.currentState.customTele = "shot down";
-				}
-				else if (core.id.lastMove == "thunder clap")
-				{
-					stateMachine.currentState.spaceToEarth = 0;
+					with (core.id)
+					{
+						fncChooseMove();
+					}
+					fncDoDequeueMove();
+					if (core.id.lastMove == "release sonic")
+					{
+						stateMachine.currentState.customTele = "release sonic";
+					}
+					else if (core.id.lastMove == "shot down")
+					{
+						stateMachine.currentState.customTele = "shot down";
+					}
+					else if (core.id.lastMove == "thunder clap")
+					{
+						stateMachine.currentState.spaceToEarth = 0;
+					}
 				}
 			}
 		}

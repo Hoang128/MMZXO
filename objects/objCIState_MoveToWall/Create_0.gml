@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-jumpSpd = 3.5;
-moveSpd = 2;
+jumpSpd = 3;
+moveSpd = 3;
 changeState = false;
 
 function fncStateStart()

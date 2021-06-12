@@ -4,12 +4,12 @@
 // Inherit the parent event
 event_inherited();
 phase = 0;
+jumpSpd = 3;
+moveSpd = 3;
 standWaitMax = 5;
 standWait = standWaitMax;
-jumpSpd = 2.5;
-moveSpd = 2;
 changeToStand = false;
-distanceToWallJump = 24;
+distanceToWallJump = 32;
 
 function fncDoJump()
 {
@@ -66,15 +66,15 @@ function fncStateRun()
 				}
 				else
 				{
+					var rect = 
+					{
+						x1 : x,
+						y1 : y - 10,
+						x2 : x + image_xscale * other.distanceToWallJump,
+						y2 : y - 14
+					}
 					with (other)
 					{
-						var rect = 
-						{
-							x1 : x,
-							y1 : y - 10,
-							x2 : x + image_xscale * distanceToWallJump,
-							y2 : y - 14
-						}
 						if (collision_rectangle(rect.x1, rect.y1, rect.x2, rect.y2, objBlock, false, true))
 						{
 							fncDoDequeueMove();
