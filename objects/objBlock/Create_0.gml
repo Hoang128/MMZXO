@@ -5,3 +5,5 @@
 event_inherited();
 
 physic.enable = false;
+
+waterInteract = false;

@@ -112,8 +112,9 @@ function fncUISelect()
 {
 	if (fncStaticHandleButton(KeyMap.UI_CONFIRM,KeyAction.PRESSED))
 	{
-		audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
-		fncUIHandleSelect();
+		var selectUI = fncUIHandleSelect();
+		if (selectUI)
+			audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
 	}
 }
 
@@ -121,8 +122,9 @@ function fncUIExit()
 {
 	if (fncStaticHandleButton(KeyMap.UI_BACK,KeyAction.PRESSED))
 	{
-		audio_play_sound(UISFX.exitSFX, global.emitterSFX.source, false);
-		fncUIHandleExit();
+		var exitUI = fncUIHandleExit();
+		if (exitUI)
+			audio_play_sound(UISFX.exitSFX, global.emitterSFX.source, false);
 	}
 }
 

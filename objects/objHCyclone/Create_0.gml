@@ -13,3 +13,5 @@ accSpd = 0.005;
 direction = 0;
 
 inited = false;
+
+audio_play_sound_on(global.emitterSFX.source, sfxModelHCyclone, false, true);

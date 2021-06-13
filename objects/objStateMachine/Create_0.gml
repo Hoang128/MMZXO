@@ -3,8 +3,6 @@
 
 // Inherit the parent event
 event_inherited();
-
-physic.enable = false;
 useQueue = false;
 
 coreType = noone;

@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+waterInteract = false;
 core = noone;
 dir = {x : 0, y : 0};
 

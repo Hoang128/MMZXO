@@ -30,6 +30,8 @@ function fncPlayerHBoostUpStart()
 		sprite_index = sprPlayerHBoostUpStart;
 		image_index = 0;
 		
+		audio_play_sound_on(global.emitterSFX.source, sfxPlayer.sfxAirDash, false, true);
+		
 		var dashEff = instance_create_depth(x, bbox_top + 12, depth - 2, objMoveImpactEff);
 		dashEff.image_angle = 90;
 		

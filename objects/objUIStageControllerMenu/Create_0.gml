@@ -57,6 +57,7 @@ function fncUIHandleExit()
 	{
 		audio_play_sound(UISFX.exitSFX, global.emitterSFX.source, false);
 		iconPhase = 3;
+		return true;
 	}
 }
 

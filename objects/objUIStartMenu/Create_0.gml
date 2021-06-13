@@ -33,19 +33,24 @@ function fncUIHandleSelect()
 			with(objRoomManager)
 				fncChangeRoomTo(roomStageSelect, true);
 			objUIManager.UICurrentInUse = noone;
+			return true;
 		}	
 		break;
 		
 		case 2:
 		{
 			fncUIOpenSubMenuAfter(2, objSceneFadeInColor, objSceneFadeOutColor);
+			return true;
 		}	
 		break;
 		
 		case 3:
 		{
 			game_end();
+			return true;
 		}	
 		break;
 	}
+	
+	return false;
 }

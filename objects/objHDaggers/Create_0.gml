@@ -30,47 +30,47 @@ function fncSetupResources()
 	{
 		case sprHSlashDashHitbox:				
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashDouble;
 			spriteWeapon = sprHSlashDashImg;	
 		}	break;
 		case sprHSlashDashAirHitbox:
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashDouble;
 			spriteWeapon = sprHSlashDashAirImg;
 		}	break;
 		case sprHSlashClimbHitbox:				
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashH;
 			spriteWeapon = sprHSlashClimbImg;
 		}	break;
 		case sprHSlashJumpHitbox:
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashH;
 			spriteWeapon = sprHSlashJumpImg;
 		}	break;
 		case sprHSlashRunHitbox:
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashH;
 			spriteWeapon = sprHSlashRunImg;
 		}	break;
 		case sprHSlashSlideHitbox:				
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashH;
 			spriteWeapon = sprHSlashSlideImg;
 		}	break;
 		case sprHSlash1Hitbox:
 		{
-			sfx = vfxVentSlash1;
+			sfx = vfxModelHSlashH;
 			spriteWeapon = sprHSlash1Img;
 		}	break;
 		case sprHSlash2Hitbox:
 		{
-			sfx = vfxVentSlash2;
+			sfx = vfxModelHSlashV;
 			spriteWeapon = sprHSlash2Img;
 		}	break;
 		case sprHSlashDoubleHitbox:
 		{
-			sfx = vfxVentSlash3;
+			sfx = vfxModelHSlashSonic;
 			spriteWeapon = sprHSlashDoubleImg;
 		}	break;
 	}

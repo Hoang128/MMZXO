@@ -119,6 +119,12 @@ vfxPlayer =
 	vfxHurt : vfxVentHurt
 };
 
+sfxPlayer = 
+{
+	sfxDash : sfxDashEff,
+	sfxAirDash : sfxDashEff
+};
+
 //State machine
 playerStateMachine = instance_create_depth(x, y, depth, objStateMachine);
 playerStateMachine.core = self;

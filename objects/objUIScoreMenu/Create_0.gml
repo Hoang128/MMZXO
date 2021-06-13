@@ -27,7 +27,10 @@ function fncUIExit()
 	if (keyboard_check_pressed(vk_anykey))
 	{
 		if (scoreDisplayState == 4)
+		{
 			fncUICloseMenu();
+			return true;
+		}
 	}
 }
 

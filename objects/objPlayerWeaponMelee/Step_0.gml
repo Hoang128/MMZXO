@@ -20,7 +20,7 @@ else
 	{
 		fncSetupResources();
 		if (core.enableNextSFX)
-			audio_play_sound_on(global.emitterSFX.source, sfx, false, false);
+			audio_play_sound_on(global.emitterSFX.source, sfx, false, true);
 		else
 			core.enableNextSFX = true;
 		inited = true;

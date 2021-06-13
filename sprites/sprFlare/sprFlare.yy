@@ -69,8 +69,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Common",
-    "path": "folders/Sprites/Effects/Common.yy",
+    "name": "Flare & Explosion",
+    "path": "folders/Sprites/Effects/Common/Flare & Explosion.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprFlare",

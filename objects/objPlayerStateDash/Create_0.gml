@@ -234,8 +234,10 @@ function fncStateInit()
 			{
 				sprite_index = sprPlayer.sprDashStart;
 				image_index = 0;
+				
+				audio_play_sound_on(global.emitterSFX.source, sfxPlayer.sfxDash, false, false);
 			}
-			
+
 			var dashDust = instance_create_depth(core.id.x, core.id.y, core.id.depth - 1, objSideDust);
 			dashDust.image_xscale = core.id.charDir;
 		}
@@ -245,8 +247,10 @@ function fncStateInit()
 			{
 				sprite_index = sprPlayer.sprAirDashStart;
 				image_index = 0;
+				
+				audio_play_sound_on(global.emitterSFX.source, sfxPlayer.sfxAirDash, false, false);
 			}
-			
+
 			with (core.id)
 				physic.gravAffect = false;
 		}

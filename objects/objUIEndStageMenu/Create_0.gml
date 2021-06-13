@@ -32,6 +32,7 @@ function fncUIHandleSelect()
 			with(objRoomManager)
 				fncChangeRoomTo(room, true);
 			objUIManager.UICurrentInUse = noone;
+			return true;
 		}	
 		break;
 		
@@ -40,6 +41,7 @@ function fncUIHandleSelect()
 			with(objRoomManager)
 				fncChangeRoomTo(roomStageSelect, true);
 			objUIManager.UICurrentInUse = noone;
+			return true;
 		}	
 		break;
 		
@@ -48,7 +50,10 @@ function fncUIHandleSelect()
 			with(objRoomManager)
 				fncChangeRoomTo(roomStart, true);
 			objUIManager.UICurrentInUse = noone;
+			return true;
 		}	
 		break;
 	}
+	
+	return false;
 }

@@ -11,3 +11,5 @@ imgSpd = 0;
 image_speed = 0;
 moveDir = 270;
 moveSpd = 1;
+
+weaponTypeCauseDeath = PlayerWeaponType.OBJECTIVE;

@@ -15,6 +15,31 @@ sprGate =
 gateBlock = noone;
 state = 0;
 
+function fncGateOpen()
+{
+	with (objGlobalManager.currentPlayer)
+	{
+		with (playerStateMachine)
+			fncStateChange(objPlayerStatePassGatePlatform);
+	}
+	global.gameState = GameState.INGAME_CUTSCENE;
+	sprite_index = sprGate.sprOpening;
+	image_index = 0;
+	audio_play_sound_on(global.emitterSFX.source, sfxGateOpen, false, true);
+	state = 2;
+}
+
+function fncGateCloseStart()
+{
+	if (!place_meeting(x, y, objPlayerBasic))
+	{
+		sprite_index = sprGate.sprClosing;
+		image_index = 0;
+		audio_play_sound_on(global.emitterSFX.source, sfxGateClose, false, true);
+		state = 4;
+	}
+}
+
 function fncGateClose()
 {
 	sprite_index = sprGate.sprClose;

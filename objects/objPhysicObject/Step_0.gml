@@ -1,9 +1,13 @@
 /// @description Insert description here
 // You can write your code in this editor
 
-if (physic.enable)
+if (waterInteract)
 {
 	fncDetectInWaterState();
+}
+
+if (physic.enable)
+{
 	
 	fncGravityCalculate();
 	

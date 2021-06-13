@@ -8,8 +8,8 @@
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
-    "name": "objNonPhysicObject",
-    "path": "objects/objNonPhysicObject/objNonPhysicObject.yy",
+    "name": "objEff",
+    "path": "objects/objEff/objEff.yy",
   },
   "physicsObject": false,
   "physicsSensor": false,

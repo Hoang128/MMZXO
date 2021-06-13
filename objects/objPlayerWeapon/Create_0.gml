@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+waterInteract = false;
 weaponType = PlayerWeaponType.OBJECTIVE;
 element = Element.NEUTRAL;
 isGuardBreaker = false;

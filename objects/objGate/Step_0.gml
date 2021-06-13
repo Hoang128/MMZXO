@@ -15,26 +15,13 @@ switch (state)
 		if (fncCanBeOpen(objGlobalManager.currentPlayer))
 		{
 			show_debug_message("can be open!");
-			with (objGlobalManager.currentPlayer)
-			{
-				with (playerStateMachine)
-					fncStateChange(objPlayerStatePassGatePlatform);
-			}
-			global.gameState = GameState.INGAME_CUTSCENE;
-			sprite_index = sprGate.sprOpening;
-			image_index = 0;
-			state = 2;
+			fncGateOpen();
 		}
 	}	break;
 	
 	//Open
 	case 3:
 	{
-		if (!place_meeting(x, y, objPlayerBasic))
-		{
-			sprite_index = sprGate.sprClosing;
-			image_index = 0;
-			state = 4;
-		}
+		fncGateCloseStart();
 	}	break;
 }

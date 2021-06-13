@@ -93,8 +93,8 @@
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Common",
-    "path": "folders/Sprites/Effects/Common.yy",
+    "name": "Dust",
+    "path": "folders/Sprites/Effects/Common/Dust.yy",
   },
   "resourceVersion": "1.0",
   "name": "sprDashDust",

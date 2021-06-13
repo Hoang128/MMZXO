@@ -38,6 +38,9 @@ sprPlayer =
 	sprAirDash : sprPlayerHAirDash,
 };
 
+sfxPlayer.sfxDash = sfxDashEff;
+sfxPlayer.sfxAirDash = sfxModelHAirDash;
+
 dashSlashAccUp = 2;
 
 runSlashPhase = 0;

@@ -5,5 +5,3 @@
 event_inherited();
 
 imgSpd = 1;
-
-audio_play_sound_on(global.emitterSFX.source, sfxDashEff, false, false);

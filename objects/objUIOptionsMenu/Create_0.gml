@@ -30,13 +30,20 @@ function fncUIHandleSelect()
 	switch (menuCursor)
 	{
 		case 0:
+		{
 			fncUIOpenSubMenuAfter(0, noone, noone);	break;
+			return true;
+		}
 		case 5:
+		{
 			fncUICloseMenu();
+			return true;
+		}
 	}
 }
 
 function fncUIHandleExit()
 {
 	fncUICloseMenu();
+	return true;
 }

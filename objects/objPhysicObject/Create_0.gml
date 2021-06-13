@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+waterInteract = true;
 physic =
 {
 	enable : false,
@@ -16,6 +16,9 @@ physic =
 }
 physic.waterRatio.x = global.waterMoveRatio.x;
 physic.waterRatio.y = global.waterMoveRatio.y;
+
+objWaterEff = noone;
+objWater = noone;
 
 timeScale = 1;
 destroyOutScreen = false;
@@ -272,15 +275,22 @@ function fncIsThinFloorAhead(dir, distance, vDir)
 
 function fncDetectInWaterState()
 {
-	var colTopPart = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top + 1, objZoneWater, false, false);
-	var colBotPart = collision_rectangle(bbox_left, bbox_top + 2, bbox_right, bbox_bottom, objZoneWater, false, false);
+	var colTopPart = collision_rectangle(bbox_left, bbox_top, bbox_right, bbox_top + 1, objZoneWater, false, true);
+	var colBotPart = collision_rectangle(bbox_left, bbox_top + 2, bbox_right, bbox_bottom, objZoneWater, false, true);
 	if (colTopPart && colBotPart)
 	{
+		objWater = colBotPart;
 		if (physic.inWater != InWater.FULL)
 		{
 			vspd = vspd/global.gravMax * physic.waterRatio.y;
 			physic.enviMoveRatio.x *= physic.waterRatio.x;
 			physic.enviMoveRatio.y *= physic.waterRatio.y;
+			
+			if ((objWaterEff != noone) && instance_exists(objWaterEff))
+			{
+				instance_destroy(objWaterEff);
+				objWaterEff = noone;
+			}
 		}
 		physic.inWater = InWater.FULL;
 	}
@@ -294,17 +304,42 @@ function fncDetectInWaterState()
 				physic.enviMoveRatio.x /= physic.waterRatio.x;
 				physic.enviMoveRatio.y /= physic.waterRatio.y;
 			}
-			//Create effect
-			/*
-			instance_create_depth(x, water.bbox_top, depth - 2, obj_waterPulseEff);
-			objWaterEff = instance_create_depth(x, water.bbox_top, depth - 1, obj_waterEff);
-			objWaterEff.core = self;
-			*/
+			
+			if (physic.inWater == InWater.NONE)
+				instance_create_depth(x, water.bbox_top, depth - 2, objWaterPulseEff);
+			
+			if (objWater == noone)
+			{
+				objWater = water;
+			}
+			
+			if (objWaterEff == noone)
+			{
+				objWaterEff = instance_create_depth(x, water.bbox_top, depth - 1, objWaterHalfEff);
+				objWaterEff.core = self;
+				objWaterEff.waterObj = water;
+			}
 		}
+		
 		physic.inWater = InWater.HALF;
 	}
 	else
 	{
+		if (physic.inWater != InWater.NONE)
+		{
+			if (objWater != noone)
+			{
+				instance_create_depth(x, objWater.bbox_top, depth - 2, objWaterPulseEff);
+				objWater = noone;
+			}
+			
+			if ((objWaterEff != noone) && instance_exists(objWaterEff))
+			{
+				instance_destroy(objWaterEff);
+				objWaterEff = noone;
+			}
+		}
+		
 		physic.inWater = InWater.NONE;
 	}
 }

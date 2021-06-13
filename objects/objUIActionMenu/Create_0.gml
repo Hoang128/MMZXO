@@ -36,6 +36,7 @@ function fncUIHandleSelect()
 		{
 			instance_create_depth(x, y, depth, objUIStageControllerMenu);
 			fncUIHandleExit();
+			return true;
 		}	
 		break;
 		
@@ -54,6 +55,7 @@ function fncUIHandleSelect()
 		case 3:
 		{
 			fncUIOpenSubMenuAfter(2, objSceneFadeInColor, objSceneFadeOutColor);
+			return true;
 		}	
 		break;
 		
@@ -62,6 +64,7 @@ function fncUIHandleSelect()
 			with(objRoomManager)
 				fncChangeRoomTo(roomStart, true);
 			objUIManager.UICurrentInUse = noone;
+			return true;
 		}
 		break;
 	}
@@ -70,4 +73,5 @@ function fncUIHandleSelect()
 function fncUIHandleExit()
 {
 	fncUICloseMenu();
+	return true;
 }
