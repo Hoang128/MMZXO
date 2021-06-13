@@ -12,6 +12,8 @@ function fncStateStart()
 	{
 		sprite_index = sprCInarabitta_SlashArrow;
 		image_index = 0;
+		
+		audio_play_sound_on(global.emitterSFX.source, sfxCI_Slash, false, true);
 	}
 }
 

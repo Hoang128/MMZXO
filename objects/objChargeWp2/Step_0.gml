@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-
-if ((level == 1) && (core.chargeWp2.Current >= core.chargeWp2.Max))
-	level = 2;
+if (instance_exists(core))
+{
+	if ((level == 1) && (core.chargeWp2.Current >= core.chargeWp2.Max))
+		level = 2;
+}

@@ -19,6 +19,8 @@ function fncStateStart()
 	{
 		sprite_index = sprCInarabitta_LaunchMissleStart;
 		image_index = 0;
+		
+		audio_play_sound_on(global.emitterSFX.source, sfxCI_VoiceLaunchMissle, false, true);
 	}
 }
 

@@ -22,6 +22,7 @@ bossManager = noone;
 
 bossBGM = bgmMMZLCrash;
 
+voiceDie = noone;
 lastMove = "no move";
 moveRatio = ds_map_create();
 

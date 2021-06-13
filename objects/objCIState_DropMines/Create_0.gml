@@ -8,7 +8,8 @@ canCheckColDown = false;
 changeState = false;
 jumpSpd = 2.5;
 moveSpd = 2.5;
-jumpTime = 4;
+jumpTimeMax = 4;
+jumpTime = jumpTimeMax;
 
 function fncDoJump()
 {
@@ -94,6 +95,8 @@ function fncStateRun()
 						instance_create_depth(x, y, depth, objCI_Mine);
 						with (other)
 							fncDoJump();
+						if (other.jumpTime == other.jumpTimeMax)
+							audio_play_sound_on(global.emitterSFX.source, sfxCI_Jump, false, true);
 						other.jumpTime--;
 					}
 				}

@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited(); 
 
+audio_play_sound_on(global.emitterSFX.source, voiceDie, false, true);
+
 ds_map_destroy(moveRatio);
 if (weaponTypeCauseDeath != PlayerWeaponType.MELEE)
 {

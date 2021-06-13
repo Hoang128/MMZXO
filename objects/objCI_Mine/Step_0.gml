@@ -7,4 +7,6 @@ event_inherited();
 if (existTime > 0)
 	existTime -= TIME_SCALE;
 else
+{
 	instance_destroy();
+}

@@ -11,6 +11,8 @@ destroySlashPiece.sprite = sprHellBatSlashPieces;
 destroySlashPiece.hMove = 2;
 destroySlashPiece.waitTime = 240;
 
+voiceDie = sfxBossHBSDead;
+
 deadImageByBuster = sprHellBatPieces;
 
 inited = false;

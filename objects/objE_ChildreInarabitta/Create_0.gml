@@ -13,6 +13,8 @@ destroySlashPiece.sprite = sprCInarabitta_SlashPieces;
 destroySlashPiece.hMove = 2;
 destroySlashPiece.waitTime = 240;
 
+voiceDie = sfxCI_Die;
+
 deadImageByBuster = sprCInarabitta_Pieces; 
 
 inited = false;

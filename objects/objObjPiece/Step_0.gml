@@ -8,6 +8,9 @@ if (!inited)
 	inited = true;
 }
 
+if (place_meeting(x, y, objBlock))
+	instance_destroy();
+
 if (physic.onGround)
 {
 	if (lastMaxVspd < -1)

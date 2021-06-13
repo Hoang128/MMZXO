@@ -10,10 +10,12 @@ physic =
 	thinBlockIgnoreTime : 0,
 	thinBlockIgnoreTimeMax : 10,
 	inWater : InWater.NONE,
-	waterRatio : global.waterMoveRatio,
+	waterRatio : {x : 1, y : 1},
 	inWind  : InWind.NONE,
 	enviMoveRatio : {x : 1, y : 1}
 }
+physic.waterRatio.x = global.waterMoveRatio.x;
+physic.waterRatio.y = global.waterMoveRatio.y;
 
 timeScale = 1;
 destroyOutScreen = false;
@@ -276,7 +278,7 @@ function fncDetectInWaterState()
 	{
 		if (physic.inWater != InWater.FULL)
 		{
-			vspd = vspd/global.gravMax * global.waterMoveRatio.y;
+			vspd = vspd/global.gravMax * physic.waterRatio.y;
 			physic.enviMoveRatio.x *= physic.waterRatio.x;
 			physic.enviMoveRatio.y *= physic.waterRatio.y;
 		}

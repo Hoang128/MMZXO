@@ -66,6 +66,8 @@ function fncStateRun()
 					
 					x = clamp(other.xDrill, bossFightZone.bbox_left + 24, bossFightZone.bbox_right - 24);
 					vspd = other.drillSpd;
+					
+					audio_play_sound_on(global.emitterSFX.source, sfxCI_Jump, false, true);
 				}
 			}
 		}	break;
@@ -94,6 +96,8 @@ function fncStateRun()
 						sprite_index = sprCInarabitta_DrillDownEnd;
 						image_index = 0;
 						other.phase = 2;
+						
+						audio_play_sound_on(global.emitterSFX.source, sfxCI_DrillDown, false, true);
 					}
 				}
 			}

@@ -13,6 +13,16 @@ else
 	instance_destroy();
 }
 
+if (createEffTime > 0)
+{
+	createEffTime -= TIME_SCALE;
+}
+else
+{
+	instance_create_depth(x, y, depth - 1, objCI_MissleDust);
+	createEffTime = createEffTimeMax;
+}
+
 if (!place_meeting(x, y, objZoneWater))
 	instance_destroy();
 

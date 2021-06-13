@@ -71,6 +71,7 @@ function fncSetSprite()
 function fncStateStart()
 {
 	fncDoJump();
+	audio_play_sound_on(global.emitterSFX.source, sfxCI_VoiceClimb, false, true);
 }
 
 function fncStateRun()
@@ -115,6 +116,8 @@ function fncStateRun()
 					hspd = 0;
 					sprite_index = sprCInarabitta_LandWall;
 					image_index = 0;
+					
+					audio_play_sound_on(global.emitterSFX.source, sfxCI_Land, false, true);
 				}
 			}
 		}
