@@ -17,6 +17,6 @@ switch (sprite_index)
 		break;
 		
 	case sprPlayerHSlashJump:
-		imgSpd = 2;
+		imgSpd = 1;
 		break;
 }

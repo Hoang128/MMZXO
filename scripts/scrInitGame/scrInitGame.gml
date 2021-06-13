@@ -92,10 +92,10 @@ function fncStaticInitInputParams()
 
 function fncStaticInitKeyboardParams()
 {
-	global.keyRight			= vk_right;
-	global.keyLeft			= vk_left;
-	global.keyUp			= vk_up;
-	global.keyDown			= vk_down;
+	global.keyRight			= vk_numpad6;
+	global.keyLeft			= vk_numpad4;
+	global.keyUp			= vk_numpad8;
+	global.keyDown			= vk_numpad5;
 	
 	global.keyDash			= ord("Z");
 	global.keyJump			= ord("X");

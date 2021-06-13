@@ -116,8 +116,8 @@ function fncPlayerJumpRun()
 						{
 							fncStateChange(objPlayerStateClimb);
 							currentState.climbFromFirstImage = climbFromFirstImageTemp;
-							return;
 						}
+						return;
 					}
 				}
 			}
@@ -146,6 +146,7 @@ function fncPlayerJumpRun()
 						{
 							fncStateChange(objPlayerStateSlide);
 						}
+						return;
 					}
 				}
 			}
@@ -162,8 +163,8 @@ function fncPlayerJumpRun()
 				{
 					fncStateChange(objPlayerStateIdle);
 					currentState.lastState = "jump";
-					return;
 				}
+				return;
 			}
 		}
 	}
@@ -201,8 +202,8 @@ function fncChangeToZXStates()
 								fncStateChange(objPlayerStateJump);
 								if (currentDashJump)
 									currentState.dashJump = true;
-								return;
 							}
+							return;
 						}
 					}
 				}
@@ -231,8 +232,8 @@ function fncChangeToHXStates()
 						{
 							fncStateChange(objPlayerStateHBoostUp);
 							currentState.airDash = true;
-							return;
 						}
+						return;
 					}
 				}
 			}
@@ -255,8 +256,8 @@ function fncChangeToHXStates()
 							var currentAirDash = true;
 							fncStateChange(objPlayerStateDash);
 							currentState.airDash = currentAirDash;
-							return;
 						}
+						return;
 					}
 				}
 			}
@@ -271,18 +272,14 @@ function fncChangeToHXStates()
 					if ((airJumpWhenFastMove == true)
 					|| ((airJumpWhenFastMove == false) && other.dashJump == false))
 					{
-						if (jumpTime > 0)
-						{
-							jumpTime--;
-							if (!mixAirDashJump)
-								airDashCount = 0;
+						if (!mixAirDashJump)
+							airDashCount = 0;
 					
-							with(other.stateMachine)
-							{
-								fncStateChange(objPlayerStateHHover);
-								return;
-							}
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateHHover);
 						}
+						return;
 					}
 				}
 			}
@@ -312,16 +309,16 @@ function fncChangeToLXStates()
 								{
 									fncStateChange(objPlayerStateLDiveIdle);
 									currentState.lastAction = "jump";
-									return;
 								}
+								return;
 							}
 							else
 							{
 								with(other.stateMachine)
 								{
 									fncStateChange(objPlayerStateLDiveMove);
-									return;
 								}
+								return;
 							}
 						}
 					}
@@ -339,8 +336,8 @@ function fncChangeToLXStates()
 						{
 							fncStateChange(objPlayerStateLDiveDash);
 							currentState.lastAction = "jump";
-							return;
 						}
+						return;
 					}
 				}
 			}

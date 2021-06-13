@@ -33,7 +33,7 @@ SaveSlotData = function(_slotId) constructor
 	{
 		modelZX:
 		{
-			isActived		: 0,
+			isActived		: 1,
 			skillActived	:
 			{
 				skill_0		: 0,
@@ -51,7 +51,7 @@ SaveSlotData = function(_slotId) constructor
 		},
 		modelH:
 		{
-			isActived		: 0,
+			isActived		: 1,
 			skillActived	:
 			{
 				skill_0		: 0,
@@ -69,7 +69,7 @@ SaveSlotData = function(_slotId) constructor
 		},
 		modelL:
 		{
-			isActived		: 0,
+			isActived		: 1,
 			skillActived	:
 			{
 				skill_0		: 0,

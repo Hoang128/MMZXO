@@ -14,10 +14,11 @@ function fncChangeImgSpd()
 		case sprHSlashDashHitbox:
 		case sprHSlashDashAirHitbox:
 		case sprHSlashClimbHitbox:
-		case sprHSlashJumpHitbox:
 		case sprHSlashRunHitbox:
 			imgSpd = 1.5;	break;
 		case sprHSlashSlideHitbox:
+			imgSpd = 1.5;	break;
+		case sprHSlashJumpHitbox:
 			imgSpd = 1.5;	break;
 		
 	}

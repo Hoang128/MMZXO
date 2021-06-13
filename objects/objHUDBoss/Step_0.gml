@@ -9,6 +9,9 @@ switch (phase)
 			case objE_HellBatSchilt:
 				avatarImg = 4;
 				break;
+			case objE_ChildreInarabitta:
+				avatarImg = 2;
+				break;
 			default:
 				avatarImg = 0;
 		}

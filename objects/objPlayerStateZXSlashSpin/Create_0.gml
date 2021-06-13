@@ -100,6 +100,8 @@ function fncPlayerZXSlashSpinRun()
 				{
 					sprite_index = sprPlayer.sprLand;
 					image_index = 0;
+					
+					hspd = 0;
 				
 					runSFXPlayer = instance_create_depth(x, y, depth, objPlayerRunSFXCreater);
 					runSFXPlayer.core = self.id;
