@@ -87,8 +87,16 @@ switch (phase)
 		else
 		{
 			UIBackground.yEnd = (UIBackground.yStart + UIBackground.UIHeight);
-			phase = 3;
+			phase = 2.5;
 		}
+	}	break;
+	case 2.5:
+	{
+		if (ds_list_size(childButtonList) > 0)
+		{
+			fncEnableUIButtonList();
+		}
+		phase = 3;
 	}	break;
 	case 3:
 	{
@@ -96,12 +104,23 @@ switch (phase)
 		{
 			if (UIControl.isEnable)
 			{
-				fncUISelect();
-				fncUIMoveUp();
-				fncUIMoveDown();
+				if (ds_list_size(childMenuNodeList) > 0)
+				{
+					fncUISelect();
+					fncUIMoveUp();
+					fncUIMoveDown();
+				}
 				fncUIExit();
 			}
 		}
+	}	break;
+	case 3.5:
+	{
+		if (ds_list_size(childButtonList) > 0)
+		{
+			fncDisableUIButtonList();
+		}
+		phase = 4;
 	}	break;
 	case 4:
 	{

@@ -240,6 +240,13 @@ function fncStaticInitStates()
 		HALF,
 		FULL
 	}
+	
+	enum ButtonState
+	{
+		NORMAL,
+		HIGHLIGHT,
+		SELECTED
+	}
 }
 
 function fncInitGameplayParams()

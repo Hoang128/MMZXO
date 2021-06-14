@@ -18,6 +18,8 @@ UIBackground.yStart = 0;
 UIBackground.UIWidth = 480;
 UIBackground.UIHeight = 1080;
 
+UIAnim.isEnable = false;
+
 titleContext = "";
 fncInitUIChildMenuNode("Chơi đơn", noone, noone, true, true);
 fncInitUIChildMenuNode("Chơi mạng", noone, noone, false, true);

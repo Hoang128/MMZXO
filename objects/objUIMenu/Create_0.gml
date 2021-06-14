@@ -78,6 +78,9 @@ UIAnim =
 parentMenu = noone;
 titleContext = "UI Menu (UI Menu Tiếng Việt)";
 
+//Text menu
+#region
+
 childMenuNodeList = ds_list_create();
 
 function fncInitUIChildMenuNode(context, childMenuType, childContextType, actived, visible)
@@ -243,6 +246,58 @@ function fncUIUpdateSelectedContext()
 	}
 }
 
+#endregion
+
+//Button menu
+#region
+
+childButtonList = ds_list_create();
+
+function fncInitUIButton(buttonType, posX, posY)
+{
+	var button = instance_create_depth(posX, posY, depth - 1, buttonType);
+	button.UIButton.enabled = false;
+	button.menuParent = self;
+	ds_list_add(childButtonList, button);
+}
+
+function fncEnableUIButtonList()
+{
+	for (var i = 0; i < ds_list_size(childButtonList); i++)
+	{
+		ds_list_find_value(childButtonList, i).UIButton.enabled = true;
+	}
+}
+
+function fncDisableUIButtonList()
+{
+	for (var i = 0; i < ds_list_size(childButtonList); i++)
+	{
+		ds_list_find_value(childButtonList, i).UIButton.enabled = false;
+	}
+}
+
+function fncDestroyUIButtonList()
+{
+	for (var i = 0; i < ds_list_size(childButtonList); i++)
+	{
+		instance_destroy(ds_list_find_value(childButtonList, i));
+	}
+}
+
+function fncResetButtonsState()
+{
+	for (var i = 0; i < ds_list_size(childButtonList); i++)
+	{
+		with (ds_list_find_value(childButtonList, i))
+		{
+			fncResetState();
+		}
+	}
+}
+
+#endregion
+
 function fncUIHandleExit()
 {
 	
@@ -264,12 +319,12 @@ function fncUICloseMenu()
 		}
 	}
 	
-	phase = 4;
+	phase = 3.5;
 }
 
 function fncUIOpenSubMenuAfter(time, effectClose, effectOpen)
 {
-	var obj = instance_create_depth(x, y, depth, objUISubMenuCreater);
+	var obj = instance_create_depth(UIBackground.xStart, UIBackground.yStart, depth, objUISubMenuCreater);
 	obj.menu = ds_list_find_value(childMenuNodeList, menuCursor).childMenuType;
 	obj.time = time;
 	obj.effectClose = effectClose;
