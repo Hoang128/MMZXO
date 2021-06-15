@@ -33,8 +33,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Button",
-    "path": "folders/Objects/Visible InGame/UI Menu/Button.yy",
+    "name": "Templates",
+    "path": "folders/Objects/Visible InGame/UI Menu/Templates.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIButton",

@@ -5,3 +5,8 @@
 event_inherited();
 
 UIText.text = "Option";
+
+function fncUIHandleSelect()
+{
+	fncStaticUIOpenSubMenuAfter(objUIOptionMenuButton, 2, noone, noone, true);
+}

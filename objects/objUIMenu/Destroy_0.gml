@@ -11,13 +11,22 @@ ds_list_clear(childButtonList);
 
 if (parentMenu != noone)
 {
-	objUIManager.UICurrentInUse = parentMenu.id;
-	if (ds_list_size(parentMenu.childButtonList) > 0)
+	if (instance_exists(parentMenu))
 	{
-		with (parentMenu)
+		objUIManager.UICurrentInUse = parentMenu.id;
+		if (ds_list_size(parentMenu.childButtonList) > 0)
 		{
-			fncResetButtonsState();
+			with (parentMenu)
+			{
+				fncResetButtonsState();
+			}
+		}
+	}
+	else
+	{
+		if (parentMenuObj != noone)
+		{
+			instance_create_depth(x, y, depth, parentMenuObj);
 		}
 	}
 }
-else objUIManager.UICurrentInUse = noone;

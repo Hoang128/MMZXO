@@ -2,13 +2,14 @@
 // You can write your code in this editor
 if (UIButton.enabled)
 {
-	if ((menuParent == noone) || (instance_exists(menuParent) && (objUIManager.UICurrentInUse == menuParent.id)))
+	if ((menuParent == noone) || (instance_exists(menuParent) 
+		&& (objUIManager.UICurrentInUse == menuParent.id) && (menuParent.UIControl.isEnable)))
 	{
 		var parentPos = {x : 0, y : 0};
 		if (instance_exists(menuParent))
 		{
-			parentPos.x = menuParent.x;
-			parentPos.y = menuParent.y;
+			parentPos.x = menuParent.UIBackground.xStart + menuParent.UITransPos.UICurrentDiffPosX;
+			parentPos.y = menuParent.UIBackground.yStart + menuParent.UITransPos.UICurrentDiffPosY;
 		}
 		switch (state)
 		{

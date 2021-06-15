@@ -7,8 +7,8 @@ if (UIButton.enabled)
 	{ x : 0, y : 0};
 	if ((menuParent != noone) && instance_exists(menuParent))
 	{
-		parentPos.x = menuParent.x;
-		parentPos.y = menuParent.y;
+		parentPos.x = menuParent.UIBackground.xStart + menuParent.UITransPos.UICurrentDiffPosX;
+		parentPos.y = menuParent.UIBackground.yStart + menuParent.UITransPos.UICurrentDiffPosY;
 	}
 	draw_sprite_ext(sprite_index, image_index, parentPos.x + x, parentPos.y + y, image_xscale, image_yscale, 0, c_white, 1);
 

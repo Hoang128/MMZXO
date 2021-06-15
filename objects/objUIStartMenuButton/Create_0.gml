@@ -4,6 +4,13 @@
 // Inherit the parent event
 event_inherited();
 
+UIAnim.isEnable = false;
+
+UITransPos.isEnable = true;
+UITransPos.UIDiffPosY = 0;
+UITransPos.UIDiffPosX = -540;
+UITransPos.UIMoveSpd = 40;
+
 UIContext.childFont = fontMenuM;
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 256;
@@ -19,6 +26,6 @@ UIBackground.UIWidth = 480;
 UIBackground.UIHeight = 1080;
 
 titleContext = "";
-fncInitUIButton(objUIBtn_Start, 200, 300);
-fncInitUIButton(objUIBtn_Option, 200, 420);
-fncInitUIButton(objUIBtn_Exit, 200, 540);
+fncInitUIButton(objUIBtn_Start, 240, 500);
+fncInitUIButton(objUIBtn_Option, 240, 620);
+fncInitUIButton(objUIBtn_Exit, 240, 740);

@@ -45,7 +45,18 @@ UIText =
 	shadowDistance : 4
 }
 
-function fncStaticUIOpenSubMenuAfter(subMenu, time, effectClose, effectOpen)
+function fncUICloseMenu()
+{
+	if (instance_exists(menuParent))
+	{
+		with (menuParent)
+		{
+			fncUICloseMenu();
+		}
+	}
+}
+
+function fncStaticUIOpenSubMenuAfter(subMenu, time, effectClose, effectOpen, isDestroySelfMenu)
 {
 	var obj = instance_create_depth(x, y, depth, objUISubMenuCreater);
 	obj.menu = subMenu;
@@ -53,8 +64,14 @@ function fncStaticUIOpenSubMenuAfter(subMenu, time, effectClose, effectOpen)
 	obj.effectClose = effectClose;
 	obj.effectOpen = effectOpen;
 	obj.menuParent = menuParent;
+	obj.menuParentObj = menuParent.object_index;
 	
 	objUIManager.UICurrentInUse = noone;
+	
+	if (isDestroySelfMenu)
+	{
+		fncUICloseMenu();
+	}
 }
 
 function fncUIHandleSelect()

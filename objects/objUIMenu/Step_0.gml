@@ -76,7 +76,7 @@ switch (phase)
 		{
 			UIBackground.xEnd = (UIBackground.xStart + UIBackground.UIWidth);
 			UIBackground.yEnd = (UIBackground.yStart + UIBackground.UIHeight);
-			phase = 3;
+			phase = 2.5;
 		}
 	}	break;
 	case 2:

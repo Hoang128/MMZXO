@@ -6,6 +6,7 @@ event_inherited();
 
 menu = noone;
 menuParent = noone;
+menuParentObj = noone;
 time = 4;
 effectOpen = noone;
 effectClose = noone;

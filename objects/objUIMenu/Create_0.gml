@@ -76,6 +76,7 @@ UIAnim =
 
 //Construct UI props & funcs
 parentMenu = noone;
+parentMenuObj = noone;
 titleContext = "UI Menu (UI Menu Tiếng Việt)";
 
 //Text menu
@@ -322,7 +323,7 @@ function fncUICloseMenu()
 	phase = 3.5;
 }
 
-function fncUIOpenSubMenuAfter(time, effectClose, effectOpen)
+function fncUIOpenSubMenuAfter(time, effectClose, effectOpen, isDestroySelfMenu)
 {
 	var obj = instance_create_depth(UIBackground.xStart, UIBackground.yStart, depth, objUISubMenuCreater);
 	obj.menu = ds_list_find_value(childMenuNodeList, menuCursor).childMenuType;
@@ -330,8 +331,14 @@ function fncUIOpenSubMenuAfter(time, effectClose, effectOpen)
 	obj.effectClose = effectClose;
 	obj.effectOpen = effectOpen;
 	obj.menuParent = self;
+	obj.menuParentObj = self.object_index;
 	
 	objUIManager.UICurrentInUse = noone;
+	
+	if (isDestroySelfMenu)
+	{
+		fncUICloseMenu();
+	}
 }
 
 function fncDrawMenuDebugInfo()
