@@ -12,6 +12,7 @@ switch (iconPhase)
 			var objIcon = instance_create_depth(x, y, depth, objUIStageIcon)
 			with (objIcon)
 			{
+				menuParent = other;
 				indexPoint.x = other.stageIconStart.x + i * (other.stageIconWidth + other.stageIconSpace);
 				indexPoint.y = other.stageIconStart.y;
 				x = other.startDrawPoint.x + indexPoint.x;
@@ -23,7 +24,7 @@ switch (iconPhase)
 					objIcon.cursorOn = 1;
 			}
 			
-			ds_list_add(stageIconList, objIcon);
+			ds_list_add(stageIconList, objIcon.id);
 		}
 		iconPhase = 1;
 	}	break;
@@ -48,7 +49,10 @@ switch (iconPhase)
 	case 2:
 	{
 		fncUIChangeStage();
-		fncUISelectStage();
+		if (fncStaticHandleButton(KeyMap.UI_CONFIRM,KeyAction.PRESSED))
+		{
+			fncUISelectStage();
+		}
 		fncUIExit();
 	}	break;
 	

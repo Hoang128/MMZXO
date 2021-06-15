@@ -61,6 +61,22 @@ function fncUIHandleExit()
 	}
 }
 
+function fncUIChangeStageTo(iconObj)
+{
+	cursor = ds_list_find_index(stageIconList, iconObj.id);
+	audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
+	for (var i = 0; i < ds_list_size(stageIconList); i++)
+	{
+		if (ds_list_find_value(stageIconList, i).cursorOn == true)
+		{
+			ds_list_find_value(stageIconList, i).cursorOn = false;
+			break;
+		}
+	}
+	
+	iconObj.cursorOn = true;
+}
+
 function fncUIChangeStage()
 {
 	if (fncStaticHandleButton(KeyMap.UI_LEFT,KeyAction.PRESSED))
@@ -71,10 +87,10 @@ function fncUIChangeStage()
 			cursor--;
 			for (var i = 0; i < ds_list_size(stageIconList); i++)
 			{
-				if (ds_list_find_value(stageIconList, i).cursorOn == 1)
+				if (ds_list_find_value(stageIconList, i).cursorOn == true)
 				{
-					ds_list_find_value(stageIconList, i).cursorOn = 0;
-					ds_list_find_value(stageIconList, i - 1).cursorOn = 1;
+					ds_list_find_value(stageIconList, i).cursorOn = false;
+					ds_list_find_value(stageIconList, i - 1).cursorOn = true;
 					break;
 				}
 			}
@@ -89,10 +105,10 @@ function fncUIChangeStage()
 			cursor++;
 			for (var i = 0; i < ds_list_size(stageIconList); i++)
 			{
-				if (ds_list_find_value(stageIconList, i).cursorOn == 1)
+				if (ds_list_find_value(stageIconList, i).cursorOn == true)
 				{
-					ds_list_find_value(stageIconList, i).cursorOn = 0;
-					ds_list_find_value(stageIconList, i + 1).cursorOn = 1;
+					ds_list_find_value(stageIconList, i).cursorOn = false;
+					ds_list_find_value(stageIconList, i + 1).cursorOn = true;
 					break;
 				}
 			}
@@ -102,19 +118,16 @@ function fncUIChangeStage()
 
 function fncUISelectStage()
 {
-	if (fncStaticHandleButton(KeyMap.UI_CONFIRM,KeyAction.PRESSED))
+	audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
+	var stage = noone;
+	with (ds_list_find_value(stageIconList, cursor))
 	{
-		audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
-		var stage = noone;
-		with (ds_list_find_value(stageIconList, cursor))
-		{
-			stage = stageRoom;
-		}
-		
-		with instance_create_depth(x, y, depth, objUICharSelectMenu)
-		{
-			stageToGo = stage;
-		}
-		iconPhase = 3;
+		stage = stageRoom;
 	}
+		
+	with instance_create_depth(x, y, depth, objUICharSelectMenu)
+	{
+		stageToGo = stage;
+	}
+	iconPhase = 3;
 }

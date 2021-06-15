@@ -13,7 +13,8 @@ switch (phase)
 				objIcon.imageChar = sprArtModelZX;
 				objIcon.cursorOn = true;
 				objIcon.charObj = objPlayerZX;
-				ds_list_add(charIconList, objIcon);
+				objIcon.menuParent = self;
+				ds_list_add(charIconList, objIcon.id);
 			}
 			
 			if (objSaveDataManager.currentPlayerData.modelUnlock.modelH.isActived == 1)
@@ -22,7 +23,8 @@ switch (phase)
 				objIcon.backColor = c_green;
 				objIcon.imageChar = sprArtModelH;
 				objIcon.charObj = objPlayerH;
-				ds_list_add(charIconList, objIcon);
+				objIcon.menuParent = self;
+				ds_list_add(charIconList, objIcon.id);
 			}
 			
 			if (objSaveDataManager.currentPlayerData.modelUnlock.modelP.isActived == 1)
@@ -31,7 +33,8 @@ switch (phase)
 				objIcon.backColor = c_purple;
 				objIcon.imageChar = sprArtModelP;
 				objIcon.charObj = objPlayerP;
-				ds_list_add(charIconList, objIcon);
+				objIcon.menuParent = self;
+				ds_list_add(charIconList, objIcon.id);
 			}
 			
 			if (objSaveDataManager.currentPlayerData.modelUnlock.modelL.isActived == 1)
@@ -40,7 +43,8 @@ switch (phase)
 				objIcon.backColor = c_blue;
 				objIcon.imageChar = sprArtModelL;
 				objIcon.charObj = objPlayerL;
-				ds_list_add(charIconList, objIcon);
+				objIcon.menuParent = self;
+				ds_list_add(charIconList, objIcon.id);
 			}
 			
 			if (objSaveDataManager.currentPlayerData.modelUnlock.modelF.isActived == 1)
@@ -49,7 +53,8 @@ switch (phase)
 				objIcon.backColor = c_orange;
 				objIcon.imageChar = sprArtModelF;
 				objIcon.charObj = objPlayerF;
-				ds_list_add(charIconList, objIcon);
+				objIcon.menuParent = self;
+				ds_list_add(charIconList, objIcon.id);
 			}
 		}
 		for (var i = 0; i < ds_list_size(charIconList); i++)
@@ -87,7 +92,10 @@ switch (phase)
 	}	break;
 	case 3:
 	{
-		fncUISelectChar();
+		if (fncStaticHandleButton(KeyMap.UI_CONFIRM,KeyAction.PRESSED))
+		{
+			fncUISelectChar();
+		}
 		fncUIChangeChar();
 		fncUIExitCharSelectMenu();
 	}	break;

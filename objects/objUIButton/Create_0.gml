@@ -37,9 +37,9 @@ UIText =
 	pos :
 	{
 		x : 0,
-		y : 80
+		y : (bbox_bottom - bbox_top) / 2,
 	},
-	font		   : fontMenuS,
+	font		   : fontButtonS,
 	color		   : c_white,
 	shadow         : true,
 	shadowDistance : 4
@@ -76,7 +76,7 @@ function fncStaticUIOpenSubMenuAfter(subMenu, time, effectClose, effectOpen, isD
 
 function fncUIHandleSelect()
 {
-	fncStaticUIOpenSubMenuAfter(objUIOptionsMenu, 2, objSceneFadeInColor, objSceneFadeOutColor);
+
 }
 
 function fncResetState()

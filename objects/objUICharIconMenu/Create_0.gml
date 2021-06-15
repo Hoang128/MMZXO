@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+menuParent = noone;
 rectPos = {x1 : -100, x2: 100, y1 : -400, y2 : 400};
 trianglePos_1 = 
 {

@@ -8,23 +8,19 @@ UIAnim.isEnable = false;
 
 UITransPos.isEnable = true;
 UITransPos.UIDiffPosY = 0;
-UITransPos.UIDiffPosX = -540;
+UITransPos.UIDiffPosX = VPORT_W + 540;
 UITransPos.UIMoveSpd = 40;
 
 closeTime = 4;
-UITransPos.isEnable = true;
-UITransPos.UIDiffPosY = 0;
-UITransPos.UIDiffPosX = -540;
-UITransPos.UIMoveSpd = 40;
 
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 128;
 UIContext.childVMargin = 192;
 
-UIBackground.xStart = 64;
-UIBackground.yStart = 64;
+UIBackground.xStart = VPORT_W/2 - 540/2;
+UIBackground.yStart = 0;
 UIBackground.UIWidth = 540;
-UIBackground.UIHeight = 952;
+UIBackground.UIHeight = VPORT_H;
 
 titleContext = "Cài đặt";
 fncInitUIButton(objUIBtn_OptionGeneral, UIBackground.UIWidth / 2, 240);

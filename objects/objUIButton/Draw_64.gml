@@ -13,7 +13,7 @@ if (UIButton.enabled)
 	draw_sprite_ext(sprite_index, image_index, parentPos.x + x, parentPos.y + y, image_xscale, image_yscale, 0, c_white, 1);
 
 	draw_set_halign(fa_center);
-	draw_set_valign(fa_bottom);
+	draw_set_valign(fa_center);
 	if (UIText.shadow)
 	{
 		draw_set_color(c_black);

@@ -9,5 +9,5 @@ if (instance_exists(objUICharSelectMenu))
 }
 else
 {
-	instance_create_depth(x, y, depth, objUIActionMenu);
+	instance_create_depth(x, y, depth, objUIActionMenuButton);
 }

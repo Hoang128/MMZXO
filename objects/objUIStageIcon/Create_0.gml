@@ -4,6 +4,7 @@
 // Inherit the parent event
 event_inherited();
 
+menuParent = noone;
 stageBossSprite = sprMShotBoss;
 stageBossId = 0;
 stageRoom = roomTest;

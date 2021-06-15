@@ -15,7 +15,7 @@ if (UIButton.enabled)
 		{
 			case ButtonState.NORMAL:
 			{
-				if (point_in_rectangle(mouse_x, mouse_y, 
+				if (point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 
 					parentPos.x + bbox_left, 
 					parentPos.y + bbox_top, 
 					parentPos.x + bbox_right, 
@@ -27,7 +27,7 @@ if (UIButton.enabled)
 			}	break;
 			case ButtonState.HIGHLIGHT:
 			{
-				if (!point_in_rectangle(mouse_x, mouse_y, 
+				if (!point_in_rectangle(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), 
 					parentPos.x + bbox_left, 
 					parentPos.y + bbox_top, 
 					parentPos.x + bbox_right, 
@@ -40,7 +40,7 @@ if (UIButton.enabled)
 				{
 					if (sprite_index == UIButtonSpr.sprSelected)
 					{
-						if (mouse_check_button_released(mb_any))
+						if (device_mouse_check_button_released(0, mb_any))
 						{
 							sprite_index = UIButtonSpr.sprConfirm;
 							image_index = 0;

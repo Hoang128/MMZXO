@@ -15,16 +15,30 @@ stageToGo = noone;
 
 function fncUISelectChar()
 {
-	if (fncStaticHandleButton(KeyMap.UI_CONFIRM,KeyAction.PRESSED))
-	{
-		audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
-		var charToGo = ds_list_find_value(charIconList, cursor).charObj;
-		objGlobalManager.charToStart = charToGo;
+	audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
+	var charToGo = ds_list_find_value(charIconList, cursor).charObj;
+	objGlobalManager.charToStart = charToGo;
 		
-		with (objRoomManager)
-			fncChangeRoomTo(other.stageToGo, true);
-		objUIManager.UICurrentInUse = noone;
+	with (objRoomManager)
+		fncChangeRoomTo(other.stageToGo, true);
+	objUIManager.UICurrentInUse = noone;
+}
+
+function fncUIChangeCharTo(objChar)
+{
+	audio_play_sound(UISFX.enterSFX, global.emitterSFX.source, false);
+	cursor = ds_list_find_index(charIconList, objChar.id);
+	for (var i = 0; i < ds_list_size(charIconList); i++)
+	{
+		if (ds_list_find_value(charIconList, i).cursorOn == 1)
+		{
+			ds_list_find_value(charIconList, i).cursorOn = 0;
+			ds_list_find_value(charIconList, i).depth += 1;
+		}
 	}
+	
+	objChar.cursorOn = 1;
+	objChar.depth -= 1;
 }
 
 function fncUIChangeChar()
@@ -40,7 +54,9 @@ function fncUIChangeChar()
 				if (ds_list_find_value(charIconList, i).cursorOn == 1)
 				{
 					ds_list_find_value(charIconList, i).cursorOn = 0;
+					ds_list_find_value(charIconList, i).depth += 1;
 					ds_list_find_value(charIconList, i - 1).cursorOn = 1;
+					ds_list_find_value(charIconList, i - 1).depth -= 1;
 					break;
 				}
 			}
@@ -58,7 +74,9 @@ function fncUIChangeChar()
 				if (ds_list_find_value(charIconList, i).cursorOn == 1)
 				{
 					ds_list_find_value(charIconList, i).cursorOn = 0;
+					ds_list_find_value(charIconList, i).depth += 1;
 					ds_list_find_value(charIconList, i + 1).cursorOn = 1;
+					ds_list_find_value(charIconList, i + 1).depth -= 1;
 					break;
 				}
 			}
