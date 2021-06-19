@@ -74,8 +74,6 @@ function fncStaticInitSoundParams()
 	global.emitterSFX.source = audio_emitter_create();
 	global.emitterBGM.source = audio_emitter_create();
 	
-	global.emitterBGM.volume = 0;
-	
 	audio_emitter_gain(global.emitterSFX.source, global.emitterSFX.volume);
 	audio_emitter_gain(global.emitterBGM.source, global.emitterBGM.volume);
 	

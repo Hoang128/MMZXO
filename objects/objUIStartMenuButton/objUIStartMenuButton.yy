@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Basic menus",
-    "path": "folders/Objects/Visible InGame/UI Menu/Basic menus.yy",
+    "name": "Start",
+    "path": "folders/Objects/Visible InGame/UI Menu/Basic menus/Start.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIStartMenuButton",

@@ -10,6 +10,8 @@ menuParent = noone;
 
 state = 0;
 
+UIButtonImg = noone;
+
 UIButtonSpr =
 {
 	sprNormal		: sprUIButtonN_Normal,
@@ -63,8 +65,11 @@ function fncStaticUIOpenSubMenuAfter(subMenu, time, effectClose, effectOpen, isD
 	obj.time = time;
 	obj.effectClose = effectClose;
 	obj.effectOpen = effectOpen;
-	obj.menuParent = menuParent;
-	obj.menuParentObj = menuParent.object_index;
+	if (menuParent != noone)
+	{
+		obj.menuParent = menuParent;
+		obj.menuParentObj = menuParent.object_index;
+	}
 	
 	objUIManager.UICurrentInUse = noone;
 	
@@ -85,5 +90,8 @@ function fncResetState()
 	{
 		sprite_index = UIButtonSpr.sprResetAnim;
 		image_index = 0;
+		
+		if (menuParent != noone)
+			objUIManager.UICurrentInUse = menuParent.id;
 	}
 }

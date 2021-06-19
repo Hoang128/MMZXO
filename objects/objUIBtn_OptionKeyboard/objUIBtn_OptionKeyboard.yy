@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Buttons",
-    "path": "folders/Objects/Visible InGame/UI Menu/Options menus/Buttons.yy",
+    "path": "folders/Objects/Visible InGame/UI Menu/Options menus/General menu/Buttons.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIBtn_OptionKeyboard",

@@ -229,6 +229,6 @@ switch (phase)
 			closeMenuOpenEffObj = instance_create_depth(x, y, depth, UIAnim.closeMenuOpenEff);
 		}
 		
-		instance_destroy();	
+		instance_destroy();
 	}	break;
 }

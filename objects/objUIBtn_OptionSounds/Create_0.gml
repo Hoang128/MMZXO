@@ -5,3 +5,8 @@
 event_inherited();
 
 UIText.text = "Sounds";
+
+function fncUIHandleSelect()
+{
+	fncStaticUIOpenSubMenuAfter(objUISoundMenu, 2, noone, noone, true);
+}

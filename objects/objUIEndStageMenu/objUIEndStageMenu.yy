@@ -27,8 +27,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Basic menus",
-    "path": "folders/Objects/Visible InGame/UI Menu/Basic menus.yy",
+    "name": "End Stage",
+    "path": "folders/Objects/Visible InGame/UI Menu/End Stage.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIEndStageMenu",

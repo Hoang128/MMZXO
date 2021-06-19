@@ -10,6 +10,7 @@ function fncUIHandleSelect()
 {
 	with (menuParent)
 	{
+		UIControl.goBack = true;
 		fncUICloseMenu();
 	}
 }

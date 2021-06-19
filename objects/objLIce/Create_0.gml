@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+waterInteract = true;
 image_xscale = 0;
 image_yscale = 0;
 scaleSpd = 0.2;

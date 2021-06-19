@@ -36,8 +36,14 @@ switch (phase)
 		if (menu != noone)
 		{
 			var objMenu = instance_create_depth(x, y, depth - 1, menu);
-			objMenu.parentMenu = menuParent;
-			objMenu.parentMenuObj = menuParentObj;
+			if (menuParent != noone)
+			{
+				objMenu.parentMenu = menuParent;
+			}
+			if (menuParentObj != noone)
+			{
+				objMenu.parentMenuObj = menuParentObj;
+			}
 		}
 		instance_destroy();
 	}	break;

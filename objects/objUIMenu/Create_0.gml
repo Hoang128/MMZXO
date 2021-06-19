@@ -51,7 +51,8 @@ UIControl =
 {
 	isEnable : true,
 	fireRateMax : 10,
-	firate : 0
+	firate : 0,
+	goBack : false
 }
 
 UITransPos =

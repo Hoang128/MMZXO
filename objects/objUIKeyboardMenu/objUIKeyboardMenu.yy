@@ -26,8 +26,8 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "Options menus",
-    "path": "folders/Objects/Visible InGame/UI Menu/Options menus.yy",
+    "name": "General menu",
+    "path": "folders/Objects/Visible InGame/UI Menu/Options menus/General menu.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIKeyboardMenu",

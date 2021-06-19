@@ -11,6 +11,7 @@ if (global.roomState == RoomState.STAGE)
 	{
 		fncCreatePlayer(charToStart);
 		instance_create_depth(x, y, depth, objHUDPlayer);
+		instance_create_depth(x, y, depth, objUIBtn_PauseGame);
 	}
 	
 	currentCamera = instance_create_depth(

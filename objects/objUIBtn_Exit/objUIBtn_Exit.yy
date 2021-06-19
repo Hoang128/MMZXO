@@ -27,7 +27,7 @@
   "overriddenProperties": [],
   "parent": {
     "name": "Buttons",
-    "path": "folders/Objects/Visible InGame/UI Menu/Basic menus/Buttons.yy",
+    "path": "folders/Objects/Visible InGame/UI Menu/Basic menus/Start/Buttons.yy",
   },
   "resourceVersion": "1.0",
   "name": "objUIBtn_Exit",

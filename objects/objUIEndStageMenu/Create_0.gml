@@ -4,6 +4,13 @@
 // Inherit the parent event
 event_inherited();
 
+UIAnim.isEnable = false;
+
+UITransPos.isEnable = true;
+UITransPos.UIDiffPosY = 0;
+UITransPos.UIDiffPosX = -540;
+UITransPos.UIMoveSpd = 40;
+
 UIContext.childFont = fontMenuM;
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 256;
@@ -18,42 +25,7 @@ UIBackground.yStart = 0;
 UIBackground.UIWidth = 480;
 UIBackground.UIHeight = 1080;
 
-titleContext = "";
-fncInitUIChildMenuNode("Retry", noone, noone, true, true);
-fncInitUIChildMenuNode("Stage select", noone, noone, true, true);
-fncInitUIChildMenuNode("Return to title screen", noone, noone, true, true);
-
-function fncUIHandleSelect()
-{
-	switch (menuCursor)
-	{
-		case 0:
-		{
-			with(objRoomManager)
-				fncChangeRoomTo(room, true);
-			objUIManager.UICurrentInUse = noone;
-			return true;
-		}	
-		break;
-		
-		case 1:
-		{
-			with(objRoomManager)
-				fncChangeRoomTo(roomStageSelect, true);
-			objUIManager.UICurrentInUse = noone;
-			return true;
-		}	
-		break;
-		
-		case 3:
-		{
-			with(objRoomManager)
-				fncChangeRoomTo(roomStart, true);
-			objUIManager.UICurrentInUse = noone;
-			return true;
-		}	
-		break;
-	}
-	
-	return false;
-}
+titleContext = "Game Over";
+fncInitUIButton(objUIBtn_EndRetry, UIBackground.UIWidth/2, 300);
+fncInitUIButton(objUIBtn_EndStageSelect, UIBackground.UIWidth/2, 420);
+fncInitUIButton(objUIBtn_EndStart, UIBackground.UIWidth/2, 540);

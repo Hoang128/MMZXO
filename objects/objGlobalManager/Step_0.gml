@@ -17,7 +17,9 @@ if (activateCount > 0)
 }
 else
 {
-	fncDeactiveOutsideCamRegion();
-	
+	if (!instance_exists(objUIPauseScreen))
+	{
+		fncDeactiveOutsideCamRegion();
+	}
 	activateCount = activateMaxCount;
 }

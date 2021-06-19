@@ -8,5 +8,5 @@ UIText.text = "Option";
 
 function fncUIHandleSelect()
 {
-	fncStaticUIOpenSubMenuAfter(objUIOptionMenuButton, 2, noone, noone, true);
+	fncStaticUIOpenSubMenuAfter(objUIOptionGeneralMenu, 2, noone, noone, true);
 }
