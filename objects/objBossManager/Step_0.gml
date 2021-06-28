@@ -26,6 +26,10 @@ switch (state)
 	
 	case bossFightState.FIGHT:
 	{
+		if (boss == noone)
+		{
+			fncChangeToEndCutsceneState();
+		}
 	}	break;
 	
 	case bossFightState.END_CUTSCENE:

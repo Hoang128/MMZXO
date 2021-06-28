@@ -22,6 +22,42 @@ fncInitUIChildMenuNode("Damage got: ", noone, objUIScoreDamageGotIndexer, true, 
 fncInitUIChildMenuNode("Enemies eliminated: ", noone, objUIScoreEnemiesDestroyed, true, false);
 fncInitUIChildMenuNode("Total score: ", noone, objUIScoreTotalIndexer, true, false);
 
+function fncSaveData()
+{
+	with (objSaveDataManager)
+	{
+		switch (objRoomManager.lastStage)
+		{
+			case RoomStartStage:
+			{
+				if (currentPlayerData.stageScore.stage_0.highestScore < other.resultData.totalScore)
+					currentPlayerData.stageScore.stage_0.highestScore = other.resultData.totalScore;
+				currentPlayerData.stageScore.stage_1.active = 1;
+				currentPlayerData.stageScore.stage_2.active = 1;
+			}	break;
+		
+			case RoomElecStage:
+			{
+				if (currentPlayerData.stageScore.stage_1.highestScore < other.resultData.totalScore)
+					currentPlayerData.stageScore.stage_1.highestScore = other.resultData.totalScore;
+				currentPlayerData.modelUnlock.modelH.isActived = 1;
+			}	break;
+		
+			case RoomIceStage:
+			{
+				if (currentPlayerData.stageScore.stage_2.highestScore < other.resultData.totalScore)
+					currentPlayerData.stageScore.stage_2.highestScore = other.resultData.totalScore;
+				currentPlayerData.modelUnlock.modelL.isActived = 1;
+			}	break;
+		}
+		
+		fncSaveGameDataSlot(playSlot);
+		fncSaveGameData();
+		fncLoadGameData();
+		fncLoadGameDataSlot(playSlot);
+	}
+}
+
 function fncUIExit()
 {
 	if (keyboard_check_pressed(vk_anykey))

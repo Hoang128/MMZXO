@@ -123,6 +123,8 @@ function fncUISelectStage()
 	with (ds_list_find_value(stageIconList, cursor))
 	{
 		stage = stageRoom;
+		global.playerStartPosition.x = stageStartPlace.x; 
+		global.playerStartPosition.y = stageStartPlace.y;
 	}
 		
 	with instance_create_depth(x, y, depth, objUICharSelectMenu)

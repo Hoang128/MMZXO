@@ -4,6 +4,8 @@
 // Inherit the parent event
 event_inherited();
 
+lastStage = noone;
+
 roomInfo =
 {
 	roomId : noone

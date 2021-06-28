@@ -8,25 +8,25 @@
   "collisionTolerance": 0,
   "swfPrecision": 2.525,
   "bbox_left": 0,
-  "bbox_right": 0,
+  "bbox_right": 5159,
   "bbox_top": 0,
-  "bbox_bottom": 0,
+  "bbox_bottom": 575,
   "HTile": false,
   "VTile": false,
   "For3D": false,
-  "width": 64,
-  "height": 64,
+  "width": 5160,
+  "height": 576,
   "textureGroupId": {
     "name": "texgroupUnused",
     "path": "texturegroups/texgroupUnused",
   },
   "swatchColours": null,
-  "gridX": 0,
-  "gridY": 0,
+  "gridX": 8,
+  "gridY": 8,
   "frames": [
-    {"compositeImage":{"FrameId":{"name":"668e1e83-dda5-4550-bc63-f9a40e92d833","path":"sprites/Sprite281/Sprite281.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
-        {"FrameId":{"name":"668e1e83-dda5-4550-bc63-f9a40e92d833","path":"sprites/Sprite281/Sprite281.yy",},"LayerId":{"name":"7e663ad4-08f4-4971-9e45-3cb8d5eb6157","path":"sprites/Sprite281/Sprite281.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
-      ],"parent":{"name":"Sprite281","path":"sprites/Sprite281/Sprite281.yy",},"resourceVersion":"1.0","name":"668e1e83-dda5-4550-bc63-f9a40e92d833","tags":[],"resourceType":"GMSpriteFrame",},
+    {"compositeImage":{"FrameId":{"name":"12e506b5-f48a-4392-a9ae-cdb6467fc868","path":"sprites/Sprite281/Sprite281.yy",},"LayerId":null,"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},"images":[
+        {"FrameId":{"name":"12e506b5-f48a-4392-a9ae-cdb6467fc868","path":"sprites/Sprite281/Sprite281.yy",},"LayerId":{"name":"4f107361-0e15-4131-91b3-6e4f1aeef04e","path":"sprites/Sprite281/Sprite281.yy",},"resourceVersion":"1.0","name":"","tags":[],"resourceType":"GMSpriteBitmap",},
+      ],"parent":{"name":"Sprite281","path":"sprites/Sprite281/Sprite281.yy",},"resourceVersion":"1.0","name":"12e506b5-f48a-4392-a9ae-cdb6467fc868","tags":[],"resourceType":"GMSpriteFrame",},
   ],
   "sequence": {
     "spriteId": {"name":"Sprite281","path":"sprites/Sprite281/Sprite281.yy",},
@@ -41,7 +41,7 @@
     "moments": {"Keyframes":[],"resourceVersion":"1.0","resourceType":"KeyframeStore<MomentsEventKeyframe>",},
     "tracks": [
       {"name":"frames","spriteId":null,"keyframes":{"Keyframes":[
-            {"id":"b3b3b868-2250-4a3a-ac89-8d7a9171f261","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"668e1e83-dda5-4550-bc63-f9a40e92d833","path":"sprites/Sprite281/Sprite281.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
+            {"id":"543d3e61-11fe-4c39-afd4-28d4d1bd66fc","Key":0.0,"Length":1.0,"Stretch":false,"Disabled":false,"IsCreationKey":false,"Channels":{"0":{"Id":{"name":"12e506b5-f48a-4392-a9ae-cdb6467fc868","path":"sprites/Sprite281/Sprite281.yy",},"resourceVersion":"1.0","resourceType":"SpriteFrameKeyframe",},},"resourceVersion":"1.0","resourceType":"Keyframe<SpriteFrameKeyframe>",},
           ],"resourceVersion":"1.0","resourceType":"KeyframeStore<SpriteFrameKeyframe>",},"trackColour":0,"inheritsTrackColour":true,"builtinName":0,"traits":0,"interpolation":1,"tracks":[],"events":[],"modifiers":[],"isCreationTrack":false,"resourceVersion":"1.0","tags":[],"resourceType":"GMSpriteFramesTrack",},
     ],
     "visibleRange": null,
@@ -65,12 +65,12 @@
     "resourceType": "GMSequence",
   },
   "layers": [
-    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"7e663ad4-08f4-4971-9e45-3cb8d5eb6157","tags":[],"resourceType":"GMImageLayer",},
+    {"visible":true,"isLocked":false,"blendMode":0,"opacity":100.0,"displayName":"default","resourceVersion":"1.0","name":"4f107361-0e15-4131-91b3-6e4f1aeef04e","tags":[],"resourceType":"GMImageLayer",},
   ],
   "nineSlice": null,
   "parent": {
-    "name": "Sprites",
-    "path": "folders/Sprites.yy",
+    "name": "Forest",
+    "path": "folders/Sprites/Stage Tilesets/Forest.yy",
   },
   "resourceVersion": "1.0",
   "name": "Sprite281",

@@ -7,24 +7,45 @@ switch (iconPhase)
 	//Setup phase
 	case 0:
 	{
-		for (var i = 0; i < 6; i++)
+		for (var i = 0; i < 3; i++)
 		{
-			var objIcon = instance_create_depth(x, y, depth, objUIStageIcon)
-			with (objIcon)
+			var createIcon = false;
+			switch(i)
 			{
-				menuParent = other;
-				indexPoint.x = other.stageIconStart.x + i * (other.stageIconWidth + other.stageIconSpace);
-				indexPoint.y = other.stageIconStart.y;
-				x = other.startDrawPoint.x + indexPoint.x;
-				y = other.startDrawPoint.y + indexPoint.y;
-				startPoint.x = x;
-				startPoint.y = y;
-				stageBossId = i;
-				if (i == 0)
-					objIcon.cursorOn = 1;
+				case 0:
+				{
+					createIcon = true;
+				}	break;
+				case 1:
+				{
+					if (objSaveDataManager.currentPlayerData.stageScore.stage_1.active)
+						createIcon = true;
+				}	break;
+				case 2:
+				{
+					if (objSaveDataManager.currentPlayerData.stageScore.stage_2.active)
+						createIcon = true;
+				}	break;
 			}
+			if (createIcon)
+			{
+				var objIcon = instance_create_depth(x, y, depth, objUIStageIcon)
+				with (objIcon)
+				{
+					menuParent = other;
+					indexPoint.x = other.stageIconStart.x + i * (other.stageIconWidth + other.stageIconSpace);
+					indexPoint.y = other.stageIconStart.y;
+					x = other.startDrawPoint.x + indexPoint.x;
+					y = other.startDrawPoint.y + indexPoint.y;
+					startPoint.x = x;
+					startPoint.y = y;
+					stageBossId = i;
+					if (i == 0)
+						objIcon.cursorOn = 1;
+				}
 			
-			ds_list_add(stageIconList, objIcon.id);
+				ds_list_add(stageIconList, objIcon.id);
+			}
 		}
 		iconPhase = 1;
 	}	break;

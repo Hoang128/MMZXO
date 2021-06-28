@@ -1,0 +1,1 @@
+scrStaticInitRoom(RoomState.STAGE);

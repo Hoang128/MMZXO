@@ -8,7 +8,9 @@ menuParent = noone;
 stageBossSprite = sprMShotBoss;
 stageBossId = 0;
 stageRoom = roomTest;
+stageStartPlace = {x : 0, y : 0};
 cursorOn = false;
+iconInited = false;
 
 indexPoint = {x : 0, y : 0};
 startPoint = {x : 0, y : 0};

@@ -3,7 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
-
+fncSaveData();
 with (objRoomManager)
 {
 	fncChangeRoomTo(roomStageSelect, true);

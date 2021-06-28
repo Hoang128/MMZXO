@@ -108,7 +108,10 @@ function fncStaticPlayerTeleUp()
 function fncStaticGoToScoreRoom()
 {
 	with (objRoomManager)
+	{
+		lastStage = room;
 		fncChangeRoomTo(roomScore);
+	}
 }
 
 #endregion

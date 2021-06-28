@@ -5,7 +5,7 @@
 event_inherited();
 DerpXml_Init();
 
-saveSlotNumber = 6;
+saveSlotNumber = 1;
 fileSavePath = "saveData.xml";
 fileConfigPath = "configData.xml";
 fileSaveDataList = array_create(saveSlotNumber, noone);
@@ -91,33 +91,39 @@ SaveSlotData = function(_slotId) constructor
 	{
 		stage_0:
 		{
-			stageName : "Air Craft",
-			highestScore : 0
+			stageName : "Forest",
+			highestScore : 0,
+			active : 1
 		},
 		stage_1:
 		{
 			stageName : "Ruined Power Plant",
-			highestScore : 0
+			highestScore : 0,
+			active : 0
 		},
 		stage_2:
 		{
-			stageName : "Volcano",
-			highestScore : 0
+			stageName : "Ice Lake",
+			highestScore : 0,
+			active : 0
 		},
 		stage_3:
 		{
-			stageName : "Forest",
-			highestScore : 0
+			stageName : "Volcano",
+			highestScore : 0,
+			active : 0
 		},
 		stage_4:
 		{
-			stageName : "Ice Lake",
-			highestScore : 0
+			stageName : "Air Craft",
+			highestScore : 0,
+			active : 0
 		},
 		stage_5:
 		{
 			stageName : "Evil Base",
-			highestScore : 0
+			highestScore : 0,
+			active : 0
 		}
 	};
 }
@@ -503,6 +509,7 @@ function fncSaveGameData()
 				DerpXmlWrite_OpenTag("stage");
 				DerpXmlWrite_Attribute("id", 0);
 				DerpXmlWrite_Attribute("name", string(fileSaveDataList[i].stageScore.stage_0.stageName));
+				DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].stageScore.stage_0.active));
 				
 					DerpXmlWrite_Text(string(fileSaveDataList[i].stageScore.stage_0.highestScore));
 					
@@ -511,6 +518,7 @@ function fncSaveGameData()
 				DerpXmlWrite_OpenTag("stage");
 				DerpXmlWrite_Attribute("id", 1);
 				DerpXmlWrite_Attribute("name", string(fileSaveDataList[i].stageScore.stage_1.stageName));
+				DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].stageScore.stage_1.active));
 				
 					DerpXmlWrite_Text(string(fileSaveDataList[i].stageScore.stage_1.highestScore));
 					
@@ -519,6 +527,7 @@ function fncSaveGameData()
 				DerpXmlWrite_OpenTag("stage");
 				DerpXmlWrite_Attribute("id", 2);
 				DerpXmlWrite_Attribute("name", string(fileSaveDataList[i].stageScore.stage_2.stageName));
+				DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].stageScore.stage_2.active));
 				
 					DerpXmlWrite_Text(string(fileSaveDataList[i].stageScore.stage_2.highestScore));
 					
@@ -527,6 +536,7 @@ function fncSaveGameData()
 				DerpXmlWrite_OpenTag("stage");
 				DerpXmlWrite_Attribute("id", 3);
 				DerpXmlWrite_Attribute("name", string(fileSaveDataList[i].stageScore.stage_3.stageName));
+				DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].stageScore.stage_3.active));
 				
 					DerpXmlWrite_Text(string(fileSaveDataList[i].stageScore.stage_3.highestScore));
 					
@@ -535,6 +545,7 @@ function fncSaveGameData()
 				DerpXmlWrite_OpenTag("stage");
 				DerpXmlWrite_Attribute("id", 4);
 				DerpXmlWrite_Attribute("name", string(fileSaveDataList[i].stageScore.stage_4.stageName));
+				DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].stageScore.stage_4.active));
 				
 					DerpXmlWrite_Text(string(fileSaveDataList[i].stageScore.stage_4.highestScore));
 					
@@ -543,6 +554,7 @@ function fncSaveGameData()
 				DerpXmlWrite_OpenTag("stage");
 				DerpXmlWrite_Attribute("id", 5);
 				DerpXmlWrite_Attribute("name", string(fileSaveDataList[i].stageScore.stage_5.stageName));
+				DerpXmlWrite_Attribute("active", string(fileSaveDataList[i].stageScore.stage_5.active));
 				
 					DerpXmlWrite_Text(string(fileSaveDataList[i].stageScore.stage_5.highestScore));
 					
