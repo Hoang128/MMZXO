@@ -156,6 +156,11 @@ function fncOnEnemyDestroy()
 		}
 	}
 	
+	if (!bullet)
+	{
+		instance_create_depth(x, y, depth, objItemGenerator);
+	}
+	
 	if (instance_exists(objScoreMgr))
 	{
 		if (hp <= 0)

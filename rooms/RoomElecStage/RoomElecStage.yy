@@ -174,6 +174,7 @@
             {"properties":[],"isDnd":false,"objectId":{"name":"objS_GunTrooper","path":"objects/objS_GunTrooper/objS_GunTrooper.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":1912.0,"y":72.0,"resourceVersion":"1.0","name":"inst_73C97EF7","tags":[],"resourceType":"GMRInstance",},
             {"properties":[],"isDnd":false,"objectId":{"name":"objE_EvilBat","path":"objects/objE_EvilBat/objE_EvilBat.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2800.0,"y":456.0,"resourceVersion":"1.0","name":"inst_23A59A4","tags":[],"resourceType":"GMRInstance",},
             {"properties":[],"isDnd":false,"objectId":{"name":"objE_EvilBat","path":"objects/objE_EvilBat/objE_EvilBat.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":2848.0,"y":456.0,"resourceVersion":"1.0","name":"inst_24E50151","tags":[],"resourceType":"GMRInstance",},
+            {"properties":[],"isDnd":false,"objectId":{"name":"objHpEnergyM","path":"objects/objHpEnergyM/objHpEnergyM.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":1.0,"scaleY":1.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":26.0,"y":131.0,"resourceVersion":"1.0","name":"inst_437DAFF5","tags":[],"resourceType":"GMRInstance",},
           ],"visible":true,"depth":0,"userdefinedDepth":true,"inheritLayerDepth":false,"inheritLayerSettings":false,"gridX":8,"gridY":8,"layers":[],"hierarchyFrozen":false,"resourceVersion":"1.0","name":"Visible","tags":[],"resourceType":"GMRInstanceLayer",},
         {"instances":[
             {"properties":[],"isDnd":false,"objectId":{"name":"objLockCamVZone","path":"objects/objLockCamVZone/objLockCamVZone.yy",},"inheritCode":false,"hasCreationCode":false,"colour":4294967295,"rotation":0.0,"scaleX":15.25,"scaleY":3.0,"imageIndex":0,"imageSpeed":1.0,"inheritedItemId":null,"frozen":false,"ignore":false,"inheritItemSettings":false,"x":0.0,"y":16.0,"resourceVersion":"1.0","name":"inst_51AC217F","tags":[],"resourceType":"GMRInstance",},
@@ -865,6 +866,7 @@
     {"name":"inst_73C97EF7","path":"rooms/RoomElecStage/RoomElecStage.yy",},
     {"name":"inst_23A59A4","path":"rooms/RoomElecStage/RoomElecStage.yy",},
     {"name":"inst_24E50151","path":"rooms/RoomElecStage/RoomElecStage.yy",},
+    {"name":"inst_437DAFF5","path":"rooms/RoomElecStage/RoomElecStage.yy",},
   ],
   "inheritCreationOrder": false,
   "sequenceId": null,

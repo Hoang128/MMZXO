@@ -12,6 +12,8 @@ waitShotLong = 10;
 rapidMax = 3;
 shotAnimWaitMax = 20;
 flareShotTimeMax = 0.5;
+mpCharge1 = 2;
+mpCharge2 = 0;
 
 dashSlashAccUp = 2;
 
@@ -220,72 +222,76 @@ function fncPerformChargeWeapon1()
 {
 	if (chargeWp1.Current >= chargeWp1.Max)
 	{
-		switch (playerStateMachine.currentState.object_index)
+		if (wp >= mpCharge1)
 		{
-			case objPlayerStateRun:
-			case objPlayerStateIdle:
+			wp -= mpCharge1;
+			switch (playerStateMachine.currentState.object_index)
 			{
-				with(playerStateMachine)
-				{
-					fncStateChange(objPlayerStateZXSlashChargeGround);	
-					return;
-				}
-			}	break;
-			
-			case objPlayerStateJump:
-			{
-				with(playerStateMachine)
-				{
-					var currentDashJump = currentState.dashJump;
-					fncStateChange(objPlayerStateZXSlashChargeJump);	
-					currentState.dashJump = currentDashJump;
-					return;
-				}
-			}	break;
-			
-			case objPlayerStateDash:
-			{
-				with(playerStateMachine)
-				{
-					if (currentState.airDash)
-						fncStateChange(objPlayerStateZXSlashChargeJump);	
-					else
-						fncStateChange(objPlayerStateZXSlashChargeGround);	
-					return;
-				}
-			}	break;
-			
-			case objPlayerStateSlide:
-			{
-				var startFrame = image_index;
-				if (sprite_index == sprPlayer.sprSlide)
-						startFrame = 4;
-				with(playerStateMachine)
-				{
-					var currentDustEff = noone;
-				
-					if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
-						currentDustEff = currentState.slideEff;
-				
-					currentState.transToSlideState = true;
-					fncStateChange(objPlayerStateZXSlashChargeSlide);
-					currentState.startFrame = startFrame;
-					currentState.slideEff = currentDustEff;
-					return;
-				}
-			}	break;
-			
-			case objPlayerStateClimb:
-			{
-				if (sprite_index == sprPlayer.sprClimb)
+				case objPlayerStateRun:
+				case objPlayerStateIdle:
 				{
 					with(playerStateMachine)
 					{
-						fncStateChange(objPlayerStateZXSlashChargeClimb);	
+						fncStateChange(objPlayerStateZXSlashChargeGround);	
 						return;
 					}
-				}
-			}	break;
+				}	break;
+			
+				case objPlayerStateJump:
+				{
+					with(playerStateMachine)
+					{
+						var currentDashJump = currentState.dashJump;
+						fncStateChange(objPlayerStateZXSlashChargeJump);	
+						currentState.dashJump = currentDashJump;
+						return;
+					}
+				}	break;
+			
+				case objPlayerStateDash:
+				{
+					with(playerStateMachine)
+					{
+						if (currentState.airDash)
+							fncStateChange(objPlayerStateZXSlashChargeJump);	
+						else
+							fncStateChange(objPlayerStateZXSlashChargeGround);	
+						return;
+					}
+				}	break;
+			
+				case objPlayerStateSlide:
+				{
+					var startFrame = image_index;
+					if (sprite_index == sprPlayer.sprSlide)
+							startFrame = 4;
+					with(playerStateMachine)
+					{
+						var currentDustEff = noone;
+				
+						if ((currentState.slideEff != noone) && instance_exists(currentState.slideEff))
+							currentDustEff = currentState.slideEff;
+				
+						currentState.transToSlideState = true;
+						fncStateChange(objPlayerStateZXSlashChargeSlide);
+						currentState.startFrame = startFrame;
+						currentState.slideEff = currentDustEff;
+						return;
+					}
+				}	break;
+			
+				case objPlayerStateClimb:
+				{
+					if (sprite_index == sprPlayer.sprClimb)
+					{
+						with(playerStateMachine)
+						{
+							fncStateChange(objPlayerStateZXSlashChargeClimb);	
+							return;
+						}
+					}
+				}	break;
+			}
 		}
 	}
 }
@@ -315,29 +321,32 @@ function fncPerformWeapon2()
 
 function fncPerformChargeWeapon2()
 {
-	if (weaponMeleeMgr.weaponSlash == noone)
+	if (wp >= mpCharge2)
 	{
-		if (canShot == 1)
+		if (weaponMeleeMgr.weaponSlash == noone)
 		{
-			flareShotPhase = 1;
-			shotAnimPhase = 1;
-			flareShotTime = flareShotTimeMax;
-			fncChangeMoveSpriteToShot(1);
-			if (chargeWp2.Current < chargeWp2.Max)
+			if (canShot == 1)
 			{
-				var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
-				busterCreater.buster = objZXBusterC1;
-				busterCreater.core = self.id;
+				wp -= mpCharge2;
+				flareShotPhase = 1;
+				shotAnimPhase = 1;
+				flareShotTime = flareShotTimeMax;
+				fncChangeMoveSpriteToShot(1);
+				if (chargeWp2.Current < chargeWp2.Max)
+				{
+					var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+					busterCreater.buster = objZXBusterC1;
+					busterCreater.core = self.id;
+				}
+				else if (chargeWp2.Current >= chargeWp2.Max)
+				{
+					var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
+					busterCreater.buster = objZXBusterC2;
+					busterCreater.core = self.id;
+				}
+				canShot = -waitShotLong;
 			}
-			else if (chargeWp2.Current >= chargeWp2.Max)
-			{
-				var busterCreater = instance_create_depth(x, y, depth, objZXBusterCreater);
-				busterCreater.buster = objZXBusterC2;
-				busterCreater.core = self.id;
-			}
-			canShot = -waitShotLong;
 		}
-		
 	}
 }
 

@@ -282,173 +282,181 @@ function fncPerformWeapon2()
 
 function fncPerformChargeWeapon1()
 {
-	if (chargeWp1.Current >= chargeWp1.Max)
+	if (wp >= mpCharge1)
 	{
-		switch (playerStateMachine.currentState.object_index)
+		wp -= mpCharge1;
+		if (chargeWp1.Current >= chargeWp1.Max)
 		{
-			case objPlayerStateRun:
-			case objPlayerStateIdle:
+			switch (playerStateMachine.currentState.object_index)
 			{
-				with(playerStateMachine)
+				case objPlayerStateRun:
+				case objPlayerStateIdle:
 				{
-					fncStateChange(objPlayerStateHSlashH);	
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
-			
-			case objPlayerStateDash:
-			{
-				with(playerStateMachine)
-				{
-					if (currentState.airDash)
-						fncStateChange(objPlayerStateHSlashJump);	
-					else
+					with(playerStateMachine)
+					{
 						fncStateChange(objPlayerStateHSlashH);	
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateJump:
-			case objPlayerStateWallKick:
-			{
-				with(playerStateMachine)
+				case objPlayerStateDash:
 				{
-					var currentDashJump = currentState.dashJump;
-					fncStateChange(objPlayerStateHSlashJump);	
-					currentState.dashJump = currentDashJump;
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						if (currentState.airDash)
+							fncStateChange(objPlayerStateHSlashJump);	
+						else
+							fncStateChange(objPlayerStateHSlashH);	
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateHBoostUp:
-			{
-				with(playerStateMachine)
+				case objPlayerStateJump:
+				case objPlayerStateWallKick:
 				{
-					fncStateChange(objPlayerStateHSlashBoostUp);	
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						var currentDashJump = currentState.dashJump;
+						fncStateChange(objPlayerStateHSlashJump);	
+						currentState.dashJump = currentDashJump;
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateSlide:
-			{
-				with(playerStateMachine)
+				case objPlayerStateHBoostUp:
 				{
-					fncStateChange(objPlayerStateHSlashSlide);	
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashBoostUp);	
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateClimb:
-			{
-				with(playerStateMachine)
+				case objPlayerStateSlide:
 				{
-					fncStateChange(objPlayerStateHSlashClimb);	
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashSlide);	
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateHHover:
-			{
-				with(playerStateMachine)
+				case objPlayerStateClimb:
 				{
-					fncStateChange(objPlayerStateHSlashHover);	
-					currentState.createCyclone = 1;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashClimb);	
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
+			
+				case objPlayerStateHHover:
+				{
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashHover);	
+						currentState.createCyclone = 1;
+					}
+					return;
+				}	break;
+			}
 		}
 	}
 }
 
 function fncPerformChargeWeapon2()
 {
-	if (weaponMeleeMgr.weaponSlash == noone)
+	if (wp >= mpCharge2)
 	{
-		switch (playerStateMachine.currentState.object_index)
+		wp -= mpCharge2;
+		if (weaponMeleeMgr.weaponSlash == noone)
 		{
-			case objPlayerStateRun:
-			case objPlayerStateIdle:
+			switch (playerStateMachine.currentState.object_index)
 			{
-				with(playerStateMachine)
+				case objPlayerStateRun:
+				case objPlayerStateIdle:
 				{
-					fncStateChange(objPlayerStateHSlashV);	
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
-			
-			case objPlayerStateDash:
-			{
-				with(playerStateMachine)
-				{
-					if (currentState.airDash)
-						fncStateChange(objPlayerStateHSlashJump);	
-					else
+					with(playerStateMachine)
+					{
 						fncStateChange(objPlayerStateHSlashV);	
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
+			
+				case objPlayerStateDash:
+				{
+					with(playerStateMachine)
+					{
+						if (currentState.airDash)
+							fncStateChange(objPlayerStateHSlashJump);	
+						else
+							fncStateChange(objPlayerStateHSlashV);	
 						
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateJump:
-			case objPlayerStateWallKick:
-			{
-				with(playerStateMachine)
+				case objPlayerStateJump:
+				case objPlayerStateWallKick:
 				{
-					var currentDashJump = currentState.dashJump;
-					fncStateChange(objPlayerStateHSlashJump);	
-					currentState.dashJump = currentDashJump;
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						var currentDashJump = currentState.dashJump;
+						fncStateChange(objPlayerStateHSlashJump);	
+						currentState.dashJump = currentDashJump;
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateHBoostUp:
-			{
-				with(playerStateMachine)
+				case objPlayerStateHBoostUp:
 				{
-					fncStateChange(objPlayerStateHSlashBoostUp);	
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashBoostUp);	
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateSlide:
-			{
-				with(playerStateMachine)
+				case objPlayerStateSlide:
 				{
-					fncStateChange(objPlayerStateHSlashSlide);	
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashSlide);	
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateClimb:
-			{
-				with(playerStateMachine)
+				case objPlayerStateClimb:
 				{
-					fncStateChange(objPlayerStateHSlashClimb);	
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashClimb);	
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
 			
-			case objPlayerStateHHover:
-			{
-				with(playerStateMachine)
+				case objPlayerStateHHover:
 				{
-					fncStateChange(objPlayerStateHSlashHover);	
-					currentState.createCyclone = 2;
-				}
-				return;
-			}	break;
+					with(playerStateMachine)
+					{
+						fncStateChange(objPlayerStateHSlashHover);	
+						currentState.createCyclone = 2;
+					}
+					return;
+				}	break;
+			}
 		}
 	}
 }

@@ -7,7 +7,7 @@ switch (phase)
 		switch (boss.object_index)
 		{
 			case objE_HellBatSchilt:
-				avatarImg = 4;
+				avatarImg = 1;
 				break;
 			case objE_ChildreInarabitta:
 				avatarImg = 2;
@@ -30,7 +30,7 @@ switch (phase)
 	{
 		if (instance_exists(boss))
 		{
-			if (boss.hp != hp)
+			if (ceil(boss.hp) != hp)
 			{
 				if (animateTime > 0)
 				{
@@ -38,7 +38,7 @@ switch (phase)
 				}
 				else
 				{
-					hp += sign(boss.hp - hp);
+					hp += sign(ceil(boss.hp) - hp);
 					animateTime = animateTimeMax;
 				}
 			}

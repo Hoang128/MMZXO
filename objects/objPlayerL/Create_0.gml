@@ -68,12 +68,20 @@ function fncPerformWeapon2()
 
 function fncPerformChargeWeapon1()
 {
-	fncPerformSlash(true, true);
+	if (wp >= mpCharge1)
+	{
+		wp -= mpCharge1;
+		fncPerformSlash(true, true);
+	}
 }
 
 function fncPerformChargeWeapon2()
 {
-	fncPerformSlash(false, true);
+	if (wp >= mpCharge2)
+	{
+		wp -= mpCharge2;
+		fncPerformSlash(false, true);
+	}
 }
 
 function fncPerformSlash(isAttack1, isCharged)

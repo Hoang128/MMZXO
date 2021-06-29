@@ -19,30 +19,40 @@ switch (phase)
 	{
 		if (instance_exists(objGlobalManager.currentPlayer))
 		{
-			if (objGlobalManager.currentPlayer.hp != hp)
+			if (objGlobalManager.currentPlayer.hp != realHp)
 			{
-				if (animateTimeHp > 0)
-				{
-					animateTimeHp--;
-				}
-				else
-				{
-					hp += sign(objGlobalManager.currentPlayer.hp - hp);
-					animateTimeHp = animateTimeMax;
-				}
+				realHp = objGlobalManager.currentPlayer.hp;
 			}
 			
-			if (objGlobalManager.currentPlayer.wp != wp)
+			if (objGlobalManager.currentPlayer.wp != realWp)
 			{
-				if (animateTimeWp > 0)
-				{
-					animateTimeWp--;
-				}
-				else
-				{
-					wp += sign(objGlobalManager.currentPlayer.wp - wp);
-					animateTimeWp = animateTimeMax;
-				}
+				realWp = objGlobalManager.currentPlayer.wp;
+			}
+		}
+		
+		if (hp != realHp)
+		{
+			if (animateTimeHp > 0)
+			{
+				animateTimeHp--;
+			}
+			else
+			{
+				hp += sign(realHp - hp);
+				animateTimeHp = animateTimeMax;
+			}
+		}
+		
+		if (wp != realWp)
+		{
+			if (animateTimeWp > 0)
+			{
+				animateTimeWp--;
+			}
+			else
+			{
+				wp += sign(realWp - wp);
+				animateTimeWp = animateTimeMax;
 			}
 		}
 	}	break;
