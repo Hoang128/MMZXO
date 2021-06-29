@@ -13,14 +13,14 @@ if (!iconInited)
 		case 1:
 		{
 			stageRoom = RoomElecStage;
-			stageStartPlace.x = 0;
-			stageStartPlace.y = 0;
+			stageStartPlace.x = 72;
+			stageStartPlace.y = 160;
 		}	break;
 		case 2:
 		{
 			stageRoom = roomTest;
-			stageStartPlace.x = 400;
-			stageStartPlace.y = 200;
+			stageStartPlace.x = 200;
+			stageStartPlace.y = 100;
 		}	break;
 	}
 	iconInited = true;

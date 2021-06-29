@@ -21,6 +21,25 @@ fncInitUIChildMenuNode("Time: ", noone, objUIScoreTimeIndexer, true, false);
 fncInitUIChildMenuNode("Damage got: ", noone, objUIScoreDamageGotIndexer, true, false);
 fncInitUIChildMenuNode("Enemies eliminated: ", noone, objUIScoreEnemiesDestroyed, true, false);
 fncInitUIChildMenuNode("Total score: ", noone, objUIScoreTotalIndexer, true, false);
+switch (objRoomManager.lastStage)
+{
+	case RoomStartStage:
+	{
+		fncInitUIChildMenuNode("You unlocked new stages! check in stage select", noone, noone, true, false);
+	}	break;
+		
+	case RoomElecStage:
+	{
+		fncInitUIChildMenuNode("You unlocked new form! check in stage select", noone, noone, true, false);
+	}	break;
+		
+	case RoomIceStage:
+	{
+		fncInitUIChildMenuNode("You unlocked new form! check in stage select", noone, noone, true, false);
+	}	break;
+}
+
+fncInitUIChildMenuNode("Click or press any key to skip animation", noone, noone, true, true);
 
 function fncSaveData()
 {
@@ -60,7 +79,7 @@ function fncSaveData()
 
 function fncUIExit()
 {
-	if (keyboard_check_pressed(vk_anykey))
+	if (keyboard_check_pressed(vk_anykey) || device_mouse_check_button_released(0, mb_any))
 	{
 		if (scoreDisplayState == 4)
 		{

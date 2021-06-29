@@ -38,7 +38,6 @@ function fncPlayerWallKickStart()
 		physic.gravAffect = false;
 		other.wallKickTimeH = wallKickTimeHMax;
 		airDashCount = airDashCountMax;
-		jumpTime = jumpTimeMax;
 		
 		vspd = -wallKickSpd;
 		hspd = 0;

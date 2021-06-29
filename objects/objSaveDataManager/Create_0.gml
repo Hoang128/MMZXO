@@ -224,7 +224,25 @@ function fncLoadGameData()
 					case "stage":
 					{
 						currentStage = real(DerpXmlRead_CurGetAttribute("id"));	
-					}
+						switch (currentStage)
+						{
+							case 0:
+							{
+								fileSaveDataList[currentSlot].stageScore.stage_0.active = real(DerpXmlRead_CurGetAttribute("active"));
+								fileSaveDataList[currentSlot].stageScore.stage_0.stageName = string(DerpXmlRead_CurGetAttribute("name"));
+							}	break;
+							case 1:
+							{
+								fileSaveDataList[currentSlot].stageScore.stage_1.active = real(DerpXmlRead_CurGetAttribute("active"));
+								fileSaveDataList[currentSlot].stageScore.stage_1.stageName = string(DerpXmlRead_CurGetAttribute("name"));
+							}	break;
+							case 2:
+							{
+								fileSaveDataList[currentSlot].stageScore.stage_2.active = real(DerpXmlRead_CurGetAttribute("active"));
+								fileSaveDataList[currentSlot].stageScore.stage_2.stageName = string(DerpXmlRead_CurGetAttribute("name"));
+							}	break;
+						}
+					}	break;
 				}
 			}	break;
 			

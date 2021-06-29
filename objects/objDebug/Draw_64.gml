@@ -12,7 +12,7 @@ if (global.debug)
 		draw_text(4, 48, "player spd = (" + string(objGlobalManager.currentPlayer.hspd) + ", " + string(objGlobalManager.currentPlayer.vspd));
 		draw_text(4, 72, "player moveDir = (" + string(objGlobalManager.currentPlayer.hMove) + ", " + string(objGlobalManager.currentPlayer.vMove));
 		draw_text(4, 96, "charge current 1 = " + string(objGlobalManager.currentPlayer.chargeWp1.Current));
-		draw_text(4, 120, "charge current 2 = " + string(objGlobalManager.currentPlayer.chargeWp2.Current));
+		draw_text(4, 120, "jump time = " + string(objGlobalManager.currentPlayer.jumpTime));
 		draw_text(4, 144, "state object number = " + string(instance_number(objState)));
 		draw_text(4, 168, "state machine number = " + string(instance_number(objStateMachine)));
 		draw_text(4, 192, "envi ratio = " + string(objGlobalManager.currentPlayer.physic.enviMoveRatio));

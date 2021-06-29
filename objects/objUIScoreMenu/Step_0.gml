@@ -6,6 +6,60 @@ event_inherited();
 
 if (phase == 3)
 {
+	if (keyboard_check_pressed(vk_anykey) || device_mouse_check_button_released(0, mb_any))
+	{
+		if (scoreDisplayState < 4)
+		{
+			ds_list_find_value(childMenuNodeList, 0).contextVisible = true;
+			with (timeElapsedContext)
+			{
+				UIContext.isVisible = true;
+				fncUIUpdateContext(other.resultData.timeElapsed);
+			}
+			ds_list_find_value(childMenuNodeList, 1).contextVisible = true;
+			with (dmgGotContext)
+			{
+				UIContext.isVisible = true;
+				fncUIUpdateContext(other.resultData.damageGot);
+			}
+			ds_list_find_value(childMenuNodeList, 2).contextVisible = true;
+			with (enemiesDestroyedContext)
+			{
+				UIContext.isVisible = true;
+				fncUIUpdateContext(other.resultData.enemiesDestroyed);
+			}
+			ds_list_find_value(childMenuNodeList, 3).contextVisible = true;
+			with (totalScoreContext)
+			{
+				UIContext.isVisible = true;
+				fncUIUpdateContext(other.resultData.totalScore);
+			}
+			
+			scoreDisplayState = 4;
+			scoreDisplayStateSub = 0;
+			switch (objRoomManager.lastStage)
+			{
+				case RoomStartStage:
+				{
+					if (objSaveDataManager.currentPlayerData.stageScore.stage_0.highestScore == 0)
+						ds_list_find_value(childMenuNodeList, 4).contextVisible = true;
+				}	break;
+		
+				case RoomElecStage:
+				{
+					if (objSaveDataManager.currentPlayerData.stageScore.stage_0.highestScore == 1)
+						ds_list_find_value(childMenuNodeList, 4).contextVisible = true;
+				}	break;
+		
+				case RoomIceStage:
+				{
+					if (objSaveDataManager.currentPlayerData.stageScore.stage_0.highestScore == 2)
+						ds_list_find_value(childMenuNodeList, 4).contextVisible = true;
+				}	break;
+			}
+			ds_list_find_value(childMenuNodeList, 5).context = "Press any key or click to go to main menu";
+		}
+	}
 	switch (scoreDisplayState)
 	{
 		case 0:

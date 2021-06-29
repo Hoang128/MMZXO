@@ -8,6 +8,21 @@ climbFromFirstImage = true;
 inited = false;
 lastState = "default";
 
+function fncEndClimb()
+{
+	with (core.id)
+	{
+		vspd = 0;
+		canClimb = -canClimbDelayTime;
+		jumpTime--;
+		with(other.stateMachine)
+		{
+			fncStateChange(objPlayerStateJump);
+		}
+		return;
+	}
+}
+
 function fncStateStart()
 {
 	fncPlayerClimbStart();
@@ -80,14 +95,14 @@ function fncPlayerClimbRun()
 		{
 			if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
 			{
-				vspd = 0;
-				canClimb = -canClimbDelayTime;
-				jumpTime--;
-				with(other.stateMachine)
-				{
-					fncStateChange(objPlayerStateJump);
-					return;
-				}
+				with (other)
+					fncEndClimb();
+			}
+			
+			if (!collision_rectangle(bbox_left, (bbox_top + bbox_bottom)/2, bbox_right, bbox_bottom, objLadder, false, true))
+			{
+				with (other)
+					fncEndClimb();
 			}
 			
 			climbDir = vMove;

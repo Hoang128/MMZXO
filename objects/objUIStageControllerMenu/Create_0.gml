@@ -38,10 +38,37 @@ fncInitUIChildMenuNode("Target:", noone, noone, true, true);
 fncInitUIChildMenuNode("Hellbat schilt", noone, noone, true, true);
 fncInitUIChildMenuNode("Location:", noone, noone, true, true);
 fncInitUIChildMenuNode("Power plant", noone, noone, true, true);
+fncInitUIChildMenuNode("Highest score:", noone, noone, true, true);
+fncInitUIChildMenuNode("0", noone, noone, true, true);
 
 objUIManager.UICurrentInUse = self;
 
 stageIconList = ds_list_create();
+
+function fncChangeStageInfo()
+{
+	switch (cursor)
+	{
+		case 0:
+		{
+			ds_list_find_value(childMenuNodeList, 1).context = "No";
+			ds_list_find_value(childMenuNodeList, 3).context = "Forest";
+			ds_list_find_value(childMenuNodeList, 5).context = objSaveDataManager.currentPlayerData.stageScore.stage_0.highestScore;
+		}	break;
+		case 1:
+		{
+			ds_list_find_value(childMenuNodeList, 1).context = "Electric Bat";
+			ds_list_find_value(childMenuNodeList, 3).context = "Power Plant";
+			ds_list_find_value(childMenuNodeList, 5).context = objSaveDataManager.currentPlayerData.stageScore.stage_1.highestScore;
+		}	break;
+		case 2:
+		{
+			ds_list_find_value(childMenuNodeList, 1).context = "Ice Rabbit";
+			ds_list_find_value(childMenuNodeList, 3).context = "Ice Lake";
+			ds_list_find_value(childMenuNodeList, 5).context = objSaveDataManager.currentPlayerData.stageScore.stage_2.highestScore;
+		}	break;
+	}
+}
 
 function fncUIExit()
 {
@@ -73,7 +100,7 @@ function fncUIChangeStageTo(iconObj)
 			break;
 		}
 	}
-	
+	fncChangeStageInfo();
 	iconObj.cursorOn = true;
 }
 
@@ -114,6 +141,8 @@ function fncUIChangeStage()
 			}
 		}
 	}
+	
+	fncChangeStageInfo();
 }
 
 function fncUISelectStage()

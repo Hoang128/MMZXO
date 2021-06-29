@@ -140,6 +140,16 @@ function fncPlayerJumpRun()
 			{
 				if (!fncIsOnGround(distanceOffSlide))
 				{
+					if (fncStaticHandleButton(KeyMap.JUMP, KeyAction.PRESSED))
+					{
+						jumpTime = jumpTimeMax - 1;
+						with(other.stateMachine)
+						{
+							fncStateChange(objPlayerStateWallKick);
+							currentState.dashJump = keyboard_check(global.keyDash);
+						}
+						return;
+					}
 					if (hMove == charDir)
 					{
 						with(other.stateMachine)

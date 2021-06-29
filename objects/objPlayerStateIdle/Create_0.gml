@@ -175,6 +175,7 @@ function fncStateInit()
 				{
 					sprite_index = sprPlayer.sprLand;
 					image_index = 0;
+					hspd = 0;
 				}
 			}	break;
 		
