@@ -46,6 +46,6 @@ baseDepth = 1000000;
 backgroundDepth = LayerDepthState.BACKGROUND_1;
 orderDepth = 0;
 
-depthRatio = 1000;
+depthRatio = 100000;
 
 inited = false;

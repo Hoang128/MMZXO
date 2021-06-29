@@ -27,7 +27,10 @@ function fncIsPlayerInRange(player)
 {
 	if (distance_to_object(player) < flyDownRange)
 	{
-		return true;
+		if ((player.y - self.y) > 0)
+			return true;
+		else
+			return false;
 	}
 	else
 	{
