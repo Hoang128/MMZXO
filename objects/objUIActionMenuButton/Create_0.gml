@@ -24,8 +24,8 @@ titleContext = "Action";
 
 fncInitUIButton(objBtn_ActionStageSelect, UIBackground.UIWidth/2 , 300);
 //fncInitUIButton(objBtn_ActionLoadGame, UIBackground.UIWidth/2 , 420);
-fncInitUIButton(objBtn_ActionOption, UIBackground.UIWidth/2 , 540);
-fncInitUIButton(objBtn_ActionExit, UIBackground.UIWidth/2 , 660);
+fncInitUIButton(objBtn_ActionOption, UIBackground.UIWidth/2 , 420);
+fncInitUIButton(objBtn_ActionExit, UIBackground.UIWidth/2 , 540);
 
 function fncUIHandleExit()
 {

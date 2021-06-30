@@ -11,6 +11,8 @@ UITransPos.UIDiffPosY = 0;
 UITransPos.UIDiffPosX = -540;
 UITransPos.UIMoveSpd = 40;
 
+UIContext.titleFont = fontMenuL;
+UIContext.titleHMargin = -128;
 UIContext.childFont = fontMenuM;
 UIContext.childVSpace = 96;
 UIContext.titleVMargin = 256;
@@ -25,7 +27,7 @@ UIBackground.yStart = 0;
 UIBackground.UIWidth = 480;
 UIBackground.UIHeight = 1080;
 
-titleContext = "";
+titleContext = "Elemental Hero";
 fncInitUIButton(objUIBtn_Start, 240, 500);
 fncInitUIButton(objUIBtn_Option, 240, 620);
 fncInitUIButton(objUIBtn_Exit, 240, 740);

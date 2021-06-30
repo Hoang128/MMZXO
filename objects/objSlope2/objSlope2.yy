@@ -4,7 +4,7 @@
     "path": "sprites/sprBlockSlope2/sprBlockSlope2.yy",
   },
   "solid": true,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

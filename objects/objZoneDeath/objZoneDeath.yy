@@ -4,7 +4,7 @@
     "path": "sprites/sprZoneDeath/sprZoneDeath.yy",
   },
   "solid": false,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {

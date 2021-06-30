@@ -27,7 +27,10 @@ UIBackground.UIHeight = 1080;
 
 activePauseButton = false;
 
-titleContext = "Game Over";
+if (instance_exists(objGlobalManager.currentPlayer))
+	titleContext = "Pause Game";
+else
+	titleContext = "Game Over";
 fncInitUIButton(objUIBtn_ResumeGame, UIBackground.UIWidth/2, 300);
 fncInitUIButton(objUIBtn_Option, UIBackground.UIWidth/2, 420);
 fncInitUIButton(objUIBtn_EndRetry, UIBackground.UIWidth/2, 540);

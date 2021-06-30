@@ -4,7 +4,7 @@
     "path": "sprites/sprBlockThinSlope3/sprBlockThinSlope3.yy",
   },
   "solid": true,
-  "visible": true,
+  "visible": false,
   "spriteMaskId": null,
   "persistent": false,
   "parentObjectId": {
